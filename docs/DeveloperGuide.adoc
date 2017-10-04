@@ -788,11 +788,35 @@ Mainstream OS
 Windows, Linux, Unix, OS-X
 ....
 
-[[private-contact-detail]]
-Private contact detail
+[[abstract]]
+Abstract
 
 ....
-A contact detail that is not meant to be shared with others
+An abstract class is a class that is declared abstract—it may or may not include abstract methods. Abstract classes cannot be instantiated, but they can be subclassed.
+An abstract method is a method that is declared without an implementation
+....
+
+[[API]]
+API
+
+....
+Application Programming Interface (API)is a collection of pre-written packages,
+classes, and interfaces with their respective methods, fields and constructors.
+....
+
+[[javaFX]]
+JavaFX
+
+....
+JavaFX is a software platform for creating and delivering desktop applications,
+as well as rich internet applications (RIAs) that can run across a wide variety of devices.
+....
+
+[[gradle]]
+Gradle
+
+....
+Gradle is an open source build automation system that builds upon the concepts of Apache Ant and Apache Maven.
 ....
 
 [appendix]
