@@ -95,11 +95,11 @@ public class FindCommandSystemTest extends AddressBookSystemTest {
         assertSelectedCardUnchanged();
 
         /*Case: find person in address book, keyword is substring of name -> 1 persons found */
-        /*command = FindCommand.COMMAND_WORD + " Mei";
+        command = FindCommand.COMMAND_WORD + " Mei";
         expectedModel = getModel();
-        ModelHelper.setFilteredList(expectedModel);
+        ModelHelper.setFilteredList(expectedModel, DANIEL);
         assertCommandSuccess(command, expectedModel);
-        assertSelectedCardUnchanged();*/
+        assertSelectedCardUnchanged();
 
 
         /* Case: find person in address book, name is substring of keyword -> 0 persons found */
