@@ -58,9 +58,13 @@ public class ParserUtil {
         return phone.isPresent() ? Optional.of(new Phone(phone.get())) : Optional.empty();
     }
 
-    public static Optional<HomeNumber> parseHome(Optional<String> phone) throws IllegalValueException {
-        requireNonNull(phone);
-        return phone.isPresent() ? Optional.of(new HomeNumber(phone.get())) : Optional.empty();
+    /**
+     * Parses a {@code Optional<String> homenumber} into an {@code Optional<Homenumber>} if {@code homenumber} is present.
+     * See header comment of this class regarding the use of {@code Optional} parameters.
+     */
+    public static Optional<HomeNumber> parseHome(Optional<String> homenumber) throws IllegalValueException {
+        requireNonNull(homenumber);
+        return homenumber.isPresent() ? Optional.of(new HomeNumber(homenumber.get())) : Optional.empty();
     }
 
 
