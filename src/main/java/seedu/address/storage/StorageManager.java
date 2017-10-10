@@ -37,6 +37,7 @@ public class StorageManager extends ComponentManager implements Storage {
         return userPrefsStorage.getUserPrefsFilePath();
     }
 
+
     @Override
     public Optional<UserPrefs> readUserPrefs() throws DataConversionException, IOException {
         return userPrefsStorage.readUserPrefs();
