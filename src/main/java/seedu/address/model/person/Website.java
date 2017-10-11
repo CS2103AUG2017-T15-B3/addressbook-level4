@@ -39,7 +39,8 @@ public class Website {
      */
     public static boolean isValidWebsite(String test) {
         Pattern p = Pattern.compile(
-                "(@)?(href=')?(HREF=')?(HREF=\")?(href=\")?(https://)?[a-zA-Z_0-9\\-]+(\\.\\w[a-zA-Z_0-9\\-]+)+(/[#&\\n\\-=?\\+\\%/\\.\\w]+)?");
+                "(@)?(href=')?(HREF=')?(HREF=\")?(href=\")?(https://)?[a-zA-Z_0-9\\-]" +
+                        "+(\\.\\w[a-zA-Z_0-9\\-]+)+(/[#&\\n\\-=?\\+\\%/\\.\\w]+)?");
 
         Matcher m = p.matcher(test);
         return m.matches();

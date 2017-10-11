@@ -28,6 +28,7 @@ public class WebsiteTest {
         assertTrue(Website.isValidWebsite("https://www.facebook.com/search"));
         assertTrue(Website.isValidWebsite("https://www.facebook.com"));
         assertTrue(Website.isValidWebsite("https://www.google.net"));
+        assertTrue(Website.isValidWebsite("https://www.linkedin.com"));
         assertTrue(Website.isValidWebsite("https://www.facebook.net"));
     }
 }
