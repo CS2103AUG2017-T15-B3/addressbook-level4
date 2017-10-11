@@ -15,8 +15,14 @@ import seedu.address.commons.exceptions.IllegalValueException;
 public class Website {
     public static final String MESSAGE_WEBSITE_CONSTRAINTS =
             "Person websites should be 3 alphanumeric/period strings separated by '.'";
+    public static final String NO_WEBSITE = "https://websiteless.com";
 
     public final String value;
+
+
+//    public Website() {
+//        this.value = NO_WEBSITE;
+//    }
 
     /**
      * Validates given website.

@@ -32,6 +32,7 @@ public class EditPersonDescriptorBuilder {
         descriptor.setPhone(person.getPhone());
         descriptor.setEmail(person.getEmail());
         descriptor.setAddress(person.getAddress());
+        descriptor.setWebsite(person.getWebsite());
         descriptor.setTags(person.getTags());
     }
 
@@ -79,6 +80,18 @@ public class EditPersonDescriptorBuilder {
             ParserUtil.parseAddress(Optional.of(address)).ifPresent(descriptor::setAddress);
         } catch (IllegalValueException ive) {
             throw new IllegalArgumentException("address is expected to be unique.");
+        }
+        return this;
+    }
+
+    /**
+     * Sets the {@code Website} of the {@code EditPersonDescriptor} that we are building.
+     */
+    public EditPersonDescriptorBuilder withWebsite(String website) {
+        try {
+            ParserUtil.parseWebsite(Optional.of(website)).ifPresent(descriptor::setWebsite);
+        } catch (IllegalValueException ive) {
+            throw new IllegalArgumentException("website is expected to be unique.");
         }
         return this;
     }
