@@ -19,11 +19,6 @@ public class Website {
 
     public final String value;
 
-
-//    public Website() {
-//        this.value = NO_WEBSITE;
-//    }
-
     /**
      * Validates given website.
      *
