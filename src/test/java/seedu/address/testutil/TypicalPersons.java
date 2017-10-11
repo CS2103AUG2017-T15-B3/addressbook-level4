@@ -24,23 +24,21 @@ import seedu.address.model.person.exceptions.DuplicatePersonException;
  */
 public class TypicalPersons {
 
-    public static final ReadOnlyPerson ALICE = new PersonBuilder().withName("Alice Pauline")
-            .withAddress("123, Jurong West Ave 6, #08-111").withEmail("alice@example.com")
-            .withPhone("85355255").withHomeNumber("65431222")
-            .withTags("friends").build();
-    public static final ReadOnlyPerson BENSON = new PersonBuilder().withName("Benson Meier")
-            .withAddress("311, Clementi Ave 2, #02-25")
-            .withEmail("johnd@example.com").withPhone("98765432").withHomeNumber("65789012")
+    private static final ReadOnlyPerson ALICE = new PersonBuilder().withName("Alice Pauline")
+            .withPhone("85355255").withHomeNumber("65431222").withEmail("alice@example.com")
+            .withAddress("123, Jurong West Ave 6, #08-111").withTags("friends").build();
+    private static final ReadOnlyPerson BENSON = new PersonBuilder().withName("Benson Meier").withPhone("98765432")
+            .withHomeNumber("65789012").withEmail("johnd@example.com").withAddress("311, Clementi Ave 2, #02-25")
             .withTags("owesMoney", "friends").build();
-    public static final ReadOnlyPerson CARL = new PersonBuilder().withName("Carl Kurz").withPhone("95352563")
+    private static final ReadOnlyPerson CARL = new PersonBuilder().withName("Carl Kurz").withPhone("95352563")
             .withHomeNumber("66231425").withEmail("heinz@example.com").withAddress("wall street").build();
-    public static final ReadOnlyPerson DANIEL = new PersonBuilder().withName("Daniel Meier").withPhone("87652533")
+    private static final ReadOnlyPerson DANIEL = new PersonBuilder().withName("Daniel Meier").withPhone("87652533")
             .withHomeNumber("67321632").withEmail("cornelia@example.com").withAddress("10th street").build();
-    public static final ReadOnlyPerson ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("9482224")
+    private static final ReadOnlyPerson ELLE = new PersonBuilder().withName("Elle Meyer").withPhone("9482224")
             .withHomeNumber("65882211").withEmail("werner@example.com").withAddress("michegan ave").build();
-    public static final ReadOnlyPerson FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("9482427")
+    private static final ReadOnlyPerson FIONA = new PersonBuilder().withName("Fiona Kunz").withPhone("9482427")
             .withHomeNumber("64251789").withEmail("lydia@example.com").withAddress("little tokyo").build();
-    public static final ReadOnlyPerson GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
+    private static final ReadOnlyPerson GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
             .withHomeNumber("65118899").withEmail("anna@example.com").withAddress("4th street").build();
 
     // Manually added
