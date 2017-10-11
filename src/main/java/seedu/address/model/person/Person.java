@@ -7,7 +7,6 @@ import java.util.Collections;
 import java.util.Objects;
 import java.util.Set;
 
-import javafx.beans.binding.ObjectExpression;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import seedu.address.model.tag.Tag;
@@ -77,12 +76,18 @@ public class Person implements ReadOnlyPerson {
         return phone.get();
     }
 
-    public void setHomeNumber(HomeNumber homeNumber){ this.homeNumber.set(requireNonNull(homeNumber));}
+    public void setHomeNumber(HomeNumber homeNumber){
+        this.homeNumber.set(requireNonNull(homeNumber));
+    }
 
     @Override
-    public ObjectProperty<HomeNumber> homeProperty() { return homeNumber;}
+    public ObjectProperty<HomeNumber> homeProperty() {
+        return homeNumber;
+    }
 
-    public HomeNumber getHomeNumber() { return homeNumber.get();}
+    public HomeNumber getHomeNumber() {
+        return homeNumber.get();
+    }
 
     public void setEmail(Email email) {
         this.email.set(requireNonNull(email));
