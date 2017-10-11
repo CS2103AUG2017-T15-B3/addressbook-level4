@@ -76,7 +76,7 @@ public class Person implements ReadOnlyPerson {
         return phone.get();
     }
 
-    public void setHomeNumber(HomeNumber homeNumber){
+    public void setHomeNumber(HomeNumber homeNumber) {
         this.homeNumber.set(requireNonNull(homeNumber));
     }
 
