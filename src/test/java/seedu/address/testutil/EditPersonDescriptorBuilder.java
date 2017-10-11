@@ -60,6 +60,18 @@ public class EditPersonDescriptorBuilder {
     }
 
     /**
+     * Sets the {@code HomeNumber} of the {@code EditPersonDescriptor} that we are building.
+     */
+    public EditPersonDescriptorBuilder withHomeNumber(String homeNumber) {
+        try {
+            ParserUtil.parseHome(Optional.of(homeNumber)).ifPresent(descriptor::setHomeNumber);
+        } catch (IllegalValueException ive) {
+            throw new IllegalArgumentException("home number is expected to be unique.");
+        }
+        return this;
+    }
+
+    /**
      * Sets the {@code Email} of the {@code EditPersonDescriptor} that we are building.
      */
     public EditPersonDescriptorBuilder withEmail(String email) {
