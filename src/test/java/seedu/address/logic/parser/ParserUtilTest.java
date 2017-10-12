@@ -20,6 +20,7 @@ import org.junit.rules.ExpectedException;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.HomeNumber;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
@@ -27,12 +28,14 @@ import seedu.address.model.tag.Tag;
 public class ParserUtilTest {
     private static final String INVALID_NAME = "R@chel";
     private static final String INVALID_PHONE = "+651234";
+    private static final String INVALID_HOME_NUMBER = "+9821";
     private static final String INVALID_ADDRESS = " ";
     private static final String INVALID_EMAIL = "example.com";
     private static final String INVALID_TAG = "#friend";
 
     private static final String VALID_NAME = "Rachel Walker";
     private static final String VALID_PHONE = "123456";
+    private static final String VALID_HOME_NUMBER = "87654321";
     private static final String VALID_ADDRESS = "123 Main Street #0505";
     private static final String VALID_EMAIL = "rachel@example.com";
     private static final String VALID_TAG_1 = "friend";
@@ -111,6 +114,31 @@ public class ParserUtilTest {
         Optional<Phone> actualPhone = ParserUtil.parsePhone(Optional.of(VALID_PHONE));
 
         assertEquals(expectedPhone, actualPhone.get());
+    }
+
+    @Test
+    public void parseHomeNumber_null_throwsNullPointerException() throws Exception {
+        thrown.expect(NullPointerException.class);
+        ParserUtil.parseHome(null);
+    }
+
+    @Test
+    public void parseHomeNumber_invalidValue_throwsIllegalValueException() throws Exception {
+        thrown.expect(IllegalValueException.class);
+        ParserUtil.parseHome(Optional.of(INVALID_HOME_NUMBER));
+    }
+
+    @Test
+    public void parseHomeNumber_optionalEmpty_returnsOptionalEmpty() throws Exception {
+        assertFalse(ParserUtil.parseHome(Optional.empty()).isPresent());
+    }
+
+    @Test
+    public void parseHomeNumber_validValue_returnsHomeNumber() throws Exception {
+        HomeNumber expectedHomeNumber = new HomeNumber(VALID_HOME_NUMBER);
+        Optional<HomeNumber> actualHomeNumber = ParserUtil.parseHome(Optional.of(VALID_HOME_NUMBER));
+
+        assertEquals(expectedHomeNumber, actualHomeNumber.get());
     }
 
     @Test

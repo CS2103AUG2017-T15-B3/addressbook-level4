@@ -12,6 +12,7 @@ import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Email;
+import seedu.address.model.person.HomeNumber;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
@@ -21,8 +22,8 @@ import seedu.address.model.tag.Tag;
  * {@code ParserUtil} contains methods that take in {@code Optional} as parameters. However, it goes against Java's
  * convention (see https://stackoverflow.com/a/39005452) as {@code Optional} should only be used a return type.
  * Justification: The methods in concern receive {@code Optional} return values from other methods as parameters and
- * return {@code Optional} values based on whether the parameters were present. Therefore, it is redundant to unwrap the
- * initial {@code Optional} before passing to {@code ParserUtil} as a parameter and then re-wrap it into an
+ * return {@code Optional} values based on whether the parameters were present. Therefore, it is redundant to unwrap
+ * the initial {@code Optional} before passing to {@code ParserUtil} as a parameter and then re-wrap it into an
  * {@code Optional} return value inside {@code ParserUtil} methods.
  */
 public class ParserUtil {
@@ -60,6 +61,17 @@ public class ParserUtil {
         requireNonNull(phone);
         return phone.isPresent() ? Optional.of(new Phone(phone.get())) : Optional.empty();
     }
+
+    /**
+     * Parses a {@code Optional<String> homenumber} into an {@code Optional<Homenumber>} if {@code homenumber} is
+     * present.
+     * See header comment of this class regarding the use of {@code Optional} parameters.
+     */
+    public static Optional<HomeNumber> parseHome(Optional<String> homeNumber) throws IllegalValueException {
+        requireNonNull(homeNumber);
+        return homeNumber.isPresent() ? Optional.of(new HomeNumber(homeNumber.get())) : Optional.empty();
+    }
+
 
     /**
      * Parses a {@code Optional<String> address} into an {@code Optional<Address>} if {@code address} is present.
