@@ -85,6 +85,7 @@ public class Person implements ReadOnlyPerson {
         return homeNumber;
     }
 
+    @Override
     public HomeNumber getHomeNumber() {
         return homeNumber.get();
     }

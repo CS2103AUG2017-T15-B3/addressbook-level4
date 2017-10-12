@@ -11,7 +11,7 @@ import seedu.address.commons.exceptions.IllegalValueException;
 public class HomeNumber {
 
     public static final String MESSAGE_HOME_NUMBER_CONSTRAINTS =
-            "Phone numbers can only contain numbers, and should be at least 3 digits long";
+            "Home numbers can only contain numbers, and should be at least 3 digits long";
     public static final String HOME_NUMBER_VALIDATION_REGEX = "\\d{3,}";
     public final String value;
 
@@ -20,13 +20,13 @@ public class HomeNumber {
      *
      * @throws IllegalValueException if given phone string is invalid.
      */
-    public HomeNumber(String phone) throws IllegalValueException {
-        requireNonNull(phone);
-        String trimmedPhone = phone.trim();
-        if (!isValidHomeNumber(trimmedPhone)) {
+    public HomeNumber(String homeNumber) throws IllegalValueException {
+        requireNonNull(homeNumber);
+        String trimmedHomeNumber = homeNumber.trim();
+        if (!isValidHomeNumber(trimmedHomeNumber)) {
             throw new IllegalValueException(MESSAGE_HOME_NUMBER_CONSTRAINTS);
         }
-        this.value = trimmedPhone;
+        this.value = trimmedHomeNumber;
     }
 
     /**
