@@ -46,6 +46,8 @@ public class PersonCard extends UiPart<Region> {
     @FXML
     private Label email;
     @FXML
+    private Label website;
+    @FXML
     private FlowPane tags;
 
     public PersonCard(ReadOnlyPerson person, int displayedIndex) {
@@ -65,6 +67,7 @@ public class PersonCard extends UiPart<Region> {
         phone.textProperty().bind(Bindings.convert(person.phoneProperty()));
         address.textProperty().bind(Bindings.convert(person.addressProperty()));
         email.textProperty().bind(Bindings.convert(person.emailProperty()));
+        website.textProperty().bind(Bindings.convert(person.websiteProperty()));
         person.tagProperty().addListener((observable, oldValue, newValue) -> {
             tags.getChildren().clear();
             initTags(person);
