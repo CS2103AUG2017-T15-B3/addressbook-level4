@@ -5,10 +5,13 @@ import java.util.List;
 import seedu.address.commons.core.EventsCenter;
 import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
-import seedu.address.commons.events.ui.JumpToListRequestEvent;
+import seedu.address.commons.events.ui.AccessWebsiteRequestEvent;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.person.ReadOnlyPerson;
 
+/**
+ * Accesses a person's website in the address book.
+ */
 public class AccessCommand extends Command {
     public static final String COMMAND_WORD = "access";
 
@@ -33,7 +36,9 @@ public class AccessCommand extends Command {
             throw new CommandException(Messages.MESSAGE_INVALID_DISPLAYED_INDEX);
         }
 
-        EventsCenter.getInstance().post(new JumpToListRequestEvent(targetIndex));
+        ReadOnlyPerson person = lastShownList.get(targetIndex.getZeroBased());
+
+        EventsCenter.getInstance().post(new AccessWebsiteRequestEvent(person.getWebsite().toString()));
         return new CommandResult(String.format(MESSAGE_ACCESS_PERSON_SUCCESS, targetIndex.getOneBased()));
     }
 

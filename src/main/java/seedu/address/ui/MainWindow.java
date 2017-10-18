@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import seedu.address.commons.core.Config;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
+import seedu.address.commons.events.ui.AccessWebsiteRequestEvent;
 import seedu.address.commons.events.ui.ChangeThemeRequestEvent;
 import seedu.address.commons.events.ui.ExitAppRequestEvent;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
@@ -215,6 +216,14 @@ public class MainWindow extends UiPart<Region> {
         getRoot().getStylesheets().add("/view/" + theme);
     }
 
+    /**
+     * Access website through browser panel based on person's link
+     * @param website
+     */
+    public void handleWebsiteAccess(String website) {
+        browserPanel.loadPage(website);
+    }
+
     void show() {
         primaryStage.show();
     }
@@ -251,5 +260,11 @@ public class MainWindow extends UiPart<Region> {
     private void handleChangeThemeEvent(ChangeThemeRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleChangeTheme(event.theme);
+    }
+
+    @Subscribe
+    private void handleAccessWebsiteEvent(AccessWebsiteRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        handleWebsiteAccess(event.website);
     }
 }
