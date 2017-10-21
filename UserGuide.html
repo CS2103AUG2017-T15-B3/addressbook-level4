@@ -31,23 +31,25 @@
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">4.1. Viewing help : <code>help</code></a></li>
 <li><a href="#adding-a-person-code-add-code">4.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">4.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#sorting-all-persons-code-sort-code">4.4. Sorting all persons : <code>sort</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">4.5. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">4.6. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">4.7. Deleting a person : <code>delete</code></a></li>
-<li><a href="#selecting-a-person-code-select-code">4.8. Selecting a person : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">4.9. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">4.10. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">4.11. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#listing-all-themes-code-themeslist-code">4.12. Listing all themes : <code>themeslist</code></a></li>
-<li><a href="#switching-themes-code-switch-code">4.13. Switching themes : <code>switch</code></a></li>
-<li><a href="#adding-an-event-addevent">4.14. Adding an event : 'addevent'</a></li>
-<li><a href="#favouriting-a-person-code-favourite-code">4.15. Favouriting a person : <code>favourite</code></a></li>
-<li><a href="#unfavouriting-a-person-code-unfavourite-code">4.16. Unfavouriting a person : <code>unfavourite</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">4.17. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">4.18. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">4.19. Saving the data</a></li>
+<li><a href="#accessing-a-person-s-website-code-access-code">4.3. Accessing a person&#8217;s website : <code>access</code></a></li>
+<li><a href="#listing-all-persons-code-list-code">4.4. Listing all persons : <code>list</code></a></li>
+<li><a href="#accessing-a-person-s-location-code-locate-code">4.5. Accessing a person&#8217;s location : <code>locate</code></a></li>
+<li><a href="#sorting-all-persons-code-sort-code">4.6. Sorting all persons : <code>sort</code></a></li>
+<li><a href="#editing-a-person-code-edit-code">4.7. Editing a person : <code>edit</code></a></li>
+<li><a href="#locating-persons-by-name-code-find-code">4.8. Locating persons by name: <code>find</code></a></li>
+<li><a href="#deleting-a-person-code-delete-code">4.9. Deleting a person : <code>delete</code></a></li>
+<li><a href="#selecting-a-person-code-select-code">4.10. Selecting a person : <code>select</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">4.11. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">4.12. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">4.13. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#listing-all-themes-code-themeslist-code">4.14. Listing all themes : <code>themeslist</code></a></li>
+<li><a href="#switching-themes-code-switch-code">4.15. Switching themes : <code>switch</code></a></li>
+<li><a href="#adding-an-event-addevent">4.16. Adding an event : 'addevent'</a></li>
+<li><a href="#favouriting-a-person-code-favourite-code">4.17. Favouriting a person : <code>favourite</code></a></li>
+<li><a href="#unfavouriting-a-person-code-unfavourite-code">4.18. Unfavouriting a person : <code>unfavourite</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">4.19. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">4.20. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">4.21. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -125,7 +127,8 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : lists all contacts</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong><code>add</code></strong><code>add n/John Doe p/98765432 h/65812321 e/johnd@example.com se/john@u.nus.edu w/https://www.facebook.com/johnDoe a/John street, block 123, #01-01 b/12/11/1972</code>
+: adds a contact named <code>John Doe</code> to the Address Book.</p>
 </li>
 <li>
 <p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
@@ -178,8 +181,25 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect2">
 <h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">4.2. Adding a person: <code>add</code></a></h3>
 <div class="paragraph">
+<p><code>since v1.2</code> <code>new field: Birthday (Archana) , Website (Darren), Home Number (Cherng Hann) and School Email(Cherng Hann)</code></p>
+</div>
+<div class="paragraph">
 <p>Adds a person to the address book<br>
 Format: <code>add n/NAME p/PHONE_NUMBER h/HOME_NUMBER e/EMAIL se/SCHOOL_EMAIL w/WEBSITE a/ADDRESS b/BIRTHDAY [t/TAG]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+See examples for a rough idea of how and what details should be inputted.<br>
+Website should be <code><a href="https://www.anyName.com/anyContent" class="bare">https://www.anyName.com/anyContent</a></code> where anyName can only be alphanumeric and anyContent can be the exact url details of the website.<br>
+Birthday should be in proper format of "dd/mm/yyyy" where all elements inputted for birthday are integers.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -208,21 +228,128 @@ A person can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">4.3. Listing all persons : <code>list</code></a></h3>
+<h3 id="accessing-a-person-s-website-code-access-code"><a class="link" href="#accessing-a-person-s-website-code-access-code">4.3. Accessing a person&#8217;s website : <code>access</code></a></h3>
+<div class="paragraph">
+<p>Accesses a person&#8217;s website in the address book<br>
+Format: 'access INDEX'</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the person and attains the address details of the person at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The person&#8217;s website is then inputted as a URL in the browser.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the most recent listing.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+<li>
+<p>The website listed must be a valid existing website listed.</p>
+</li>
+<li>
+<p>The website should be <code><a href="https://www.anyName.com/anyContent" class="bare">https://www.anyName.com/anyContent</a></code> where anyName can be alphanumeric and anyContent can be the exact url details of the website.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>access 2</code><br>
+Selects the 2nd person in the address book and attains the website of the 2nd person.
+The website details is then loaded into the browser.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>access 1</code><br>
+Selects the 1st person in the results of the <code>find</code> command and attains the website of the 2nd person.
+The website details is then loaded into the browser.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">4.4. Listing all persons : <code>list</code></a></h3>
 <div class="paragraph">
 <p>Shows a list of all persons in the address book.<br>
 Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sorting-all-persons-code-sort-code"><a class="link" href="#sorting-all-persons-code-sort-code">4.4. Sorting all persons : <code>sort</code></a></h3>
+<h3 id="accessing-a-person-s-location-code-locate-code"><a class="link" href="#accessing-a-person-s-location-code-locate-code">4.5. Accessing a person&#8217;s location : <code>locate</code></a></h3>
+<div class="paragraph">
+<p><code>since v1.3</code> <code>Darren Chin</code></p>
+</div>
+<div class="paragraph">
+<p>Accesses a person&#8217;s location in the address book<br>
+Format: 'locate INDEX'</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the person and attains the address details of the person at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The person&#8217;s address is then used in a search function Using Google Maps Search.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the most recent listing.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+<li>
+<p>The address listed must be a valid address listed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>locate 2</code><br>
+Selects the 2nd person in the address book and attains the address of the 2nd person.
+The address details is then used in a Google Maps Search.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>locate 1</code><br>
+Selects the 1st person in the results of the <code>find</code> command and attains the address of the 2nd person.
+The address details is then used in a Google Maps Search.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sorting-all-persons-code-sort-code"><a class="link" href="#sorting-all-persons-code-sort-code">4.6. Sorting all persons : <code>sort</code></a></h3>
+<div class="paragraph">
+<p><code>since v1.2</code> <code>Darren Chin</code></p>
+</div>
 <div class="paragraph">
 <p>Sorts all persons in the address book by their names alphabetically.<br>
 Format: <code>sort</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">4.5. Editing a person : <code>edit</code></a></h3>
+<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">4.7. Editing a person : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing person in the address book.<br>
 Format: <code>edit INDEX [n/NAME] [p/PHONE] [h/HOME_NUMBER] [e/EMAIL] [se/SCHOOL_EMAIL] [w/WEBSITE] [a/ADDRESS] [b/BIRTHDAY] [t/TAG]&#8230;&#8203;</code></p>
@@ -267,7 +394,10 @@ Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all 
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">4.6. Locating persons by name: <code>find</code></a></h3>
+<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">4.8. Locating persons by name: <code>find</code></a></h3>
+<div class="paragraph">
+<p><code>since v1.3</code> <code>Darren Chin</code></p>
+</div>
 <div class="paragraph">
 <p>Finds persons whose names contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -318,7 +448,7 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">4.7. Deleting a person : <code>delete</code></a></h3>
+<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">4.9. Deleting a person : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified person from the address book.<br>
 Format: <code>delete INDEX</code></p>
@@ -359,7 +489,10 @@ Deletes the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">4.8. Selecting a person : <code>select</code></a></h3>
+<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">4.10. Selecting a person : <code>select</code></a></h3>
+<div class="paragraph">
+<p><code>since v1.2</code> <code>Changed select from google search to Person Card</code> <code>Archana</code></p>
+</div>
 <div class="paragraph">
 <p>Selects the person identified by the index number used in the last person listing.<br>
 Format: <code>select INDEX</code></p>
@@ -369,7 +502,7 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
+<p>Selects the person and loads the details of the person at the specified <code>INDEX</code> in a person card.</p>
 </li>
 <li>
 <p>The index refers to the index number shown in the most recent listing.</p>
@@ -400,7 +533,7 @@ Selects the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">4.9. Listing entered commands : <code>history</code></a></h3>
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">4.11. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format: <code>history</code></p>
@@ -421,7 +554,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">4.10. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">4.12. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
@@ -466,7 +599,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">4.11. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">4.13. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Format: <code>redo</code></p>
@@ -498,14 +631,20 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-themes-code-themeslist-code"><a class="link" href="#listing-all-themes-code-themeslist-code">4.12. Listing all themes : <code>themeslist</code></a></h3>
+<h3 id="listing-all-themes-code-themeslist-code"><a class="link" href="#listing-all-themes-code-themeslist-code">4.14. Listing all themes : <code>themeslist</code></a></h3>
+<div class="paragraph">
+<p><code>since v1.2</code> <code>Dickson Chan</code></p>
+</div>
 <div class="paragraph">
 <p>Shows a list of all themes in the address book.<br>
 Format: <code>themeslist</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="switching-themes-code-switch-code"><a class="link" href="#switching-themes-code-switch-code">4.13. Switching themes : <code>switch</code></a></h3>
+<h3 id="switching-themes-code-switch-code"><a class="link" href="#switching-themes-code-switch-code">4.15. Switching themes : <code>switch</code></a></h3>
+<div class="paragraph">
+<p><code>since v1.2</code> <code>Dickson Chan</code></p>
+</div>
 <div class="paragraph">
 <p>Switches the current theme to the specified theme.<br>
 Format: <code>switch INDEX</code></p>
@@ -541,7 +680,10 @@ Switches to the 2nd theme in the themes list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-event-addevent"><a class="link" href="#adding-an-event-addevent">4.14. Adding an event : 'addevent'</a></h3>
+<h3 id="adding-an-event-addevent"><a class="link" href="#adding-an-event-addevent">4.16. Adding an event : 'addevent'</a></h3>
+<div class="paragraph">
+<p><code>since v1.2</code> <code>Cherng Hann</code></p>
+</div>
 <div class="paragraph">
 <p>Adds an event to the address book<br>
 Format: <code>add n/NAME d/DATE a/ADDRESS</code></p>
@@ -561,7 +703,10 @@ Format: <code>add n/NAME d/DATE a/ADDRESS</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="favouriting-a-person-code-favourite-code"><a class="link" href="#favouriting-a-person-code-favourite-code">4.15. Favouriting a person : <code>favourite</code></a></h3>
+<h3 id="favouriting-a-person-code-favourite-code"><a class="link" href="#favouriting-a-person-code-favourite-code">4.17. Favouriting a person : <code>favourite</code></a></h3>
+<div class="paragraph">
+<p><code>since v1.2</code> <code>Dickson Chan</code></p>
+</div>
 <div class="paragraph">
 <p>Favourites the specified person from the address book.<br>
 Format: <code>favourite INDEX</code></p>
@@ -602,7 +747,10 @@ Favourites the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="unfavouriting-a-person-code-unfavourite-code"><a class="link" href="#unfavouriting-a-person-code-unfavourite-code">4.16. Unfavouriting a person : <code>unfavourite</code></a></h3>
+<h3 id="unfavouriting-a-person-code-unfavourite-code"><a class="link" href="#unfavouriting-a-person-code-unfavourite-code">4.18. Unfavouriting a person : <code>unfavourite</code></a></h3>
+<div class="paragraph">
+<p><code>since v1.2</code> <code>Dickson Chan</code></p>
+</div>
 <div class="paragraph">
 <p>Unfavourites the specified person from the address book.<br>
 Format: <code>unfavourite INDEX</code></p>
@@ -643,21 +791,21 @@ Unfavourites the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.17. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.19. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from the address book.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.18. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.20. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.19. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.21. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -684,6 +832,10 @@ There is no need to save manually.</p>
 e.g. <code>add n/James Ho p/22224444 h/65812131 e/jamesho@example.com se/jamesho@u.nus.edu w/https://www.facebook.com/jamesHo a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
 </li>
 <li>
+<p><strong>Access</strong> : <code>access INDEX</code><br>
+e.g.<code>access 2</code></p>
+</li>
+<li>
 <p><strong>Clear</strong> : <code>clear</code></p>
 </li>
 <li>
@@ -700,6 +852,10 @@ e.g. <code>find James Jake</code></p>
 </li>
 <li>
 <p><strong>List</strong> : <code>list</code></p>
+</li>
+<li>
+<p><strong>Locate</strong> : <code>locate INDEX</code><br>
+e.g.<code>locate 2</code></p>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
@@ -750,7 +906,7 @@ suggest similar words.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-21 06:13:30 +00:00
+Last updated 2017-10-21 11:59:06 +00:00
 </div>
 </div>
 </body>
