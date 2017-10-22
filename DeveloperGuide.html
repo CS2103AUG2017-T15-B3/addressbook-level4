@@ -51,9 +51,10 @@
 <li><a href="#switch-theme-mechanism">5.3. Switch Theme Mechanism</a></li>
 <li><a href="#sort-mechanism">5.4. Sort mechanism</a></li>
 <li><a href="#access-website-mechanism">5.5. Access Website mechanism</a></li>
-<li><a href="#find-mechanism">5.6. Find Mechanism</a></li>
-<li><a href="#logging">5.7. Logging</a></li>
-<li><a href="#configuration">5.8. Configuration</a></li>
+<li><a href="#location-mechanism">5.6. Location mechanism</a></li>
+<li><a href="#find-mechanism">5.7. Find Mechanism</a></li>
+<li><a href="#logging">5.8. Logging</a></li>
+<li><a href="#configuration">5.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">6. Documentation</a>
@@ -989,16 +990,15 @@ can be undoable, where the previous state of the address book before sorting is 
 <div class="sect2">
 <h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">5.4. Sort mechanism</a></h3>
 <div class="paragraph">
-<p>The sort mechanism sorts the names of people inside the <code>addressbook</code> which
-is inside the 'ModelManager'. It organizes the position of the people existing in
-the addressbook based on their names in an alphabetical order. The sort command inherits
-from UndoableCommand.</p>
+<p>The sort mechanism sorts the names of people inside the <code>addressbook</code> of the 'ModelManager'.
+When the sort method is executed, it organizes the position of the people existing in the <code>addressbook</code>
+based on their names in alphabetical order. The sort mechanism touches all components of the software application
+but mainly involving the logic and model component.</p>
 </div>
 <div class="paragraph">
-<p>From Figure 5.2.1 below, it is visible that <code>SortCommand</code> inherits from <code>UndoableCommand</code>
-which is an extra layer between abstract <code>Command</code> class in which the SortCommand
-can be undoable, where the previous state of the address book before sorting
-is saved.</p>
+<p>In the figure [Figure 5.2.1] below, the <code>SortCommand</code> inherits from <code>UndoableCommand</code>
+which is an extra layer between abstract <code>Command</code> class which belongs to the Logic Component.
+This allows the SortCommand to be undoable, where the previous state of the address book before sorting is saved.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1009,9 +1009,7 @@ is saved.</p>
 <p>Figure 5.2.1 SortCommand Logic Class Diagram</p>
 </div>
 <div class="paragraph">
-<p>Suppose a user has an unorganized list of contacts and executes the
-<code>SortCommand</code> to organize his contacts based on their names in an
-alphabetical order.</p>
+<p>Suppose a user has an unorganized list of contacts and executes the <code>SortCommand</code> to organize his contacts.</p>
 </div>
 <div class="paragraph">
 <p>The execution of SortCommand is processed in this way:</p>
@@ -1019,13 +1017,13 @@ alphabetical order.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User will execute a new <code>SortCommand</code> so as to sort the address book.</p>
+<p>User will execute and create a new <code>SortCommand</code> so as to sort the address book.</p>
 </li>
 <li>
-<p>This is carried out by <code>model.sort()</code> in <code>executeUndoableCommand()</code>.</p>
+<p>When <code>executeUndoableCommand()</code> of <code>SortCommand</code> is called, <code>model.sort()</code> in the method will be processed.</p>
 </li>
 <li>
-<p>The <code>internalList</code> of the address book is accessed and is sorted through a <code>lambda</code> function which
+<p>The <code>internalList</code> of the address book is then accessed and sorted through a <code>lambda</code> function which
 compares the name of everyone and necessarily switches the position between contacts throughout the <code>internalList</code> by comparing names between person r1 and r2 sequentially.</p>
 </li>
 <li>
@@ -1036,7 +1034,7 @@ to update the <code>PersonListPanel</code> of the GUI being shown.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Code of SortCommand :</p>
+<p>Code of <code>SortCommand.java</code> and its method <code>executeUndoableCommand</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1050,7 +1048,7 @@ to update the <code>PersonListPanel</code> of the GUI being shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Sort method inside ModelManager.java :</p>
+<p>Code of sort method inside <code>ModelManager.java</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1063,7 +1061,7 @@ to update the <code>PersonListPanel</code> of the GUI being shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Sort method inside UniquePersonList.java :</p>
+<p>Code of sort method inside <code>UniquePersonList.java</code> using a lambda function to sort <code>internalList</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1074,10 +1072,8 @@ to update the <code>PersonListPanel</code> of the GUI being shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the sort operation works:</p>
-</div>
-<div class="paragraph">
-<p>When sort is typed into command line input, new SortCommand is created.</p>
+<p>The following sequence diagram shows how the sort operation works:
+As seen from the figure [Figure 5.2.2] below, when sort is typed into command line input, new <code>SortCommand</code> is created.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1085,24 +1081,32 @@ to update the <code>PersonListPanel</code> of the GUI being shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>When executeUndoableCommand is called in SortCommand class, it will call the sort function in ModelManager.
-It will call the sort() function of its own class until it reaches InternalList.sort() where the sorting of contacts based on their names will begin.</p>
+<p>Figure 5.2.2 SortCommand Logic Sequence Diagram</p>
+</div>
+<div class="paragraph">
+<p>When <code>executeUndoableCommand</code> is called in SortCommand class, it will call the sort function in ModelManager.
+It will call the sort() function of its own class until it reaches InternalList.sort() where the sorting of
+contacts positions based on their names will be executed.
+Ultimately, achieving the final product of having a sorted addressbook being shown in the <code>PersonListPanel</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/SortCommandModelSequenceDiagram.PNG" alt="SortCommandModelSequenceDiagram" width="800">
 </div>
 </div>
+<div class="paragraph">
+<p>Figure 5.2.3 SortCommand Model Sequence Diagram</p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">5.4.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>SortCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> extending to <code>UndoableCommand</code> class<br>
-<strong>Pros:</strong> Sort function call is able to be undone if needed as it now inherits from the Super Class.<br>
+<strong>Pros:</strong> Sort method call is able to be undone if needed as it now inherits from the Super Class.<br>
 <strong>Cons:</strong> Developers might need to understand how <code>UndoableCommand</code> works before implementation.<br>
 <strong>Alternative 2:</strong> Just extend to <code>Command</code> class<br>
 <strong>Pros:</strong> Does not need understanding of <code>UndoableCommand</code> class.<br>
-<strong>Cons:</strong> Unable to undo sort function and work from previous state of address book if user has called <code>SortCommand</code> to sort address book.</p>
+<strong>Cons:</strong> Unable to undo sort method and work from previous state of address book if user has called <code>SortCommand</code> to sort address book.</p>
 </div>
 <hr>
 <div class="paragraph">
@@ -1123,10 +1127,12 @@ It will call the sort() function of its own class until it reaches InternalList.
 <h3 id="access-website-mechanism"><a class="link" href="#access-website-mechanism">5.5. Access Website mechanism</a></h3>
 <div class="paragraph">
 <p>The access website mechanism has an <code>AccessCommand</code> that allows user to access the website by stating the
-index of the desired contact in the contact list viewed. The <code>AccessCommand</code> class inherits from the <code>Command</code> class.</p>
+index of the desired contact in the contact list viewed.
+The implementation of the access website mechanism is mostly done in the <code>UI</code>, <code>Model</code>, and <code>Logic</code> component.
+The <code>AccessCommand</code> class inherits from the <code>Command</code> class.</p>
 </div>
 <div class="paragraph">
-<p>Suppose a user would like access one of his contacts website that is listed in the address book
+<p>Suppose a user would like to access one of his contacts website that is listed in the <code>PersonListPanel</code> of the address book
 and executes the <code>AccessCommand</code> to access the website.</p>
 </div>
 <div class="paragraph">
@@ -1135,23 +1141,24 @@ and executes the <code>AccessCommand</code> to access the website.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User will input <code>access index</code> where index refers to the index of the person listed in the person card list in GUI.</p>
+<p>User will input <code>access index</code> where <code>index</code> refers to the index of the person listed in the <code>PersonListPanel</code> in GUI.</p>
 </li>
 <li>
 <p>Input of user will be parse as an argument through the AddressBookParser and AccessCommandParser to extract the index.</p>
 </li>
 <li>
-<p>A new <code>AccessCommand</code> with the index inputted will be executed.</p>
+<p>A new <code>AccessCommand</code> with the index inputted will be created.</p>
 </li>
 <li>
-<p>In the execute() of AccessCommand, the person of the website that the user wants to access will be obtained through the
-index of the <code>lastShownList</code> and stored into <code>ReadOnlyPerson</code> class variable.</p>
+<p>The method <code>execute()</code> of the <code>AccessCommand</code> will then be processed,
+where the person of the website that the user wants to access will be obtained through the
+index of the <code>lastShownList</code> and stored into <code>person</code> variable which is of <code>ReadOnlyPerson</code> data-type.</p>
 </li>
 <li>
-<p>The <code>EventsCenter</code> will then post a new <code>AccessWebsiteRequestEvent</code> which contains the website of the person.</p>
+<p>The <code>EventsCenter</code> will then post a new <code>AccessWebsiteRequestEvent</code> with parameter input of the <code>website</code> of the <code>person</code> variable.</p>
 </li>
 <li>
-<p>The <code>AccessWebsiteRequestEvent</code> event would then be handled by an event handler <code>handleAccessWebsiteEvent</code>.</p>
+<p>The <code>AccessWebsiteRequestEvent</code> event would then be handled by an event handler <code>handleAccessWebsiteEvent</code> in <code>BrowserPanel</code>.</p>
 </li>
 <li>
 <p>The event handler will help to load the website of the person through the browser panel based on the website inputted.</p>
@@ -1159,7 +1166,7 @@ index of the <code>lastShownList</code> and stored into <code>ReadOnlyPerson</co
 </ol>
 </div>
 <div class="paragraph">
-<p>Code of AccessCommand :</p>
+<p>Code of <code>AccessCommand</code> and its method <code>execute()</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1186,12 +1193,19 @@ index of the <code>lastShownList</code> and stored into <code>ReadOnlyPerson</co
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Code of how accessing website event is handled in <code>BrowserPanel</code>:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">MainWindow</span> <span class="directive">extends</span> UiPart&lt;<span class="predefined-type">Region</span>&gt; {
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">BrowserPanel</span> <span class="directive">extends</span> UiPart&lt;<span class="predefined-type">Region</span>&gt; {
     <span class="directive">public</span> <span class="type">void</span> handleWebsiteAccess(<span class="predefined-type">String</span> website) {
         browserPanel.loadPage(website);
     }
+
+    <span class="directive">public</span> <span class="type">void</span> loadPage(<span class="predefined-type">String</span> url) {
+            Platform.runLater(() -&gt; browser.getEngine().load(url));
+        }
 
     <span class="annotation">@Subscribe</span>
     <span class="directive">private</span> <span class="type">void</span> handleAccessWebsiteEvent(AccessWebsiteRequestEvent event) {
@@ -1206,7 +1220,7 @@ index of the <code>lastShownList</code> and stored into <code>ReadOnlyPerson</co
 inputs <code>access 1</code> into the command line.</p>
 </div>
 <div class="paragraph">
-<p>Sequence diagram for Logic Component of AccessCommand:</p>
+<p>Sequence diagram for <code>Logic</code> Component for <code>AccessCommand</code> and how it is executed:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1214,27 +1228,33 @@ inputs <code>access 1</code> into the command line.</p>
 </div>
 </div>
 <div class="paragraph">
+<p>Figure 5.6.1 Access Command Logic Sequence Diagram</p>
+</div>
+<div class="paragraph">
 <p>After creating a new <code>AccessCommand</code>, <code>LogicManager</code> will call execute on <code>AccessCommand</code>
 and this will result in the website of the person at the index inputted to be called through an event request and event handler.
 The website will then be loaded onto the browser of the <code>BrowserPanel</code> of the <code>MainWindow</code>.</p>
 </div>
 <div class="paragraph">
-<p>Sequence diagram for execute() of AccessCommand:</p>
+<p>Sequence diagram for <code>execute()</code> method of <code>AccessCommand</code> and its event handling:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AccessCommandEventsSequenceDiagram.PNG" alt="AccessCommandEventsSequenceDiagram" width="800">
 </div>
 </div>
+<div class="paragraph">
+<p>Figure 5.6.1 Access Command Model/EventsCenter/UI Sequence Diagram</p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">5.5.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> How accessing a website of a person executes<br>
 <strong>Alternative 1 (current choice):</strong> Create a new event request and event handler for AccessCommand.<br>
-<strong>Pros:</strong> Able to have more features as AccessWebsite and Select feature is able to exist concurrently in the application.<br>
+<strong>Pros:</strong> Able to have more features like AccessWebsite and Select feature that is able to exist concurrently in the application.<br>
 <strong>Cons:</strong> Having the current select feature which is to search for names of contact of Google is quite unnecessary.<br>
 <strong>Alternative 2:</strong> Change the code of event request and event handler related to SelectCommand to allow users to access website of their contacts instead
-of creating a search on contacts name through he browser panel.<br>
+of creating a search on contacts name through the browser panel.<br>
 <strong>Pros:</strong> Select feature which seems unnecessary is replaced with a more useful feature of AccessWebsite.<br>
 <strong>Cons:</strong> Will not be able to replace the select feature anymore which might be important for other aspects such as creating a Person Card Viewer
 which is important for GUI enhancement.<br></p>
@@ -1242,7 +1262,149 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-mechanism"><a class="link" href="#find-mechanism">5.6. Find Mechanism</a></h3>
+<h3 id="location-mechanism"><a class="link" href="#location-mechanism">5.6. Location mechanism</a></h3>
+<div class="paragraph">
+<p>The location mechanism has an <code>LocationCommand</code> that allows user to access the address through Google Maps Search
+by stating the index of the desired contact in the contact list viewed.
+The implementation of the location mechanism is mostly done in the <code>UI</code>, <code>Model</code>, and <code>Logic</code> component
+and is very similar to the access website mechanism in terms of implementation and sequential process.
+The <code>LocationCommand</code> class inherits from the <code>Command</code> class.</p>
+</div>
+<div class="paragraph">
+<p>Suppose a user would like to access one of his contacts address that is listed in the <code>PersonListPanel</code> of the address book
+and executes the <code>LocationCommand</code> to access the location using the address attained.</p>
+</div>
+<div class="paragraph">
+<p>The execution of LocationCommand is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will input <code>locate index</code> where <code>index</code> refers to the index of the person listed in the <code>PersonListPanel</code> in GUI.</p>
+</li>
+<li>
+<p>Input of user will be parse as an argument through the AddressBookParser and LocationCommandParser to extract the index.</p>
+</li>
+<li>
+<p>A new <code>LocationCommand</code> with the index inputted will be created.</p>
+</li>
+<li>
+<p>The method <code>execute()</code> of the <code>LocationCommand</code> will then be processed,
+where the person of the address that the user wants to find on Google Maps Search will be obtained through the
+index of the <code>lastShownList</code> and stored into <code>person</code> variable which is of <code>ReadOnlyPerson</code> data-type.</p>
+</li>
+<li>
+<p>The <code>EventsCenter</code> will then post a new <code>AccessLocationRequestEvent</code> with parameter input of the <code>address</code> of the <code>person</code> variable.</p>
+</li>
+<li>
+<p>The <code>AccessLocationRequestEvent</code> event would then be handled by an event handler <code>handleAccessLocationEvent</code> in <code>BrowserPanel</code>.</p>
+</li>
+<li>
+<p>The event handler will help to load the address of the person through Google Maps Search in the browser panel.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of <code>LocationCommand</code> and its method <code>execute()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">LocationCommand</span> <span class="directive">extends</span> Command {
+    <span class="directive">private</span> <span class="directive">final</span> Index targetIndex;
+
+    <span class="directive">public</span> LocationCommand(Index targetIndex) {
+            <span class="local-variable">this</span>.targetIndex = targetIndex;
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult execute() <span class="directive">throws</span> CommandException {
+        <span class="predefined-type">List</span>&lt;ReadOnlyPerson&gt; lastShownList = model.getFilteredPersonList();
+
+        <span class="keyword">if</span> (targetIndex.getZeroBased() &gt;= lastShownList.size()) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(Messages.MESSAGE_INVALID_DISPLAYED_INDEX);
+        }
+
+        ReadOnlyPerson person = lastShownList.get(targetIndex.getZeroBased());
+        EventsCenter.getInstance().post(<span class="keyword">new</span> AccessLocationRequestEvent(person.getAddress().toString()));
+        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_LOCATE_PERSON_SUCCESS, targetIndex.getOneBased()));
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code of how accessing location event is handled in <code>BrowserPanel</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">BrowserPanel</span> <span class="directive">extends</span> UiPart&lt;<span class="predefined-type">Region</span>&gt; {
+    <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="predefined-type">String</span> GOOGLE_SEARCH_URL_PREFIX = <span class="string"><span class="delimiter">&quot;</span><span class="content">https://www.google.com.sg/maps?safe=off&amp;q=</span><span class="delimiter">&quot;</span></span>;
+    <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="predefined-type">String</span> GOOGLE_SEARCH_URL_SUFFIX = <span class="string"><span class="delimiter">&quot;</span><span class="content">&amp;cad=h</span><span class="delimiter">&quot;</span></span>;
+
+    <span class="directive">private</span> <span class="type">void</span> loadPersonLocation(<span class="predefined-type">String</span> location) {
+        loadPage(GOOGLE_SEARCH_URL_PREFIX + location.replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">+</span><span class="delimiter">&quot;</span></span>)
+                + GOOGLE_SEARCH_URL_SUFFIX);
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> loadPage(<span class="predefined-type">String</span> url) {
+            Platform.runLater(() -&gt; browser.getEngine().load(url));
+    }
+
+    <span class="annotation">@Subscribe</span>
+    <span class="directive">private</span> <span class="type">void</span> handleAccessLocationEvent(AccessLocationRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        loadPersonLocation(event.location);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Through the sequence diagram, you can see how the code executes when a user
+inputs <code>locate 1</code> into the command line.</p>
+</div>
+<div class="paragraph">
+<p>Sequence diagram for <code>Logic</code> Component for <code>LocationCommand</code> and how it is executed:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LocationCommandLogicSequenceDiagram.PNG" alt="LocationCommandLogicSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.7.1 Location Command Logic Sequence Diagram</p>
+</div>
+<div class="paragraph">
+<p>After creating a new <code>LocationCommand</code>, <code>LogicManager</code> will call execute on <code>LocationCommand</code>
+and this will result in the address of the person at the index inputted to be called through an event request and event handler.
+The address will then be loaded onto Google Maps Search of the browser of the <code>MainWindow</code>.</p>
+</div>
+<div class="paragraph">
+<p>Sequence diagram for <code>execute()</code> method of <code>LocationCommand</code> and its event handling:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LocationCommandEventsSequenceDiagram.PNG" alt="LocationCommandEventsSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.7.2 Access Command Model/EventsCenter/UI Sequence Diagram</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">5.6.1. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> How accessing a location of a person executes<br>
+<strong>Alternative 1 (current choice):</strong> Create a new event request and event handler for LocationCommand.<br>
+<strong>Pros:</strong> Able to have more features like Location, AccessWebsite and Select feature that is able to exist concurrently in the application.<br>
+<strong>Cons:</strong> Having the current select feature which is to search for names of contact of Google is quite unnecessary.<br>
+<strong>Alternative 2:</strong> Change the code of event request and event handler related to SelectCommand to allow users to access the address through Google Maps Search instead
+of processing a search on contact&#8217;s name through the google search using browser.<br>
+<strong>Pros:</strong> Select feature which seems unnecessary is replaced with a more useful feature of AccessWebsite.<br>
+<strong>Cons:</strong> Will not be able to replace the select feature anymore which might be important for other aspects such as creating a PersonCard Viewer
+which is important for GUI enhancement.<br></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-mechanism"><a class="link" href="#find-mechanism">5.7. Find Mechanism</a></h3>
 <div class="paragraph">
 <p>The find mechanism is facilitated by the <code>NameContainsKeyWordsPredicate</code> class which resides in the person class. It supports finding any person in the address book using their full name or a part of the name.</p>
 </div>
@@ -1308,7 +1470,7 @@ which is important for GUI enhancement.<br></p>
 <p>If yes, then the function returns true else it returns false.</p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">5.6.1. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">5.7.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>containsPartOfWord</code><br>
 <strong>Alternative 1 (current choice):</strong> length&gt;=2<br>
@@ -1321,7 +1483,7 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">5.7. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">5.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -1359,7 +1521,7 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="configuration"><a class="link" href="#configuration">5.8. Configuration</a></h3>
+<h3 id="configuration"><a class="link" href="#configuration">5.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2975,7 +3137,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-22 15:02:25 +00:00
+Last updated 2017-10-22 15:37:57 +00:00
 </div>
 </div>
 </body>
