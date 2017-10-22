@@ -47,8 +47,8 @@
 <li><a href="#adding-an-event-addevent">4.16. Adding an event : 'addevent'</a></li>
 <li><a href="#favouriting-a-person-code-favourite-code">4.17. Favouriting a person : <code>favourite</code></a></li>
 <li><a href="#unfavouriting-a-person-code-unfavourite-code">4.18. Unfavouriting a person : <code>unfavourite</code></a></li>
-<li><a href="#details-panel">4.19. Details Panel</a></li>
-<li><a href="#checking-for-birthdays-code-birthdays-code">4.20. Checking for birthdays : <code>birthdays</code></a></li>
+<li><a href="#listing-all-favourited-persons-code-favouritelist-code">4.19. Listing all favourited persons : <code>favouritelist</code></a></li>
+<li><a href="#details-panel">4.20. Details Panel</a></li>
 <li><a href="#clearing-all-entries-code-clear-code">4.21. Clearing all entries : <code>clear</code></a></li>
 <li><a href="#exiting-the-program-code-exit-code">4.22. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving-the-data">4.23. Saving the data</a></li>
@@ -785,6 +785,11 @@ Format: <code>unfavourite INDEX</code></p>
 Unfavourites the 2nd person in the address book.</p>
 </li>
 <li>
+<p><code>favouritelist</code><br>
+<code>unfavourite 1</code><br>
+Unfavourites the 1st person in the results of the <code>favouritelist</code> command.</p>
+</li>
+<li>
 <p><code>find Betsy</code><br>
 <code>unfavourite 1</code><br>
 Unfavourites the 1st person in the results of the <code>find</code> command.</p>
@@ -793,18 +798,26 @@ Unfavourites the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="details-panel"><a class="link" href="#details-panel">4.19. Details Panel</a></h3>
+<h3 id="listing-all-favourited-persons-code-favouritelist-code"><a class="link" href="#listing-all-favourited-persons-code-favouritelist-code">4.19. Listing all favourited persons : <code>favouritelist</code></a></h3>
+<div class="paragraph">
+<p><code>since v1.2</code> <code>Dickson Chan</code></p>
+</div>
+<div class="paragraph">
+<p>Shows a list of all favourited persons in the address book.<br>
+Format: <code>favouritelist</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="details-panel"><a class="link" href="#details-panel">4.20. Details Panel</a></h3>
 <div class="paragraph">
 <p><code>since v1.2</code> <code>Archana Pradeep</code></p>
 </div>
 <div class="paragraph">
 <p>UI that shows all details of a person that is not shown in person card</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="checking-for-birthdays-code-birthdays-code"><a class="link" href="#checking-for-birthdays-code-birthdays-code">4.20. Checking for birthdays : <code>birthdays</code></a></h3>
 <div class="paragraph">
-<p><code>since v1.3</code> <code>Archana Pradeep</code></p>
+<p>Checking for birthdays : <code>birthdays</code>
+<code>since v1.3</code> <code>Archana Pradeep</code></p>
 </div>
 <div class="paragraph">
 <p>Returns a list of all contacts who have their birthdays today</p>
@@ -856,7 +869,7 @@ e.g. <code>add n/James Ho p/22224444 h/65812131 e/jamesho@example.com se/jamesho
 </li>
 <li>
 <p><strong>Access</strong> : <code>access INDEX</code><br>
-e.g.<code>access 2</code></p>
+e.g. <code>access 2</code></p>
 </li>
 <li>
 <p><strong>Clear</strong> : <code>clear</code></p>
@@ -878,14 +891,32 @@ e.g. <code>find James Jake</code></p>
 </li>
 <li>
 <p><strong>Locate</strong> : <code>locate INDEX</code><br>
-e.g.<code>locate 2</code></p>
+e.g. <code>locate 2</code></p>
+</li>
+<li>
+<p><strong>Favourite</strong> : <code>favourite INDEX</code><br>
+e.g. <code>favourite 3</code></p>
+</li>
+<li>
+<p><strong>Unfavourite</strong> : <code>unfavourite INDEX</code><br>
+e.g. <code>unfavourite 3</code></p>
+</li>
+<li>
+<p><strong>FavouriteList</strong> : <code>favouritelist</code></p>
+</li>
+<li>
+<p><strong>ThemesList</strong> : <code>themeslist</code></p>
+</li>
+<li>
+<p><strong>SwitchTheme</strong> : <code>switchtheme INDEX</code><br>
+e.g. <code>switchtheme 2</code></p>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
 </li>
 <li>
 <p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 2</code></p>
+e.g. <code>select 2</code></p>
 </li>
 <li>
 <p><strong>History</strong> : <code>history</code></p>
@@ -929,7 +960,7 @@ suggest similar words.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-22 11:11:48 +00:00
+Last updated 2017-10-22 11:19:27 +00:00
 </div>
 </div>
 </body>
