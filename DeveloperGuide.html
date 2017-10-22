@@ -48,13 +48,12 @@
 <ul class="sectlevel2">
 <li><a href="#undo-redo-mechanism">5.1. Undo/Redo mechanism</a></li>
 <li><a href="#add-event">5.2. Add Event</a></li>
-<li><a href="#design-consideration">5.3. Design Consideration</a></li>
-<li><a href="#switch-theme-mechanism">5.4. Switch Theme Mechanism</a></li>
-<li><a href="#sort-mechanism">5.5. Sort mechanism</a></li>
-<li><a href="#access-website-mechanism">5.6. Access Website mechanism</a></li>
-<li><a href="#find-mechanism">5.7. Find Mechanism</a></li>
-<li><a href="#logging">5.8. Logging</a></li>
-<li><a href="#configuration">5.9. Configuration</a></li>
+<li><a href="#switch-theme-mechanism">5.3. Switch Theme Mechanism</a></li>
+<li><a href="#sort-mechanism">5.4. Sort mechanism</a></li>
+<li><a href="#access-website-mechanism">5.5. Access Website mechanism</a></li>
+<li><a href="#find-mechanism">5.6. Find Mechanism</a></li>
+<li><a href="#logging">5.7. Logging</a></li>
+<li><a href="#configuration">5.8. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">6. Documentation</a>
@@ -813,18 +812,33 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 <div class="sect2">
 <h3 id="add-event"><a class="link" href="#add-event">5.2. Add Event</a></h3>
 <div class="paragraph">
-<p>Add event mechanism adds an event which stores in the AddressBook, which will then be used in a Calendar in future implementation. A reminder feature will also be tagged on to the event.</p>
+<p>Add event mechanism adds an event which stores in the AddressBook,
+which will then be used in a Calendar in future implementation. A reminder feature will also be tagged on to the event.</p>
 </div>
 <div class="paragraph">
 <p>The add event mechanism is facilitated by a <code>EventList</code>, which is stored in AddressBook. Similar to the PersonList and TagList, the list contains the
 different events with their information given by the user. This command inherits from <code>UndoableCommand</code>.</p>
 </div>
 <div class="paragraph">
-<p>Code of AddEventCommand:
-public class AddEventCommand extends UndoableCommand {</p>
+<p>From Figure 5.2.1 below, it is visible that <code>AddEventCommand</code> inherits from <code>UndoableCommand</code> which is an extra layer between abstract <code>Command</code> class in which the SortCommand
+can be undoable, where the previous state of the address book before sorting is saved.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddEventCommandLogicClassDiagram.png" alt="AddEventCommandLogicClassDiagram" width="800">
+</div>
 </div>
 <div class="paragraph">
-<p>@Override
+<p>Figure 5.2.1 AddEventCommand Logic Class Diagram</p>
+</div>
+<div class="paragraph">
+<p>Code of AddEventCommand:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public class AddEventCommand extends UndoableCommand {
+
+@Override
  public CommandResult executeUndoableCommand() throws CommandException {
     requireNonNull(model);
      try {
@@ -834,11 +848,14 @@ public class AddEventCommand extends UndoableCommand {</p>
         throw new CommandException(MESSAGE_DUPLICATE_EVENT);
         }
     }
-}</p>
+}</pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="design-consideration"><a class="link" href="#design-consideration">5.3. Design Consideration</a></h3>
+<div class="paragraph">
+<p>The new Events will be stored in UniqueEventList in AddressBook.</p>
+</div>
+<div class="sect3">
+<h4 id="design-consideration"><a class="link" href="#design-consideration">5.2.1. Design Consideration</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>AddEventCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> Extends to UndoableCommand<br>
@@ -853,8 +870,9 @@ public class AddEventCommand extends UndoableCommand {</p>
 <strong>Cons:</strong> Developer might get confused with the different use of imports as Name and Address are from person while Date is from events.<br></p>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="switch-theme-mechanism"><a class="link" href="#switch-theme-mechanism">5.4. Switch Theme Mechanism</a></h3>
+<h3 id="switch-theme-mechanism"><a class="link" href="#switch-theme-mechanism">5.3. Switch Theme Mechanism</a></h3>
 <div class="paragraph">
 <p>The switch theme mechanism is facilitated by a <code>ThemesList</code>, which resides inside <code>AddressBook</code>. <code>ThemesList</code> contains a list of CSS files, in which each file are of differing colour themes for the application user interface. It sets the theme of the application to the theme specified by the index given by the user. This command will inherit from <code>Command</code>.</p>
 </div>
@@ -946,7 +964,7 @@ public class AddEventCommand extends UndoableCommand {</p>
 <p>Upon detecting <code>ChangeThemeRequestEvent</code>, <code>Ui</code> will call <code>handleChangeTheme</code> to handle the event, update the <code>MainWindow</code> accordingly and update its status bar.</p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">5.4.1. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">5.3.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>SwitchThemeCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> Extending to <code>Command</code> class.<br>
@@ -969,7 +987,7 @@ public class AddEventCommand extends UndoableCommand {</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">5.5. Sort mechanism</a></h3>
+<h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">5.4. Sort mechanism</a></h3>
 <div class="paragraph">
 <p>The sort mechanism sorts the names of people inside the <code>addressbook</code> which
 is inside the 'ModelManager'. It organizes the position of the people existing in
@@ -1076,7 +1094,7 @@ It will call the sort() function of its own class until it reaches InternalList.
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">5.5.1. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">5.4.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>SortCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> extending to <code>UndoableCommand</code> class<br>
@@ -1102,7 +1120,7 @@ It will call the sort() function of its own class until it reaches InternalList.
 </div>
 </div>
 <div class="sect2">
-<h3 id="access-website-mechanism"><a class="link" href="#access-website-mechanism">5.6. Access Website mechanism</a></h3>
+<h3 id="access-website-mechanism"><a class="link" href="#access-website-mechanism">5.5. Access Website mechanism</a></h3>
 <div class="paragraph">
 <p>The access website mechanism has an <code>AccessCommand</code> that allows user to access the website by stating the
 index of the desired contact in the contact list viewed. The <code>AccessCommand</code> class inherits from the <code>Command</code> class.</p>
@@ -1209,7 +1227,7 @@ The website will then be loaded onto the browser of the <code>BrowserPanel</code
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">5.6.1. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">5.5.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> How accessing a website of a person executes<br>
 <strong>Alternative 1 (current choice):</strong> Create a new event request and event handler for AccessCommand.<br>
@@ -1224,7 +1242,7 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-mechanism"><a class="link" href="#find-mechanism">5.7. Find Mechanism</a></h3>
+<h3 id="find-mechanism"><a class="link" href="#find-mechanism">5.6. Find Mechanism</a></h3>
 <div class="paragraph">
 <p>The find mechanism is facilitated by the <code>NameContainsKeyWordsPredicate</code> class which resides in the person class. It supports finding any person in the address book using their full name or a part of the name.</p>
 </div>
@@ -1290,7 +1308,7 @@ which is important for GUI enhancement.<br></p>
 <p>If yes, then the function returns true else it returns false.</p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">5.7.1. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">5.6.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>containsPartOfWord</code><br>
 <strong>Alternative 1 (current choice):</strong> length&gt;=2<br>
@@ -1303,7 +1321,7 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">5.8. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">5.7. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -1341,7 +1359,7 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="configuration"><a class="link" href="#configuration">5.9. Configuration</a></h3>
+<h3 id="configuration"><a class="link" href="#configuration">5.8. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1929,31 +1947,27 @@ Do take a look at the <a href="#storage-component">Design: Storage Component</a>
 <div class="paragraph">
 <p>The new backUpAddressBook stores the address book at a back up location.</p>
 </div>
-<div class="paragraph">
-<p>private AddressBookStorage backUpLocation;</p>
-</div>
-<div class="paragraph">
-<p>public StorageManager(AddressBookStorage addressBookStorage, UserPrefsStorage userPrefsStorage) {
+<div class="listingblock">
+<div class="content">
+<pre>private AddressBookStorage backUpLocation;
+
+public StorageManager(AddressBookStorage addressBookStorage, UserPrefsStorage userPrefsStorage) {
     super();
     this.addressBookStorage = addressBookStorage;
     this.userPrefsStorage = userPrefsStorage;
     this.backUpLocation = new XmlAddressBookStorage(addressBookStorage.getAddressBookFilePath());
-}</p>
-</div>
-<div class="paragraph">
-<p>public Optional&lt;ReadOnlyAddressBook&gt; readBackupAddressBook() throws DataConversionException, IOException {
+}
+
+public Optional&lt;ReadOnlyAddressBook&gt; readBackupAddressBook() throws DataConversionException, IOException {
     return readAddressBook(backUpLocation.getAddressBookFilePath());
-}</p>
-</div>
-<div class="paragraph">
-<p>private void backUpAddressBook(ReadOnlyAddressBook addressBook) throws IOException {
+}
+
+private void backUpAddressBook(ReadOnlyAddressBook addressBook) throws IOException {
     String backupPath = backUpLocation.getAddressBookFilePath();
     logger.fine("Backing up data to: " + backupPath);
     saveAddressBook(addressBook, backupPath);
-}</p>
+}</pre>
 </div>
-<div class="paragraph">
-<p>+</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -2961,7 +2975,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-22 11:19:27 +00:00
+Last updated 2017-10-22 15:02:25 +00:00
 </div>
 </div>
 </body>
