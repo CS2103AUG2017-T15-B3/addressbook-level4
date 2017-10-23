@@ -1,5 +1,6 @@
 package seedu.address.ui;
 
+import java.time.YearMonth;
 import java.util.logging.Logger;
 
 import com.google.common.eventbus.Subscribe;
@@ -50,6 +51,7 @@ public class MainWindow extends UiPart<Region> {
     private PersonListPanel personListPanel;
     private Config config;
     private UserPrefs prefs;
+    private Calendar calendar;
 
     @FXML
     private StackPane browserPlaceholder;
@@ -71,6 +73,9 @@ public class MainWindow extends UiPart<Region> {
 
     @FXML
     private StackPane statusbarPlaceholder;
+
+    @FXML
+    private StackPane calendarPanel;
 
     public MainWindow(Stage primaryStage, Config config, UserPrefs prefs, Logic logic) {
         super(FXML);
@@ -154,6 +159,9 @@ public class MainWindow extends UiPart<Region> {
 
         CommandBox commandBox = new CommandBox(logic);
         commandBoxPlaceholder.getChildren().add(commandBox.getRoot());
+
+        Calendar calendar = new Calendar(YearMonth.now());
+        calendarPanel.getChildren().add(calendar.getView());
     }
 
     void hide() {
