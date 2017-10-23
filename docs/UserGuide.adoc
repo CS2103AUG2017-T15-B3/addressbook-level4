@@ -319,8 +319,8 @@ Examples:
 `switch 2` +
 Switches to the 2nd theme in the themes list.
 
-=== Adding an event : 'addevent'
-`since v1.2` `Cherng Hann`
+=== Adding an event : `addevent`
+`since v1.2` `Chia Cherng Hann`
 
 Adds an event to the address book +
 Format: `add n/NAME d/DATE a/ADDRESS`
@@ -330,6 +330,8 @@ Examples:
 * `addevent n/ZoukOut d/23/12/2017 a/Sentosa, Siloso Beach`
 * `addevent n/Orbital d/1/5/2018 a/NUS School Of Computing`
 * `addevent n/Halloween Horror Night d/31/10/2017 a/Universal Studios Singapore
+
+The events will be displayed on the Calendar.
 
 === Favouriting a person : `favourite`
 `since v1.2` `Dickson Chan`
