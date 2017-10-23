@@ -47,12 +47,12 @@
 <li><a href="#implementation">5. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-mechanism">5.1. Undo/Redo mechanism</a></li>
-<li><a href="#add-event">5.2. Add Event</a></li>
-<li><a href="#switch-theme-mechanism">5.3. Switch Theme Mechanism</a></li>
+<li><a href="#add-event-mechanism">5.2. Add Event mechanism</a></li>
+<li><a href="#switch-theme-mechanism">5.3. Switch Theme mechanism</a></li>
 <li><a href="#sort-mechanism">5.4. Sort mechanism</a></li>
 <li><a href="#access-website-mechanism">5.5. Access Website mechanism</a></li>
 <li><a href="#location-mechanism">5.6. Location mechanism</a></li>
-<li><a href="#find-mechanism">5.7. Find Mechanism</a></li>
+<li><a href="#find-mechanism">5.7. Find mechanism</a></li>
 <li><a href="#logging">5.8. Logging</a></li>
 <li><a href="#configuration">5.9. Configuration</a></li>
 </ul>
@@ -811,7 +811,7 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 </div>
 </div>
 <div class="sect2">
-<h3 id="add-event"><a class="link" href="#add-event">5.2. Add Event</a></h3>
+<h3 id="add-event-mechanism"><a class="link" href="#add-event-mechanism">5.2. Add Event mechanism</a></h3>
 <div class="paragraph">
 <p>Add event mechanism adds an event which stores in the AddressBook,
 which will then be used in a Calendar in future implementation. A reminder feature will also be tagged on to the event.</p>
@@ -873,7 +873,7 @@ can be undoable, where the previous state of the address book before sorting is 
 </div>
 </div>
 <div class="sect2">
-<h3 id="switch-theme-mechanism"><a class="link" href="#switch-theme-mechanism">5.3. Switch Theme Mechanism</a></h3>
+<h3 id="switch-theme-mechanism"><a class="link" href="#switch-theme-mechanism">5.3. Switch Theme mechanism</a></h3>
 <div class="paragraph">
 <p>The switch theme mechanism is facilitated by a <code>ThemesList</code>, which resides inside <code>AddressBook</code>. <code>ThemesList</code> contains a list of CSS files, in which each file are of differing colour themes for the application user interface. It sets the theme of the application to the theme specified by the index given by the user. This command will inherit from <code>Command</code>.</p>
 </div>
@@ -1404,7 +1404,7 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-mechanism"><a class="link" href="#find-mechanism">5.7. Find Mechanism</a></h3>
+<h3 id="find-mechanism"><a class="link" href="#find-mechanism">5.7. Find mechanism</a></h3>
 <div class="paragraph">
 <p>The find mechanism is facilitated by the <code>NameContainsKeyWordsPredicate</code> class which resides in the person class. It supports finding any person in the address book using their full name or a part of the name.</p>
 </div>
@@ -3137,7 +3137,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-23 04:58:14 +00:00
+Last updated 2017-10-23 05:16:45 +00:00
 </div>
 </div>
 </body>
