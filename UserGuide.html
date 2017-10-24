@@ -70,9 +70,14 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Myth&#8217;s Book is an address book dedicated for university students to store useful information such
-as the phone numbers and emails of the people around them. The Myth&#8217;s Book is a <code>Command Line Input</code> based
-software which helps caters to students who are efficient and comfortable in typing out command line inputs to
-manipulate with information of their contacts in the address book.</p>
+as websites, phone numbers and emails of the people around them for personal usage. The application helps students
+to keep track of birthday dates and upcoming events through a calendar and facilitate convenient access to their friend&#8217;s website
+and even Google Maps location through the in-built browser panel in the application. Furthermore, there are many
+useful tools such as finding group tags (e.g. friends, neighbours) and switching themes for better user preference and usability.</p>
+</div>
+<div class="paragraph">
+<p>The Myth&#8217;s Book is a <code>Command Line Input</code> based software which helps caters to students who are efficient and comfortable
+in typing out command line inputs to manipulate with information of their contacts in the address book.</p>
 </div>
 </div>
 </div>
@@ -201,8 +206,9 @@ Format: <code>add n/NAME p/PHONE_NUMBER h/HOME_NUMBER e/EMAIL se/SCHOOL_EMAIL w/
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-See examples for a rough idea of how and what details should be inputted.<br>
-Website should be <code><a href="https://www.anyName.com/anyContent" class="bare">https://www.anyName.com/anyContent</a></code> where anyName can only be alphanumeric and anyContent can be the exact url details of the website.<br>
+You can see the examples provided below to know more about what details should be inputted.<br>
+Website should follow this format <code><a href="https://www.anyName.com/anyContent" class="bare">https://www.anyName.com/anyContent</a></code> where anyName can only be alphanumeric and anyContent can be the exact url details of the website.<br>
+It is encouraged to have <code><a href="https://www" class="bare">https://www</a>.</code> and a domain name like <code>.com</code> or <code>.net</code> in the inputted website or it will result in website input error.<br>
 Birthday should be in proper format of "dd/mm/yyyy" where all elements inputted for birthday are integers.
 </td>
 </tr>
@@ -272,18 +278,29 @@ Format: 'access INDEX'</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>access 2</code><br>
+<p>1.<code>list</code><br>
+2.<code>access 2</code><br>
 Selects the 2nd person in the address book and attains the website of the 2nd person.
 The website details is then loaded into the browser.</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
-<code>access 1</code><br>
+<p>1.<code>find Betsy</code><br>
+2.<code>access 1</code><br>
 Selects the 1st person in the results of the <code>find</code> command and attains the website of the 1st person.
 The website details is then loaded into the browser.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Result of using <code>access index</code> should look like the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AccessCommandFinalResult.PNG" alt="AccessCommandFinalResult" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 4.3.1 Access Command Result</p>
 </div>
 </div>
 <div class="sect2">
@@ -326,20 +343,31 @@ Format: 'locate INDEX'</p>
 </div>
 </div>
 <div class="paragraph">
+<p>Result of using <code>locate index</code> should look like the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LocationCommandFinalResult.PNG" alt="LocationCommandFinalResult" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 4.5.1 Location Command Result</p>
+</div>
+<div class="paragraph">
 <p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>locate 2</code><br>
+<p>1.<code>list</code><br>
+2.<code>locate 2</code><br>
 Selects the 2nd person in the address book and attains the address of the 2nd person.
 The address details is then used in a Google Maps Search.</p>
 </li>
 <li>
-<p><code>find Betsy</code><br>
-<code>locate 1</code><br>
-Selects the 1st person in the results of the <code>find</code> command and attains the address of the 2nd person.
+<p>1.<code>find Betsy</code><br>
+2.<code>locate 1</code><br>
+Selects the 1st person in the results of the <code>find</code> command and attains the address of the 1st person.
 The address details is then used in a Google Maps Search.</p>
 </li>
 </ul>
@@ -990,7 +1018,7 @@ suggest similar words.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-24 05:03:21 +00:00
+Last updated 2017-10-24 16:24:30 +00:00
 </div>
 </div>
 </body>
