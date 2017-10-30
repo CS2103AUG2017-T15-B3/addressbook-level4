@@ -1519,7 +1519,7 @@ which is important for GUI enhancement.<br></p>
 <p>The Birthdays mechanism is facilitated by the <code>CheckIfBirthday</code> class which resides in the person class. It lists out all contacts that have their birthdays today.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Birthdays</code> command is an undoable command and thus inherits from <code>UndoableCommand</code> rather than <code>Command</code>.</p>
+<p>The <code>Birthdays</code> command is not an undoable command and thus inherits from <code>Command</code> rather than <code>UndoableCommand</code>.</p>
 </div>
 <div class="paragraph">
 <p>The <code>CheckIfBirthday</code> class checks if the birth month and day of a contact matches today. As the birthday field is a birthday object, it is converted to a string using the <code>toString()</code> method in the <code>Birthday</code> class and then parsed into a date object using <code>simpleDateFormat()</code>.</p>
@@ -3238,7 +3238,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-25 09:11:55 +00:00
+Last updated 2017-10-30 04:18:32 +00:00
 </div>
 </div>
 </body>
