@@ -330,13 +330,13 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/se-edu/addressbook-level4/tree/master/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
+The <code>.pptx</code> files used to create diagrams in this document can be found in the <a href="https://github.com/CS2103AUG2017-T15-B3/main/docs/diagrams/">diagrams</a> folder. To update a diagram, modify the diagram in the pptx file, select the objects of the diagram, and choose <code>Save as picture</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -466,13 +466,13 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><em>Figure 2.2.1 : Structure of the UI Component</em></p>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -511,7 +511,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -552,7 +552,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><em>Figure 2.4.1 : Structure of the Model Component</em></p>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -585,7 +585,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p><em>Figure 2.5.1 : Structure of the Storage Component</em></p>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -830,7 +830,7 @@ can be undoable, where the previous state of the address book before sorting is 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddEventCommandLogicClassDiagram.PNG" alt="AddEventCommandLogicClassDiagram" width="800">
+<img src="images/AddEventDiagram.PNG" alt="AddEventDiagram" width="800">
 </div>
 </div>
 <div class="paragraph">
@@ -1861,7 +1861,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Update the version number in <a href="https://github.com/se-edu/addressbook-level4/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
+<p>Update the version number in <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
 </li>
 <li>
 <p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
@@ -2689,7 +2689,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-01 09:56:20 +00:00
+Last updated 2017-11-01 10:24:04 +00:00
 </div>
 </div>
 </body>
