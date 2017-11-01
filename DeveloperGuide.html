@@ -96,6 +96,8 @@
 <li><a href="#use-case-undo-command">C.5. Use case: Undo command</a></li>
 <li><a href="#use-case-list-persons">C.6. Use case: List persons</a></li>
 <li><a href="#use-case-add-event">C.7. Use case: Add event</a></li>
+<li><a href="#use-case-access-website">C.8. Use case: Access website</a></li>
+<li><a href="#use-case-access-location">C.9. Use case: Access Location</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
@@ -1204,6 +1206,7 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">AccessCommand</span> <span class="directive">extends</span> Command {
     <span class="directive">private</span> <span class="directive">final</span> Index targetIndex;
 
+    <span class="comment">// ... access logic ...</span>
     <span class="directive">public</span> AccessCommand(Index targetIndex) {
         <span class="local-variable">this</span>.targetIndex = targetIndex;
     }
@@ -1217,9 +1220,15 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
         }
 
         ReadOnlyPerson person = lastShownList.get(targetIndex.getZeroBased());
+        <span class="predefined-type">String</span> name = person.getName().toString();
+        <span class="predefined-type">String</span> website = person.getWebsite().toString();
 
-        EventsCenter.getInstance().post(<span class="keyword">new</span> AccessWebsiteRequestEvent(person.getWebsite().toString()));
-        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_ACCESS_PERSON_SUCCESS, targetIndex.getOneBased()));
+        <span class="keyword">if</span> (website.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">NIL</span><span class="delimiter">&quot;</span></span>)) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(Messages.MESSAGE_INVALID_WEBSITE);
+        }
+
+        EventsCenter.getInstance().post(<span class="keyword">new</span> AccessWebsiteRequestEvent(website));
+        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_ACCESS_PERSON_SUCCESS, targetIndex.getOneBased(), name));
     }
 }</code></pre>
 </div>
@@ -1235,8 +1244,8 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
     }
 
     <span class="directive">public</span> <span class="type">void</span> loadPage(<span class="predefined-type">String</span> url) {
-            Platform.runLater(() -&gt; browser.getEngine().load(url));
-        }
+        Platform.runLater(() -&gt; browser.getEngine().load(url));
+    }
 
     <span class="annotation">@Subscribe</span>
     <span class="directive">private</span> <span class="type">void</span> handleAccessWebsiteEvent(AccessWebsiteRequestEvent event) {
@@ -1344,7 +1353,7 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
     <span class="directive">private</span> <span class="directive">final</span> Index targetIndex;
 
     <span class="directive">public</span> LocationCommand(Index targetIndex) {
-            <span class="local-variable">this</span>.targetIndex = targetIndex;
+        <span class="local-variable">this</span>.targetIndex = targetIndex;
     }
 
     <span class="annotation">@Override</span>
@@ -1356,8 +1365,14 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
         }
 
         ReadOnlyPerson person = lastShownList.get(targetIndex.getZeroBased());
-        EventsCenter.getInstance().post(<span class="keyword">new</span> AccessLocationRequestEvent(person.getAddress().toString()));
-        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_LOCATE_PERSON_SUCCESS, targetIndex.getOneBased()));
+        <span class="predefined-type">String</span> name = person.getName().toString();
+        <span class="predefined-type">String</span> location = person.getAddress().toString();
+        <span class="keyword">if</span> (location.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">NIL</span><span class="delimiter">&quot;</span></span>)) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(Messages.MESSAGE_INVALID_LOCATION);
+        }
+
+        EventsCenter.getInstance().post(<span class="keyword">new</span> AccessLocationRequestEvent(location));
+        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_LOCATE_PERSON_SUCCESS, targetIndex.getOneBased(), name));
     }
 }</code></pre>
 </div>
@@ -1377,7 +1392,7 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
     }
 
     <span class="directive">public</span> <span class="type">void</span> loadPage(<span class="predefined-type">String</span> url) {
-            Platform.runLater(() -&gt; browser.getEngine().load(url));
+        Platform.runLater(() -&gt; browser.getEngine().load(url));
     }
 
     <span class="annotation">@Subscribe</span>
@@ -3090,8 +3105,112 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 </ol>
 </div>
 <div class="paragraph">
-<p>Use case ends
-{More to be added}</p>
+<p>Use case ends</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-access-website"><a class="link" href="#use-case-access-website">C.8. Use case: Access website</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User chooses to access a contact&#8217;s website.</p>
+</li>
+<li>
+<p>AddressBook requests for details of the access.</p>
+</li>
+<li>
+<p>User enters the requested details which includes the index of the desired contact.</p>
+</li>
+<li>
+<p>AddressBook shows the website of the desired contact for user to use.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. AddressBook detects an error in the entered data.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. AddressBook shows an error message and requests for correct data.</p>
+</li>
+<li>
+<p>3a2. User enters new data.</p>
+<div class="paragraph">
+<p>Steps 3a1-3a2 are repeated until the data entered are correct.</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 4.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-access-location"><a class="link" href="#use-case-access-location">C.9. Use case: Access Location</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User chooses to access a contact&#8217;s location.</p>
+</li>
+<li>
+<p>AddressBook requests for details of the access.</p>
+</li>
+<li>
+<p>User enters the requested details which includes the index of the desired contact.</p>
+</li>
+<li>
+<p>AddressBook shows the location of the desired contact for user to view.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. AddressBook detects an error in the entered data.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. AddressBook shows an error message and requests for correct data.</p>
+</li>
+<li>
+<p>3a2. User enters new data.</p>
+<div class="paragraph">
+<p>Steps 3a1-3a2 are repeated until the data entered are correct.</p>
+</div>
+<div class="paragraph">
+<p>Use case resumes at step 4.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>{More to be added}</p>
 </div>
 <div class="paragraph">
 <p><a href="#the-myths-book---developer-guide">Back To Top</a></p>
@@ -3238,7 +3357,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-30 07:05:02 +00:00
+Last updated 2017-11-01 09:24:43 +00:00
 </div>
 </div>
 </body>

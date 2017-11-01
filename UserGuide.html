@@ -194,11 +194,8 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="sect2">
 <h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">4.2. Adding a person: <code>add</code></a></h3>
 <div class="paragraph">
-<p><code>since v1.2</code> <code>new field: Birthday (Archana) , Website (Darren), Home Number (Cherng Hann) and School Email(Cherng Hann)</code></p>
-</div>
-<div class="paragraph">
 <p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL w/WEBSITE a/ADDRESS [h/HOME_NUMBER] [se/SCHOOL_EMAIL] [b/BIRTHDAY] [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL [w/WEBSITE] [a/ADDRESS] [h/HOME_NUMBER] [se/SCHOOL_EMAIL] [b/BIRTHDAY] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -210,7 +207,7 @@ Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL w/WEBSITE a/ADDRESS [h/HOME_NUMB
 Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John t/friend</code> or as <code>n/John</code>.<br>
 You can see the examples provided below to know more about what details should be inputted.<br>
 A person can have any number of tags (including 0).<br>
-Home number, school email, and birthday are optional fields.
+Website, address, home number, school email, and birthday are optional fields.
 </td>
 </tr>
 </table>
@@ -444,7 +441,7 @@ Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all 
 <div class="sect2">
 <h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">4.8. Locating persons by name: <code>find</code></a></h3>
 <div class="paragraph">
-<p><code>since v1.3</code> <code>Darren Chin</code></p>
+<p><code>since v1.3</code> <code>Archana Pradeep</code></p>
 </div>
 <div class="paragraph">
 <p>Finds persons whose names contain any of the given keywords.<br>
@@ -539,7 +536,7 @@ Deletes the 1st person in the results of the <code>find</code> command.</p>
 <div class="sect2">
 <h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">4.10. Selecting a person : <code>select</code></a></h3>
 <div class="paragraph">
-<p><code>since v1.2</code> <code>Changed select from google search to Person Card</code> <code>Archana</code></p>
+<p><code>since v1.2</code> <code>Archana Pradeep</code></p>
 </div>
 <div class="paragraph">
 <p>Selects the person identified by the index number used in the last person listing.<br>
@@ -578,6 +575,14 @@ Selects the 2nd person in the address book.</p>
 Selects the 1st person in the results of the <code>find</code> command.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/SelectCommandFinalResult.PNG" alt="SelectCommandFinalResult" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 4.10.1 Select Command of Index 3 Result</p>
 </div>
 </div>
 <div class="sect2">
@@ -947,7 +952,7 @@ You will be able to toggle through different months to view the day and date of 
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL w/WEBSITE a/ADDRESS [h/HOME_NUMBER] [se/SCHOOL_EMAIL] [b/BIRTHDAY] [t/TAG]&#8230;&#8203;</code><br>
+<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL [w/WEBSITE] [a/ADDRESS] [h/HOME_NUMBER] [se/SCHOOL_EMAIL] [b/BIRTHDAY] [t/TAG]&#8230;&#8203;</code><br>
 e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com w/https://www.facebook.com/jamesHo a/123, Clementi Rd, 1234665 h/65812131 se/jamesho@u.nus.edu b/12/11/1972 t/friend t/colleague</code></p>
 </li>
 <li>
@@ -1049,7 +1054,7 @@ suggest similar words.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-30 07:05:02 +00:00
+Last updated 2017-11-01 09:24:43 +00:00
 </div>
 </div>
 </body>
