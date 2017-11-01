@@ -27,7 +27,7 @@
 <li><a href="#introduction">1. Introduction</a></li>
 <li><a href="#about">2. About</a></li>
 <li><a href="#quick-start">3. Quick Start</a></li>
-<li><a href="#features">4. Features</a>
+<li><a href="#command-features">4. Command Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">4.1. Viewing help : <code>help</code></a></li>
 <li><a href="#adding-a-person-code-add-code">4.2. Adding a person: <code>add</code></a></li>
@@ -37,32 +37,33 @@
 <li><a href="#sorting-all-persons-code-sort-code">4.6. Sorting all persons : <code>sort</code></a></li>
 <li><a href="#editing-a-person-code-edit-code">4.7. Editing a person : <code>edit</code></a></li>
 <li><a href="#locating-persons-by-name-code-find-code">4.8. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">4.9. Deleting a person : <code>delete</code></a></li>
-<li><a href="#selecting-a-person-code-select-code">4.10. Selecting a person : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">4.11. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">4.12. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">4.13. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#listing-all-themes-code-themeslist-code">4.14. Listing all themes : <code>themeslist</code></a></li>
-<li><a href="#switching-themes-code-switch-code">4.15. Switching themes : <code>switch</code></a></li>
-<li><a href="#adding-an-event-code-addevent-code">4.16. Adding an event : <code>addevent</code></a></li>
-<li><a href="#favouriting-a-person-code-favourite-code">4.17. Favouriting a person : <code>favourite</code></a></li>
-<li><a href="#unfavouriting-a-person-code-unfavourite-code">4.18. Unfavouriting a person : <code>unfavourite</code></a></li>
-<li><a href="#listing-all-favourited-persons-code-favouritelist-code">4.19. Listing all favourited persons : <code>favouritelist</code></a></li>
-<li><a href="#checking-for-birthdays-code-birthdays-code">4.20. Checking for birthdays : <code>birthdays</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">4.21. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">4.22. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">4.23. Saving the data</a></li>
+<li><a href="#finding-a-person-s-tag-code-findtag-code">4.9. Finding a person&#8217;s tag : <code>findtag</code></a></li>
+<li><a href="#deleting-a-person-code-delete-code">4.10. Deleting a person : <code>delete</code></a></li>
+<li><a href="#selecting-a-person-code-select-code">4.11. Selecting a person : <code>select</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">4.12. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">4.13. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">4.14. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#listing-all-themes-code-themeslist-code">4.15. Listing all themes : <code>themeslist</code></a></li>
+<li><a href="#switching-themes-code-switch-code">4.16. Switching themes : <code>switch</code></a></li>
+<li><a href="#adding-an-event-code-addevent-code">4.17. Adding an event : <code>addevent</code></a></li>
+<li><a href="#favouriting-a-person-code-favourite-code">4.18. Favouriting a person : <code>favourite</code></a></li>
+<li><a href="#unfavouriting-a-person-code-unfavourite-code">4.19. Unfavouriting a person : <code>unfavourite</code></a></li>
+<li><a href="#listing-all-favourited-persons-code-favouritelist-code">4.20. Listing all favourited persons : <code>favouritelist</code></a></li>
+<li><a href="#checking-for-birthdays-code-birthdays-code">4.21. Checking for birthdays : <code>birthdays</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">4.22. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">4.23. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">4.24. Saving the data</a></li>
 </ul>
 </li>
-<li><a href="#other-features">5. Other features</a>
+<li><a href="#ui-features">5. UI features</a>
 <ul class="sectlevel2">
 <li><a href="#details-panel">5.1. Details Panel</a></li>
 <li><a href="#calendar">5.2. Calendar</a></li>
+<li><a href="#bright-theme">5.3. Bright Theme</a></li>
 </ul>
 </li>
 <li><a href="#faq">6. FAQ</a></li>
 <li><a href="#command-summary">7. Command Summary</a></li>
-<li><a href="#coming-in-v2-0">8. Coming in v2.0</a></li>
 </ul>
 </div>
 </div>
@@ -160,7 +161,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect1">
-<h2 id="features"><a class="link" href="#features">4. Features</a></h2>
+<h2 id="command-features"><a class="link" href="#command-features">4. Command Features</a></h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
@@ -493,7 +494,55 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">4.9. Deleting a person : <code>delete</code></a></h3>
+<h3 id="finding-a-person-s-tag-code-findtag-code"><a class="link" href="#finding-a-person-s-tag-code-findtag-code">4.9. Finding a person&#8217;s tag : <code>findtag</code></a></h3>
+<div class="paragraph">
+<p><code>since v1.3</code> <code>Dickson Chan</code></p>
+</div>
+<div class="paragraph">
+<p>Finds persons whose tags contain any of the given keywords.<br>
+Format: <code>findtag TAGS [MORE_TAGS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>friends</code> will match <code>Friends</code></p>
+</li>
+<li>
+<p>The order of the tags does not matter. e.g. <code>friends owesMoney</code> will match <code>owesMoney friends</code></p>
+</li>
+<li>
+<p>Only the tag is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched. For eg: <code>friend</code> will not be matched to <code>friends</code>.</p>
+</li>
+<li>
+<p>Persons matching at least one tag will be returned (i.e. <code>OR</code> search). e.g. <code>friends</code> will return <code>Hans Gruber</code> that has <code>friends</code> and <code>neighbours</code> tags, <code>Bo Yang</code> that has <code>owesMoney</code> tag.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findtag friends</code><br>
+Returns any person having tag <code>friends</code>.</p>
+</li>
+<li>
+<p><code>findtag owesMoney neighbours friends</code><br>
+Returns any person having tags <code>owesMoney</code>, <code>neighbours</code>, or <code>friends</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">4.10. Deleting a person : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified person from the address book.<br>
 Format: <code>delete INDEX</code></p>
@@ -534,7 +583,7 @@ Deletes the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">4.10. Selecting a person : <code>select</code></a></h3>
+<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">4.11. Selecting a person : <code>select</code></a></h3>
 <div class="paragraph">
 <p><code>since v1.2</code> <code>Archana Pradeep</code></p>
 </div>
@@ -586,7 +635,7 @@ Selects the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">4.11. Listing entered commands : <code>history</code></a></h3>
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">4.12. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format: <code>history</code></p>
@@ -607,7 +656,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">4.12. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">4.13. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
@@ -652,7 +701,7 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">4.13. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">4.14. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Format: <code>redo</code></p>
@@ -684,19 +733,22 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-themes-code-themeslist-code"><a class="link" href="#listing-all-themes-code-themeslist-code">4.14. Listing all themes : <code>themeslist</code></a></h3>
+<h3 id="listing-all-themes-code-themeslist-code"><a class="link" href="#listing-all-themes-code-themeslist-code">4.15. Listing all themes : <code>themeslist</code></a></h3>
 <div class="paragraph">
-<p><code>since v1.2</code> <code>Dickson Chan</code></p>
+<p><code>since v1.1</code> <code>Dickson Chan</code></p>
 </div>
 <div class="paragraph">
 <p>Shows a list of all themes in the address book.<br>
 Format: <code>themeslist</code></p>
 </div>
+<div class="paragraph">
+<p>Result of using <code>themeslist</code> should look like the figure below.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="switching-themes-code-switch-code"><a class="link" href="#switching-themes-code-switch-code">4.15. Switching themes : <code>switch</code></a></h3>
+<h3 id="switching-themes-code-switch-code"><a class="link" href="#switching-themes-code-switch-code">4.16. Switching themes : <code>switch</code></a></h3>
 <div class="paragraph">
-<p><code>since v1.2</code> <code>Dickson Chan</code></p>
+<p><code>since v1.1</code> <code>Dickson Chan</code></p>
 </div>
 <div class="paragraph">
 <p>Switches the current theme to the specified theme.<br>
@@ -731,9 +783,12 @@ Switches to the 2nd theme in the themes list.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Result of using <code>switch INDEX</code> should look like the figure below.</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-event-code-addevent-code"><a class="link" href="#adding-an-event-code-addevent-code">4.16. Adding an event : <code>addevent</code></a></h3>
+<h3 id="adding-an-event-code-addevent-code"><a class="link" href="#adding-an-event-code-addevent-code">4.17. Adding an event : <code>addevent</code></a></h3>
 <div class="paragraph">
 <p><code>since v1.2</code> <code>Cherng Hann</code></p>
 </div>
@@ -762,7 +817,7 @@ Adds an event <code>Halloween Horror Night</code> in the address book.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="favouriting-a-person-code-favourite-code"><a class="link" href="#favouriting-a-person-code-favourite-code">4.17. Favouriting a person : <code>favourite</code></a></h3>
+<h3 id="favouriting-a-person-code-favourite-code"><a class="link" href="#favouriting-a-person-code-favourite-code">4.18. Favouriting a person : <code>favourite</code></a></h3>
 <div class="paragraph">
 <p><code>since v1.2</code> <code>Dickson Chan</code></p>
 </div>
@@ -806,7 +861,7 @@ Favourites the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="unfavouriting-a-person-code-unfavourite-code"><a class="link" href="#unfavouriting-a-person-code-unfavourite-code">4.18. Unfavouriting a person : <code>unfavourite</code></a></h3>
+<h3 id="unfavouriting-a-person-code-unfavourite-code"><a class="link" href="#unfavouriting-a-person-code-unfavourite-code">4.19. Unfavouriting a person : <code>unfavourite</code></a></h3>
 <div class="paragraph">
 <p><code>since v1.2</code> <code>Dickson Chan</code></p>
 </div>
@@ -855,7 +910,7 @@ Unfavourites the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-favourited-persons-code-favouritelist-code"><a class="link" href="#listing-all-favourited-persons-code-favouritelist-code">4.19. Listing all favourited persons : <code>favouritelist</code></a></h3>
+<h3 id="listing-all-favourited-persons-code-favouritelist-code"><a class="link" href="#listing-all-favourited-persons-code-favouritelist-code">4.20. Listing all favourited persons : <code>favouritelist</code></a></h3>
 <div class="paragraph">
 <p><code>since v1.2</code> <code>Dickson Chan</code></p>
 </div>
@@ -865,7 +920,7 @@ Format: <code>favouritelist</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="checking-for-birthdays-code-birthdays-code"><a class="link" href="#checking-for-birthdays-code-birthdays-code">4.20. Checking for birthdays : <code>birthdays</code></a></h3>
+<h3 id="checking-for-birthdays-code-birthdays-code"><a class="link" href="#checking-for-birthdays-code-birthdays-code">4.21. Checking for birthdays : <code>birthdays</code></a></h3>
 <div class="paragraph">
 <p><code>since v1.3</code> <code>Archana Pradeep</code></p>
 </div>
@@ -877,21 +932,21 @@ Format: <code>favouritelist</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.21. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.22. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from the address book.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.22. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.23. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.23. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.24. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -903,7 +958,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="other-features"><a class="link" href="#other-features">5. Other features</a></h2>
+<h2 id="ui-features"><a class="link" href="#ui-features">5. UI features</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="details-panel"><a class="link" href="#details-panel">5.1. Details Panel</a></h3>
@@ -911,7 +966,10 @@ There is no need to save manually.</p>
 <p><code>since v1.2</code> <code>Archana Pradeep</code></p>
 </div>
 <div class="paragraph">
-<p>UI that shows all details of a person that is not shown in person card</p>
+<p>UI that shows all details of a person that is not shown in person card.</p>
+</div>
+<div class="paragraph">
+<p><a href="#the-myths-book---user-guide">Back To Top</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -920,12 +978,30 @@ There is no need to save manually.</p>
 <p><code>since v1.3</code> <code>Chia Cherng Hann</code></p>
 </div>
 <div class="paragraph">
-<p>UI that displays a calendar for the user.
+<p>UI that displays a calendar for the user.<br>
 You will be able to toggle through different months to view the day and date of different months.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/calendar.PNG" alt="calendar" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><a href="#the-myths-book---user-guide">Back To Top</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="bright-theme"><a class="link" href="#bright-theme">5.3. Bright Theme</a></h3>
+<div class="paragraph">
+<p><code>since v1.1</code> <code>Dickson Chan</code></p>
+</div>
+<div class="paragraph">
+<p>UI that is of a bright colour scheme as compared to the default <code>Dark Theme</code>.<br>
+You will be able to switch between <code>Bright Theme</code> and <code>Dark Theme</code> through the command <code>switch</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/BrightTheme.png" alt="BrightTheme" width="800">
 </div>
 </div>
 <div class="paragraph">
@@ -949,15 +1025,21 @@ You will be able to toggle through different months to view the day and date of 
 <div class="sect1">
 <h2 id="command-summary"><a class="link" href="#command-summary">7. Command Summary</a></h2>
 <div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
 <div class="ulist">
 <ul>
+<li>
+<p><strong>Access</strong> : <code>access INDEX</code><br>
+e.g. <code>access 2</code></p>
+</li>
 <li>
 <p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL [w/WEBSITE] [a/ADDRESS] [h/HOME_NUMBER] [se/SCHOOL_EMAIL] [b/BIRTHDAY] [t/TAG]&#8230;&#8203;</code><br>
 e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com w/https://www.facebook.com/jamesHo a/123, Clementi Rd, 1234665 h/65812131 se/jamesho@u.nus.edu b/12/11/1972 t/friend t/colleague</code></p>
 </li>
 <li>
-<p><strong>Access</strong> : <code>access INDEX</code><br>
-e.g. <code>access 2</code></p>
+<p><strong>AddEvent</strong> <code>addevent n/NAME d/DATE a/ADDRESS</code><br>
+e.g. <code>addevent n/IHG Floorball d/16/01/2018 a/NUS Sports Recreation Centre</code></p>
 </li>
 <li>
 <p><strong>Clear</strong> : <code>clear</code></p>
@@ -971,8 +1053,25 @@ e.g. <code>delete 3</code></p>
 e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
 </li>
 <li>
+<p><strong>Favourite</strong> : <code>favourite INDEX</code><br>
+e.g. <code>favourite 3</code></p>
+</li>
+<li>
+<p><strong>FavouriteList</strong> : <code>favouritelist</code></p>
+</li>
+<li>
 <p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
 e.g. <code>find James Jake</code></p>
+</li>
+<li>
+<p>* FindTag* : <code>findtag TAG [MORE_TAGS]</code><br>
+e.g. <code>findtag friends neighbours</code></p>
+</li>
+<li>
+<p><strong>Help</strong> : <code>help</code></p>
+</li>
+<li>
+<p><strong>History</strong> : <code>history</code></p>
 </li>
 <li>
 <p><strong>List</strong> : <code>list</code></p>
@@ -982,53 +1081,34 @@ e.g. <code>find James Jake</code></p>
 e.g. <code>locate 2</code></p>
 </li>
 <li>
-<p><strong>Favourite</strong> : <code>favourite INDEX</code><br>
-e.g. <code>favourite 3</code></p>
-</li>
-<li>
-<p><strong>Unfavourite</strong> : <code>unfavourite INDEX</code><br>
-e.g. <code>unfavourite 3</code></p>
-</li>
-<li>
-<p><strong>FavouriteList</strong> : <code>favouritelist</code></p>
-</li>
-<li>
-<p><strong>ThemesList</strong> : <code>themeslist</code></p>
-</li>
-<li>
-<p><strong>SwitchTheme</strong> : <code>switchtheme INDEX</code><br>
-e.g. <code>switchtheme 2</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
+<p><strong>Redo</strong> : <code>redo</code></p>
 </li>
 <li>
 <p><strong>Select</strong> : <code>select INDEX</code><br>
 e.g. <code>select 2</code></p>
 </li>
 <li>
-<p><strong>History</strong> : <code>history</code></p>
+<p><strong>SwitchTheme</strong> : <code>switchtheme INDEX</code><br>
+e.g. <code>switchtheme 2</code></p>
+</li>
+<li>
+<p><strong>ThemesList</strong> : <code>themeslist</code></p>
 </li>
 <li>
 <p><strong>Undo</strong> : <code>undo</code></p>
 </li>
 <li>
-<p><strong>Redo</strong> : <code>redo</code></p>
-</li>
-<li>
-<p><strong>AddEvent</strong> <code>addevent n/NAME d/DATE a/ADDRESS</code><br>
-e.g. <code>addevent n/IHG Floorball d/16/01/2018 a/NUS Sports Recreation Centre</code></p>
+<p><strong>Unfavourite</strong> : <code>unfavourite INDEX</code><br>
+e.g. <code>unfavourite 3</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
 <p><a href="#the-myths-book---user-guide">Back To Top</a></p>
 </div>
+<div class="paragraph">
+<p>== Coming in v2.0</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="coming-in-v2-0"><a class="link" href="#coming-in-v2-0">8. Coming in v2.0</a></h2>
-<div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1052,9 +1132,11 @@ suggest similar words.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-01 09:24:43 +00:00
+Last updated 2017-11-01 09:56:20 +00:00
 </div>
 </div>
 </body>
