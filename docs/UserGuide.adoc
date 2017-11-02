@@ -523,7 +523,7 @@ e.g. `favourite 3`
 * *FavouriteList* : `favouritelist`
 * *Find* : `find KEYWORD [MORE_KEYWORDS]` +
 e.g. `find James Jake`
-* * FindTag* : `findtag TAG [MORE_TAGS]` +
+* *FindTag* : `findtag TAG [MORE_TAGS]` +
 e.g. `findtag friends neighbours`
 * *Help* : `help`
 * *History* : `history`
@@ -539,6 +539,7 @@ e.g. `switchtheme 2`
 * *Undo* : `undo`
 * *Unfavourite* : `unfavourite INDEX` +
 e.g. `unfavourite 3`
+=======
 
 link:#the-myths-book---user-guide[Back To Top]
 
