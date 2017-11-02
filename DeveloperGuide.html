@@ -89,7 +89,7 @@
 <li><a href="#use-case-add-person">B.4. Use case: Add person</a></li>
 <li><a href="#use-case-undo-command">B.5. Use case: Undo command</a></li>
 <li><a href="#use-case-list-persons">B.6. Use case: List persons</a></li>
-<li><a href="#use-case-add-event">B.7. Use case: Add event</a></li>
+<li><a href="#use-case-birthdays-command">B.7. Use case: Birthdays Command</a></li>
 <li><a href="#use-case-access-website">B.8. Use case: Access website</a></li>
 <li><a href="#use-case-access-location">B.9. Use case: Access Location</a></li>
 </ul>
@@ -2261,6 +2261,23 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. Person name is invalid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="use-case-add-person"><a class="link" href="#use-case-add-person">B.4. Use case: Add person</a></h3>
@@ -2410,7 +2427,38 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-add-event"><a class="link" href="#use-case-add-event">B.7. Use case: Add event</a></h3>
+<h3 id="use-case-birthdays-command"><a class="link" href="#use-case-birthdays-command">B.7. Use case: Birthdays Command</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User wants to know if any person has a birthday today.</p>
+</li>
+<li>
+<p>User requests birthdays command.</p>
+</li>
+<li>
+<p>AddressBook lists all persons with birthday today.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. No birthdays today.
+Use case ends.
+=== Use case: Add event</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2689,7 +2737,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-01 10:24:04 +00:00
+Last updated 2017-11-02 05:32:18 +00:00
 </div>
 </div>
 </body>
