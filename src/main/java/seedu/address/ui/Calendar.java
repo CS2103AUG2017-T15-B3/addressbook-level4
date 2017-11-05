@@ -2,7 +2,11 @@ package seedu.address.ui;
 
 import java.time.LocalDate;
 import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.logging.Logger;
+
+import com.google.common.eventbus.Subscribe;
 
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -11,11 +15,15 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import seedu.address.commons.core.LogsCenter;
+import seedu.address.model.event.ReadOnlyEvent;
+import seedu.address.model.event.exceptions.DuplicateEventException;
 
 /**
  * The UI component that is responsible for implemented Calendar.
  */
 public class Calendar {
+    private final Logger logger = LogsCenter.getLogger(this.getClass());
 
     private ArrayList<AnchorPaneNode> allCalendarDays = new ArrayList<>(35);
     private VBox view;
@@ -129,5 +137,23 @@ public class Calendar {
 
     public void setAllCalendarDays(ArrayList<AnchorPaneNode> allCalendarDays) {
         this.allCalendarDays = allCalendarDays;
+    }
+
+    private void populateNewCalendar(ReadOnlyEvent event) {
+        Text txt = new Text("New Event");
+        for (AnchorPaneNode ap : allCalendarDays) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+            String newDate = formatter.format(ap.getDate());
+            if (newDate.equals(event.getDate().toString())) {
+                ap.getChildren().add(txt);
+            }
+        }
+    }
+
+    @Subscribe
+    private void handlePopulateEvent(PopulateRequestEvent request) throws DuplicateEventException {
+        System.out.println("Populate Event");
+        logger.info(LogsCenter.getEventHandlingLogMessage(request));
+        populateNewCalendar(request.event);
     }
 }
