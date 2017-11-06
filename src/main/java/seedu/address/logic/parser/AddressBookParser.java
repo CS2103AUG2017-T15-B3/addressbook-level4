@@ -15,6 +15,7 @@ import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.DeleteEventCommand;
 import seedu.address.logic.commands.EditCommand;
+import seedu.address.logic.commands.EventsCommand;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FavouriteCommand;
 import seedu.address.logic.commands.FavouriteListCommand;
@@ -59,6 +60,7 @@ public class AddressBookParser {
         final String commandWord = matcher.group("commandWord");
         final String arguments = matcher.group("arguments");
         switch (commandWord) {
+
         case AddCommand.COMMAND_WORD: case AddCommand.COMMAND_ALIAS:
             return new AddCommandParser().parse(arguments);
 
@@ -130,6 +132,9 @@ public class AddressBookParser {
 
         case BirthdaysCommand.COMMAND_WORD: case BirthdaysCommand.COMMAND_ALIAS:
             return new BirthdaysCommand();
+
+        case EventsCommand.COMMAND_WORD: case EventsCommand.COMMAND_ALIAS:
+            return new EventsCommand();
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);

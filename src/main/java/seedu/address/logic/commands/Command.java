@@ -28,6 +28,10 @@ public abstract class Command {
         return String.format(Messages.MESSAGE_BIRTHDAYS_LISTED_OVERVIEW, displaySize);
     }
 
+    public static String getEventsMessageSummary(int displaySize) {
+        return String.format(Messages.MESSAGE_EVENTS_LISTED_OVERVIEW, displaySize);
+    }
+
     /**
      * Executes the command and returns the result message.
      *

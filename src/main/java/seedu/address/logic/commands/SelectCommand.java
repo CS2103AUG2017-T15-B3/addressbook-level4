@@ -7,6 +7,7 @@ import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.events.ui.AccessWebsiteRequestEvent;
 import seedu.address.commons.events.ui.JumpToListRequestEvent;
+import seedu.address.commons.events.ui.PanelSwitchRequestEvent;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.person.ReadOnlyPerson;
 
@@ -37,10 +38,6 @@ public class SelectCommand extends Command {
 
         List<ReadOnlyPerson> lastShownList = model.getFilteredPersonList();
 
-        if (targetIndex.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_DISPLAYED_INDEX);
-        }
-
         ReadOnlyPerson person = lastShownList.get(targetIndex.getZeroBased());
         String name = person.getName().toString();
         String website = person.getWebsite().toString();
@@ -49,9 +46,9 @@ public class SelectCommand extends Command {
             website = FACEBOOK_URL_PREFIX;
         }
 
-        EventsCenter.getInstance().post(new AccessWebsiteRequestEvent(website));
-
+        EventsCenter.getInstance().post(new AccessWebsiteRequestEvent(person.getWebsite().toString()));
         EventsCenter.getInstance().post(new JumpToListRequestEvent(targetIndex));
+        EventsCenter.getInstance().post(new PanelSwitchRequestEvent(COMMAND_WORD));
 
         return new CommandResult(String.format(MESSAGE_SELECT_PERSON_SUCCESS, targetIndex.getOneBased(), name));
     }
