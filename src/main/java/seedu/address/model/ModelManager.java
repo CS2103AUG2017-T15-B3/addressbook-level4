@@ -13,7 +13,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.ComponentManager;
-import seedu.address.commons.core.EventsCenter;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.model.AddressBookChangedEvent;
 import seedu.address.model.event.ReadOnlyEvent;
@@ -23,7 +22,6 @@ import seedu.address.model.person.ReadOnlyPerson;
 import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
 import seedu.address.ui.AddEventRequestEvent;
-import seedu.address.ui.PopulateRequestEvent;
 
 /**
  * Represents the in-memory model of the address book data.
@@ -103,8 +101,6 @@ public class ModelManager extends ComponentManager implements Model {
 
     @Override
     public synchronized void addEvent(ReadOnlyEvent event) throws DuplicateEventException {
-        System.out.println("Adding event");
-        EventsCenter.getInstance().post(new PopulateRequestEvent(event));
         addressBook.addEvent(event);
         updateFilteredEventList(PREDICATE_SHOW_ALL_EVENTS);
         indicateAddressBookChanged();

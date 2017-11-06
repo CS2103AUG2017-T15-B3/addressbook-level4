@@ -161,7 +161,7 @@ public class MainWindow extends UiPart<Region> {
         CommandBox commandBox = new CommandBox(logic);
         commandBoxPlaceholder.getChildren().add(commandBox.getRoot());
 
-        Calendar calendar = new Calendar(YearMonth.now());
+        calendar = new Calendar(YearMonth.now());
         calendarPanel.getChildren().add(calendar.getView());
     }
 
@@ -288,5 +288,11 @@ public class MainWindow extends UiPart<Region> {
         handleChangeTheme(event.theme);
         browserPanel.setDefaultPage(event.theme);
         logic.setCurrentTheme(getCurrentTheme());
+    }
+
+    @Subscribe
+    private void handlePopulateEvent(PopulateRequestEvent request) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(request));
+        calendar.populateNewCalendar(request.event);
     }
 }
