@@ -50,7 +50,6 @@ public class Calendar {
                                       new Text("Tuesday"), new Text("Wednesday"), new Text("Thursday"),
                                       new Text("Friday"), new Text("Saturday") };
 
-
         GridPane dayLabels = new GridPane();
         dayLabels.setPrefWidth(600);
         Integer col = 0;
@@ -168,6 +167,7 @@ public class Calendar {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
                 String newDate = formatter.format(ap.getDate());
                 if (newDate.equals(event1.getDate().toString())) {
+                    ap.getChildren();
                     ap.setStyle("-fx-background-color: #fff8dc;");
                 }
             }
