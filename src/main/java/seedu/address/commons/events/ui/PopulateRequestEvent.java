@@ -9,11 +9,9 @@ import seedu.address.model.event.UniqueEventList;
  */
 public class PopulateRequestEvent extends BaseEvent {
 
-    public final ReadOnlyEvent event;
     public final UniqueEventList eventList;
 
-    public PopulateRequestEvent(ReadOnlyEvent event, UniqueEventList eventList) {
-        this.event = event;
+    public PopulateRequestEvent(UniqueEventList eventList) {
         this.eventList = eventList;
     }
 

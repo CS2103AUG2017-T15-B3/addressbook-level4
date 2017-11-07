@@ -112,7 +112,7 @@ public class Calendar {
      */
     public void previousMonth() {
         currentYearMonth = currentYearMonth.minusMonths(1);
-    //    populateCalendar(currentYearMonth);
+        populateCalendar(currentYearMonth);
     }
 
     /**
@@ -120,7 +120,7 @@ public class Calendar {
      */
     public void nextMonth() {
         currentYearMonth = currentYearMonth.plusMonths(1);
-    //    populateCalendar(currentYearMonth);
+        populateCalendar(currentYearMonth);
     }
 
     public VBox getView() {
@@ -135,19 +135,6 @@ public class Calendar {
         this.allCalendarDays = allCalendarDays;
     }
 
-//    /**
-//     *  Populating Calendar just based on one event added into the addressBook.
-//     */
-//    public void populateNewCalendar(ReadOnlyEvent event) {
-//        for (AnchorPaneNode ap : allCalendarDays) {
-//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-//            String newDate = formatter.format(ap.getDate());
-//            if (newDate.equals(event.getDate().toString())) {
-//                ap.setStyle("-fx-background-color: #fff8dc;");
-//            }
-//        }
-//    }
-
     /**
      * populating updated calendar for the swithc buttons for the change of months.
      * @param eventList
@@ -156,6 +143,7 @@ public class Calendar {
 
     public void populateUpdatedCalendar(UniqueEventList eventList, YearMonth yearMonth ) {
         // Get the date we want to start with on the calendar
+        yearMonth = currentYearMonth;
         LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
         // Dial back the day until it is SUNDAY (unless the month starts on a sunday)
         while (!calendarDate.getDayOfWeek().toString().equals("SUNDAY")) {

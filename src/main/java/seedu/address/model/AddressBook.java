@@ -202,7 +202,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void addEvent(ReadOnlyEvent p) throws DuplicateEventException {
         Event newEvent = new Event(p);
         events.add(newEvent);
-        EventsCenter.getInstance().post(new PopulateRequestEvent(p,events));
+        EventsCenter.getInstance().post(new PopulateRequestEvent(events));
     }
 
     /**
