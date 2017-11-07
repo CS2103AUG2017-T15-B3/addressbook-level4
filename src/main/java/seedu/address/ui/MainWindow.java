@@ -1,5 +1,6 @@
 package seedu.address.ui;
 
+import java.time.Year;
 import java.time.YearMonth;
 import java.util.logging.Logger;
 
@@ -293,6 +294,7 @@ public class MainWindow extends UiPart<Region> {
     @Subscribe
     private void handlePopulateEvent(PopulateRequestEvent request) {
         logger.info(LogsCenter.getEventHandlingLogMessage(request));
-        calendar.populateNewCalendar(request.event);
+        // calendar.populateNewCalendar(request.event);
+        calendar.populateUpdatedCalendar(request.eventList, YearMonth.now());
     }
 }

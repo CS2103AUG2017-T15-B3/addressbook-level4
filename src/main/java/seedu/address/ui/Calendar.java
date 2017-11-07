@@ -12,7 +12,9 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import seedu.address.model.event.Event;
 import seedu.address.model.event.ReadOnlyEvent;
+import seedu.address.model.event.UniqueEventList;
 
 /**
  * The UI component that is responsible for implemented Calendar.
@@ -43,6 +45,7 @@ public class Calendar {
                 ap.getStyleClass().add("calendar-color");
             }
         }
+
         // Days of the week labels
         Text[] dayNames = new Text[]{ new Text("Sunday"), new Text("Monday"),
                                       new Text("Tuesday"), new Text("Wednesday"), new Text("Thursday"),
@@ -108,17 +111,18 @@ public class Calendar {
     /**
      * Move the month back by one. Repopulate the calendar with the correct dates.
      */
-    private void previousMonth() {
+    public void previousMonth() {
         currentYearMonth = currentYearMonth.minusMonths(1);
-        populateCalendar(currentYearMonth);
+    //    populateCalendar(currentYearMonth);
+
     }
 
     /**
      * Move the month forward by one. Repopulate the calendar with the correct dates.
      */
-    private void nextMonth() {
+    public void nextMonth() {
         currentYearMonth = currentYearMonth.plusMonths(1);
-        populateCalendar(currentYearMonth);
+    //    populateCalendar(currentYearMonth);
     }
 
     public VBox getView() {
@@ -133,13 +137,56 @@ public class Calendar {
         this.allCalendarDays = allCalendarDays;
     }
 
-    public void populateNewCalendar(ReadOnlyEvent event) {
+//    /**
+//     *  Populating Calendar just based on one event added into the addressBook.
+//     */
+//    public void populateNewCalendar(ReadOnlyEvent event) {
+//        for (AnchorPaneNode ap : allCalendarDays) {
+//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+//            String newDate = formatter.format(ap.getDate());
+//            if (newDate.equals(event.getDate().toString())) {
+//                ap.setStyle("-fx-background-color: #fff8dc;");
+//            }
+//        }
+//    }
+
+    /**
+     * populating updated calendar for the swithc buttons for the change of months.
+     * @param eventList
+     * @param yearMonth
+     */
+
+    public void populateUpdatedCalendar(UniqueEventList eventList, YearMonth yearMonth ) {
+        // Get the date we want to start with on the calendar
+        LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
+        // Dial back the day until it is SUNDAY (unless the month starts on a sunday)
+        while (!calendarDate.getDayOfWeek().toString().equals("SUNDAY")) {
+            calendarDate = calendarDate.minusDays(1);
+        }
+        // Populate the calendar with day numbers
         for (AnchorPaneNode ap : allCalendarDays) {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-            String newDate = formatter.format(ap.getDate());
-            if (newDate.equals(event.getDate().toString())) {
-                ap.setStyle("-fx-background-color: #fff8dc;");
+            if (ap.getChildren().size() != 0) {
+                ap.getChildren().remove(0);
             }
+            Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
+            txt.getStyleClass().add("calendar-color");
+            ap.setDate(calendarDate);
+            ap.setTopAnchor(txt, 5.0);
+            ap.setLeftAnchor(txt, 5.0);
+            ap.getChildren().add(txt);
+            calendarDate = calendarDate.plusDays(1);
+        }
+
+        for (AnchorPaneNode ap : allCalendarDays) {
+            for (Event event1 : eventList) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+                String newDate = formatter.format(ap.getDate());
+                if (newDate.equals(event1.getDate().toString())) {
+                    ap.setStyle("-fx-background-color: #fff8dc;");
+                }
+            }
+            // Change the title of the calendar
+            calendarTitle.setText(yearMonth.getMonth().toString() + " " + String.valueOf(yearMonth.getYear()));
         }
     }
 }
