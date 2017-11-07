@@ -13,7 +13,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import seedu.address.model.event.Event;
-import seedu.address.model.event.ReadOnlyEvent;
 import seedu.address.model.event.UniqueEventList;
 
 /**
@@ -114,7 +113,6 @@ public class Calendar {
     public void previousMonth() {
         currentYearMonth = currentYearMonth.minusMonths(1);
     //    populateCalendar(currentYearMonth);
-
     }
 
     /**

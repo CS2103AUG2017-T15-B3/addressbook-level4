@@ -12,6 +12,7 @@ import java.util.Set;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.EventsCenter;
+import seedu.address.commons.events.ui.PopulateRequestEvent;
 import seedu.address.model.event.Event;
 import seedu.address.model.event.ReadOnlyEvent;
 import seedu.address.model.event.UniqueEventList;
@@ -23,7 +24,6 @@ import seedu.address.model.person.exceptions.DuplicatePersonException;
 import seedu.address.model.person.exceptions.PersonNotFoundException;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
-import seedu.address.ui.PopulateRequestEvent;
 
 /**
  * Wraps all data at the address-book level
