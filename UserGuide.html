@@ -399,11 +399,11 @@ Format: <code>edit INDEX [n/NAME] [p/PHONE] [h/HOME_NUMBER] [e/EMAIL] [se/SCHOOL
 <ul>
 <li>
 <p><code>edit 1 p/91234567 e/johndoe@example.com</code><br>
-Edits the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
+By typing this command, you will be able to edit the phone number and email address of the 1st person to be <code>91234567</code> and <code>johndoe@example.com</code> respectively.</p>
 </li>
 <li>
 <p><code>edit 2 n/Betsy Crower t/</code><br>
-Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
+By typing this command, you will be able to edit the name of the 2nd person to be <code>Betsy Crower</code> and clears all existing tags.</p>
 </li>
 </ul>
 </div>
@@ -450,11 +450,12 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <ul>
 <li>
 <p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
+If there was john` and <code>John Doe</code> in the person list,
+by typing this command, you will be able to find both <code>john</code> and <code>John Doe</code>.</p>
 </li>
 <li>
 <p><code>find Betsy Tim John</code><br>
-Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+By typing this command, you will be able to find any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
 </li>
 </ul>
 </div>
@@ -495,11 +496,11 @@ Format: <code>findtag TAGS [MORE_TAGS]</code></p>
 <ul>
 <li>
 <p><code>findtag friends</code><br>
-Returns any person having tag <code>friends</code>.</p>
+By typing this command, you will be able to find any person having tag <code>friends</code>.</p>
 </li>
 <li>
 <p><code>findtag owesMoney neighbours friends</code><br>
-Returns any person having tags <code>owesMoney</code>, <code>neighbours</code>, or <code>friends</code>.</p>
+By typing this command, you will be able to find any person having tags <code>owesMoney</code>, <code>neighbours</code>, or <code>friends</code>.</p>
 </li>
 </ul>
 </div>
@@ -534,14 +535,33 @@ You will be able to view all the stored information about the person selected.</
 <ul>
 <li>
 <p><code>find Betsy</code><br>
-<code>select 1</code><br>
-Selects the 1st person in the results of the <code>find</code> command.</p>
+<code>select 1</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>find Betsy</code>, you will be able to find any person having the name <code>Betsy</code>.<br></p>
+</li>
+<li>
+<p>Subsequently, by typing <code>select 1</code>, you are selecting the 1st person in the results of the <code>find Betsy</code> command which will
+displays the information details of the 1st person in the graphical user interface.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
 <p><code>list</code><br>
-<code>select 3</code><br>
-Selects the 3rd person in The Myth&#8217;s Book.<br>
+<code>select 3</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>list</code>, you will be able to view the current listing of all contacts with updated details.<br></p>
+</li>
+<li>
+<p>Subsequently, by typing <code>select 3</code>, you are selecting the 3rd person in the most recent listing of The Myth&#8217;s Book.<br>
 You should see the displayed result of <code>select 3</code> as seen in Figure 5.8.1 below.</p>
+</li>
+</ol>
+</div>
 </li>
 </ul>
 </div>
@@ -585,12 +605,12 @@ Format: <code>delete INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>delete 2</code><br>
-This will delete the 2nd person in The Myth&#8217;s Book.</p>
+By typing <code>delete 2</code>, you will be able to delete the 2nd person in the most recent listing in The Myth&#8217;s Book.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
 <code>delete 1</code><br>
-This will delete the 1st person in the results of the <code>find</code> command.</p>
+By typing <code>find Betsy</code>, you will be able to delete the 1st person in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
@@ -738,8 +758,17 @@ Format: <code>switch INDEX</code></p>
 <ul>
 <li>
 <p><code>themeslist</code><br>
-<code>switch 2</code><br>
-Switches to the 2nd theme in the themes list.</p>
+<code>switch 2</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>themeslist</code>, you will be able to see the available themes that The Myth&#8217;s Book has to offer.<br></p>
+</li>
+<li>
+<p>By typing <code>switch 2</code>, you will be able to switch to the 2nd theme listed in the themes list.</p>
+</li>
+</ol>
+</div>
 </li>
 </ul>
 </div>
@@ -818,16 +847,35 @@ Format: <code>access INDEX</code></p>
 <ul>
 <li>
 <p><code>find Betsy</code><br>
-<code>access 1</code><br>
-Selects the 1st person in the results of the <code>find</code> command and attains the website of the 1st person.
-The website details is then loaded into the browser.</p>
+<code>access 1</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>find Betsy</code>, you will be able to see a generated list of persons having names <code>Betsy</code>.</p>
 </li>
 <li>
-<p>1.<code>list</code><br>
-2.<code>select 6</code><br>
-3.<code>access 6</code><br>
-Lists down all the contacts and selects the 6th person in The Myth&#8217;s Book.<br>
-By typing <code>access 6</code>, it allows you to access the website of the 6th person which is loaded into the browser.</p>
+<p>Subsequently, typing <code>access 1</code>, it will help you attain the website details of the 1st person in the generated list which is then loaded into the browser.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><code>list</code><br>
+<code>select 6</code><br>
+<code>access 6</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>list</code>, it lists down all the contacts.<br></p>
+</li>
+<li>
+<p>Subsequently, by typing <code>select 6</code>, it will select and show you information details of the 6th person in the most recent listing.<br></p>
+</li>
+<li>
+<p>Finally, by typing <code>access 6</code>, it allows you to access the website details of the 6th person which is loaded into the browser.</p>
+</li>
+</ol>
+</div>
 </li>
 </ul>
 </div>
@@ -855,18 +903,22 @@ Format: <code>add n/NAME d/DATE a/ADDRESS</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>addevent n/ZoukOut d/23/12/2017 a/Sentosa, Siloso Beach</code><br>
-Adds an event <code>ZoukOut</code> in The Myth&#8217;s Book.</p>
-</li>
-<li>
-<p><code>addevent n/Orbital d/1/5/2018 a/NUS School Of Computing</code><br>
-Adds an event <code>Orbital</code> in The Myth&#8217;s Book.</p>
-</li>
-<li>
-<p><code>addevent n/Halloween Horror Night d/31/10/2017 a/Universal Studios Singapore</code><br>
-Adds an event <code>Halloween Horror Night</code> in The Myth&#8217;s Book.</p>
+<p><code>addevent n/ZoukOut d/23/12/2017 a/Sentosa, Siloso Beach</code><br></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>By typing this command, you will be able to add an event <code>ZoukOut</code> in The Myth&#8217;s Book.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addevent n/Halloween Horror Night d/31/10/2017 a/Universal Studios Singapore</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By typing this command, you will be able to add an event <code>Halloween Horror Night</code> in The Myth&#8217;s Book.</p>
 </div>
 <div class="paragraph">
 <p>If input is correct, you will be able to see the event being added successfully into The Myth&#8217;s Book and receive the following displayed result in the Results Display Panel.</p>
@@ -926,12 +978,12 @@ Format: <code>favourite INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>favourite 2</code><br>
-Favourites the 2nd person in The Myth&#8217;s Book.</p>
+By typing this command, you will be able to favourite the 2nd person in the most recent person listing of The Myth&#8217;s Book.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
 <code>favourite 1</code><br>
-Favourites the 1st person in the results of the <code>find</code> command.</p>
+By typing this command, you will be able to favourite the 1st person in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
@@ -974,17 +1026,17 @@ Format: <code>unfavourite INDEX</code></p>
 <li>
 <p><code>list</code><br>
 <code>unfavourite 2</code><br>
-Unfavourites the 2nd person in The Myth&#8217;s Book.</p>
+By typing <code>unfavourite 2</code>, you will be able to unfavourite the 2nd person in the most recent person listing of The Myth&#8217;s Book.</p>
 </li>
 <li>
 <p><code>favouritelist</code><br>
 <code>unfavourite 1</code><br>
-Unfavourites the 1st person in the results of the <code>favouritelist</code> command.</p>
+By typing <code>unfavourite 1</code>, you will be able to unfavourite the 1st person in the results of the <code>favouritelist</code> command.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
 <code>unfavourite 1</code><br>
-Unfavourites the 1st person in the results of the <code>find</code> command.</p>
+By typing <code>unfavourite 1</code>, you will be able to unfavourite the 1st person in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
@@ -1025,21 +1077,41 @@ Format: 'locate INDEX'</p>
 <ul>
 <li>
 <p><code>find Betsy</code><br>
-<code>locate 1</code><br>
-Selects the 1st person in the results of the <code>find</code> command and attains the address of the 1st person.
-The address details is then used in a Google Maps Search.</p>
+<code>locate 1</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>find Betsy</code>, you will be able to see a generated list of persons having names <code>Betsy</code>.</p>
 </li>
 <li>
-<p>1.<code>list</code><br>
-2.<code>locate 6</code><br>
-Lists down all the contacts and <code>locate 6</code> selects the 6th person in The Myth&#8217;s Book.<br>
-The address details of the 6th person is then used in a Google Maps Search.</p>
+<p>Subsequently, typing <code>locate 1</code>, it will help you attain the address details of the 1st person in
+the generated list which is then loaded into the browser with a Google Maps Search.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><code>list</code><br>
+<code>select 6</code><br>
+<code>locate 6</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>list</code>, it lists down all the contacts.<br></p>
+</li>
+<li>
+<p>Subsequently, by typing <code>select 6</code>, it will select and show you information details of the 6th person in the most recent listing.<br></p>
+</li>
+<li>
+<p>Finally, by typing <code>locate 6</code>, it allows you to access the address details of the 6th person which is loaded into the browser.<br></p>
+</li>
+<li>
+<p>You should see the displayed result of the person&#8217;s address in a Google Maps Search as seen in Figure 6.6.1 below.</p>
+</li>
+</ol>
+</div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>By typing <code>locate 6</code>,
-You should see the displayed result of the person&#8217;s address in a Google Maps Search as seen in Figure 6.6.1 below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1370,7 +1442,7 @@ e.g. <code>unfavourite 3</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-08 07:50:27 +00:00
+Last updated 2017-11-08 07:53:11 +00:00
 </div>
 </div>
 </body>
