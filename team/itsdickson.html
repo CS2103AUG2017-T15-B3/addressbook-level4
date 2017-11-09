@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3">
+<title>Chan Kin Hung Dickson - Project Portfolio</title>
+<link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Chan Kin Hung Dickson - Project Portfolio</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="purpose"><a class="link" href="#purpose">Purpose</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-the-myth-s-book"><a class="link" href="#project-the-myth-s-book">Project: The Myth&#8217;s Book</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Myth&#8217;s Book is an address book dedicated for university students to store useful information such
+as websites, phone numbers and emails of the people around them for personal usage. The application helps students
+to keep track of birthday dates and upcoming events through a calendar and facilitate convenient access to their friend&#8217;s website
+and even Google Maps location through the in-built browser panel in the application. Furthermore, there are many
+useful tools such as finding group tags (e.g. friends, neighbours) and switching themes for better user preference and usability.</p>
+</div>
+<div class="paragraph">
+<p>The Myth&#8217;s Book is a <code>Command Line Input</code> based software which helps caters to students who are efficient and comfortable
+in typing out command line inputs to manipulate with information of their contacts in the address book.
+The Myth&#8217;s Book is a software application that is coded in <code>Java</code> programming language.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/main/itsdickson.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/test/itsdickson.md">Test code</a>]</p>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-favourite-unfavourite"><a class="link" href="#enhancement-added-favourite-unfavourite">Enhancement Added: Favourite/Unfavourite</a></h3>
+<div class="sect3">
+<h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="favouriting-a-person-code-favourite-code"><a class="link" href="#favouriting-a-person-code-favourite-code">Favouriting a person : <code>favourite</code></a></h3>
+<div class="paragraph">
+<p>This command helps you to favourite the specified person in the most recent listing from The Myth&#8217;s Book.<br>
+Format: <code>favourite INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the most recent listing.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Favourites the person at the specified <code>INDEX</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>favourite 2</code><br>
+By typing this command, you will be able to favourite the 2nd person in the most recent person listing of The Myth&#8217;s Book.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>favourite 1</code><br>
+By typing this command, you will be able to favourite the 1st person in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-favourited-persons-code-favouritelist-code"><a class="link" href="#listing-all-favourited-persons-code-favouritelist-code">Listing all favourited persons : <code>favouritelist</code></a></h3>
+<div class="paragraph">
+<p>This command shows a list of all favourited persons in The Myth&#8217;s Book.<br>
+Format: <code>favouritelist</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unfavouriting-a-person-code-unfavourite-code"><a class="link" href="#unfavouriting-a-person-code-unfavourite-code">Unfavouriting a person : <code>unfavourite</code></a></h3>
+<div class="paragraph">
+<p>This command unfavourites the specified person from The Myth&#8217;s Book.<br>
+Format: <code>unfavourite INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the most recent listing.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Unfavourites the person at the specified <code>INDEX</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>unfavourite 2</code><br>
+By typing <code>unfavourite 2</code>, you will be able to unfavourite the 2nd person in the most recent person listing of The Myth&#8217;s Book.</p>
+</li>
+<li>
+<p><code>favouritelist</code><br>
+<code>unfavourite 1</code><br>
+By typing <code>unfavourite 1</code>, you will be able to unfavourite the 1st person in the results of the <code>favouritelist</code> command.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>unfavourite 1</code><br>
+By typing <code>unfavourite 1</code>, you will be able to unfavourite the 1st person in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<div class="paragraph">
+<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-switch-theme"><a class="link" href="#enhancement-added-switch-theme">Enhancement Added: Switch Theme</a></h3>
+<div class="paragraph">
+<p>(Pull Requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/50">#50</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/63">#63</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/78">#78</a>)</p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-2"><a class="link" href="#external-behavior-2">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="switching-themes-code-switch-code"><a class="link" href="#switching-themes-code-switch-code">Switching themes : <code>switch</code></a></h3>
+<div class="paragraph">
+<p>This command helps you to switch the current theme to your favourite theme.<br>
+Format: <code>switch INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the themes list window.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Switches the current theme to the theme at the specified <code>INDEX</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>themeslist</code><br>
+<code>switch 2</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>themeslist</code>, you will be able to see the available themes that The Myth&#8217;s Book has to offer.<br></p>
+</li>
+<li>
+<p>By typing <code>switch 2</code>, you will be able to switch to the 2nd theme listed in the themes list.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You should see the result of using <code>switch 2</code> as seen in Figure 5.15.1.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Switch.png" alt="Switch" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.15.1 <code>switch 2</code> Result for Switch Command</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
+<div class="paragraph">
+<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="switch-theme-mechanism"><a class="link" href="#switch-theme-mechanism">Switch Theme mechanism</a></h3>
+<div class="paragraph">
+<p>The switch theme mechanism is facilitated by a <code>ThemesList</code>, which resides inside <code>AddressBook</code>. <code>ThemesList</code> contains a list of CSS files, in which each file are of differing colour themes for the application user interface. It sets the theme of the application to the theme specified by the index given by the user. This command will inherit from <code>Command</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SwitchThemeCommandDiagram1.png" alt="SwitchThemeCommandDiagram1" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram above, <code>SwitchThemeCommand</code> inherits <code>Command</code>, which means its state is not saved by the address book, and it cannot be undone after executing the command.</p>
+</div>
+<div class="paragraph">
+<p>Suppose that the user has just launched the application. The <code>ThemesList</code> will be initialised based on the current existing colour themes.</p>
+</div>
+<div class="paragraph">
+<p>The user executes <code>themeslist</code> to look through the existing colour themes, and pick one that he or she wants.</p>
+</div>
+<div class="paragraph">
+<p>The user will then execute <code>switch 2</code>, with <code>2</code> being the <code>index</code> of the theme that the user prefers, provided by the executed <code>themeslist</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>ThemesList</code> will take the <code>index</code> provided by the user, and return a <code>String</code> of the CSS file name based on the <code>index</code>.</p>
+</div>
+<div class="paragraph">
+<p>The execution of <code>switch 2</code> toggles an event <code>ChangeThemeRequestEvent</code>, which will then be listened and handled by <code>MainWindow</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Stylesheets</code> of the <code>MainWindow</code> will then remove the current existing CSS file, which is the current theme, and add the given <code>String</code> of the CSS file into <code>Stylesheets</code>. That will set the current colour theme of <code>The Myth&#8217;s Book</code> to the preferred colour theme.</p>
+</div>
+<div class="paragraph">
+<p>Code of SwitchThemeCommand :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SwitchThemeCommand</span> <span class="directive">extends</span> Command {
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult execute() {
+        <span class="comment">// ... switch theme logic ...</span>
+        EventsCenter.getInstance().post(<span class="keyword">new</span> ChangeThemeRequestEvent(themeToChange));
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Listener for ChangeThemeRequestEvent in MainWindow.java :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Subscribe</span>
+<span class="directive">private</span> <span class="type">void</span> handleChangeThemeEvent(ChangeThemeRequestEvent event) {
+    logger.info(LogsCenter.getEventHandlingLogMessage(event));
+    handleChangeTheme(event.theme);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Removing and adding of CSS file into Stylesheets in MainWindow.java :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> handleChangeTheme(<span class="predefined-type">String</span> theme) {
+    <span class="keyword">if</span> (getRoot().getStylesheets().size() &gt; <span class="integer">1</span>) {
+        getRoot().getStylesheets().remove(CURRENT_THEME_INDEX);
+    }
+    getRoot().getStylesheets().add(<span class="string"><span class="delimiter">&quot;</span><span class="content">/view/</span><span class="delimiter">&quot;</span></span> + theme);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the switch theme operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SwitchThemeCommandDiagram2.png" alt="SwitchThemeCommandDiagram2" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram above, when <code>switch 1</code> is typed into the command line input, a new <code>SwitchThemeCommand</code> is created.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SwitchThemeCommandDiagram3.png" alt="SwitchThemeCommandDiagram3" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram above, when <code>switch 1</code> is executed in <code>SwitchThemeCommand</code>, it will post <code>ChangeThemeRequestEvent</code> to the <code>EventsCenter</code>.</p>
+</div>
+<div class="paragraph">
+<p>Upon detecting <code>ChangeThemeRequestEvent</code>, <code>Ui</code> will call <code>handleChangeTheme</code> to handle the event, update the <code>MainWindow</code> accordingly and update its status bar.</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>SwitchThemeCommand</code><br>
+<strong>Alternative 1 (current choice):</strong> Extending to <code>Command</code> class.<br>
+<strong>Pros:</strong> Developers do not need to learn the implementation of <code>UndoableCommand</code> class.<br>
+<strong>Cons:</strong> <code>SwitchThemeCommand</code> cannot be undone and have to repeatedly call command to switch to different themes.<br>
+<strong>Alternative 2:</strong> Extending to <code>UndoableCommand</code> class.<br>
+<strong>Pros:</strong> Might be more favourable to users to undo <code>SwitchThemeCommand</code> if he/she switch to an incorrect theme.<br>
+<strong>Cons:</strong> Developers need to learn the implementation of <code>UndoableCommand</code>. Difficult to implement.<br></p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Aspect:</strong> How switch theme executes<br>
+<strong>Alternative 1 (current choice):</strong> Taking in index (type Integer) as the argument.<br>
+<strong>Pros:</strong> Simple to implement since the index will tally with <code>ThemesList</code>. Simple to use since users don&#8217;t have to remember the names and look at the index in <code>ThemesList</code>.<br>
+<strong>Cons:</strong> Maybe less favourable for users when the size of <code>ThemesList</code> increase.<br>
+<strong>Alternative 2:</strong> Taking in theme&#8217;s name (type String) as the argument.<br>
+<strong>Pros:</strong> Might be more favourable for long-time users since names may be easier to remember than numbers after using the application for a long time.<br>
+<strong>Cons:</strong> Harder to implement and test.<br></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-themes-list"><a class="link" href="#enhancement-added-themes-list">Enhancement Added: Themes List</a></h3>
+<div class="paragraph">
+<p>(Pull Requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/50">#50</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/63">#63</a>)</p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-3"><a class="link" href="#external-behavior-3">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-themes-code-themeslist-code"><a class="link" href="#listing-all-themes-code-themeslist-code">Listing all themes : <code>themeslist</code></a></h3>
+<div class="paragraph">
+<p>This command shows a list of all themes that is available to you in pop-up window format in The Myth&#8217;s Book.<br>
+Format: <code>themeslist</code></p>
+</div>
+<div class="paragraph">
+<p>You should see the result of using <code>themeslist</code> as seen in Figure 5.14.1.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/themeslist.png" alt="themeslist" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.14.1 <code>themeslist</code> Result for Themes List Command</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
+<div class="paragraph">
+<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-events-list"><a class="link" href="#enhancement-added-events-list">Enhancement Added: Events List</a></h3>
+<div class="paragraph">
+<p>(Pull Request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/135">#135</a>)</p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-4"><a class="link" href="#external-behavior-4">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-events-code-events-code"><a class="link" href="#listing-all-events-code-events-code">Listing all events : <code>events</code></a></h3>
+<div class="paragraph">
+<p>This command replaces the list of contacts, and subsequently lists all the events stored in The Myth&#8217;s Book.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>events</code></p>
+</div>
+<div class="paragraph">
+<p>You should see the result of using <code>events</code> as seen in Figure 5.4.1.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/events.png" alt="events" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.4.1 <code>events</code> Result for Events Command</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-4"><a class="link" href="#justification-4">Justification</a></h4>
+<div class="paragraph">
+<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed"><a class="link" href="#enhancement-proposed">Enhancement Proposed:</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Acceptance Testing on <code>Team T16-B1</code> (<a href="https://github.com/CS2103AUG2017-T16-B1/main/issues">Issues</a>)</p>
+</li>
+<li>
+<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+</li>
+<li>
+<p>Wrote additional tests to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-11-09 06:42:07 +00:00
+</div>
+</div>
+</body>
+</html>
