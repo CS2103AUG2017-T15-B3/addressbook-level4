@@ -90,7 +90,7 @@
 <li><a href="#use-case-add-person">B.4. Use case: Add person</a></li>
 <li><a href="#use-case-undo-command">B.5. Use case: Undo command</a></li>
 <li><a href="#use-case-list-persons">B.6. Use case: List persons</a></li>
-<li><a href="#use-case-birthdays-command">B.7. Use case: Birthdays Command</a></li>
+<li><a href="#use-case-list-birthdays">B.7. Use case: List Birthdays</a></li>
 <li><a href="#use-case-access-website">B.8. Use case: Access website</a></li>
 <li><a href="#use-case-access-location">B.9. Use case: Access Location</a></li>
 </ul>
@@ -911,7 +911,7 @@ can be undoable, where the previous state of the address book before sorting is 
 </div>
 </div>
 <div class="paragraph">
-<p>As seen from the diagram above, <code>SwitchThemeCommand</code> inherits <code>Command</code>, which means its state is not saved by the address book, and it cannot be undone after executing the command.</p>
+<p>As seen in the diagram above, <code>SwitchThemeCommand</code> inherits <code>Command</code>, which means its state is not saved by the address book, and it cannot be undone after executing the command.</p>
 </div>
 <div class="paragraph">
 <p>Suppose that the user has just launched the application. The <code>ThemesList</code> will be initialised based on the current existing colour themes.</p>
@@ -979,7 +979,7 @@ can be undoable, where the previous state of the address book before sorting is 
 </div>
 </div>
 <div class="paragraph">
-<p>As seen from the diagram above, when <code>switch 1</code> is typed into the command line input, a new <code>SwitchThemeCommand</code> is created.</p>
+<p>As seen in the diagram above, when <code>switch 1</code> is typed into the command line input, a new <code>SwitchThemeCommand</code> is created.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -987,7 +987,7 @@ can be undoable, where the previous state of the address book before sorting is 
 </div>
 </div>
 <div class="paragraph">
-<p>As seen from the diagram above, when <code>switch 1</code> is executed in <code>SwitchThemeCommand</code>, it will post <code>ChangeThemeRequestEvent</code> to the <code>EventsCenter</code>.</p>
+<p>As seen in the diagram above, when <code>switch 1</code> is executed in <code>SwitchThemeCommand</code>, it will post <code>ChangeThemeRequestEvent</code> to the <code>EventsCenter</code>.</p>
 </div>
 <div class="paragraph">
 <p>Upon detecting <code>ChangeThemeRequestEvent</code>, <code>Ui</code> will call <code>handleChangeTheme</code> to handle the event, update the <code>MainWindow</code> accordingly and update its status bar.</p>
@@ -1101,7 +1101,7 @@ to update the <code>PersonListPanel</code> of the GUI being shown.</p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the sort operation works:
-As seen from the figure [Figure 5.2.2] below, when sort is typed into command line input, new <code>SortCommand</code> is created.</p>
+As seen in the figure [Figure 5.2.2] below, when sort is typed into command line input, new <code>SortCommand</code> is created.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2440,7 +2440,7 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-birthdays-command"><a class="link" href="#use-case-birthdays-command">B.7. Use case: Birthdays Command</a></h3>
+<h3 id="use-case-list-birthdays"><a class="link" href="#use-case-list-birthdays">B.7. Use case: List Birthdays</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2750,7 +2750,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-09 06:20:21 +00:00
+Last updated 2017-11-09 06:26:45 +00:00
 </div>
 </div>
 </body>

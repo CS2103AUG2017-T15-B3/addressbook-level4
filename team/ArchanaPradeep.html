@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3">
+<title>Archana Pradeep - Project Portfolio</title>
+<link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Archana Pradeep - Project Portfolio</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="project-the-myth-s-book"><a class="link" href="#project-the-myth-s-book">Project: The Myth&#8217;s Book</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Myth’s Book is an address book dedicated for university students to store useful information such as websites, phone numbers and emails of the people around them for personal usage. The application helps students to keep track of birthday dates and upcoming events through a calendar and facilitate convenient access to their friend’s website and even Google Maps location through the in-built browser panel in the application. Furthermore, there are many useful tools such as finding group tags (e.g. friends, neighbours) and switching themes for better user preference and usability.</p>
+</div>
+<div class="paragraph">
+<p>The Myth’s Book is a Command Line Input based software which helps caters to students who are efficient and comfortable in typing out command line inputs to manipulate with information of their contacts in the address book. The Myth’s Book is a software application that is coded in Java programming language.
+<strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/main/archthegit.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/test/archthegit.md">Test code</a>][<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/unused/archthegit.md">Unused code</a>]</p>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-modified-find-command-v1-0"><a class="link" href="#enhancement-added-modified-find-command-v1-0">Enhancement Added: Modified find Command (V1.0)</a></h3>
+<div class="sect3">
+<h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">Locating persons by name: <code>find</code></a></h3>
+<div class="paragraph">
+<p>This command helps you to find persons whose names contain any of the given keywords.<br>
+Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Partial words will also be matched. For eg: "Han" will be matched to "Hans".</p>
+</li>
+<li>
+<p>If search word is smaller than name, it has to be the first n character of the name.</p>
+</li>
+<li>
+<p>It cannot be the middle n or the last n characters of the name.</p>
+</li>
+<li>
+<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find John</code><br>
+If there was john` and <code>John Doe</code> in the person list,
+by typing this command, you will be able to find both <code>john</code> and <code>John Doe</code>.</p>
+</li>
+<li>
+<p><code>find Betsy Tim John</code><br>
+By typing this command, you will be able to find any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<div class="paragraph">
+<p>Modifying the find command was necessary as my teammates and I found it unfriendly that we could&#8217;nt search for a part of somebody&#8217;s name. Since we fit into the same category as our target users we thought the users would feel the same.</p>
+</div>
+<div class="paragraph">
+<p>I designed it so that the search only works if the substring is 2 characters or longer.As searching for one character might
+not filter out anybody in The Myth&#8217;s Book at all.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-mechanism"><a class="link" href="#find-mechanism">Find mechanism</a></h3>
+<div class="paragraph">
+<p>The find mechanism is facilitated by the <code>NameContainsKeyWordsPredicate</code> class which resides in the person class. It supports finding any person in the address book using their full name or a part of the name.</p>
+</div>
+<div class="paragraph">
+<p>However, if a user is searching by part of a name, the substring must be in the beginning of the first name or last name and it has to be at least two characters long.</p>
+</div>
+<div class="paragraph">
+<p>The <code>find</code> command is not an undoable command and therefore it inherits from <code>Command</code> rather than <code>UndoableCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>NameContainsKeyWordsPredicate</code> class has a test function that uses stream, a new feature of Java 8 to process data more efficiently than using loops. The <code>test()</code> returns true if either the full name(first name + last name) ignoring case or it contains a substring of the name ignoring case.</p>
+</div>
+<div class="paragraph">
+<p>The main logic in the <code>NameContainsKeyWordsPredicate</code> class comes from the <code>StringUtil</code> class that acts as a helper function for handling any operations related to strings.</p>
+</div>
+<div class="paragraph">
+<p>How the <code>containsPartofWord()</code> function works:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> containsPartOfWord(<span class="predefined-type">String</span> sentence, <span class="predefined-type">String</span> word) {
+    requireNonNull(sentence);
+    requireNonNull(word);
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The function takes in two string arguments, one being the name of the person and the other being the substring. The function first checks to see if either of these arguments are null using java.util.Objects.requireNonNull. If any of the arguments are null, it throws a NullPointerException.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> containsPartOfWord(<span class="predefined-type">String</span> sentence, <span class="predefined-type">String</span> word) {
+    ....
+    checkArgument(preppedWord.split(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s+</span><span class="delimiter">&quot;</span></span>).length == <span class="integer">1</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Word parameter should be a single word</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">String</span> preppedSentence = sentence;
+    <span class="predefined-type">String</span><span class="type">[]</span> wordsInPreppedSentence = preppedSentence.split(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s+</span><span class="delimiter">&quot;</span></span>);
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If both strings are valid, it then checks that the substring is only one word. The function then splits up the person’s name into first name and last name.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> containsPartOfWord(<span class="predefined-type">String</span> sentence, <span class="predefined-type">String</span> word) {
+    ....
+    if (preppedWord.length() &gt;= <span class="integer">2</span>) {
+        <span class="keyword">for</span> (<span class="predefined-type">String</span> wordInSentence : wordsInPreppedSentence) {
+            <span class="keyword">if</span> ((wordInSentence.toLowerCase().contains(preppedWord.toLowerCase()))
+                &amp;&amp; (wordInSentence.toLowerCase().startsWith(preppedWord.toLowerCase()))) {
+            <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+            }
+        }
+    ....</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The function first checks if the length of the substring is greater than, equal to 2. Using an enhanced for loop, the function iterates through the words in a person’s name and checks to see if any of them start with the substring ignoring cases.</p>
+</div>
+<div class="paragraph">
+<p>If yes, then the function returns true else it returns false.</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>containsPartOfWord</code><br>
+<strong>Alternative 1 (current choice):</strong> length&gt;=2<br>
+<strong>Pros:</strong> Making sure that not every person&#8217;s name comes up in find. For e.g: 'find a'<br>
+<strong>Cons:</strong> There might exist people whose first or last name is stored as a single character<br>
+<strong>Alternative 2:</strong> Allow any length of substrings<br>
+<strong>Pros:</strong> No exception cases<br>
+<strong>Cons:</strong> No purpose of using find as if you search for one character, all contacts might get filtered<br></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-birthday-field-v1-1"><a class="link" href="#enhancement-added-birthday-field-v1-1">Enhancement Added: Birthday Field (V1.1)</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-2"><a class="link" href="#external-behavior-2">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-persons-by-name-code-find-code-2"><a class="link" href="#locating-persons-by-name-code-find-code-2">Locating persons by name: <code>find</code></a></h3>
+<div class="paragraph">
+<p>This command helps you to find persons whose names contain any of the given keywords.<br>
+Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Partial words will also be matched. For eg: "Han" will be matched to "Hans".</p>
+</li>
+<li>
+<p>If search word is smaller than name, it has to be the first n character of the name.</p>
+</li>
+<li>
+<p>It cannot be the middle n or the last n characters of the name.</p>
+</li>
+<li>
+<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find John</code><br>
+If there was john` and <code>John Doe</code> in the person list,
+by typing this command, you will be able to find both <code>john</code> and <code>John Doe</code>.</p>
+</li>
+<li>
+<p><code>find Betsy Tim John</code><br>
+By typing this command, you will be able to find any person having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
+<div class="paragraph">
+<p>It was the first part of a two part modification. For university students, storing of birthdays would be a valuable addition. This would also help me implement reminders for birthdays in the later versions of the application.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-details-panel-v1-2"><a class="link" href="#enhancement-added-details-panel-v1-2">Enhancement Added: Details Panel (V1.2)</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-3"><a class="link" href="#external-behavior-3">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="details-panel"><a class="link" href="#details-panel">Details Panel</a></h3>
+<div class="paragraph">
+<p>This <code>Details Panel</code> is a graphical user interface that shows you all the <code>hidden</code> details of a person that is not shown in the person list.</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
+<div class="paragraph">
+<p>The team decided to reduce the amount of information shown on the person card as it seemed too cluttered
+==== Implementation</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-mechanism-2"><a class="link" href="#find-mechanism-2">Find mechanism</a></h3>
+<div class="paragraph">
+<p>The find mechanism is facilitated by the <code>NameContainsKeyWordsPredicate</code> class which resides in the person class. It supports finding any person in the address book using their full name or a part of the name.</p>
+</div>
+<div class="paragraph">
+<p>However, if a user is searching by part of a name, the substring must be in the beginning of the first name or last name and it has to be at least two characters long.</p>
+</div>
+<div class="paragraph">
+<p>The <code>find</code> command is not an undoable command and therefore it inherits from <code>Command</code> rather than <code>UndoableCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>NameContainsKeyWordsPredicate</code> class has a test function that uses stream, a new feature of Java 8 to process data more efficiently than using loops. The <code>test()</code> returns true if either the full name(first name + last name) ignoring case or it contains a substring of the name ignoring case.</p>
+</div>
+<div class="paragraph">
+<p>The main logic in the <code>NameContainsKeyWordsPredicate</code> class comes from the <code>StringUtil</code> class that acts as a helper function for handling any operations related to strings.</p>
+</div>
+<div class="paragraph">
+<p>How the <code>containsPartofWord()</code> function works:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> containsPartOfWord(<span class="predefined-type">String</span> sentence, <span class="predefined-type">String</span> word) {
+    requireNonNull(sentence);
+    requireNonNull(word);
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The function takes in two string arguments, one being the name of the person and the other being the substring. The function first checks to see if either of these arguments are null using java.util.Objects.requireNonNull. If any of the arguments are null, it throws a NullPointerException.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> containsPartOfWord(<span class="predefined-type">String</span> sentence, <span class="predefined-type">String</span> word) {
+    ....
+    checkArgument(preppedWord.split(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s+</span><span class="delimiter">&quot;</span></span>).length == <span class="integer">1</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">Word parameter should be a single word</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">String</span> preppedSentence = sentence;
+    <span class="predefined-type">String</span><span class="type">[]</span> wordsInPreppedSentence = preppedSentence.split(<span class="string"><span class="delimiter">&quot;</span><span class="char">\\</span><span class="content">s+</span><span class="delimiter">&quot;</span></span>);
+    ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If both strings are valid, it then checks that the substring is only one word. The function then splits up the person’s name into first name and last name.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> containsPartOfWord(<span class="predefined-type">String</span> sentence, <span class="predefined-type">String</span> word) {
+    ....
+    if (preppedWord.length() &gt;= <span class="integer">2</span>) {
+        <span class="keyword">for</span> (<span class="predefined-type">String</span> wordInSentence : wordsInPreppedSentence) {
+            <span class="keyword">if</span> ((wordInSentence.toLowerCase().contains(preppedWord.toLowerCase()))
+                &amp;&amp; (wordInSentence.toLowerCase().startsWith(preppedWord.toLowerCase()))) {
+            <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+            }
+        }
+    ....</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The function first checks if the length of the substring is greater than, equal to 2. Using an enhanced for loop, the function iterates through the words in a person’s name and checks to see if any of them start with the substring ignoring cases.</p>
+</div>
+<div class="paragraph">
+<p>If yes, then the function returns true else it returns false.</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>containsPartOfWord</code><br>
+<strong>Alternative 1 (current choice):</strong> length&gt;=2<br>
+<strong>Pros:</strong> Making sure that not every person&#8217;s name comes up in find. For e.g: 'find a'<br>
+<strong>Cons:</strong> There might exist people whose first or last name is stored as a single character<br>
+<strong>Alternative 2:</strong> Allow any length of substrings<br>
+<strong>Pros:</strong> No exception cases<br>
+<strong>Cons:</strong> No purpose of using find as if you search for one character, all contacts might get filtered<br></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-birthdays-command-v1-3"><a class="link" href="#enhancement-added-birthdays-command-v1-3">Enhancement Added: Birthdays Command (V1.3)</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-4"><a class="link" href="#external-behavior-4">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="checking-for-birthdays-code-birthdays-code"><a class="link" href="#checking-for-birthdays-code-birthdays-code">Checking for birthdays : <code>birthdays</code></a></h3>
+<div class="paragraph">
+<p>This command shows you a list of all the contacts who have their birthdays today.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>birthdays</code></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-4"><a class="link" href="#justification-4">Justification</a></h4>
+<div class="paragraph">
+<p>Made a birthday reminder so that university students can check if their friend&#8217;s have birthdays today. This is a rather useful feature for students as they usually celebrate birthdays.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="birthdays-mechanism"><a class="link" href="#birthdays-mechanism">Birthdays mechanism</a></h3>
+<div class="paragraph">
+<p>The Birthdays mechanism is facilitated by the <code>CheckIfBirthday</code> class which resides in the person class. It lists out all contacts that have their birthdays today.</p>
+</div>
+<div class="paragraph">
+<p>The <code>Birthdays</code> command is not an undoable command and thus inherits from <code>Command</code> rather than <code>UndoableCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>CheckIfBirthday</code> class checks if the birth month and day of a contact matches today. As the birthday field is a birthday object, it is converted to a string using the <code>toString()</code> method in the <code>Birthday</code> class and then parsed into a date object using <code>simpleDateFormat()</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="predefined-type">Date</span> date = <span class="keyword">new</span> <span class="predefined-type">SimpleDateFormat</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">dd/MM/yyyy</span><span class="delimiter">&quot;</span></span>).parse(birthday);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The date is then converted into a <code>Calendar</code> object for easier comparison. Then the Day and Month of today is compared with the day and month of a person&#8217;s birthday in the following way.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="keyword">return</span> (((cal.get(<span class="predefined-type">Calendar</span>.MONTH)) == <span class="predefined-type">Calendar</span>.getInstance().get(<span class="predefined-type">Calendar</span>.MONTH))
+                &amp;&amp; ((cal.get(<span class="predefined-type">Calendar</span>.DAY_OF_MONTH) == <span class="predefined-type">Calendar</span>.getInstance().get(<span class="predefined-type">Calendar</span>.DAY_OF_MONTH))));
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An overall view of birthdays command logic is shown in Figure 5.8.1</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BirthdaysMechanism.png" alt="BirthdaysMechanism" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.8.1 Birthdays Command Logic Sequence Diagram</p>
+</div>
+<div class="paragraph">
+<p>What the user finally sees is a list of people with their birthday today as shown in figure 5.8.2. This is because the <code>executeUndoableCommand()</code> which is overriden in the BirthdaysCommand class updates the <code>filteredPersonList</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult executeUndoableCommand() {
+        model.updateFilteredPersonList(check);
+        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(getBirthdayMessageSummary(model.getFilteredPersonList().size()));
+    }</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BirthdaysMechanism2.png" alt="BirthdaysMechanism2" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.8.2 What the user sees</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> UI of <code>BirthdaysCommand</code><br>
+<strong>Alternative 1 (current choice):</strong> Showing the persons as a list<br>
+<strong>Pros:</strong> g: Voluntary action. users can check birthday if they want to and won&#8217;t get confused even if there are multiple contacts with the same name as to whose birthday it is<br>
+<strong>Cons:</strong> Some users might want the birthdays to appear as a pop up<br>
+<strong>Alternative 2:</strong> Use a pop up which is triggered when the app is opened<br>
+<strong>Pros:</strong> Involuntary and less effort from the users' part<br>
+<strong>Cons:</strong> If pop up only shows a list of names, users might get confused as to who the person is if there are multiple persons with the same name.<br></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-add-command-code-remark-code"><a class="link" href="#enhancement-proposed-add-command-code-remark-code">Enhancement Proposed: Add command <code>remark</code></a></h3>
+<div class="paragraph">
+<p>{Explain similar to the Undo/Redo feature above.}</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Fixed bugs in the details panel ( Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/130" class="bare">https://github.com/CS2103AUG2017-T15-B3/main/pull/130</a>)</p>
+</li>
+<li>
+<p>Acceptance testing feedback given to <code>Team T09-B2</code> [<a href="https://github.com/CS2103AUG2017-T09-B2/main/issues?q=is%3Aissue+is%3Aclosed" class="bare">https://github.com/CS2103AUG2017-T09-B2/main/issues?q=is%3Aissue+is%3Aclosed</a> [Issues]]</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-11-09 06:26:45 +00:00
+</div>
+</div>
+</body>
+</html>
