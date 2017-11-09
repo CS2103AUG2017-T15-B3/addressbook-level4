@@ -5,27 +5,51 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<title>John Doe - Project Portfolio</title>
+<title>Darren Chin Jhun Pyng - Project Portfolio</title>
 <link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css">
 </head>
 <body class="article">
 <div id="header">
-<h1>John Doe - Project Portfolio</h1>
+<h1>Darren Chin Jhun Pyng - Project Portfolio</h1>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="project-addressbook-level-4"><a class="link" href="#project-addressbook-level-4">Project: AddressBook - Level 4</a></h2>
+<h2 id="purpose"><a class="link" href="#purpose">Purpose</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook - Level 4 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 6 kLoC.</p>
+<p>This project portfolio displays the contributions and enhancements made to the software, The Myth&#8217;s Book,
+along with its justifications. The portfolio will first introduce The Myth&#8217;s Book and subsequently talk
+about the enhancements and contributions made by Darren Chin.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-the-myth-s-book"><a class="link" href="#project-the-myth-s-book">Project: The Myth&#8217;s Book</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Myth&#8217;s Book is an address book dedicated for university students to store useful information such
+as websites, phone numbers and emails of the people around them for personal usage. The application helps students
+to keep track of birthday dates and upcoming events through a calendar and facilitate convenient access to their friend&#8217;s website
+and even Google Maps location through the in-built browser panel in the application. Furthermore, there are many
+useful tools such as finding group tags (e.g. friends, neighbours) and switching themes for better user preference and usability.</p>
 </div>
 <div class="paragraph">
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] {give links to collated code files}</p>
+<p>The Myth&#8217;s Book is a <code>Command Line Input</code> based software which helps caters to students who are efficient and comfortable
+in typing out command line inputs to manipulate with information of their contacts in the address book.
+The Myth&#8217;s Book is a software application that is coded in <code>Java</code> programming language.</p>
 </div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/main/DarrenCzen.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/test/DarrenCzen.md">Test code</a>]</p>
+</div>
+<hr>
 <div class="sect2">
-<h3 id="enhancement-added-undo-redo"><a class="link" href="#enhancement-added-undo-redo">Enhancement Added: Undo/Redo</a></h3>
+<h3 id="enhancement-added-sort-command-sort-names-alphabetically"><a class="link" href="#enhancement-added-sort-command-sort-names-alphabetically">Enhancement Added: Sort Command, Sort Names Alphabetically</a></h3>
+<div class="paragraph">
+<p>Code on GitHub:<br>
+Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/46">#46</a></p>
+</div>
 <div class="sect3">
 <h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
 <hr>
@@ -35,80 +59,10 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">Undoing previous command : <code>undo</code></a></h3>
+<h3 id="sorting-all-persons-code-sort-code"><a class="link" href="#sorting-all-persons-code-sort-code">Sorting all persons : <code>sort</code></a></h3>
 <div class="paragraph">
-<p>This command helps you to restore The Myth&#8217;s Book to the state before the previous <em>undoable</em> command was executed.<br>
-Format: <code>undo</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Undoable commands: those commands that modify The Myth&#8217;s Book&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete 1</code><br>
-<code>list</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
-</li>
-<li>
-<p><code>select 1</code><br>
-<code>list</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">Redoing the previously undone command : <code>redo</code></a></h3>
-<div class="paragraph">
-<p>This command helps you to reverse the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>delete 1</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
-</li>
-<li>
-<p><code>delete 1</code><br>
-<code>clear</code><br>
-<code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
-</li>
-</ul>
+<p>This command sorts all contacts stored in The Myth&#8217;s Book by their names alphabetically.<br>
+Format: <code>sort</code></p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -117,7 +71,9 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <div class="sect3">
 <h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
 <div class="paragraph">
-<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
+<p>The <code>Sort Command</code> enhances the organization of contact/person list of The Myth&#8217;s Book by sorting the contacts based
+on their names alphabetically. Therefore, this allows users to be able to view and look through the overall contacts list in
+an orderly manner whenever needed which attributes to the factor of user-friendliness and user-readability.</p>
 </div>
 </div>
 <div class="sect3">
@@ -129,198 +85,403 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="undo-redo-mechanism"><a class="link" href="#undo-redo-mechanism">Undo/Redo mechanism</a></h3>
+<h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">Sort mechanism</a></h3>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by an <code>UndoRedoStack</code>, which resides inside <code>LogicManager</code>. It supports undoing and redoing of commands that modifies the state of the address book (e.g. <code>add</code>, <code>edit</code>). Such commands will inherit from <code>UndoableCommand</code>.</p>
+<p>The sort mechanism sorts the names of people inside the <code>addressbook</code> of the 'ModelManager'.
+When the sort method is executed, it organizes the position of the people existing in the <code>addressbook</code>
+based on their names in alphabetical order. The sort mechanism touches all components of the software application
+but mainly involving the logic and model component.</p>
 </div>
 <div class="paragraph">
-<p><code>UndoRedoStack</code> only deals with <code>UndoableCommands</code>. Commands that cannot be undone will inherit from <code>Command</code> instead. The following diagram shows the inheritance diagram for commands:</p>
+<p>In the figure [Figure 5.2.1] below, the <code>SortCommand</code> inherits from <code>UndoableCommand</code>
+which is an extra layer between abstract <code>Command</code> class which belongs to the Logic Component.
+This allows the SortCommand to be undoable, where the previous state of the address book before sorting is saved.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/LogicCommandClassDiagram.png" alt="LogicCommandClassDiagram" width="800">
+<img src="../images/SortCommandLogicClassDiagram.PNG" alt="SortCommandLogicClassDiagram" width="800">
 </div>
 </div>
 <div class="paragraph">
-<p>As you can see from the diagram, <code>UndoableCommand</code> adds an extra layer between the abstract <code>Command</code> class and concrete commands that can be undone, such as the <code>DeleteCommand</code>. Note that extra tasks need to be done when executing a command in an <em>undoable</em> way, such as saving the state of the address book before execution. <code>UndoableCommand</code> contains the high-level algorithm for those extra tasks while the child classes implements the details of how to execute the specific command. Note that this technique of putting the high-level algorithm in the parent class and lower-level steps of the algorithm in child classes is also known as the <a href="https://www.tutorialspoint.com/design_pattern/template_pattern.htm">template pattern</a>.</p>
+<p>Figure 5.2.1 SortCommand Logic Class Diagram</p>
 </div>
 <div class="paragraph">
-<p>Commands that are not undoable are implemented this way:</p>
+<p>Suppose a user has an unorganized list of contacts and executes the <code>SortCommand</code> to organize his contacts.</p>
+</div>
+<div class="paragraph">
+<p>The execution of SortCommand is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will execute and create a new <code>SortCommand</code> so as to sort the address book.</p>
+</li>
+<li>
+<p>When <code>executeUndoableCommand()</code> of <code>SortCommand</code> is called, <code>model.sort()</code> in the method will be processed.</p>
+</li>
+<li>
+<p>The <code>internalList</code> of the address book is then accessed and sorted through a <code>lambda</code> function which
+compares the name of everyone and necessarily switches the position between contacts throughout the <code>internalList</code> by comparing names between person r1 and r2 sequentially.</p>
+</li>
+<li>
+<p>After <code>internalList</code> is sorted, function <code>updateFilterPersonList(PREDICATE_SHOW_ALL_PERSONS)</code> is called
+to update the list being filtered and also call an event <code>indicatedAddressBookChanged()</code>
+to update the <code>PersonListPanel</code> of the GUI being shown.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of <code>SortCommand.java</code> and its method <code>executeUndoableCommand</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">ListCommand</span> <span class="directive">extends</span> Command {
-    <span class="annotation">@Override</span>
-    <span class="directive">public</span> CommandResult execute() {
-        <span class="comment">// ... list logic ...</span>
-    }
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>With the extra layer, the commands that are undoable are implemented this way:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">abstract</span> <span class="type">class</span> <span class="class">UndoableCommand</span> <span class="directive">extends</span> Command {
-    <span class="annotation">@Override</span>
-    <span class="directive">public</span> CommandResult execute() {
-        <span class="comment">// ... undo logic ...</span>
-
-        executeUndoableCommand();
-    }
-}
-
-<span class="directive">public</span> <span class="type">class</span> <span class="class">DeleteCommand</span> <span class="directive">extends</span> UndoableCommand {
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SortCommand</span> <span class="directive">extends</span> UndoableCommand {
     <span class="annotation">@Override</span>
     <span class="directive">public</span> CommandResult executeUndoableCommand() {
-        <span class="comment">// ... delete logic ...</span>
+        model.sort();
+        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(MESSAGE_SUCCESS);
     }
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Suppose that the user has just launched the application. The <code>UndoRedoStack</code> will be empty at the beginning.</p>
+<p>Code of sort method inside <code>ModelManager.java</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Override</span>
+<span class="directive">public</span> <span class="directive">synchronized</span> <span class="type">void</span> sort() {
+    addressBook.sort();
+    updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+    indicateAddressBookChanged();
+}</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>The user executes a new <code>UndoableCommand</code>, <code>delete 5</code>, to delete the 5th person in the address book. The current state of the address book is saved before the <code>delete 5</code> command executes. The <code>delete 5</code> command will then be pushed onto the <code>undoStack</code> (the current state is saved together with the command).</p>
+<p>Code of sort method inside <code>UniquePersonList.java</code> using a lambda function to sort <code>internalList</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> sort() {
+    internalList.sort((r1, r2) -&gt; (
+            r1.getName().toString().compareTo(r2.getName().toString())));
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the sort operation works:
+As seen from the figure [Figure 5.2.2] below, when sort is typed into command line input, new <code>SortCommand</code> is created.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoStartingStackDiagram.png" alt="UndoRedoStartingStackDiagram" width="800">
+<img src="../images/SortCommandLogicSequenceDiagram.PNG" alt="SortCommandLogicSequenceDiagram" width="800">
 </div>
 </div>
 <div class="paragraph">
-<p>As the user continues to use the program, more commands are added into the <code>undoStack</code>. For example, the user may execute <code>add n/David &#8230;&#8203;</code> to add a new person.</p>
+<p>Figure 5.2.2 SortCommand Logic Sequence Diagram</p>
+</div>
+<div class="paragraph">
+<p>When <code>executeUndoableCommand</code> is called in SortCommand class, it will call the sort function in ModelManager.
+It will call the sort() function of its own class until it reaches InternalList.sort() where the sorting of
+contacts positions based on their names will be executed.
+Ultimately, achieving the final product of having a sorted addressbook being shown in the <code>PersonListPanel</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/UndoRedoNewCommand1StackDiagram.png" alt="UndoRedoNewCommand1StackDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not be pushed to the <code>UndoRedoStack</code> at all.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The user now decides that adding the person was a mistake, and decides to undo that action using <code>undo</code>.</p>
-</div>
-<div class="paragraph">
-<p>We will pop the most recent command out of the <code>undoStack</code> and push it back to the <code>redoStack</code>. We will restore the address book to the state before the <code>add</code> command executed.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoExecuteUndoStackDiagram.png" alt="UndoRedoExecuteUndoStackDiagram" width="800">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>undoStack</code> is empty, then there are no other commands left to be undone, and an <code>Exception</code> will be thrown when popping the <code>undoStack</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
+<img src="../images/SortCommandModelSequenceDiagram.PNG" alt="SortCommandModelSequenceDiagram" width="800">
 </div>
 </div>
 <div class="paragraph">
-<p>The redo does the exact opposite (pops from <code>redoStack</code>, push to <code>undoStack</code>, and restores the address book to the state after the command is executed).</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>redoStack</code> is empty, then there are no other commands left to be redone, and an <code>Exception</code> will be thrown when popping the <code>redoStack</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The user now decides to execute a new command, <code>clear</code>. As before, <code>clear</code> will be pushed into the <code>undoStack</code>. This time the <code>redoStack</code> is no longer empty. It will be purged as it no longer make sense to redo the <code>add n/David</code> command (this is the behavior that most modern desktop applications follow).</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand2StackDiagram.png" alt="UndoRedoNewCommand2StackDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>Commands that are not undoable are not added into the <code>undoStack</code>. For example, <code>list</code>, which inherits from <code>Command</code> rather than <code>UndoableCommand</code>, will not be added after execution:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoNewCommand3StackDiagram.png" alt="UndoRedoNewCommand3StackDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarize what happens inside the <code>UndoRedoStack</code> when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="200">
-</div>
+<p>Figure 5.2.3 SortCommand Model Sequence Diagram</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Implementation of <code>UndoableCommand</code><br>
-<strong>Alternative 1 (current choice):</strong> Add a new abstract method <code>executeUndoableCommand()</code><br>
-<strong>Pros:</strong> We will not lose any undone/redone functionality as it is now part of the default behaviour. Classes that deal with <code>Command</code> do not have to know that <code>executeUndoableCommand()</code> exist.<br>
-<strong>Cons:</strong> Hard for new developers to understand the template pattern.<br>
-<strong>Alternative 2:</strong> Just override <code>execute()</code><br>
-<strong>Pros:</strong> Does not involve the template pattern, easier for new developers to understand.<br>
-<strong>Cons:</strong> Classes that inherit from <code>UndoableCommand</code> must remember to call <code>super.execute()</code>, or lose the ability to undo/redo.</p>
+<p><strong>Aspect:</strong> Implementation of <code>SortCommand</code><br>
+<strong>Alternative 1 (current choice):</strong> extending to <code>UndoableCommand</code> class<br>
+<strong>Pros:</strong> Sort method call is able to be undone if needed as it now inherits from the Super Class.<br>
+<strong>Cons:</strong> Developers might need to understand how <code>UndoableCommand</code> works before implementation.<br>
+<strong>Alternative 2:</strong> Just extend to <code>Command</code> class<br>
+<strong>Pros:</strong> Does not need understanding of <code>UndoableCommand</code> class.<br>
+<strong>Cons:</strong> Unable to undo sort method and work from previous state of address book if user has called <code>SortCommand</code> to sort address book.</p>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Aspect:</strong> How undo &amp; redo executes<br>
-<strong>Alternative 1 (current choice):</strong> Saves the entire address book.<br>
-<strong>Pros:</strong> Easy to implement.<br>
-<strong>Cons:</strong> May have performance issues in terms of memory usage.<br>
-<strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.<br>
-<strong>Pros:</strong> Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).<br>
-<strong>Cons:</strong> We must ensure that the implementation of each individual command are correct.</p>
+<p><strong>Aspect:</strong> Implementation of how sort executes<br>
+<strong>Alternative 1 (current choice):</strong> Compare and sort the names of every individual alphabetically.<br>
+<strong>Pros:</strong> Easy to implement and uses less complexity.<br>
+<strong>Cons:</strong> Unable to sort based on user preferences like email, phone number.<br>
+<strong>Alternative 2:</strong> Include all types of sorting like sorting phone numbers and emails.<br>
+<strong>Pros:</strong> Might be more favourable for user who have specific needs to collate certain information such as
+ email or phone number about his contacts in an alphanumeric order.<br>
+<strong>Cons:</strong> Difficult to implement and wastes memory space as sorting might be unnecessary and complex for general users
+          since main goal is to keep address book organized.<br></p>
 </div>
 <hr>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Type of commands that can be undone/redone<br>
-<strong>Alternative 1 (current choice):</strong> Only include commands that modifies the address book (<code>add</code>, <code>clear</code>, <code>edit</code>).<br>
-<strong>Pros:</strong> We only revert changes that are hard to change back (the view can easily be re-modified as no data are lost).<br>
-<strong>Cons:</strong> User might think that undo also applies when the list is modified (undoing filtering for example), only to realize that it does not do that, after executing <code>undo</code>.<br>
-<strong>Alternative 2:</strong> Include all commands.<br>
-<strong>Pros:</strong> Might be more intuitive for the user.<br>
-<strong>Cons:</strong> User have no way of skipping such commands if he or she just want to reset the state of the address book and not the view.<br>
-<strong>Additional Info:</strong> See our discussion  <a href="https://github.com/se-edu/addressbook-level4/issues/390#issuecomment-298936672">here</a>.</p>
+<p><mark>End of Extract</mark></p>
 </div>
 <hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-access-command-accessing-a-website-of-a-contact"><a class="link" href="#enhancement-added-access-command-accessing-a-website-of-a-contact">Enhancement Added: Access Command, Accessing a website of a contact</a></h3>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Data structure to support the undo/redo commands<br>
-<strong>Alternative 1 (current choice):</strong> Use separate stack for undo and redo<br>
-<strong>Pros:</strong> Easy to understand for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.<br>
-<strong>Cons:</strong> Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>UndoRedoStack</code>.<br>
-<strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo<br>
-<strong>Pros:</strong> We do not need to maintain a separate stack, and just reuse what is already in the codebase.<br>
-<strong>Cons:</strong> Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.<br></p>
+<p>Code on GitHub:<br>
+Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/77">#77</a></p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-2"><a class="link" href="#external-behavior-2">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="accessing-a-person-s-website-code-access-code"><a class="link" href="#accessing-a-person-s-website-code-access-code">Accessing a person&#8217;s website : <code>access</code></a></h3>
+<div class="paragraph">
+<p>This command helps you to access a person&#8217;s website in The Myth&#8217;s Book.<br>
+Format: <code>access INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the most recent listing.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+<li>
+<p>This command selects the person and attains the website details of the person at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The person&#8217;s website is then inputted as a URL in the browser.</p>
+</li>
+<li>
+<p>The website listed must be a valid existing website listed.</p>
+</li>
+<li>
+<p>The website should be <code><a href="https://www.anyName.com/anyContent" class="bare">https://www.anyName.com/anyContent</a></code> where anyName can be alphanumeric and anyContent can be the exact url details of the website.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find Betsy</code><br>
+<code>access 1</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>find Betsy</code>, you will be able to see a generated list of persons having names <code>Betsy</code>.</p>
+</li>
+<li>
+<p>Subsequently, typing <code>access 1</code>, it will help you attain the website details of the 1st person in the generated list which is then loaded into the browser.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><code>list</code><br>
+<code>select 6</code><br>
+<code>access 6</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>list</code>, it lists down all the contacts.<br></p>
+</li>
+<li>
+<p>Subsequently, by typing <code>select 6</code>, it will select and show you information details of the 6th person in the most recent listing.<br></p>
+</li>
+<li>
+<p>Finally, by typing <code>access 6</code>, it allows you to access the website details of the 6th person which is loaded into the browser.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You should see the displayed result of <code>access 6</code> as seen in Figure 6.1.1 below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AccessCommandFinalResult.PNG" alt="AccessCommandFinalResult" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 6.1.1 <code>Access 6</code> Result for Access Command</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
+<div class="paragraph">
+<p>The <code>Access Command</code> allows users to be able to access the website of a contact through the in-built browser panel which
+helps to facilitate ease of access for users. The command also helps users to avoid opening other programs and avoid switching
+between programs so as to facilitate user-friendliness and create an <code>all-in-one</code> platform in The Myth&#8217;s Book.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="access-website-mechanism"><a class="link" href="#access-website-mechanism">Access Website mechanism</a></h3>
+<div class="paragraph">
+<p>The access website mechanism has an <code>AccessCommand</code> that allows user to access the website by stating the
+index of the desired contact in the contact list viewed.
+The implementation of the access website mechanism is mostly done in the <code>UI</code>, <code>Model</code>, and <code>Logic</code> component.
+The <code>AccessCommand</code> class inherits from the <code>Command</code> class.</p>
+</div>
+<div class="paragraph">
+<p>Suppose a user would like to access one of his contacts website that is listed in the <code>PersonListPanel</code> of the address book
+and executes the <code>AccessCommand</code> to access the website.</p>
+</div>
+<div class="paragraph">
+<p>The execution of AccessCommand is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will input <code>access index</code> where <code>index</code> refers to the index of the person listed in the <code>PersonListPanel</code> in GUI.</p>
+</li>
+<li>
+<p>Input of user will be parse as an argument through the AddressBookParser and AccessCommandParser to extract the index.</p>
+</li>
+<li>
+<p>A new <code>AccessCommand</code> with the index inputted will be created.</p>
+</li>
+<li>
+<p>The method <code>execute()</code> of the <code>AccessCommand</code> will then be processed,
+where the person of the website that the user wants to access will be obtained through the
+index of the <code>lastShownList</code> and stored into <code>person</code> variable which is of <code>ReadOnlyPerson</code> data-type.</p>
+</li>
+<li>
+<p>The <code>EventsCenter</code> will then post a new <code>AccessWebsiteRequestEvent</code> with parameter input of the <code>website</code> of the <code>person</code> variable.</p>
+</li>
+<li>
+<p>The <code>AccessWebsiteRequestEvent</code> event would then be handled by an event handler <code>handleAccessWebsiteEvent</code> in <code>BrowserPanel</code>.</p>
+</li>
+<li>
+<p>The event handler will help to load the website of the person through the browser panel based on the website inputted.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of <code>AccessCommand</code> and its method <code>execute()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">AccessCommand</span> <span class="directive">extends</span> Command {
+    <span class="directive">private</span> <span class="directive">final</span> Index targetIndex;
+
+    <span class="comment">// ... access logic ...</span>
+    <span class="directive">public</span> AccessCommand(Index targetIndex) {
+        <span class="local-variable">this</span>.targetIndex = targetIndex;
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult execute() <span class="directive">throws</span> CommandException {
+        <span class="predefined-type">List</span>&lt;ReadOnlyPerson&gt; lastShownList = model.getFilteredPersonList();
+
+        <span class="keyword">if</span> (targetIndex.getZeroBased() &gt;= lastShownList.size()) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(Messages.MESSAGE_INVALID_DISPLAYED_INDEX);
+        }
+
+        ReadOnlyPerson person = lastShownList.get(targetIndex.getZeroBased());
+        <span class="predefined-type">String</span> name = person.getName().toString();
+        <span class="predefined-type">String</span> website = person.getWebsite().toString();
+
+        <span class="keyword">if</span> (website.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">NIL</span><span class="delimiter">&quot;</span></span>)) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(Messages.MESSAGE_INVALID_WEBSITE);
+        }
+
+        EventsCenter.getInstance().post(<span class="keyword">new</span> AccessWebsiteRequestEvent(website));
+        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_ACCESS_PERSON_SUCCESS, targetIndex.getOneBased(), name));
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code of how accessing website event is handled in <code>BrowserPanel</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">BrowserPanel</span> <span class="directive">extends</span> UiPart&lt;<span class="predefined-type">Region</span>&gt; {
+    <span class="directive">public</span> <span class="type">void</span> handleWebsiteAccess(<span class="predefined-type">String</span> website) {
+        browserPanel.loadPage(website);
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> loadPage(<span class="predefined-type">String</span> url) {
+        Platform.runLater(() -&gt; browser.getEngine().load(url));
+    }
+
+    <span class="annotation">@Subscribe</span>
+    <span class="directive">private</span> <span class="type">void</span> handleAccessWebsiteEvent(AccessWebsiteRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        handleWebsiteAccess(event.website);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Through the sequence diagram, you can see how the code executes when a user
+inputs <code>access 1</code> into the command line.</p>
+</div>
+<div class="paragraph">
+<p>Sequence diagram for <code>Logic</code> Component for <code>AccessCommand</code> and how it is executed:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AccessCommandLogicSequenceDiagram.PNG" alt="AccessCommandLogicSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.6.1 Access Command Logic Sequence Diagram</p>
+</div>
+<div class="paragraph">
+<p>After creating a new <code>AccessCommand</code>, <code>LogicManager</code> will call execute on <code>AccessCommand</code>
+and this will result in the website of the person at the index inputted to be called through an event request and event handler.
+The website will then be loaded onto the browser of the <code>BrowserPanel</code> of the <code>MainWindow</code>.</p>
+</div>
+<div class="paragraph">
+<p>Sequence diagram for <code>execute()</code> method of <code>AccessCommand</code> and its event handling:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AccessCommandEventsSequenceDiagram.PNG" alt="AccessCommandEventsSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.6.2 Access Command Model/EventsCenter/UI Sequence Diagram</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> How accessing a website of a person executes<br>
+<strong>Alternative 1 (current choice):</strong> Create a new event request and event handler for AccessCommand.<br>
+<strong>Pros:</strong> Able to have more features like AccessWebsite and Select feature that is able to exist concurrently in the application.<br>
+<strong>Cons:</strong> Having the current select feature which is to search for names of contact of Google is quite unnecessary.<br>
+<strong>Alternative 2:</strong> Change the code of event request and event handler related to SelectCommand to allow users to access website of their contacts instead
+of creating a search on contacts name through the browser panel.<br>
+<strong>Pros:</strong> Select feature which seems unnecessary is replaced with a more useful feature of AccessWebsite.<br>
+<strong>Cons:</strong> Will not be able to replace the select feature anymore which might be important for other aspects such as creating a Person Card Viewer
+which is important for GUI enhancement.<br></p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -329,9 +490,497 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 </div>
 </div>
 <div class="sect2">
-<h3 id="enhancement-proposed-add-command-code-remark-code"><a class="link" href="#enhancement-proposed-add-command-code-remark-code">Enhancement Proposed: Add command <code>remark</code></a></h3>
+<h3 id="enhancement-added-location-command-locate-an-address-of-a-user"><a class="link" href="#enhancement-added-location-command-locate-an-address-of-a-user">Enhancement Added: Location Command, Locate an address of a user</a></h3>
 <div class="paragraph">
-<p>{Explain similar to the Undo/Redo feature above.}</p>
+<p>Code on GitHub:<br>
+Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/79">#79</a></p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-3"><a class="link" href="#external-behavior-3">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="accessing-a-person-s-location-code-locate-code"><a class="link" href="#accessing-a-person-s-location-code-locate-code">Accessing a person&#8217;s location : <code>locate</code></a></h3>
+<div class="paragraph">
+<p>This command helps you to access a person&#8217;s address on Google Maps Search in The Myth&#8217;s Book<br>
+Format: 'locate INDEX'</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the most recent listing.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+<li>
+<p>Selects the person and attains the address details of the person at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The person&#8217;s address is then used in a search function Using Google Maps Search.</p>
+</li>
+<li>
+<p>The address listed must be a valid address listed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find Betsy</code><br>
+<code>locate 1</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>find Betsy</code>, you will be able to see a generated list of persons having names <code>Betsy</code>.</p>
+</li>
+<li>
+<p>Subsequently, typing <code>locate 1</code>, it will help you attain the address details of the 1st person in
+the generated list which is then loaded into the browser with a Google Maps Search.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><code>list</code><br>
+<code>select 6</code><br>
+<code>locate 6</code><br></p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By typing <code>list</code>, it lists down all the contacts.<br></p>
+</li>
+<li>
+<p>Subsequently, by typing <code>select 6</code>, it will select and show you information details of the 6th person in the most recent listing.<br></p>
+</li>
+<li>
+<p>Finally, by typing <code>locate 6</code>, it allows you to access the address details of the 6th person which is loaded into the browser.<br></p>
+</li>
+<li>
+<p>You should see the displayed result of the person&#8217;s address in a Google Maps Search as seen in Figure 6.6.1 below.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LocationCommandFinalResult.PNG" alt="LocationCommandFinalResult" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 6.6.1 Location Command Result</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
+<div class="paragraph">
+<p>The <code>Location Command</code> allows users to be able to access the address of a contact through the in-built browser panel
+using Google Maps Search which helps to facilitate ease of access for users.
+The command also helps users to avoid opening other programs and avoid switching between programs so as to facilitate
+user-friendliness and create an <code>all-in-one</code> platform in The Myth&#8217;s Book.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="location-mechanism"><a class="link" href="#location-mechanism">Location mechanism</a></h3>
+<div class="paragraph">
+<p>The location mechanism has an <code>LocationCommand</code> that allows user to access the address through Google Maps Search
+by stating the index of the desired contact in the contact list viewed.
+The implementation of the location mechanism is mostly done in the <code>UI</code>, <code>Model</code>, and <code>Logic</code> component
+and is very similar to the access website mechanism in terms of implementation and sequential process.
+The <code>LocationCommand</code> class inherits from the <code>Command</code> class.</p>
+</div>
+<div class="paragraph">
+<p>Suppose a user would like to access one of his contacts address that is listed in the <code>PersonListPanel</code> of the address book
+and executes the <code>LocationCommand</code> to access the location using the address attained.</p>
+</div>
+<div class="paragraph">
+<p>The execution of LocationCommand is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will input <code>locate index</code> where <code>index</code> refers to the index of the person listed in the <code>PersonListPanel</code> in GUI.</p>
+</li>
+<li>
+<p>Input of user will be parse as an argument through the AddressBookParser and LocationCommandParser to extract the index.</p>
+</li>
+<li>
+<p>A new <code>LocationCommand</code> with the index inputted will be created.</p>
+</li>
+<li>
+<p>The method <code>execute()</code> of the <code>LocationCommand</code> will then be processed,
+where the person of the address that the user wants to find on Google Maps Search will be obtained through the
+index of the <code>lastShownList</code> and stored into <code>person</code> variable which is of <code>ReadOnlyPerson</code> data-type.</p>
+</li>
+<li>
+<p>The <code>EventsCenter</code> will then post a new <code>AccessLocationRequestEvent</code> with parameter input of the <code>address</code> of the <code>person</code> variable.</p>
+</li>
+<li>
+<p>The <code>AccessLocationRequestEvent</code> event would then be handled by an event handler <code>handleAccessLocationEvent</code> in <code>BrowserPanel</code>.</p>
+</li>
+<li>
+<p>The event handler will help to load the address of the person through Google Maps Search in the browser panel.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of <code>LocationCommand</code> and its method <code>execute()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">LocationCommand</span> <span class="directive">extends</span> Command {
+    <span class="directive">private</span> <span class="directive">final</span> Index targetIndex;
+
+    <span class="directive">public</span> LocationCommand(Index targetIndex) {
+        <span class="local-variable">this</span>.targetIndex = targetIndex;
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult execute() <span class="directive">throws</span> CommandException {
+        <span class="predefined-type">List</span>&lt;ReadOnlyPerson&gt; lastShownList = model.getFilteredPersonList();
+
+        <span class="keyword">if</span> (targetIndex.getZeroBased() &gt;= lastShownList.size()) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(Messages.MESSAGE_INVALID_DISPLAYED_INDEX);
+        }
+
+        ReadOnlyPerson person = lastShownList.get(targetIndex.getZeroBased());
+        <span class="predefined-type">String</span> name = person.getName().toString();
+        <span class="predefined-type">String</span> location = person.getAddress().toString();
+        <span class="keyword">if</span> (location.equals(<span class="string"><span class="delimiter">&quot;</span><span class="content">NIL</span><span class="delimiter">&quot;</span></span>)) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(Messages.MESSAGE_INVALID_LOCATION);
+        }
+
+        EventsCenter.getInstance().post(<span class="keyword">new</span> AccessLocationRequestEvent(location));
+        <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_LOCATE_PERSON_SUCCESS, targetIndex.getOneBased(), name));
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code of how accessing location event is handled in <code>BrowserPanel</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">BrowserPanel</span> <span class="directive">extends</span> UiPart&lt;<span class="predefined-type">Region</span>&gt; {
+    <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="predefined-type">String</span> GOOGLE_SEARCH_URL_PREFIX = <span class="string"><span class="delimiter">&quot;</span><span class="content">https://www.google.com.sg/maps?safe=off&amp;q=</span><span class="delimiter">&quot;</span></span>;
+    <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="predefined-type">String</span> GOOGLE_SEARCH_URL_SUFFIX = <span class="string"><span class="delimiter">&quot;</span><span class="content">&amp;cad=h</span><span class="delimiter">&quot;</span></span>;
+
+    <span class="directive">private</span> <span class="type">void</span> loadPersonLocation(<span class="predefined-type">String</span> location) {
+        loadPage(GOOGLE_SEARCH_URL_PREFIX + location.replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">+</span><span class="delimiter">&quot;</span></span>)
+                + GOOGLE_SEARCH_URL_SUFFIX);
+    }
+
+    <span class="directive">public</span> <span class="type">void</span> loadPage(<span class="predefined-type">String</span> url) {
+        Platform.runLater(() -&gt; browser.getEngine().load(url));
+    }
+
+    <span class="annotation">@Subscribe</span>
+    <span class="directive">private</span> <span class="type">void</span> handleAccessLocationEvent(AccessLocationRequestEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        loadPersonLocation(event.location);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Through the sequence diagram, you can see how the code executes when a user
+inputs <code>locate 1</code> into the command line.</p>
+</div>
+<div class="paragraph">
+<p>Sequence diagram for <code>Logic</code> Component for <code>LocationCommand</code> and how it is executed:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LocationCommandLogicSequenceDiagram.png" alt="LocationCommandLogicSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.7.1 Location Command Logic Sequence Diagram</p>
+</div>
+<div class="paragraph">
+<p>After creating a new <code>LocationCommand</code>, <code>LogicManager</code> will call execute on <code>LocationCommand</code>
+and this will result in the address of the person at the index inputted to be called through an event request and event handler.
+The address will then be loaded onto Google Maps Search of the browser of the <code>MainWindow</code>.</p>
+</div>
+<div class="paragraph">
+<p>Sequence diagram for <code>execute()</code> method of <code>LocationCommand</code> and its event handling:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/LocationCommandEventsSequenceDiagram.png" alt="LocationCommandEventsSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.7.2 Access Command Model/EventsCenter/UI Sequence Diagram</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> How accessing a location of a person executes<br>
+<strong>Alternative 1 (current choice):</strong> Create a new event request and event handler for LocationCommand.<br>
+<strong>Pros:</strong> Able to have more features like Location, AccessWebsite and Select feature that is able to exist concurrently in the application.<br>
+<strong>Cons:</strong> Having the current select feature which is to search for names of contact of Google is quite unnecessary.<br>
+<strong>Alternative 2:</strong> Change the code of event request and event handler related to SelectCommand to allow users to access the address through Google Maps Search instead
+of processing a search on contact&#8217;s name through the google search using browser.<br>
+<strong>Pros:</strong> Select feature which seems unnecessary is replaced with a more useful feature of AccessWebsite.<br>
+<strong>Cons:</strong> Will not be able to replace the select feature anymore which might be important for other aspects such as creating a PersonCard Viewer
+which is important for GUI enhancement.<br></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-add-command-optional-fields"><a class="link" href="#enhancement-add-command-optional-fields">Enhancement: Add Command, Optional fields</a></h3>
+<div class="paragraph">
+<p>Code on GitHub:<br>
+Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/99">#99</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/96">#96</a></p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-4"><a class="link" href="#external-behavior-4">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">Adding a person: <code>add</code></a></h3>
+<div class="paragraph">
+<p>The <code>add</code> command helps you to add a person to The Myth&#8217;s Book.<br>
+You should look at the prefixes section, tips section and note section to
+know more on the format of adding a contact.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL [w/WEBSITE] [a/ADDRESS] [h/HOME_NUMBER] [se/SCHOOL_EMAIL] [b/BIRTHDAY] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Prefixes and its meaning:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 40%;">
+<colgroup>
+<col style="width: 28%;">
+<col style="width: 21%;">
+<col style="width: 7%;">
+<col style="width: 42%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compulsory Prefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meaning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional Prefix</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meaning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">phone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>w</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">website</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>e</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>h</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">home number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>b</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">birthday</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>se</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">school email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can follow the examples below to guide you on how to add an individual.</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/John Doe p/98765432 h/65812321 e/johnd@example.com se/john@u.nus.edu w/https://www.facebook.com/johnDoe a/John street, block 123, #01-01 b/12/11/1972</code></p>
+</li>
+<li>
+<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com p/98123414 h/65132100 se/betsy@u.nus.edu w/https://www.facebook.com/betsyCrowe a/Newgate Prison p/1234567 b/02/03/2000 t/criminal</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of adding an individual that excludes the Birthday, School Email, and Home Number field:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/Adam Bait t/friend e/adambait@example.com p/98123414 w/https://www.facebook.com/adamBait a/18 Taiseng p/1234567</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A tag is used to group your contacts into categories such as <code>friends</code>,<code>colleagues</code>.<br>
+Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John t/friend</code> or as <code>n/John</code>.<br>
+A person can have any number of tags (including 0).<br>
+Website, address, home number, school email, and birthday are optional fields.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Website should follow this format <code><a href="https://www.anyName.com/anyContent" class="bare">https://www.anyName.com/anyContent</a></code> where both <code>anyName</code> and <code>anyContent</code> can be alphanumeric.<br>
+You must have <code><a href="https://www" class="bare">https://www</a>.</code> and a domain name like <code>.com</code> or <code>.net</code> in the inputted website or it will result in inputted format error.<br>
+Birthday should be in proper format of "dd/mm/yyyy" where all numbers inputted for birthday are integers.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-4"><a class="link" href="#justification-4">Justification</a></h4>
+<div class="paragraph">
+<p>The implementation of optional fields when adding a contact allows users to be able to add contacts with ease
+as it is not realistically possible for users to attain every information of a contact when adding a contact.
+The enhancement also helps to facilitate user-friendliness in using The Myth&#8217;s Book.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-website-field-for-person-class"><a class="link" href="#enhancement-website-field-for-person-class">Enhancement: Website field for Person Class</a></h3>
+<div class="paragraph">
+<p>Code on GitHub:<br>
+Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/57">#57</a></p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-5"><a class="link" href="#external-behavior-5">External behavior</a></h4>
+<hr>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="justification-5"><a class="link" href="#justification-5">Justification</a></h4>
+<div class="paragraph">
+<p>The implementation of website field for a contact allows users to carry out activities
+of university students such as browsing a person&#8217;s social network website in The Myth&#8217;s Book.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-allow-inputted-names-to-become-capitalized-fully"><a class="link" href="#enhancement-allow-inputted-names-to-become-capitalized-fully">Enhancement: Allow inputted names to become capitalized fully</a></h3>
+<div class="paragraph">
+<p>Code on GitHub:<br>
+Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/123/commits/cf57e5e78374ec3ee69125e8342ed27c9efa06da">#123</a></p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-6"><a class="link" href="#external-behavior-6">External behavior</a></h4>
+<hr>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="justification-6"><a class="link" href="#justification-6">Justification</a></h4>
+<div class="paragraph">
+<p>The implementation of capitalizing names fully for a contact being added allows users to
+be able to view a sorted person list in a more orderly manner(alphabetically and lexicographically)
+in The Myth&#8217;s Book.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-alias-for-basic-commands"><a class="link" href="#enhancement-alias-for-basic-commands">Enhancement: Alias for basic commands</a></h3>
+<div class="paragraph">
+<p>Code on GitHub:<br>
+Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/34">#34</a></p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-7"><a class="link" href="#external-behavior-7">External behavior</a></h4>
+<hr>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="justification-7"><a class="link" href="#justification-7">Justification</a></h4>
+<div class="paragraph">
+<p>The implementation of website field for a contact allows users to carry out activities
+of university students such as browsing a person&#8217;s social network website in The Myth&#8217;s Book.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-toggling-of-person-list-and-events-list"><a class="link" href="#enhancement-proposed-toggling-of-person-list-and-events-list">Enhancement proposed: Toggling of Person List and Events List</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-8"><a class="link" href="#external-behavior-8">External behavior</a></h4>
+<hr>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="justification-8"><a class="link" href="#justification-8">Justification</a></h4>
+
 </div>
 </div>
 <div class="sect2">
@@ -339,28 +988,58 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>Wrote introduction and about of The Myth&#8217;s Book for User Guide and Developer Guide. (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/91">#91</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Change structure of software&#8217;s user guide and updated preface of most sections in user guide. (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/123">#123</a>)</p>
+</li>
+<li>
+<p>Added prefix table for Add Command in user guide. (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/123">#123</a>)</p>
+</li>
+<li>
+<p>Updated software&#8217;s user guide to be more user friendly and user focused. (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/134">#134</a>)</p>
+</li>
+<li>
+<p>Updated software&#8217;s developer guide to showcase more user stories. (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/35">#35</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/53">#53</a>)</p>
+</li>
+<li>
+<p>Wrote additional tests to test hashcode of person&#8217;s attributes to increase test coverage (Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/96">#96</a>)</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">Project: PowerPointLabs</a></h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="contribution-to-acceptance-testing-hitmeup-cs2103aug2017-w14-b3"><a class="link" href="#contribution-to-acceptance-testing-hitmeup-cs2103aug2017-w14-b3">Contribution to Acceptance Testing: HitMeUp (CS2103AUG2017-W14-B3)</a></h4>
 <div class="paragraph">
-<p>{Optionally (not graded), you may include other projects in your portfolio.}</p>
+<p><strong>Suggestion/Bug Finding contributed</strong>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Provided suggestion for sort command to be non case-sensitive.
+(Issue #114 - <a href="https://github.com/CS2103AUG2017-W14-B3/main/issues/114">Suggestion - sort</a>)</p>
+</li>
+<li>
+<p>Provided suggestion for select command to show a user&#8217;s twitter/instagram instead of google search.
+(Issue #109 - <a href="https://github.com/CS2103AUG2017-W14-B3/main/issues/109">Suggestion for select function</a>)</p>
+</li>
+<li>
+<p>Provided suggestion for user guide to show better user guidance for email command.
+(Issue #106 - <a href="https://github.com/CS2103AUG2017-W14-B3/main/issues/106">Suggestion - user guide for email function </a>)</p>
+</li>
+<li>
+<p>Provided suggestion/bug fix for birthday inputted to account for leap year so that all contacts can have their birthday properly accounted for.
+(Issue #105 - <a href="https://github.com/CS2103AUG2017-W14-B3/main/issues/105">Bug for Birthday</a>)</p>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-09 06:18:21 +00:00
+Last updated 2017-11-09 06:19:19 +00:00
 </div>
 </div>
 </body>
