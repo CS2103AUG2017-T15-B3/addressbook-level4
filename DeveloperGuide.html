@@ -55,8 +55,9 @@
 <li><a href="#find-mechanism">5.7. Find mechanism</a></li>
 <li><a href="#birthdays-mechanism">5.8. Birthdays mechanism</a></li>
 <li><a href="#calendar-mechanism">5.9. Calendar mechanism</a></li>
-<li><a href="#logging">5.10. Logging</a></li>
-<li><a href="#configuration">5.11. Configuration</a></li>
+<li><a href="#details-panel-mechanism">5.10. Details Panel Mechanism</a></li>
+<li><a href="#logging">5.11. Logging</a></li>
+<li><a href="#configuration">5.12. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">6. Documentation</a>
@@ -1555,7 +1556,7 @@ which is important for GUI enhancement.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/BirthdaysMechanism.png" alt="BirthdaysMechanism" width="800">
+<img src="images/BirthdayMechanism.png" alt="BirthdayMechanism" width="800">
 </div>
 </div>
 <div class="paragraph">
@@ -1585,11 +1586,11 @@ which is important for GUI enhancement.<br></p>
 <h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">5.8.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> UI of <code>BirthdaysCommand</code><br>
-<strong>Alternative 1 (current choice):</strong> Showing the persons as a list<br>
-<strong>Pros:</strong> g: Voluntary action. users can check birthday if they want to and won&#8217;t get confused even if there are multiple contacts with the same name as to whose birthday it is<br>
-<strong>Cons:</strong> Some users might want the birthdays to appear as a pop up<br>
-<strong>Alternative 2:</strong> Use a pop up which is triggered when the app is opened<br>
-<strong>Pros:</strong> Involuntary and less effort from the users' part<br>
+<strong>Alternative 1 (current choice):</strong> Showing the persons as a list.<br>
+<strong>Pros:</strong> g: Voluntary action. users can check birthday if they want to and won&#8217;t get confused even if there are multiple contacts with the same name as to whose birthday it is.<br>
+<strong>Cons:</strong> Some users might want the birthdays to appear as a pop up.<br>
+<strong>Alternative 2:</strong> Use a pop up which is triggered when the app is opened.<br>
+<strong>Pros:</strong> Involuntary and less effort from the users' part.<br>
 <strong>Cons:</strong> If pop up only shows a list of names, users might get confused as to who the person is if there are multiple persons with the same name.<br></p>
 </div>
 </div>
@@ -1607,7 +1608,58 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">5.10. Logging</a></h3>
+<h3 id="details-panel-mechanism"><a class="link" href="#details-panel-mechanism">5.10. Details Panel Mechanism</a></h3>
+<div class="paragraph">
+<p>The details panel is used to show all the information regarding a person as compared to the person card which shows only a person&#8217;s name, tags, phone number and email id.</p>
+</div>
+<div class="paragraph">
+<p>The details panel can be accessed by using the <code>select</code> command or by directly clicking on the peron card in the ui.</p>
+</div>
+<div class="paragraph">
+<p>The details panel is directly accessed by <code>MainWindow</code> class. The <code>details panel</code> class extends from <code>UiPart&lt;Region&gt;</code> and calls the super class constructor to use the FXML file.</p>
+</div>
+<div class="paragraph">
+<p>The details panel also calls the <code>loadBlankPage()</code> method in its constructor so that the user does not see anything on the details panel when the application is first opened.</p>
+</div>
+<div class="paragraph">
+<p>The <code>loadPersonInfo()</code> method is called from  two event handlers <code>handlePersonPanelSelectionChangedEvent()</code> and <code>handlePersonSelectionChangedEvent()</code> as shown in the code snippet below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"> <span class="annotation">@Subscribe</span>
+    <span class="directive">private</span> <span class="type">void</span> handlePersonPanelSelectionChangedEvent(PersonPanelSelectionChangedEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        loadPersonInfo(event.getNewSelection().person);
+    }
+
+    <span class="annotation">@Subscribe</span>
+    <span class="directive">private</span> <span class="type">void</span> handlePersonSelectionChangedEvent(PersonSelectionChangedEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        loadPersonInfo(event.getNewSelection());
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>handlePersonPanelSelectionChangedEvent</code> is used to load a person&#8217;s details only when a person card has been selected and a personPanelSelectionChangedEvent is raised. The PersonSelectionchangedEvent is raised when the person&#8217;s details are updated using the <code>edit</code> command.</p>
+</div>
+<div class="paragraph">
+<p>The <code>loadPersonInfo</code> is facilitated by the <code>bindListeners()</code> method that "listens" for a change in any of the fields of the person.</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">5.10.1. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Creating the details panel when there is a person card.<br>
+<strong>Alternative 1 (current choice):</strong> details panel
+<strong>Pros:</strong> g: Offers more abstraction to the user as they only see necessary information on the person card and the rest is on the details panel.<br>
+<strong>Cons:</strong> Some users might find it a hassle to access the details panel to see more information.<br>
+<strong>Alternative 2:</strong> All the information on the person card.<br>
+<strong>Pros:</strong> Users will have all the information in one place.<br>
+<strong>Cons:</strong> Some fields are optional so the person card will look confusing to a new user if they see that some person cards have more information on them than the others.<br></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">5.11. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -1645,7 +1697,7 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="configuration"><a class="link" href="#configuration">5.11. Configuration</a></h3>
+<h3 id="configuration"><a class="link" href="#configuration">5.12. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2755,7 +2807,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-10 08:02:45 +00:00
+Last updated 2017-11-10 14:59:32 +00:00
 </div>
 </div>
 </body>
