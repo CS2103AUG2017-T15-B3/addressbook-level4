@@ -27,6 +27,14 @@
 <div class="paragraph">
 <p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/main/archthegit.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/test/archthegit.md">Test code</a>][<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/unused/archthegit.md">Unused code</a>]</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="purpose-of-project-portfolio"><a class="link" href="#purpose-of-project-portfolio">Purpose of Project Portfolio</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The purpose of this project portfolio is to showcase my contribution to the Myth&#8217;s Book, A project for the introductory Software Engineering module (CS2103T) at the National University of Singapore. It highlights some of the key features I implemented during the course of this module and the technical details behind how these features were implemented. It also demonstrates my ability to work with a large code base (approx. 8KLoC)</p>
+</div>
 <div class="sect2">
 <h3 id="enhancement-added-modified-find-command-v1-0"><a class="link" href="#enhancement-added-modified-find-command-v1-0">Enhancement Added: Modified Find Command (V1.0)</a></h3>
 <div class="sect3">
@@ -73,6 +81,17 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 </div>
 <div class="paragraph">
+<p>If you followed the command format, you should see a list similar to the Figure 5.7.1 shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Find.png" alt="Find" width="400">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.16.1</p>
+</div>
+<div class="paragraph">
 <p>Examples:</p>
 </div>
 <div class="ulist">
@@ -95,11 +114,7 @@ By typing this command, you will be able to find any person having names <code>B
 <div class="sect3">
 <h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
 <div class="paragraph">
-<p>Modifying the find command was necessary as my teammates and I found it unfriendly that we could&#8217;nt search for a part of somebody&#8217;s name. Since we fit into the same category as our target users we thought the users would feel the same.</p>
-</div>
-<div class="paragraph">
-<p>I designed it so that the search only works if the substring is 2 characters or longer.As searching for one character might
-not filter out anybody in The Myth&#8217;s Book at all.</p>
+<p>Modifying the find command was necessary as my teammates and I found it unfriendly that we could&#8217;nt search for a part of somebody&#8217;s name. Since we fit into the same category as our target users we thought the users would feel the same. I designed it so that the search only works if the substring is 2 characters or longer.As searching for one character might not filter out anybody in The Myth&#8217;s Book at all.</p>
 </div>
 </div>
 <div class="sect3">
@@ -198,7 +213,7 @@ not filter out anybody in The Myth&#8217;s Book at all.</p>
 <div class="sect3">
 <h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
 <div class="paragraph">
-<p>It was the first part of a two part modification. For university students, storing of birthdays would be a valuable addition. This would also help me implement reminders for birthdays in the later versions of the application.</p>
+<p>It was the first of a two part modification. For university students, storing of birthdays would be a valuable addition as their social life consists of meeting up for friends' birthdays and so on. Additionally,This would also help me implement reminders for birthdays in the later version of the application.</p>
 </div>
 <hr>
 </div>
@@ -216,7 +231,15 @@ not filter out anybody in The Myth&#8217;s Book at all.</p>
 <div class="sect2">
 <h3 id="details-panel"><a class="link" href="#details-panel">Details Panel</a></h3>
 <div class="paragraph">
-<p>This <code>Details Panel</code> is a graphical user interface that shows you all the <code>hidden</code> details of a person that is not shown in the person list.</p>
+<p>This <code>Details Panel</code> is a graphical user interface that shows you all the <code>hidden</code> details of a person that is not shown in the person list. If a person card is clicked on or the select command is used, you should see the details of the person as shown below in Figure 7.1.1 .</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DetailsPanel.png" alt="DetailsPanel" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 7.1.1</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -225,9 +248,12 @@ not filter out anybody in The Myth&#8217;s Book at all.</p>
 <div class="sect3">
 <h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
 <div class="paragraph">
-<p>The team decided to reduce the amount of information shown on the person card as it seemed too cluttered
-==== Implementation</p>
+<p>Since The Myth&#8217;s Book has 9 fields, putting all that information on the person card would not only make it messy but also be unfriendly for the user as they have to then search for the information. Hence I decided to implement the details panel while only showing name, tags, email and phone number on the person card.</p>
 </div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
 <hr>
 <div class="paragraph">
 <p><mark>Start of Extract [from: Developer Guide]</mark></p>
@@ -308,17 +334,29 @@ not filter out anybody in The Myth&#8217;s Book at all.</p>
 <p>Format: <code>birthdays</code></p>
 </div>
 <div class="paragraph">
+<p>After typing in the command, you should see a list similar to Figure 5.16.1 shown below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BirthdaysMechanism2.png" alt="BirthdaysMechanism2" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.16.1</p>
+</div>
+<div class="paragraph">
 <p><mark>End of Extract</mark></p>
 </div>
 <hr>
 <div class="sect3">
 <h4 id="justification-4"><a class="link" href="#justification-4">Justification</a></h4>
 <div class="paragraph">
-<p>Made a birthday reminder so that university students can check if their friend&#8217;s have birthdays today. This is a rather useful feature for students as they usually celebrate birthdays.</p>
+<p>It happens that students have a lot of friends and cannot always keep track of which of their friends have a birthday. A large part of a university student&#8217;s social scene revolves around meeting their friends and attending parties. Birthdays are usually a big reason for these meet ups between friends. Therefore, I think the reminders feature would be a valuable addition to The Myth&#8217;s Book.</p>
 </div>
+<hr>
 </div>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
 <hr>
 <div class="paragraph">
 <p><mark>Start of Extract [from: Developer Guide]</mark></p>
@@ -374,14 +412,6 @@ not filter out anybody in The Myth&#8217;s Book at all.</p>
     }</code></pre>
 </div>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/BirthdaysMechanism2.png" alt="BirthdaysMechanism2" width="200">
-</div>
-</div>
-<div class="paragraph">
-<p>Figure 5.8.2 What the user sees</p>
-</div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
 <div class="paragraph">
@@ -402,7 +432,7 @@ not filter out anybody in The Myth&#8217;s Book at all.</p>
 <div class="sect2">
 <h3 id="enhancement-proposed-task-manager"><a class="link" href="#enhancement-proposed-task-manager">Enhancement Proposed: Task Manager</a></h3>
 <div class="paragraph">
-<p>A to-do list to remind university students when their assignment or submissions are due.</p>
+<p>A to-do list to remind university students when their assignment or submissions are due. This facilitates our purpose to reduce multi-tasking as much as possible as now even the tasks they have to do is in one application.</p>
 </div>
 </div>
 <div class="sect2">
@@ -410,7 +440,7 @@ not filter out anybody in The Myth&#8217;s Book at all.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Fixed bugs in the details panel ( Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/130" class="bare">https://github.com/CS2103AUG2017-T15-B3/main/pull/130</a>)</p>
+<p>Fixed bugs in the details panel [Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/130">pull request</a>]</p>
 </li>
 <li>
 <p>Acceptance testing feedback given to <code>Team T09-B2</code> [<a href="https://github.com/CS2103AUG2017-T09-B2/main/issues?q=is%3Aissue+is%3Aclosed">Issues</a>]</p>
@@ -426,7 +456,7 @@ not filter out anybody in The Myth&#8217;s Book at all.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-10 14:59:32 +00:00
+Last updated 2017-11-11 14:32:52 +00:00
 </div>
 </div>
 </body>
