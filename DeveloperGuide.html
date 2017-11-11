@@ -54,10 +54,12 @@
 <li><a href="#location-mechanism">5.6. Location mechanism</a></li>
 <li><a href="#find-mechanism">5.7. Find mechanism</a></li>
 <li><a href="#birthdays-mechanism">5.8. Birthdays mechanism</a></li>
-<li><a href="#calendar-mechanism">5.9. Calendar mechanism</a></li>
-<li><a href="#details-panel-mechanism">5.10. Details Panel Mechanism</a></li>
-<li><a href="#logging">5.11. Logging</a></li>
-<li><a href="#configuration">5.12. Configuration</a></li>
+<li><a href="#mode-switching-mechanism">5.9. Mode Switching mechanism</a></li>
+<li><a href="#optional-person-fields-mechanism">5.10. Optional Person Fields mechanism</a></li>
+<li><a href="#calendar-mechanism">5.11. Calendar mechanism</a></li>
+<li><a href="#details-panel-mechanism">5.12. Details Panel Mechanism</a></li>
+<li><a href="#logging">5.13. Logging</a></li>
+<li><a href="#configuration">5.14. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">6. Documentation</a>
@@ -124,15 +126,18 @@ The Myth&#8217;s Book is a software application that is coded in <code>Java</cod
 <h2 id="about"><a class="link" href="#about">2. About</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This developer guide will teach you how to set up the application software on IntelliJ IDEA and
-allow you to understand the process, features and structure of the application software to help
-you become a more knowledgeable contributor towards debugging, updating and improving The Myth&#8217;s Book.</p>
+<p>This developer guide will guide you on how to set up the application software on IntelliJ IDEA and
+allow you to understand more about the process, features and structure of the application software
+as you are updating, improving and debugging The Myth&#8217;s Book.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="setting-up"><a class="link" href="#setting-up">3. Setting up</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section guides you on how to set up The Myth&#8217;s Book on IntelliJ IDEA.</p>
+</div>
 <div class="sect2">
 <h3 id="prerequisites"><a class="link" href="#prerequisites">3.1. Prerequisites</a></h3>
 <div class="olist arabic">
@@ -291,17 +296,7 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="sect3">
 <h4 id="getting-started-with-coding"><a class="link" href="#getting-started-with-coding">3.4.4. Getting started with coding</a></h4>
 <div class="paragraph">
-<p>When you are ready to start coding,</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Get some sense of the overall design by reading the <a href="#architecture">Architecture</a> section.</p>
-</li>
-<li>
-<p>Take a look at the section <a href="#suggested-programming-tasks-to-get-started">Suggested Programming Tasks to Get Started</a>.</p>
-</li>
-</ol>
+<p>Before you start coding, it is advisable that you should read and recognise the overall design by reading the <a href="#architecture">Architecture</a> section.</p>
 </div>
 <div class="paragraph">
 <p><a href="#the-myths-book---developer-guide">Back To Top</a></p>
@@ -313,18 +308,24 @@ Having both Travis and AppVeyor ensures your App works on both Unix-based platfo
 <div class="sect1">
 <h2 id="design"><a class="link" href="#design">4. Design</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This section enables you to understand the structure of the application software and its components.</p>
+</div>
 <div class="sect2">
 <h3 id="architecture"><a class="link" href="#architecture">4.1. Architecture</a></h3>
+<div class="paragraph">
+<p>This section enables you to understand the overall architecture of the application software.</p>
+</div>
+<div class="paragraph">
+<p>The <strong><em>Architecture Diagram</em></strong> given below explains the high-level design of the App. Given below is a quick overview of each component.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/Architecture.png" alt="Architecture" width="600">
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.1.1 : Architecture Diagram</em></p>
-</div>
-<div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+<p><em>Figure 4.1.1 : Architecture Diagram</em></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -339,20 +340,26 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p>In the <code>Main</code> component of the software, there is only one class called <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>.</p>
+</div>
+<div class="paragraph">
+<p><code>MainApp</code> is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+<p>Launching of the application where it initializes the components in the correct sequence, and connects them together.</p>
 </li>
 <li>
-<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
+<p>Shutting down the components and invokes cleanup method where necessary.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><a href="#common-classes"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components. Two of those classes play important roles at the architecture level.</p>
+<p>In the software, <a href="#common-classes"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.</p>
+</div>
+<div class="paragraph">
+<p>Two of the classes below play important roles in the software at the architecture level.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -405,7 +412,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.1.2 : Class Diagram of the Logic Component</em></p>
+<p><em>Figure 4.1.2 : Class Diagram of the Logic Component</em></p>
 </div>
 <h4 id="events-driven-nature-of-the-design" class="discrete">Events-Driven nature of the design</h4>
 <div class="paragraph">
@@ -417,7 +424,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.1.3a : Component interactions for <code>delete 1</code> command (part 1)</em></p>
+<p><em>Figure 4.1.3a : Component interactions for <code>delete 1</code> command (part 1)</em></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -440,7 +447,7 @@ Note how the <code>Model</code> simply raises a <code>AddressBookChangedEvent</c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.1.3b : Component interactions for <code>delete 1</code> command (part 2)</em></p>
+<p><em>Figure 4.1.3b : Component interactions for <code>delete 1</code> command (part 2)</em></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -466,7 +473,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.2.1 : Structure of the UI Component</em></p>
+<p><em>Figure 4.2.1 : Structure of the UI Component</em></p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
@@ -502,7 +509,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.3.1 : Structure of the Logic Component</em></p>
+<p><em>Figure 4.3.1 : Structure of the Logic Component</em></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -510,7 +517,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.3.2 : Structure of Commands in the Logic Component. This diagram shows finer details concerning <code>XYZCommand</code> and <code>Command</code> in Figure 2.3.1</em></p>
+<p><em>Figure 4.3.2 : Structure of Commands in the Logic Component. This diagram shows finer details concerning <code>XYZCommand</code> and <code>Command</code> in Figure 4.3.1</em></p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -541,7 +548,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.3.1 : Interactions Inside the Logic Component for the <code>delete 1</code> Command</em></p>
+<p><em>Figure 4.3.1 : Interactions Inside the Logic Component for the <code>delete 1</code> Command</em></p>
 </div>
 </div>
 <div class="sect2">
@@ -552,7 +559,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.4.1 : Structure of the Model Component</em></p>
+<p><em>Figure 4.4.1 : Structure of the Model Component</em></p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -585,7 +592,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2.5.1 : Structure of the Storage Component</em></p>
+<p><em>Figure 4.5.1 : Structure of the Storage Component</em></p>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/CS2103AUG2017-T15-B3/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -1020,23 +1027,23 @@ can be undoable, where the previous state of the address book before sorting is 
 <div class="sect2">
 <h3 id="sort-mechanism"><a class="link" href="#sort-mechanism">5.4. Sort mechanism</a></h3>
 <div class="paragraph">
-<p>The sort mechanism sorts the names of people inside the <code>addressbook</code> of the 'ModelManager'.
+<p>The sort mechanism sorts the contacts based on their names inside the <code>addressbook</code> of the <code>ModelManager</code>.
 When the sort method is executed, it organizes the position of the people existing in the <code>addressbook</code>
 based on their names in alphabetical order. The sort mechanism touches all components of the software application
 but mainly involving the logic and model component.</p>
 </div>
 <div class="paragraph">
-<p>In the figure [Figure 5.2.1] below, the <code>SortCommand</code> inherits from <code>UndoableCommand</code>
+<p>In the figure [Figure 5.4.1] below, the <code>SortCommand</code> inherits from <code>UndoableCommand</code>
 which is an extra layer between abstract <code>Command</code> class which belongs to the Logic Component.
 This allows the SortCommand to be undoable, where the previous state of the address book before sorting is saved.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SortCommandLogicClassDiagram.PNG" alt="SortCommandLogicClassDiagram" width="800">
+<img src="images/SortCommandLogicClassDiagram.PNG" alt="SortCommandLogicClassDiagram" width="600">
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.2.1 SortCommand Logic Class Diagram</p>
+<p>Figure 5.4.1 SortCommand Logic Class Diagram</p>
 </div>
 <div class="paragraph">
 <p>Suppose a user has an unorganized list of contacts and executes the <code>SortCommand</code> to organize his contacts.</p>
@@ -1069,6 +1076,7 @@ to update the <code>PersonListPanel</code> of the GUI being shown.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SortCommand</span> <span class="directive">extends</span> UndoableCommand {
+    <span class="comment">// ... SortCommand logic ...</span>
     <span class="annotation">@Override</span>
     <span class="directive">public</span> CommandResult executeUndoableCommand() {
         model.sort();
@@ -1102,30 +1110,33 @@ to update the <code>PersonListPanel</code> of the GUI being shown.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The following sequence diagram shows how the sort operation works:
-As seen in the figure [Figure 5.2.2] below, when sort is typed into command line input, new <code>SortCommand</code> is created.</p>
+<p>The following sequence diagrams shows how the sort operation works:
+As seen in the figure [Figure 5.4.2] below, when sort is typed into command line input, new <code>SortCommand</code> is created.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SortCommandLogicSequenceDiagram.PNG" alt="SortCommandLogicSequenceDiagram" width="800">
+<img src="images/SortCommandLogicSequenceDiagram.PNG" alt="SortCommandLogicSequenceDiagram" width="600">
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.2.2 SortCommand Logic Sequence Diagram</p>
+<p>Figure 5.4.2 SortCommand Logic Sequence Diagram</p>
 </div>
 <div class="paragraph">
-<p>When <code>executeUndoableCommand</code> is called in SortCommand class, it will call the sort function in ModelManager.
+<p>As seen in the figure [Figure 5.4.3] below, when <code>executeUndoableCommand</code> is called in SortCommand class, it will call the sort function in ModelManager.
 It will call the sort() function of its own class until it reaches InternalList.sort() where the sorting of
-contacts positions based on their names will be executed.
-Ultimately, achieving the final product of having a sorted addressbook being shown in the <code>PersonListPanel</code></p>
+contacts positions based on their names will be executed.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/SortCommandModelSequenceDiagram.PNG" alt="SortCommandModelSequenceDiagram" width="800">
+<img src="images/SortCommandModelSequenceDiagram.PNG" alt="SortCommandModelSequenceDiagram" width="600">
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.2.3 SortCommand Model Sequence Diagram</p>
+<p>Figure 5.4.3 SortCommand Model Sequence Diagram</p>
+</div>
+<div class="paragraph">
+<p>Finally, the execution will create a sorted addressbook where the names of contacts are alphabetically sorted
+and shown in the <code>PersonListPanel</code>.</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">5.4.1. Design Considerations</a></h4>
@@ -1156,7 +1167,7 @@ Ultimately, achieving the final product of having a sorted addressbook being sho
 <div class="sect2">
 <h3 id="access-website-mechanism"><a class="link" href="#access-website-mechanism">5.5. Access Website mechanism</a></h3>
 <div class="paragraph">
-<p>The access website mechanism has an <code>AccessCommand</code> that allows user to access the website by stating the
+<p>The access website mechanism has an <code>AccessCommand</code> that allows users to access the website by stating the
 index of the desired contact in the contact list viewed.
 The implementation of the access website mechanism is mostly done in the <code>UI</code>, <code>Model</code>, and <code>Logic</code> component.
 The <code>AccessCommand</code> class inherits from the <code>Command</code> class.</p>
@@ -1203,7 +1214,7 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">AccessCommand</span> <span class="directive">extends</span> Command {
     <span class="directive">private</span> <span class="directive">final</span> Index targetIndex;
 
-    <span class="comment">// ... access logic ...</span>
+    <span class="comment">// ... AccessCommand logic ...</span>
     <span class="directive">public</span> AccessCommand(Index targetIndex) {
         <span class="local-variable">this</span>.targetIndex = targetIndex;
     }
@@ -1236,6 +1247,8 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">BrowserPanel</span> <span class="directive">extends</span> UiPart&lt;<span class="predefined-type">Region</span>&gt; {
+    <span class="comment">// ... BrowserPanel logic ...</span>
+
     <span class="directive">public</span> <span class="type">void</span> handleWebsiteAccess(<span class="predefined-type">String</span> website) {
         browserPanel.loadPage(website);
     }
@@ -1253,11 +1266,15 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
 </div>
 </div>
 <div class="paragraph">
-<p>Through the sequence diagram, you can see how the code executes when a user
+<p>Through the sequence diagrams below, you can see how the code executes when a user
 inputs <code>access 1</code> into the command line.</p>
 </div>
 <div class="paragraph">
-<p>Sequence diagram for <code>Logic</code> Component for <code>AccessCommand</code> and how it is executed:</p>
+<p>When a user inputs <code>access 1</code>, it will trigger <code>LogicManager</code> to parse the arguments
+into the <code>AddressBookParser</code> so that it can create a new <code>AccessCommand</code> and store it as a <code>Command</code>.</p>
+</div>
+<div class="paragraph">
+<p>Sequence diagram for <code>Logic</code> Component for <code>AccessCommand</code> and its execution:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1265,15 +1282,17 @@ inputs <code>access 1</code> into the command line.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.6.1 Access Command Logic Sequence Diagram</p>
+<p>Figure 5.5.1 Access Command Logic Sequence Diagram</p>
 </div>
 <div class="paragraph">
 <p>After creating a new <code>AccessCommand</code>, <code>LogicManager</code> will call execute on <code>AccessCommand</code>
-and this will result in the website of the person at the index inputted to be called through an event request and event handler.
-The website will then be loaded onto the browser of the <code>BrowserPanel</code> of the <code>MainWindow</code>.</p>
+and this will result in the website of the person at the index inputted to be attained through the <code>ObservableList&lt;ReadOnlyPerson&gt;</code>
+of the <code>ModelManager</code>. The website attained will be parsed through an event request and event handler.
+Finally, the website will then be loaded onto the browser of the <code>BrowserPanel</code> of the <code>MainWindow</code>.</p>
 </div>
 <div class="paragraph">
-<p>Sequence diagram for <code>execute()</code> method of <code>AccessCommand</code> and its event handling:</p>
+<p>The process can be observed in the sequence diagram below
+where it shows the sequence of <code>execute()</code> method of <code>AccessCommand</code> and its event handling.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1281,7 +1300,7 @@ The website will then be loaded onto the browser of the <code>BrowserPanel</code
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.6.2 Access Command Model/EventsCenter/UI Sequence Diagram</p>
+<p>Figure 5.5.2 Access Command Model/EventsCenter/UI Sequence Diagram</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">5.5.1. Design Considerations</a></h4>
@@ -1301,10 +1320,10 @@ which is important for GUI enhancement.<br></p>
 <div class="sect2">
 <h3 id="location-mechanism"><a class="link" href="#location-mechanism">5.6. Location mechanism</a></h3>
 <div class="paragraph">
-<p>The location mechanism has an <code>LocationCommand</code> that allows user to access the address through Google Maps Search
+<p>The location mechanism has a <code>LocationCommand</code> that allows users to access the address through Google Maps Search
 by stating the index of the desired contact in the contact list viewed.
 The implementation of the location mechanism is mostly done in the <code>UI</code>, <code>Model</code>, and <code>Logic</code> component
-and is very similar to the access website mechanism in terms of implementation and sequential process.
+and is very similar to the access website mechanism in terms of implementation and execution sequence.
 The <code>LocationCommand</code> class inherits from the <code>Command</code> class.</p>
 </div>
 <div class="paragraph">
@@ -1349,6 +1368,8 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">LocationCommand</span> <span class="directive">extends</span> Command {
     <span class="directive">private</span> <span class="directive">final</span> Index targetIndex;
 
+    <span class="comment">// ... LocationCommand logic ...</span>
+
     <span class="directive">public</span> LocationCommand(Index targetIndex) {
         <span class="local-variable">this</span>.targetIndex = targetIndex;
     }
@@ -1380,8 +1401,11 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">BrowserPanel</span> <span class="directive">extends</span> UiPart&lt;<span class="predefined-type">Region</span>&gt; {
+
     <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="predefined-type">String</span> GOOGLE_SEARCH_URL_PREFIX = <span class="string"><span class="delimiter">&quot;</span><span class="content">https://www.google.com.sg/maps?safe=off&amp;q=</span><span class="delimiter">&quot;</span></span>;
     <span class="directive">public</span> <span class="directive">static</span> <span class="directive">final</span> <span class="predefined-type">String</span> GOOGLE_SEARCH_URL_SUFFIX = <span class="string"><span class="delimiter">&quot;</span><span class="content">&amp;cad=h</span><span class="delimiter">&quot;</span></span>;
+
+    <span class="comment">// ... BrowserPanel logic ...</span>
 
     <span class="directive">private</span> <span class="type">void</span> loadPersonLocation(<span class="predefined-type">String</span> location) {
         loadPage(GOOGLE_SEARCH_URL_PREFIX + location.replaceAll(<span class="string"><span class="delimiter">&quot;</span><span class="content"> </span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">+</span><span class="delimiter">&quot;</span></span>)
@@ -1405,6 +1429,10 @@ index of the <code>lastShownList</code> and stored into <code>person</code> vari
 inputs <code>locate 1</code> into the command line.</p>
 </div>
 <div class="paragraph">
+<p>When a user inputs <code>locate 1</code>, it will trigger <code>LogicManager</code> to parse the arguments
+into the <code>AddressBookParser</code> so that it can create a new <code>LocationCommand</code> and store it as a <code>Command</code>.</p>
+</div>
+<div class="paragraph">
 <p>Sequence diagram for <code>Logic</code> Component for <code>LocationCommand</code> and how it is executed:</p>
 </div>
 <div class="imageblock">
@@ -1413,15 +1441,18 @@ inputs <code>locate 1</code> into the command line.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.7.1 Location Command Logic Sequence Diagram</p>
+<p>Figure 5.6.1 LocationCommand Logic Sequence Diagram</p>
 </div>
 <div class="paragraph">
 <p>After creating a new <code>LocationCommand</code>, <code>LogicManager</code> will call execute on <code>LocationCommand</code>
-and this will result in the address of the person at the index inputted to be called through an event request and event handler.
-The address will then be loaded onto Google Maps Search of the browser of the <code>MainWindow</code>.</p>
+and this will result in the address of the person at the index inputted to be attained through
+the <code>ObservableList&lt;ReadOnlyPerson&gt;</code> of the <code>ModelManager</code>.
+The address attained will be parsed through an event request and event handler.
+Finally, the address will then be loaded onto Google Maps Search of the browser of the <code>MainWindow</code>.</p>
 </div>
 <div class="paragraph">
-<p>Sequence diagram for <code>execute()</code> method of <code>LocationCommand</code> and its event handling:</p>
+<p>The process can be observed in the sequence diagram below
+where it shows the sequence of <code>execute()</code> method of <code>LocationCommand</code> and its event handling.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1429,7 +1460,7 @@ The address will then be loaded onto Google Maps Search of the browser of the <c
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.7.2 Access Command Model/EventsCenter/UI Sequence Diagram</p>
+<p>Figure 5.6.2 LocationCommand Model/EventsCenter/UI Sequence Diagram</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">5.6.1. Design Considerations</a></h4>
@@ -1588,19 +1619,299 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-mechanism"><a class="link" href="#calendar-mechanism">5.9. Calendar mechanism</a></h3>
+<h3 id="mode-switching-mechanism"><a class="link" href="#mode-switching-mechanism">5.9. Mode Switching mechanism</a></h3>
+<div class="paragraph">
+<p>This mechanism allows the switching between <code>two</code> modes in The Myth&#8217;s Book which is firstly, <code>Persons Mode</code> which is activated by typing <code>list</code>,
+and secondly, <code>Events Mode</code> which is activated by typing <code>events</code>. The mode switching mechanism allows users to type in different specific commands based on the mode
+that is being used in the software.</p>
+</div>
+<div class="paragraph">
+<p>The commands are categorised into three groups:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Person Commands</code> such as the <code>AddCommand</code> or <code>EditCommand</code>.</p>
+</li>
+<li>
+<p><code>Event Commands</code> such as the <code>AddEventCommand</code> or <code>DeleteEventCommand</code>.</p>
+</li>
+<li>
+<p><code>General Commands</code> such as the <code>HelpCommand</code> or <code>SwitchThemeCommand</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>Person Commands</code> and <code>Event Commands</code> commands are controlled by a boolean variable <code>personListActivated</code>
+which is initially set as true
+where system is in <code>Persons Mode</code> at the start.<br>
+The <code>General Commands</code> is not controlled by the boolean variable <code>personListActivated</code> and is able to be executed in both modes.
+<code>Person Commands</code> can be used when <code>personListActivated</code> is <code>true</code> while <code>Event Commands</code> can be used when <code>personListActivated</code> is <code>false</code>.</p>
+</div>
+<div class="paragraph">
+<p>The implementation of the mode switching mechanism is mostly done in the <code>Logic</code> component.
+The Mode Switching Mechanism is implemented in the <code>AddressBookParser</code> code of the <code>Logic</code> component.</p>
+</div>
+<div class="paragraph">
+<p>Suppose a user is currently on the <code>Persons Mode</code> on The Myth&#8217;s Book and he wants to use
+the <code>Events Mode</code> and the commands related to <code>Events</code>. As such, user is currently able to
+use <code>Person Commands</code> and <code>General Commands</code> but unable to use <code>Event Commands</code>.</p>
+</div>
+<div class="paragraph">
+<p>The execution of Mode Switching Mechanism from <code>Persons Mode</code> to <code>Events Mode</code> processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User wants to add a new event so user inputs <code>addevent n/ZoukOut d/5/12/2017 a/Sentosa Beach, Siloso</code>.</p>
+</li>
+<li>
+<p>Input of user is parse as an argument through the <code>AddressBookParser</code> but throws an error as application is not in the <code>Events Mode</code>.</p>
+</li>
+<li>
+<p>User then switches to <code>Events Mode</code> by inputting <code>events</code> which would turn <code>personListActivated</code> to <code>false</code>.</p>
+</li>
+<li>
+<p>User is now able to use <code>Event Commands</code> such as the <code>AddEventCommand</code> or <code>DeleteEventCommand</code>.</p>
+</li>
+<li>
+<p>User then uses the <code>AddEventCommand</code> and inputs <code>addevent n/ZoukOut d/5/12/2017 a/Sentosa Beach, Siloso</code>.</p>
+</li>
+<li>
+<p>Input of user is successfully parse as an argument through the <code>AddressBookParser</code> and then through the <code>AddEventCommandParser</code> and adds a new event successfully.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Suppose a user is currently on the <code>Events Mode</code> and wants to use the <code>Persons Mode</code> and the commands related to <code>Persons</code>.</p>
+</div>
+<div class="paragraph">
+<p>In order for user to switch back from <code>Events Mode</code> to <code>Persons Mode</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User wants to add a new contact so user inputs <code>add n/Dion Poh p/63425234 e/dionPoh@hotmail.com</code>.</p>
+</li>
+<li>
+<p>User switches to <code>Persons Mode</code> by inputting <code>list</code> which would turn <code>personListActivated</code> to <code>true</code>.</p>
+</li>
+<li>
+<p>User is now able to use <code>Person Commands</code> such as the <code>AddCommand</code>.</p>
+</li>
+<li>
+<p>User then uses the <code>AddCommand</code> and inputs <code>add n/Dion Poh p/63425234 e/dionPoh@hotmail.com</code>.</p>
+</li>
+<li>
+<p>Input of user is successfully parse as an argument through the <code>AddressBookParser</code> and then through the <code>AddCommandParser</code> and adds a new contact successfully.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of <code>AddressBookParser</code> class and how it executes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">AddressBookParser</span> {
+
+    <span class="comment">/**
+     * Used to control lock mechanism for different commands between person and events platforms.
+     */</span>
+    <span class="directive">private</span> <span class="directive">static</span> <span class="predefined-type">Boolean</span> personListActivated = <span class="predefined-constant">true</span>;
+
+    <span class="comment">// ... AddressBookParser logic ...</span>
+
+    <span class="directive">public</span> Command parseCommand(<span class="predefined-type">String</span> userInput) <span class="directive">throws</span> <span class="exception">ParseException</span> {
+        <span class="comment">// ... parseCommand logic ...</span>
+
+        <span class="keyword">switch</span> (commandWord) {
+        <span class="keyword">case</span> AddCommand.COMMAND_WORD: <span class="keyword">case</span> AddCommand.COMMAND_ALIAS:
+            <span class="keyword">if</span> (personListActivated) {
+                <span class="keyword">return</span> <span class="keyword">new</span> AddCommandParser().parse(arguments);
+            } <span class="keyword">else</span> {
+                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">ParseException</span>(MESSAGE_INVALID_PERSON_PLATFORM);
+            }
+
+        <span class="comment">// ... other code ...</span>
+
+        <span class="keyword">case</span> ListCommand.COMMAND_WORD: <span class="keyword">case</span> ListCommand.COMMAND_ALIAS:
+            personListActivated = <span class="predefined-constant">true</span>;
+            <span class="keyword">return</span> <span class="keyword">new</span> ListCommand();
+
+        <span class="comment">// ... other code ...</span>
+
+        <span class="keyword">case</span> HelpCommand.COMMAND_WORD: <span class="keyword">case</span> HelpCommand.COMMAND_ALIAS:
+            <span class="keyword">return</span> <span class="keyword">new</span> HelpCommand();
+
+        <span class="keyword">case</span> AddEventCommand.COMMAND_WORD: <span class="keyword">case</span> AddEventCommand.COMMAND_ALIAS:
+            <span class="keyword">if</span> (!personListActivated) {
+                <span class="keyword">return</span> <span class="keyword">new</span> AddEventCommandParser().parse(arguments);
+            } <span class="keyword">else</span> {
+                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">ParseException</span>(MESSAGE_INVALID_EVENT_PLATFORM);
+            }
+
+        <span class="keyword">case</span> EventsCommand.COMMAND_WORD:
+            personListActivated = <span class="predefined-constant">false</span>;
+            <span class="keyword">return</span> <span class="keyword">new</span> EventsCommand();
+
+        <span class="comment">// ... other code ...</span>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">5.9.1. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> The handling of different commands inputted into CommandBox for the two different modes(Persons or Events) in The Myth&#8217;s Book. <br>
+<strong>Alternative 1 (current choice):</strong> Create a system in the AddressBookParser that can differentiate the different commands for different modes(Persons or Events).<br>
+<strong>Pros:</strong> Able to have better usability as it can separate and classify features for both Persons and Events that is able to exist concurrently with lesser bugs in the application.<br>
+<strong>Cons:</strong> Users would have to switch between Events and Persons platform when they want to use the other platform that they are not currently on.<br>
+<strong>Alternative 2:</strong> Use the initial AddressBookParser given that accepts all of command and still executes regardless of the software being used in either mode.<br>
+<strong>Pros:</strong> User can use all commands and does not need to face the issue of having to switch between the two platforms to use the different commands.<br>
+<strong>Cons:</strong> User experience and software might feel buggy as user might be on the events mode but executing commands related to the persons mode which user might be unable to see.<br></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="optional-person-fields-mechanism"><a class="link" href="#optional-person-fields-mechanism">5.10. Optional Person Fields mechanism</a></h3>
+<div class="paragraph">
+<p>This mechanism allows certain fields of the <code>Person</code> class to be optional when adding a contact.
+The implementation of making fields optional for <code>AddCommand</code> allows users to add contacts with lesser
+information required as it only requires name,phone,email to add a contact and other fields can be
+optionally added together into the input of adding a contact. The implementation is mostly done in the`Model` and <code>Logic</code> component.</p>
+</div>
+<div class="paragraph">
+<p>Suppose a user would like to add a new contact with an address to The Myth&#8217;s Book and executes the <code>AddCommand</code>
+by typing <code>add n/Adam Bait e/adambait@example.com p/98123414 a/18 Taiseng</code>.</p>
+</div>
+<div class="paragraph">
+<p>The execution of <code>AddCommand</code> is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will input <code>add n/Adam Bait e/adambait@example.com p/98123414 a/18 Taiseng</code>.</p>
+</li>
+<li>
+<p>Input of user will be handled by the <code>LogicManager</code> and parse as an argument through the <code>AddressBookParser</code> and <code>AddCommandParser</code>.</p>
+</li>
+<li>
+<p><code>AddCommandParser</code> will check for all the prefixes inputted and the existence of compulsory prefixes required.</p>
+</li>
+<li>
+<p>As <code>Name</code>,<code>Phone</code>,<code>Email</code> fields are necessary fields, they are handled as per normal in the <code>parse</code> method of <code>AddCommandParser</code>
+after being checked that the user has inputted the correct prefixes and information for the 3 necessary fields.</p>
+</li>
+<li>
+<p>For the <code>Address</code> field which are similar to other optional fields, it tests whether user has inputted
+the address field or not in <code>parse</code> method of <code>AddCommandParser</code> and <code>parseAddress</code> method of <code>ParserUtil.java</code>.</p>
+</li>
+<li>
+<p>Based on whether the user has inputted the optional <code>Address</code> field, it is handled either by
+assigning it with the inputted and validated string of address or assigning it with a
+temporary string variable as seen from <code>Address</code> constructor of <code>Address.java</code>.</p>
+</li>
+<li>
+<p>Once all information inputted is handled, user&#8217;s inputted contact will be successfully added into The Myth&#8217;s Book.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of <code>parse</code> method inside <code>AddCommandParser.java</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> AddCommand parse(<span class="predefined-type">String</span> args) <span class="directive">throws</span> <span class="exception">ParseException</span> {
+
+    Address address;
+    <span class="comment">// ... method logic ...</span>
+
+    ArgumentMultimap argMultimap =
+            ArgumentTokenizer.tokenize(args, PREFIX_NAME, PREFIX_PHONE, PREFIX_HOME_NUMBER,
+                    PREFIX_EMAIL, PREFIX_ADDRESS, PREFIX_WEBSITE, PREFIX_SCH_EMAIL,
+                    PREFIX_BIRTHDAY, PREFIX_TAG);
+
+    <span class="keyword">if</span> (!arePrefixesPresent(argMultimap, PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL)) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">ParseException</span>(<span class="predefined-type">String</span>.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
+    }
+
+    <span class="keyword">try</span> {
+        <span class="predefined-type">Name</span> name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME)).get();
+        Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE)).get();
+        Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL)).get();
+
+        <span class="comment">// ... method logic ...</span>
+
+        Optional&lt;Address&gt; tempAddress = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS));
+        address = (tempAddress.isPresent()) ? tempAddress.get() : <span class="keyword">new</span> Address(<span class="predefined-constant">null</span>);
+
+        <span class="comment">// ... method logic ...</span>
+
+        ReadOnlyPerson person = <span class="keyword">new</span> Person(name, phone, homeNumber,
+             email, schEmail, website, address, birthday, <span class="predefined-constant">false</span>, tagList);
+
+        <span class="keyword">return</span> <span class="keyword">new</span> AddCommand(person);
+    } <span class="keyword">catch</span> (IllegalValueException ive) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">ParseException</span>(ive.getMessage(), ive);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code of <code>parseAddress</code> method inside <code>ParserUtil.java</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> Optional&lt;Address&gt; parseAddress(Optional&lt;<span class="predefined-type">String</span>&gt; address) <span class="directive">throws</span> IllegalValueException {
+    <span class="keyword">return</span> address.isPresent() ? Optional.of(<span class="keyword">new</span> Address(address.get())) : Optional.empty();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code of <code>Address</code> constructor inside <code>Address.java</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> Address(<span class="predefined-type">String</span> address) <span class="directive">throws</span> IllegalValueException {
+    <span class="keyword">if</span> (address == <span class="predefined-constant">null</span>) {
+        <span class="local-variable">this</span>.value = ADDRESS_TEMPORARY;
+    } <span class="keyword">else</span> {
+        <span class="keyword">if</span> (!isValidAddress(address)) {
+            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalValueException(MESSAGE_ADDRESS_CONSTRAINTS);
+        }
+        <span class="local-variable">this</span>.value = address;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">5.10.1. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> The ease of adding contacts to The Myth&#8217;s Book. <br>
+<strong>Alternative 1 (current choice):</strong> Make certain fields that are supposed to be inputted to be optional.<br>
+<strong>Pros:</strong> Users are able to add contacts without much trouble as it only requires minimally 3 inputs.<br>
+<strong>Cons:</strong> Users would not have full details of a contact that is being added if all fields are not filled in.<br>
+<strong>Alternative 2:</strong> All fields must be inputted in order for users to add a contact.<br>
+<strong>Pros:</strong> When a contact is added, all information related to the contact is accounted for.<br>
+<strong>Cons:</strong> As there are currently 8-9 fields that are required to fill in, it might be realistically troublesome for a user
+to add a contact which is not user friendly.<br></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calendar-mechanism"><a class="link" href="#calendar-mechanism">5.11. Calendar mechanism</a></h3>
 <div class="paragraph">
 <p>The Calendar mechanism is facilitated by the <code>AnchorPaneNode</code> class.</p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">5.9.1. Design Considerations</a></h4>
+<h4 id="design-considerations-10"><a class="link" href="#design-considerations-10">5.11.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p>To be included.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="details-panel-mechanism"><a class="link" href="#details-panel-mechanism">5.10. Details Panel Mechanism</a></h3>
+<h3 id="details-panel-mechanism"><a class="link" href="#details-panel-mechanism">5.12. Details Panel Mechanism</a></h3>
 <div class="paragraph">
 <p>The details panel is used to show all the information regarding a person as compared to the person card which shows only a person&#8217;s name, tags, phone number and email id.</p>
 </div>
@@ -1638,7 +1949,7 @@ which is important for GUI enhancement.<br></p>
 <p>The <code>loadPersonInfo</code> is facilitated by the <code>bindListeners()</code> method that "listens" for a change in any of the fields of the person.</p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">5.10.1. Design Considerations</a></h4>
+<h4 id="design-considerations-11"><a class="link" href="#design-considerations-11">5.12.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Creating the details panel when there is a person card.<br>
 <strong>Alternative 1 (current choice):</strong> details panel
@@ -1651,7 +1962,7 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">5.11. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">5.13. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -1689,7 +2000,7 @@ which is important for GUI enhancement.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="configuration"><a class="link" href="#configuration">5.12. Configuration</a></h3>
+<h3 id="configuration"><a class="link" href="#configuration">5.14. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2799,7 +3110,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-11 14:36:11 +00:00
+Last updated 2017-11-11 14:39:06 +00:00
 </div>
 </div>
 </body>
