@@ -827,11 +827,7 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 <div class="sect2">
 <h3 id="add-event-mechanism"><a class="link" href="#add-event-mechanism">5.2. Add Event mechanism</a></h3>
 <div class="paragraph">
-<p>Add event mechanism adds an event which stores in the The Myth&#8217;s Book,
-which will then be used in a Calendar in future implementation. A reminder feature will also be tagged on to the event.</p>
-</div>
-<div class="paragraph">
-<p>The add event mechanism is facilitated by a <code>EventList</code>, which is stored in The Myth&#8217;s Book. Similar to the PersonList and TagList, the list contains the
+<p>Add event mechanism adds an event which stores in the The Myth&#8217;s Book. The add event mechanism is facilitated by a <code>EventList</code>, which is stored in The Myth&#8217;s Book. Similar to the PersonList and TagList, the list contains the
 different events with their information given by the user. This command inherits from <code>UndoableCommand</code>.</p>
 </div>
 <div class="paragraph">
@@ -847,33 +843,53 @@ can be undoable, where the previous state of the address book before sorting is 
 <p>Figure 5.2.1 AddEventCommand Logic Class Diagram</p>
 </div>
 <div class="paragraph">
+<p>The execution of AddEventCommand is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will execute and create a new <code>AddEventCommand</code> so as to add an event into The Myth&#8217;s Book.</p>
+</li>
+<li>
+<p>When <code>executeUndoable()</code> of <code>AddEventCommand</code> is called, <code>model.addEvent()</code> in the method will be processed.</p>
+</li>
+<li>
+<p>The <code>internalList</code> of the AddressBook will store all the Events.</p>
+</li>
+<li>
+<p>After <code>internalList</code> has added the event, function <code>updateFilterEventList(PREDICATE_SHOW_ALL_EVENT)</code> is called
+to update the list being filtered and also call an event <code>indicatedAddressBookChanged()</code> to show that the addressBook has be updated
+with additional event.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The illustration of the execution is illustrated in Figure 5.2.2 below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/addeventmodelseqdiagram.PNG" alt="addeventmodelseqdiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.2.2 AddEventCommand Model Sequence Diagram</p>
+</div>
+<div class="paragraph">
 <p>Code of <code>AddEventCommand</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>public class AddEventCommand extends UndoableCommand {
-
-@Override
- public CommandResult executeUndoableCommand() throws CommandException {
-    requireNonNull(model);
-     try {
-         model.addEvent(toAdd);
-         return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
+<pre>    @Override
+    public CommandResult executeUndoableCommand() throws CommandException {
+        requireNonNull(model);
+        try {
+            model.addEvent(toAdd);
+            return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
         } catch (DuplicateEventException e) {
-        throw new CommandException(MESSAGE_DUPLICATE_EVENT);
+            throw new CommandException(MESSAGE_DUPLICATE_EVENT);
         }
-    }
-}</pre>
+    }</pre>
 </div>
-</div>
-<div class="paragraph">
-<p>A UniqueEventList is also created to store the list of Events in AddressBook.java</p>
-</div>
-<div class="paragraph">
-<p>Code of <code>UniqueEventList.java</code> when an Event is created and stored into the UniqueEventList:</p>
-</div>
-<div class="paragraph">
-<p>The new Events will be stored in UniqueEventList in AddressBook.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -890,6 +906,19 @@ can be undoable, where the previous state of the address book before sorting is 
     }
     ...
 }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code from <code>ModelManager</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    @Override
+    public synchronized void addEvent(ReadOnlyEvent event) throws DuplicateEventException {
+        addressBook.addEvent(event);
+        updateFilteredEventList(PREDICATE_SHOW_ALL_EVENTS);
+        indicateAddressBookChanged();
+    }</pre>
 </div>
 </div>
 <div class="sect3">
@@ -1899,13 +1928,195 @@ to add a contact which is not user friendly.<br></p>
 </div>
 <div class="sect2">
 <h3 id="calendar-mechanism"><a class="link" href="#calendar-mechanism">5.11. Calendar mechanism</a></h3>
+<div class="sect3">
+<h4 id="creating-calendar-layout"><a class="link" href="#creating-calendar-layout">5.11.1. Creating Calendar Layout</a></h4>
 <div class="paragraph">
-<p>The Calendar mechanism is facilitated by the <code>AnchorPaneNode</code> class.</p>
+<p>The Calendar is created with GridPanes and VBox. The following code snippets describes how the <code>AnchorPaneNode</code> object fills up the
+GridPane of the calendar. At the end of the method, the VBox gathers all the required parameters to get the view of the calendar.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public Calendar(YearMonth yearMonth, ObservableList&lt;ReadOnlyEvent&gt; eventList) {
+        currentYearMonth = yearMonth;
+        // Create the calendar grid pane
+        GridPane calendar = new GridPane();
+        calendar.setPrefSize(600, 400);
+        // Create rows and columns with anchor panes for the calendar
+        for (int i = 0; i &lt; 5; i++) {
+            for (int j = 0; j &lt; 7; j++) {
+                AnchorPaneNode ap = new AnchorPaneNode();
+                ap.setPrefSize(200, 200);
+                calendar.add(ap, j, i);
+                allCalendarDays.add(ap);
+                ap.getStyleClass().add("calendar-color");
+            }
+        }
+
+        // Days of the week labels
+        Text[] dayNames = new Text[]{new Text("Sunday"), new Text("Monday"),
+                          new Text("Tuesday"), new Text("Wednesday"), new Text("Thursday"),
+                          new Text("Friday"), new Text("Saturday")};
+
+        GridPane dayLabels = new GridPane();
+        dayLabels.setPrefWidth(600);
+        Integer col = 0;
+        for (Text txt : dayNames) {
+            txt.getStyleClass().add("calendar-color");
+            AnchorPane ap = new AnchorPane();
+            ap.setPrefSize(200, 10);
+            ap.setBottomAnchor(txt, 5.0);
+            ap.getChildren().add(txt);
+            dayLabels.add(ap, col++, 0);
+        }
+        ...
+    }</pre>
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-10"><a class="link" href="#design-considerations-10">5.11.1. Design Considerations</a></h4>
+<h4 id="populating-calendar"><a class="link" href="#populating-calendar">5.11.2. Populating Calendar</a></h4>
 <div class="paragraph">
-<p>To be included.</p>
+<p>Now, you have the Calendar outline, the populateCalendar method calendar called will then populate the Calendar with the individual dates of the months.
+During the process, we would check if is there any events that are on the date corresponding to the AnchorPaneNode. If it tallies, the AnchorPaneNode will
+be populated with a change in background color.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public void populateCalendar(YearMonth yearMonth, ObservableList&lt;ReadOnlyEvent&gt; events) {
+        // Get the date we want to start with on the calendar
+        LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
+        // Dial back the day until it is SUNDAY (unless the month starts on a sunday)
+        while (!calendarDate.getDayOfWeek().toString().equals("SUNDAY")) {
+            calendarDate = calendarDate.minusDays(1);
+        }
+        // Populate the calendar with day numbers
+        for (AnchorPaneNode ap : allCalendarDays) {
+            if (ap.getChildren().size() != 0) {
+                ap.getChildren().remove(0);
+            }
+            Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
+            txt.getStyleClass().add("calendar-color");
+            ap.setDate(calendarDate);
+            ap.setTopAnchor(txt, 5.0);
+            ap.setLeftAnchor(txt, 5.0);
+            ap.setStyle("calendar-color");
+            ap.getChildren().add(txt);
+            calendarDate = calendarDate.plusDays(1);
+        }
+
+        for (AnchorPaneNode ap : allCalendarDays) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+            String newDate = formatter.format(ap.getDate());
+            for (ReadOnlyEvent event : events) {
+                String date = event.getDate().toString();
+                if (newDate.equals(date)) {
+                    ap.getChildren();
+                    ap.setStyle("-fx-background-color: #ffebcd;");
+                }
+            }
+        }
+        // Change the title of the calendar
+        calendarTitle.setText(yearMonth.getMonth().toString() + " " + String.valueOf(yearMonth.getYear()));
+    }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>View the full code at <a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/src/main/java/seedu/address/ui/Calendar.java">Calendar</a> ,
+<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/src/main/java/seedu/address/ui/AnchorPaneNode.java">AnchorPaneNode</a></p>
+</div>
+<div class="paragraph">
+<p>The updating of different months and population of event nodes are done by the two separate methods that will post events to
+<code>EventsCenter</code> to update the calendar based on the <code>UniqueEventList</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public void previousMonth() {
+        currentYearMonth = currentYearMonth.minusMonths(1);
+        EventsCenter.getInstance().post(new PopulateMonthEvent(currentYearMonth));
+    }
+    public void nextMonth() {
+        currentYearMonth = currentYearMonth.plusMonths(1);
+        EventsCenter.getInstance().post(new PopulateMonthEvent(currentYearMonth));
+    }</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="dialog-box"><a class="link" href="#dialog-box">5.11.3. Dialog Box</a></h4>
+<div class="paragraph">
+<p>The mechanism behind the process of adding an event from the dialog box is shown in Figure 5.9.3.1 below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dialogaddeventsequencediagram.PNG" alt="dialogaddeventsequencediagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.9.3.1 Dialog Add Event Sequence Diagram</p>
+</div>
+<div class="paragraph">
+<p>From the startDialog method in <code>AnchorPaneNode</code> class, after receiving a valid Event, an <code>AddEventRequestEvent</code> object will be posted to <code>EventsCenter</code>.
+Then with the <code>@Subscribe</code> function, a handleAddEvent() method in <code>ModelManager</code> will be called to addEvent of the <code>AddressBook</code> object. The following code snippets
+shows the key implementation of how an Event object is added to the addressbook.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>   dialog.setResultConverter(dialogButton -&gt; {
+        if (dialogButton == button) {
+                return new BuildEvent().withName(text1.getText()).withDate(date).withAddress(text2.getText()).build();
+            }
+            return null;
+        });
+
+        Optional&lt;Event&gt; result = dialog.showAndWait();
+        result.ifPresent(event -&gt; {
+            EventsCenter.getInstance().post(new AddEventRequestEvent(event));
+   });</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    @Subscribe
+    private void handleAddEvent(AddEventRequestEvent event) throws DuplicateEventException {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        addressBook.addEvent(event.event);
+        updateFilteredEventList(PREDICATE_SHOW_ALL_EVENTS);
+        indicateAddressBookChanged();
+    }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Population of the calendar after Adding or Delete of Events will be completed by this method in the <code>Calendar.java</code> class.
+It reverts every node to be of the same color, then runs through the events list to update the individual event node.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public void populateUpdatedCalendar(UniqueEventList eventList) {
+        for (AnchorPaneNode ap : allCalendarDays) {
+            ap.setStyle("calendar-color");
+            for (Event event1 : eventList) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+                String newDate = formatter.format(ap.getDate());
+                if (newDate.equals(event1.getDate().toString())) {
+                    ap.getChildren();
+                    ap.setStyle("-fx-background-color: #ffebcd;");
+                }
+            }
+        }
+    }</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-10"><a class="link" href="#design-considerations-10">5.11.4. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> UI of <code>Calendar</code><br>
+<strong>Alternative 1 (current choice):</strong> Showing the calendar on a GridPane<br>
+<strong>Pros:</strong> A customizable calendar for the user and easy access to add an event on the calendar <br>
+<strong>Cons:</strong> Some users might want to have better user interface experience<br>
+<strong>Alternative 2:</strong> Google calendar implementation<br>
+<strong>Pros:</strong> Ready made calendar for developers to implement<br>
+<strong>Cons:</strong> Difficult to apply changes and suit the calendar to be as what user wants.<br></p>
 </div>
 </div>
 </div>
@@ -3109,7 +3320,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 07:59:41 +00:00
+Last updated 2017-11-12 09:25:31 +00:00
 </div>
 </div>
 </body>

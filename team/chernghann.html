@@ -16,6 +16,16 @@
 </div>
 <div id="content">
 <div class="sect1">
+<h2 id="purpose"><a class="link" href="#purpose">Purpose</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This project portfolio showcases my contributions to The Myth&#8217;s Book, a software engineering product made by
+my team and I during our study in National University of Singapore. The portfolio provides an outline of our project and
+showcases my contributions and justifications made to The Myth&#8217;s Book.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="project-the-myth-s-book"><a class="link" href="#project-the-myth-s-book">Project: The Myth&#8217;s Book</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -34,9 +44,158 @@ The Myth&#8217;s Book is a software application that is coded in <code>Java</cod
 <p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/main/chernghann.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/test/chernghann.md">Test code</a>]</p>
 </div>
 <div class="sect2">
-<h3 id="enhancement-added-add-events"><a class="link" href="#enhancement-added-add-events">Enhancement Added: Add Events</a></h3>
+<h3 id="enhancement-added-school-email-and-home-number-field"><a class="link" href="#enhancement-added-school-email-and-home-number-field">Enhancement Added: School Email and Home Number Field</a></h3>
 <div class="sect3">
 <h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">Adding a person: <code>add</code></a></h3>
+<div class="paragraph">
+<p>The <code>add</code> command helps you to add a person to The Myth&#8217;s Book.<br>
+You should look at the prefixes section, tips section and note section to
+know more on the format of adding a contact.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL [w/WEBSITE] [a/ADDRESS] [h/HOME_NUMBER] [se/SCHOOL_EMAIL] [b/BIRTHDAY] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Prefixes and its meaning:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 40%;">
+<colgroup>
+<col style="width: 28%;">
+<col style="width: 21%;">
+<col style="width: 7%;">
+<col style="width: 42%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compulsory Prefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meaning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional Prefix</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meaning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>p</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">phone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>w</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">website</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>e</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>h</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">home number</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>b</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">birthday</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>se</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">school email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>You can follow the examples below to guide you on how to add an individual.</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/John Doe p/98765432 h/65812321 e/johnd@example.com se/john@u.nus.edu w/https://www.facebook.com/johnDoe a/John street, block 123, #01-01 b/12/11/1972</code></p>
+</li>
+<li>
+<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com p/98123414 h/65132100 se/betsy@u.nus.edu w/https://www.facebook.com/betsyCrowe a/Newgate Prison p/1234567 b/02/03/2000 t/criminal</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of adding an individual that excludes the Birthday, School Email, and Home Number field:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/Adam Bait t/friend e/adambait@example.com p/98123414 w/https://www.facebook.com/adamBait a/18 Taiseng p/1234567</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+A tag is used to group your contacts into categories such as <code>friends</code>,<code>colleagues</code>.<br>
+Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John t/friend</code> or as <code>n/John</code>.<br>
+A person can have any number of tags (including 0).<br>
+Website, address, home number, school email, and birthday are optional fields.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Website should follow this format <code><a href="https://www.anyName.com/anyContent" class="bare">https://www.anyName.com/anyContent</a></code> where both <code>anyName</code> and <code>anyContent</code> can be alphanumeric.<br>
+You must have <code><a href="https://www" class="bare">https://www</a>.</code> and a domain name like <code>.com</code> or <code>.net</code> in the inputted website or it will result in inputted format error.<br>
+Birthday should be in proper format of "dd/mm/yyyy" where all numbers inputted for birthday are integers.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<div class="paragraph">
+<p>As university students, most of us would have school emails and personal emails. An extra field for the user to store an extra set of
+emails is definitely useful such that can contact the particular contact at a different email.
+Same idea applies to having an additional Home Number Field to be implemented for adding of a person into The Myth&#8217;s Book.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-add-events"><a class="link" href="#enhancement-added-add-events">Enhancement Added: Add Events</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-2"><a class="link" href="#external-behavior-2">External behavior</a></h4>
 <hr>
 <div class="paragraph">
 <p><mark>Start of Extract [from: User Guide]</mark></p>
@@ -73,7 +232,8 @@ Format: <code>add n/NAME d/DATE a/ADDRESS</code></p>
 <p>By typing this command, you will be able to add an event <code>Halloween Horror Night</code> in The Myth&#8217;s Book.</p>
 </div>
 <div class="paragraph">
-<p>If input is correct, you will be able to see the event being added successfully into The Myth&#8217;s Book and receive the following displayed result in the Results Display Panel.</p>
+<p>If input is correct, you will be able to see the event being added successfully into The Myth&#8217;s Book and receive the following displayed result in the Results Display Panel.
+The date of the event on the calendar will be populated with a different shade of color to signify that there is an event on that date.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -98,72 +258,32 @@ Eg. 09/12/2017 will not be accepted as a valid date.</p>
 </tr>
 </table>
 </div>
-</div>
-<div class="sect2">
-<h3 id="calendar"><a class="link" href="#calendar">Calendar</a></h3>
-<div class="paragraph">
-<p>The Calendar is a graphical user interface that displays a calendar for the user.<br>
-You will be able to navigate through different months to view the events on different days and dates of different months.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/calendar.PNG" alt="calendar" width="700">
-</div>
-</div>
-<div class="paragraph">
-<p>Figure 7.2.1</p>
-</div>
-<div class="paragraph">
-<p>Furthermore, you can add events after clicking on the specific date. A pop up window (Figure 7.2.2) will appear prompting you to fill up the details of the event.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/popupwindow.PNG" alt="popupwindow" width="300">
-</div>
-</div>
-<div class="paragraph">
-<p>Figure 7.2.2</p>
-</div>
-<div class="paragraph">
-<p>After adding an event, the Calendar will be populated with a colour over the chosen date of the Event. The day that has an event will be shown as seen in Figure 7.2.3 below.
-The calendar will also be populated after adding an event through the <a href="#62-adding-an-event&#8212;&#8203;addevent">Add Event Command</a>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/populatecalendar.PNG" alt="populatecalendar" width="700">
-</div>
-</div>
-<div class="paragraph">
-<p>Figure 7.2.3</p>
-</div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
 </div>
 <hr>
 <div class="sect3">
-<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
 <div class="paragraph">
 <p>As an address book targeted at University students in Singapore age between 18-24.
 On average, an university students have to juggle between many commitments in school and out of school. Many of these young adults are actively involved in many events internally and externally.
-Thus, the add event feature allos the users to be able to store and keep track of what events that are coming up and be able to plan and organise their schedule.</p>
+Thus, the add event feature allows the users to be able to store and keep track of what events that are coming up and be able to plan and organise their schedule.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="implementation"><a class="link" href="#implementation">Implementation</a></h2>
+<div class="sectionbody">
 <hr>
 <div class="paragraph">
 <p><mark>Start of Extract [from: Developer Guide]</mark></p>
 </div>
-</div>
-</div>
 <div class="sect2">
 <h3 id="add-event-mechanism"><a class="link" href="#add-event-mechanism">Add Event mechanism</a></h3>
 <div class="paragraph">
-<p>Add event mechanism adds an event which stores in the The Myth&#8217;s Book,
-which will then be used in a Calendar in future implementation. A reminder feature will also be tagged on to the event.</p>
-</div>
-<div class="paragraph">
-<p>The add event mechanism is facilitated by a <code>EventList</code>, which is stored in The Myth&#8217;s Book. Similar to the PersonList and TagList, the list contains the
+<p>Add event mechanism adds an event which stores in the The Myth&#8217;s Book. The add event mechanism is facilitated by a <code>EventList</code>, which is stored in The Myth&#8217;s Book. Similar to the PersonList and TagList, the list contains the
 different events with their information given by the user. This command inherits from <code>UndoableCommand</code>.</p>
 </div>
 <div class="paragraph">
@@ -179,33 +299,53 @@ can be undoable, where the previous state of the address book before sorting is 
 <p>Figure 5.2.1 AddEventCommand Logic Class Diagram</p>
 </div>
 <div class="paragraph">
+<p>The execution of AddEventCommand is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will execute and create a new <code>AddEventCommand</code> so as to add an event into The Myth&#8217;s Book.</p>
+</li>
+<li>
+<p>When <code>executeUndoable()</code> of <code>AddEventCommand</code> is called, <code>model.addEvent()</code> in the method will be processed.</p>
+</li>
+<li>
+<p>The <code>internalList</code> of the AddressBook will store all the Events.</p>
+</li>
+<li>
+<p>After <code>internalList</code> has added the event, function <code>updateFilterEventList(PREDICATE_SHOW_ALL_EVENT)</code> is called
+to update the list being filtered and also call an event <code>indicatedAddressBookChanged()</code> to show that the addressBook has be updated
+with additional event.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The illustration of the execution is illustrated in Figure 5.2.2 below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addeventmodelseqdiagram.PNG" alt="addeventmodelseqdiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.2.2 AddEventCommand Model Sequence Diagram</p>
+</div>
+<div class="paragraph">
 <p>Code of <code>AddEventCommand</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>public class AddEventCommand extends UndoableCommand {
-
-@Override
- public CommandResult executeUndoableCommand() throws CommandException {
-    requireNonNull(model);
-     try {
-         model.addEvent(toAdd);
-         return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
+<pre>    @Override
+    public CommandResult executeUndoableCommand() throws CommandException {
+        requireNonNull(model);
+        try {
+            model.addEvent(toAdd);
+            return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
         } catch (DuplicateEventException e) {
-        throw new CommandException(MESSAGE_DUPLICATE_EVENT);
+            throw new CommandException(MESSAGE_DUPLICATE_EVENT);
         }
-    }
-}</pre>
+    }</pre>
 </div>
-</div>
-<div class="paragraph">
-<p>A UniqueEventList is also created to store the list of Events in AddressBook.java</p>
-</div>
-<div class="paragraph">
-<p>Code of <code>UniqueEventList.java</code> when an Event is created and stored into the UniqueEventList:</p>
-</div>
-<div class="paragraph">
-<p>The new Events will be stored in UniqueEventList in AddressBook.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -222,6 +362,19 @@ can be undoable, where the previous state of the address book before sorting is 
     }
     ...
 }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code from <code>ModelManager</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    @Override
+    public synchronized void addEvent(ReadOnlyEvent event) throws DuplicateEventException {
+        addressBook.addEvent(event);
+        updateFilteredEventList(PREDICATE_SHOW_ALL_EVENTS);
+        indicateAddressBookChanged();
+    }</pre>
 </div>
 </div>
 <div class="sect3">
@@ -248,7 +401,7 @@ can be undoable, where the previous state of the address book before sorting is 
 <div class="sect2">
 <h3 id="enhancement-added-calendar"><a class="link" href="#enhancement-added-calendar">Enhancement Added: Calendar</a></h3>
 <div class="sect3">
-<h4 id="external-behavior-2"><a class="link" href="#external-behavior-2">External behavior</a></h4>
+<h4 id="external-behavior-3"><a class="link" href="#external-behavior-3">External behavior</a></h4>
 <hr>
 <div class="paragraph">
 <p><mark>Start of Extract [from: User Guide]</mark></p>
@@ -256,10 +409,10 @@ can be undoable, where the previous state of the address book before sorting is 
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-2"><a class="link" href="#calendar-2">Calendar</a></h3>
+<h3 id="calendar"><a class="link" href="#calendar">Calendar</a></h3>
 <div class="paragraph">
 <p>The Calendar is a graphical user interface that displays a calendar for the user.<br>
-You will be able to navigate through different months to view the events on different days and dates of different months.</p>
+You will be able to navigate through different months to view the events on different dates in different months.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -270,7 +423,7 @@ You will be able to navigate through different months to view the events on diff
 <p>Figure 7.2.1</p>
 </div>
 <div class="paragraph">
-<p>Furthermore, you can add events after clicking on the specific date. A pop up window (Figure 7.2.2) will appear prompting you to fill up the details of the event.</p>
+<p>Furthermore, you can add events after clicking on the specific date. A pop up window (Figure 7.2.2) will appear prompting you to fill up the details of the event (NAME and ADDRESS of the event).</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -282,7 +435,7 @@ You will be able to navigate through different months to view the events on diff
 </div>
 <div class="paragraph">
 <p>After adding an event, the Calendar will be populated with a colour over the chosen date of the Event. The day that has an event will be shown as seen in Figure 7.2.3 below.
-The calendar will also be populated after adding an event through the <a href="#62-adding-an-event&#8212;&#8203;addevent">Add Event Command</a>.</p>
+The calendar will also be populated after adding an event through the <a href="#adding-an-event-code-addevent-code">Add Event Command</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -297,29 +450,212 @@ The calendar will also be populated after adding an event through the <a href="#
 </div>
 <hr>
 <div class="sect3">
-<h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
+<h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
 <div class="paragraph">
-<p>A Calendar User Interface will enhance the user&#8217;s experience in using and organising their upcoming events. With a simple click on the calendar,
-the user will be able to get to add the events and be shown to them on the calendar with it being populating with a different shade of colour.</p>
+<p>A Calendar User Interface will enhance the user&#8217;s experience in using and organising their upcoming events. The calendar will be populated by the
+events added by the <code>AddEvent</code> Command. Also, a simple click on the calendar, the user will be able to get to add the events and be shown to them
+on the calendar with it being populating with a shade of colour.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+</div>
+<div class="sect2">
+<h3 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h3>
 <hr>
 <div class="paragraph">
 <p><mark>Start of Extract [from: Developer Guide]</mark></p>
-</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="calendar-mechanism"><a class="link" href="#calendar-mechanism">Calendar mechanism</a></h3>
+<div class="sect3">
+<h4 id="creating-calendar-layout"><a class="link" href="#creating-calendar-layout">Creating Calendar Layout</a></h4>
 <div class="paragraph">
-<p>The Calendar mechanism is facilitated by the <code>AnchorPaneNode</code> class.</p>
+<p>The Calendar is created with GridPanes and VBox. The following code snippets describes how the <code>AnchorPaneNode</code> object fills up the
+GridPane of the calendar. At the end of the method, the VBox gathers all the required parameters to get the view of the calendar.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public Calendar(YearMonth yearMonth, ObservableList&lt;ReadOnlyEvent&gt; eventList) {
+        currentYearMonth = yearMonth;
+        // Create the calendar grid pane
+        GridPane calendar = new GridPane();
+        calendar.setPrefSize(600, 400);
+        // Create rows and columns with anchor panes for the calendar
+        for (int i = 0; i &lt; 5; i++) {
+            for (int j = 0; j &lt; 7; j++) {
+                AnchorPaneNode ap = new AnchorPaneNode();
+                ap.setPrefSize(200, 200);
+                calendar.add(ap, j, i);
+                allCalendarDays.add(ap);
+                ap.getStyleClass().add("calendar-color");
+            }
+        }
+
+        // Days of the week labels
+        Text[] dayNames = new Text[]{new Text("Sunday"), new Text("Monday"),
+                          new Text("Tuesday"), new Text("Wednesday"), new Text("Thursday"),
+                          new Text("Friday"), new Text("Saturday")};
+
+        GridPane dayLabels = new GridPane();
+        dayLabels.setPrefWidth(600);
+        Integer col = 0;
+        for (Text txt : dayNames) {
+            txt.getStyleClass().add("calendar-color");
+            AnchorPane ap = new AnchorPane();
+            ap.setPrefSize(200, 10);
+            ap.setBottomAnchor(txt, 5.0);
+            ap.getChildren().add(txt);
+            dayLabels.add(ap, col++, 0);
+        }
+        ...
+    }</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="populating-calendar"><a class="link" href="#populating-calendar">Populating Calendar</a></h4>
+<div class="paragraph">
+<p>Now, you have the Calendar outline, the populateCalendar method calendar called will then populate the Calendar with the individual dates of the months.
+During the process, we would check if is there any events that are on the date corresponding to the AnchorPaneNode. If it tallies, the AnchorPaneNode will
+be populated with a change in background color.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public void populateCalendar(YearMonth yearMonth, ObservableList&lt;ReadOnlyEvent&gt; events) {
+        // Get the date we want to start with on the calendar
+        LocalDate calendarDate = LocalDate.of(yearMonth.getYear(), yearMonth.getMonthValue(), 1);
+        // Dial back the day until it is SUNDAY (unless the month starts on a sunday)
+        while (!calendarDate.getDayOfWeek().toString().equals("SUNDAY")) {
+            calendarDate = calendarDate.minusDays(1);
+        }
+        // Populate the calendar with day numbers
+        for (AnchorPaneNode ap : allCalendarDays) {
+            if (ap.getChildren().size() != 0) {
+                ap.getChildren().remove(0);
+            }
+            Text txt = new Text(String.valueOf(calendarDate.getDayOfMonth()));
+            txt.getStyleClass().add("calendar-color");
+            ap.setDate(calendarDate);
+            ap.setTopAnchor(txt, 5.0);
+            ap.setLeftAnchor(txt, 5.0);
+            ap.setStyle("calendar-color");
+            ap.getChildren().add(txt);
+            calendarDate = calendarDate.plusDays(1);
+        }
+
+        for (AnchorPaneNode ap : allCalendarDays) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+            String newDate = formatter.format(ap.getDate());
+            for (ReadOnlyEvent event : events) {
+                String date = event.getDate().toString();
+                if (newDate.equals(date)) {
+                    ap.getChildren();
+                    ap.setStyle("-fx-background-color: #ffebcd;");
+                }
+            }
+        }
+        // Change the title of the calendar
+        calendarTitle.setText(yearMonth.getMonth().toString() + " " + String.valueOf(yearMonth.getYear()));
+    }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>View the full code at <a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/src/main/java/seedu/address/ui/Calendar.java">Calendar</a> ,
+<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/src/main/java/seedu/address/ui/AnchorPaneNode.java">AnchorPaneNode</a></p>
+</div>
+<div class="paragraph">
+<p>The updating of different months and population of event nodes are done by the two separate methods that will post events to
+<code>EventsCenter</code> to update the calendar based on the <code>UniqueEventList</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public void previousMonth() {
+        currentYearMonth = currentYearMonth.minusMonths(1);
+        EventsCenter.getInstance().post(new PopulateMonthEvent(currentYearMonth));
+    }
+    public void nextMonth() {
+        currentYearMonth = currentYearMonth.plusMonths(1);
+        EventsCenter.getInstance().post(new PopulateMonthEvent(currentYearMonth));
+    }</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="dialog-box"><a class="link" href="#dialog-box">Dialog Box</a></h4>
+<div class="paragraph">
+<p>The mechanism behind the process of adding an event from the dialog box is shown in Figure 5.9.3.1 below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dialogaddeventsequencediagram.PNG" alt="dialogaddeventsequencediagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.9.3.1 Dialog Add Event Sequence Diagram</p>
+</div>
+<div class="paragraph">
+<p>From the startDialog method in <code>AnchorPaneNode</code> class, after receiving a valid Event, an <code>AddEventRequestEvent</code> object will be posted to <code>EventsCenter</code>.
+Then with the <code>@Subscribe</code> function, a handleAddEvent() method in <code>ModelManager</code> will be called to addEvent of the <code>AddressBook</code> object. The following code snippets
+shows the key implementation of how an Event object is added to the addressbook.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>   dialog.setResultConverter(dialogButton -&gt; {
+        if (dialogButton == button) {
+                return new BuildEvent().withName(text1.getText()).withDate(date).withAddress(text2.getText()).build();
+            }
+            return null;
+        });
+
+        Optional&lt;Event&gt; result = dialog.showAndWait();
+        result.ifPresent(event -&gt; {
+            EventsCenter.getInstance().post(new AddEventRequestEvent(event));
+   });</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    @Subscribe
+    private void handleAddEvent(AddEventRequestEvent event) throws DuplicateEventException {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        addressBook.addEvent(event.event);
+        updateFilteredEventList(PREDICATE_SHOW_ALL_EVENTS);
+        indicateAddressBookChanged();
+    }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Population of the calendar after Adding or Delete of Events will be completed by this method in the <code>Calendar.java</code> class.
+It reverts every node to be of the same color, then runs through the events list to update the individual event node.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public void populateUpdatedCalendar(UniqueEventList eventList) {
+        for (AnchorPaneNode ap : allCalendarDays) {
+            ap.setStyle("calendar-color");
+            for (Event event1 : eventList) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+                String newDate = formatter.format(ap.getDate());
+                if (newDate.equals(event1.getDate().toString())) {
+                    ap.getChildren();
+                    ap.setStyle("-fx-background-color: #ffebcd;");
+                }
+            }
+        }
+    }</pre>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
 <div class="paragraph">
-<p>To be included.</p>
+<p><strong>Aspect:</strong> UI of <code>Calendar</code><br>
+<strong>Alternative 1 (current choice):</strong> Showing the calendar on a GridPane<br>
+<strong>Pros:</strong> A customizable calendar for the user and easy access to add an event on the calendar <br>
+<strong>Cons:</strong> Some users might want to have better user interface experience<br>
+<strong>Alternative 2:</strong> Google calendar implementation<br>
+<strong>Pros:</strong> Ready made calendar for developers to implement<br>
+<strong>Cons:</strong> Difficult to apply changes and suit the calendar to be as what user wants.<br></p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -328,43 +664,21 @@ the user will be able to get to add the events and be shown to them on the calen
 </div>
 </div>
 <div class="sect2">
-<h3 id="enhancement-added-school-email-and-home-number-field"><a class="link" href="#enhancement-added-school-email-and-home-number-field">Enhancement Added: School Email and Home Number Field</a></h3>
-<div class="sect3">
-<h4 id="external-behavior-3"><a class="link" href="#external-behavior-3">External behavior</a></h4>
-<hr>
+<h3 id="enhancement-proposed-1-school-timetable"><a class="link" href="#enhancement-proposed-1-school-timetable">Enhancement Proposed 1: School Timetable</a></h3>
 <div class="paragraph">
-<p><mark>Start of Extract [from: User Guide]</mark></p>
-</div>
-<div class="paragraph">
-<p>include::../UserGuide.adoc</p>
-</div>
-<div class="paragraph">
-<p><mark>End of Extract</mark></p>
-</div>
-<hr>
-</div>
-<div class="sect3">
-<h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
-
-</div>
-<div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
-<hr>
-<div class="paragraph">
-<p><mark>Start of Extract [from: Developer Guide]</mark></p>
-</div>
-<div class="paragraph">
-<p>include::../DeveloperGuide.adoc</p>
-</div>
-<div class="paragraph">
-<p><mark>End of Extract</mark></p>
-</div>
-<hr>
+<p>Nusmods is commonly used by students in National University of Singapore to plan for their school modules and organising their timetable.
+I am proposing an in-app timetable that caters to the all the different universities in Singapore. Similar to Nusmods, the students
+will be able to key in their module code and plan out their timetable in The Myth&#8217;s Book. Thankfully for the Nusmods api, I believe that
+this enhancement could be achieve in a few month&#8217;s time and be implemented in the next version of The Myth&#8217;s Book.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="enhancement-proposed-sending-of-text-messages"><a class="link" href="#enhancement-proposed-sending-of-text-messages">Enhancement Proposed: Sending of Text Messages</a></h3>
-
+<h3 id="enhancement-proposed-2-name-card-recognition"><a class="link" href="#enhancement-proposed-2-name-card-recognition">Enhancement Proposed 2: Name Card Recognition</a></h3>
+<div class="paragraph">
+<p>As we attempt to allow The Myth&#8217;s Book to reach out to the target audience, I feel that the working adults could also use this application
+at work. Thus, this enhancement that I propose is for the working adults who tend to have name cards or business cards. User of
+the application can then simply use their laptop&#8217;s web camera feature to scan the name card and store the details of the contact.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
@@ -375,7 +689,7 @@ the user will be able to get to add the events and be shown to them on the calen
 <div class="ulist">
 <ul>
 <li>
-<p>Provide suggestions for improvement (Pull request <a href="https://github.com/CS2103AUG2017-W09-B1/main/issues/121#event-1330982844">#121</a>)</p>
+<p>Provide suggestions for improvement (Pull request <a href="https://github.com/CS2103AUG2017-W09-B1/main/issues/121#event-1330982844">#121</a> , <a href="https://github.com/CS2103AUG2017-W09-B1/main/issues/115">#115</a>)</p>
 </li>
 <li>
 <p>Found a bug in implementation (Pull request <a href="https://github.com/CS2103AUG2017-W09-B1/main/issues/113">#113</a>)</p>
@@ -383,21 +697,53 @@ the user will be able to get to add the events and be shown to them on the calen
 </ul>
 </div>
 </li>
+<li>
+<p>Documentation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Included a <code>Back to Top</code> button for both User Guide and Developer Guide that improves user friendliness.
+(Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/42">#42</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Software Contributions</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Storage</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Included ability to readBackUpAddressBook (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/48">#45</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Test coverages</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Increase test coverages (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/151">#151</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/158">#158</a>)</p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="project-ping"><a class="link" href="#project-ping">Project: Ping!</a></h2>
-<div class="sectionbody">
-
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 07:59:41 +00:00
+Last updated 2017-11-12 09:25:31 +00:00
 </div>
 </div>
 </body>
