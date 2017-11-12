@@ -2831,7 +2831,8 @@ be populated with a change in background color.</p>
 </div>
 <div class="paragraph">
 <p>The updating of different months and population of event nodes are done by the two separate methods that will post events to
-<code>EventsCenter</code> to update the calendar based on the <code>UniqueEventList</code>.</p>
+<code>EventsCenter</code> to update the calendar based on the <code>currentYearMonth</code>. The listener <code>handlePopulateMonthEvent</code> method
+will then populate the Calendar in <code>MainWindow</code> with <code>EventList</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2842,6 +2843,15 @@ be populated with a change in background color.</p>
     public void nextMonth() {
         currentYearMonth = currentYearMonth.plusMonths(1);
         EventsCenter.getInstance().post(new PopulateMonthEvent(currentYearMonth));
+    }</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    @Subscribe
+    private void handlePopulateMonthEvent(PopulateMonthEvent request) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(request));
+        calendar.populateCalendar(request.yearMonth, logic.getFilteredEventList());
     }</pre>
 </div>
 </div>
@@ -4125,7 +4135,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 15:42:08 +00:00
+Last updated 2017-11-12 15:51:43 +00:00
 </div>
 </div>
 </body>
