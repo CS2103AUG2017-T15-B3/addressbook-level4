@@ -804,138 +804,11 @@ which is important for GUI enhancement.<br></p>
 <div class="paragraph">
 <p><mark>Start of Extract [from: User Guide]</mark></p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">Adding a person: <code>add</code></a></h3>
-<div class="paragraph">
-<p>The <code>add</code> command helps you to add a person to The Myth&#8217;s Book.<br>
-You should look at the prefixes section, tips section and note section to
-know more on the format of adding a contact.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL [w/WEBSITE] [a/ADDRESS] [h/HOME_NUMBER] [se/SCHOOL_EMAIL] [b/BIRTHDAY] [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p>Prefixes and its meaning:</p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 40%;">
-<colgroup>
-<col style="width: 28%;">
-<col style="width: 21%;">
-<col style="width: 7%;">
-<col style="width: 42%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Compulsory Prefix</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Meaning</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional Prefix</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Meaning</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>n</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>a</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">address</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>p</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">phone</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>w</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">website</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>e</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>h</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">home number</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>b</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">birthday</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>se</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">school email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>You can follow the examples below to guide you on how to add an individual.</p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add n/John Doe p/98765432 h/65812321 e/johnd@example.com se/john@u.nus.edu w/https://www.facebook.com/johnDoe a/John street, block 123, #01-01 b/12/11/1972</code></p>
-</li>
-<li>
-<p><code>add n/Betsy Crowe t/friend e/betsycrowe@example.com p/98123414 h/65132100 se/betsy@u.nus.edu w/https://www.facebook.com/betsyCrowe a/Newgate Prison p/1234567 b/02/03/2000 t/criminal</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Example of adding an individual that excludes the Birthday, School Email, and Home Number field:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add n/Adam Bait t/friend e/adambait@example.com p/98123414 w/https://www.facebook.com/adamBait a/18 Taiseng p/1234567</code></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-A tag is used to group your contacts into categories such as <code>friends</code>,<code>colleagues</code>.<br>
-Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John t/friend</code> or as <code>n/John</code>.<br>
-A person can have any number of tags (including 0).<br>
-Website, address, home number, school email, and birthday are optional fields.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Website should follow this format <code><a href="https://www.anyName.com/anyContent" class="bare">https://www.anyName.com/anyContent</a></code> where both <code>anyName</code> and <code>anyContent</code> can be alphanumeric.<br>
-You must have <code><a href="https://www" class="bare">https://www</a>.</code> and a domain name like <code>.com</code> or <code>.net</code> in the inputted website or it will result in inputted format error.<br>
-Birthday should be in proper format of "dd/mm/yyyy" where all numbers inputted for birthday are integers.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
 </div>
 <hr>
+</div>
 <div class="sect3">
 <h4 id="justification-4"><a class="link" href="#justification-4">Justification</a></h4>
 <div class="paragraph">
@@ -1586,7 +1459,7 @@ better user readability. You can click and view the attached pull request links 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/PrefaceUG.PNG" alt="PrefaceUG" width="600">
+<img src="../images/PrefaceUG.png" alt="PrefaceUG" width="600">
 </div>
 </div>
 <div class="ulist">
@@ -1641,7 +1514,7 @@ better user readability. You can click and view the attached pull request links 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 14:47:12 +00:00
+Last updated 2017-11-12 15:42:08 +00:00
 </div>
 </div>
 </body>
