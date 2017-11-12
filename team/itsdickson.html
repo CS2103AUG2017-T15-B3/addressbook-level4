@@ -18,7 +18,10 @@
 <div class="sect1">
 <h2 id="purpose"><a class="link" href="#purpose">Purpose</a></h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>This Project Portfolio Page introduces the software, The Myth&#8217;s Book, and subsequently displays the contributions that Chan Kin Hung Dickson
+done for The Myth&#8217;s Book. The contributions include enhancements added, enhancements proposed, and other additional contributions.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -37,10 +40,27 @@ in typing out command line inputs to manipulate with information of their contac
 The Myth&#8217;s Book is a software application that is coded in <code>Java</code> programming language.</p>
 </div>
 <div class="paragraph">
+<p>The figure below is the start page of The Myth&#8217;s Book.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 1.1 The Myth&#8217;s Book UI</em></p>
+</div>
+<div class="paragraph">
 <p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/main/itsdickson.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-T15-B3/main/blob/master/collated/test/itsdickson.md">Test code</a>]</p>
 </div>
 <div class="sect2">
 <h3 id="enhancement-added-favourite-unfavourite"><a class="link" href="#enhancement-added-favourite-unfavourite">Enhancement Added: Favourite/Unfavourite</a></h3>
+<div class="paragraph">
+<p>This section includes the behaviour, justification and implementation of <code>FavouriteCommand</code>, <code>Unfavouritecommand</code> and <code>FavouriteListCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code on GitHub</strong>: Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/67">#67</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/82">#82</a></p>
+</div>
 <div class="sect3">
 <h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
 <hr>
@@ -91,10 +111,10 @@ By typing this command, you will be able to favourite the 1st person in the resu
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-favourited-persons-code-favouritelist-code"><a class="link" href="#listing-all-favourited-persons-code-favouritelist-code">Listing all favourited persons : <code>favouritelist</code></a></h3>
+<h3 id="listing-all-favourited-persons-code-favourites-code"><a class="link" href="#listing-all-favourited-persons-code-favourites-code">Listing all favourited persons : <code>favourites</code></a></h3>
 <div class="paragraph">
 <p>This command shows a list of all favourited persons in The Myth&#8217;s Book.<br>
-Format: <code>favouritelist</code></p>
+Format: <code>favourites</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -131,9 +151,9 @@ Format: <code>unfavourite INDEX</code></p>
 By typing <code>unfavourite 2</code>, you will be able to unfavourite the 2nd person in the most recent person listing of The Myth&#8217;s Book.</p>
 </li>
 <li>
-<p><code>favouritelist</code><br>
+<p><code>favourites</code><br>
 <code>unfavourite 1</code><br>
-By typing <code>unfavourite 1</code>, you will be able to unfavourite the 1st person in the results of the <code>favouritelist</code> command.</p>
+By typing <code>unfavourite 1</code>, you will be able to unfavourite the 1st person in the results of the <code>favourites</code> command.</p>
 </li>
 <li>
 <p><code>find Betsy</code><br>
@@ -149,7 +169,10 @@ By typing <code>unfavourite 1</code>, you will be able to unfavourite the 1st pe
 <div class="sect3">
 <h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
 <div class="paragraph">
-<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
+<p>University students tend to make many friends while they are in school, and when the contacts list increase in number, it becomes hard for the students to keep track
+which one of them are their close friends. Furthermore, it becomes tedious to search around the contacts list to find their good or even best friends. Hence, <code>FavouriteCommand</code>,
+<code>UnfavouriteCommand</code> and <code>FavouriteListCommand</code> will help university students better categorise their good and best friends, so that they can easily look for their best friends when they need to.
+This would also help improve the efficiency of using The Myth&#8217;s Book, as less time would be spent trying to find their favourited contacts.</p>
 </div>
 </div>
 <div class="sect3">
@@ -165,9 +188,12 @@ By typing <code>unfavourite 1</code>, you will be able to unfavourite the 1st pe
 </div>
 </div>
 <div class="sect2">
-<h3 id="enhancement-added-switch-theme"><a class="link" href="#enhancement-added-switch-theme">Enhancement Added: Switch Theme</a></h3>
+<h3 id="enhancement-added-switch-themes"><a class="link" href="#enhancement-added-switch-themes">Enhancement Added: Switch/Themes</a></h3>
 <div class="paragraph">
-<p>(Pull Requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/50">#50</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/63">#63</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/78">#78</a>)</p>
+<p>This section includes the behaviour, justification and implementation of <code>SwitchThemeCommand</code> and <code>ThemeListCommand</code>. It also includes the behaviour and justification of <code>Bright Theme</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code on GitHub</strong>: Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/50">#50</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/63">#63</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/78">#78</a></p>
 </div>
 <div class="sect3">
 <h4 id="external-behavior-2"><a class="link" href="#external-behavior-2">External behavior</a></h4>
@@ -178,7 +204,39 @@ By typing <code>unfavourite 1</code>, you will be able to unfavourite the 1st pe
 </div>
 </div>
 <div class="sect2">
-<h3 id="switching-themes-code-switch-code"><a class="link" href="#switching-themes-code-switch-code">Switching themes : <code>switch</code></a></h3>
+<h3 id="bright-theme"><a class="link" href="#bright-theme">Bright Theme</a></h3>
+<div class="paragraph">
+<p>UI that is of a bright colour scheme as compared to the default <code>Dark Theme</code>.<br>
+You will be able to switch between <code>Bright Theme</code> and <code>Dark Theme</code> through the command <code>switch</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BrightTheme.png" alt="BrightTheme" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 9.3.1 Bright Theme</p>
+</div>
+<div class="paragraph">
+<p><a href="#the-myths-book---user-guide">Back To Top</a>
+=== Listing all themes : <code>themes</code></p>
+</div>
+<div class="paragraph">
+<p>This command shows a list of all themes that is available to you in pop-up window format in The Myth&#8217;s Book.<br>
+Format: <code>themes</code></p>
+</div>
+<div class="paragraph">
+<p>You should see the result of using <code>themes</code> as seen in Figure 6.5.1.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/themeslist.png" alt="themeslist" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 6.5.1 <code>themes</code> Result for Themes List Command
+=== Switching themes : <code>switch</code></p>
+</div>
 <div class="paragraph">
 <p>This command helps you to switch the current theme to your favourite theme.<br>
 Format: <code>switch INDEX</code></p>
@@ -206,12 +264,12 @@ Format: <code>switch INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>themeslist</code><br>
+<p><code>themes</code><br>
 <code>switch 2</code><br></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>By typing <code>themeslist</code>, you will be able to see the available themes that The Myth&#8217;s Book has to offer.<br></p>
+<p>By typing <code>themes</code>, you will be able to see the available themes that The Myth&#8217;s Book has to offer.<br></p>
 </li>
 <li>
 <p>By typing <code>switch 2</code>, you will be able to switch to the 2nd theme listed in the themes list.</p>
@@ -222,7 +280,7 @@ Format: <code>switch INDEX</code></p>
 </ul>
 </div>
 <div class="paragraph">
-<p>You should see the result of using <code>switch 2</code> as seen in Figure 5.15.1.</p>
+<p>You should see the result of using <code>switch 2</code> as seen in Figure 6.6.1.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -230,7 +288,7 @@ Format: <code>switch INDEX</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.15.1 <code>switch 2</code> Result for Switch Command</p>
+<p>Figure 6.6.1 <code>switch 2</code> Result for Switch Command</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -239,7 +297,10 @@ Format: <code>switch INDEX</code></p>
 <div class="sect3">
 <h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
 <div class="paragraph">
-<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
+<p>University students in this age would often like customisation of their application. Furthermore, different students have different preferences in how their application should look like.
+If there is no customisation, some students may not want to use the application as it does not appeal to them. Hence, <code>SwitchThemeCommand</code>, <code>ThemeListCommand</code> and <code>Bright Theme</code> provides the ability for
+university students to choose the type of colour theme they want their The Myth&#8217;s Book to have. This improves the overall user experience of the university students since they can choose their
+preferred colour theme for the application.</p>
 </div>
 </div>
 <div class="sect3">
@@ -253,7 +314,10 @@ Format: <code>switch INDEX</code></p>
 <div class="sect2">
 <h3 id="switch-theme-mechanism"><a class="link" href="#switch-theme-mechanism">Switch Theme mechanism</a></h3>
 <div class="paragraph">
-<p>The switch theme mechanism is facilitated by a <code>ThemesList</code>, which resides inside <code>AddressBook</code>. <code>ThemesList</code> contains a list of CSS files, in which each file are of differing colour themes for the application user interface. It sets the theme of the application to the theme specified by the index given by the user. This command will inherit from <code>Command</code>.</p>
+<p>The switch theme mechanism is facilitated by a <code>ThemesList</code>, which resides inside <code>AddressBook</code>. <code>Themes</code> contains a list of CSS files, in which each file are of differing colour themes for the application user interface. It sets the theme of the application to the theme specified by the index given by the user. This command will inherit from <code>Command</code>.</p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, <code>SwitchThemeCommand</code> inherits <code>Command</code>, which means its state is not saved by the address book, and it cannot be undone after executing the command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -261,28 +325,40 @@ Format: <code>switch INDEX</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>As seen in the diagram above, <code>SwitchThemeCommand</code> inherits <code>Command</code>, which means its state is not saved by the address book, and it cannot be undone after executing the command.</p>
+<p><em>Figure 5.5.1 Switch Theme Command Diagram 1</em></p>
 </div>
 <div class="paragraph">
-<p>Suppose that the user has just launched the application. The <code>ThemesList</code> will be initialised based on the current existing colour themes.</p>
+<p>The execution of SwitchThemeCommand is processed in this way:</p>
 </div>
-<div class="paragraph">
-<p>The user executes <code>themeslist</code> to look through the existing colour themes, and pick one that he or she wants.</p>
-</div>
-<div class="paragraph">
-<p>The user will then execute <code>switch 2</code>, with <code>2</code> being the <code>index</code> of the theme that the user prefers, provided by the executed <code>themeslist</code>.</p>
-</div>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User has just launched the application. The <code>Themes</code> will be initialised based on <code>CurrentTheme</code> which resides in <code>ModelManager</code>.</p>
+</li>
+<li>
+<p>User will execute <code>themes</code> to look through the existing colour themes, and pick one that he or she wants.</p>
+</li>
+<li>
+<p>User will then execute <code>switch 2</code>, with <code>2</code> being the <code>index</code> of the theme that the user prefers, provided by the executed <code>themes</code>.</p>
+</li>
+<li>
 <p>The <code>ThemesList</code> will take the <code>index</code> provided by the user, and return a <code>String</code> of the CSS file name based on the <code>index</code>.</p>
+</li>
+<li>
+<p>The execution of <code>switch 2</code> posts an event <code>ChangeThemeRequestEvent</code>, which will then be listened and handled by <code>handleChangeThemeEvent</code> in <code>MainWindow</code>.</p>
+</li>
+<li>
+<p>The <code>Stylesheets</code> of the <code>MainWindow</code> will then remove the current existing CSS file, which is the current theme, and add the given <code>String</code> of the CSS file into <code>Stylesheets</code>.
+That will set the current colour theme of The Myth&#8217;s Book to the preferred colour theme.</p>
+</li>
+<li>
+<p>Subsequently, the colour theme chosen will update <code>CurrentTheme</code> of The Myth&#8217;s Book in <code>UserPrefs</code> through <code>LogicManager</code> and <code>ModelManager</code>. This will
+allow the application to check the latest colour theme before the application was closed and sets the application&#8217;s colour theme to it through <code>MainWindow</code>.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>The execution of <code>switch 2</code> toggles an event <code>ChangeThemeRequestEvent</code>, which will then be listened and handled by <code>MainWindow</code>.</p>
-</div>
-<div class="paragraph">
-<p>The <code>Stylesheets</code> of the <code>MainWindow</code> will then remove the current existing CSS file, which is the current theme, and add the given <code>String</code> of the CSS file into <code>Stylesheets</code>. That will set the current colour theme of <code>The Myth&#8217;s Book</code> to the preferred colour theme.</p>
-</div>
-<div class="paragraph">
-<p>Code of SwitchThemeCommand :</p>
+<p>Code of SwitchThemeCommand:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -296,19 +372,20 @@ Format: <code>switch INDEX</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Listener for ChangeThemeRequestEvent in MainWindow.java :</p>
+<p>Listener for ChangeThemeRequestEvent in MainWindow.java:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Subscribe</span>
 <span class="directive">private</span> <span class="type">void</span> handleChangeThemeEvent(ChangeThemeRequestEvent event) {
-    logger.info(LogsCenter.getEventHandlingLogMessage(event));
     handleChangeTheme(event.theme);
+    browserPanel.setDefaultPage(event.theme);
+    logic.setCurrentTheme(getCurrentTheme());
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Removing and adding of CSS file into Stylesheets in MainWindow.java :</p>
+<p>Removing and adding of CSS file into Stylesheets in MainWindow.java:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -316,12 +393,25 @@ Format: <code>switch INDEX</code></p>
     <span class="keyword">if</span> (getRoot().getStylesheets().size() &gt; <span class="integer">1</span>) {
         getRoot().getStylesheets().remove(CURRENT_THEME_INDEX);
     }
-    getRoot().getStylesheets().add(<span class="string"><span class="delimiter">&quot;</span><span class="content">/view/</span><span class="delimiter">&quot;</span></span> + theme);
+    getRoot().getStylesheets().add(VIEW_PATH + theme);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Setting of default theme of application based on UserPrefs in MainWindow.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> <span class="type">void</span> setWindowDefaultTheme(UserPrefs prefs) {
+    getRoot().getStylesheets().add(prefs.getTheme());
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram shows how the switch theme operation works:</p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, when <code>switch 1</code> is typed into the command line input, a new <code>SwitchThemeCommand</code> is created.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -329,7 +419,10 @@ Format: <code>switch INDEX</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>As seen in the diagram above, when <code>switch 1</code> is typed into the command line input, a new <code>SwitchThemeCommand</code> is created.</p>
+<p><em>Figure 5.5.2 Switch Theme Command Diagram 2</em></p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, when <code>switch 1</code> is executed in <code>SwitchThemeCommand</code>, it will post <code>ChangeThemeRequestEvent</code> to the <code>EventsCenter</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -337,10 +430,10 @@ Format: <code>switch INDEX</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>As seen in the diagram above, when <code>switch 1</code> is executed in <code>SwitchThemeCommand</code>, it will post <code>ChangeThemeRequestEvent</code> to the <code>EventsCenter</code>.</p>
+<p><em>Figure 5.5.3 Switch Theme Command Diagram 3</em></p>
 </div>
 <div class="paragraph">
-<p>Upon detecting <code>ChangeThemeRequestEvent</code>, <code>Ui</code> will call <code>handleChangeTheme</code> to handle the event, update the <code>MainWindow</code> accordingly and update its status bar.</p>
+<p>Upon detecting <code>ChangeThemeRequestEvent</code>, <code>MainWindow</code> will call <code>handleChangeTheme</code> to handle the event.</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
@@ -357,63 +450,161 @@ Format: <code>switch INDEX</code></p>
 <div class="paragraph">
 <p><strong>Aspect:</strong> How switch theme executes<br>
 <strong>Alternative 1 (current choice):</strong> Taking in index (type Integer) as the argument.<br>
-<strong>Pros:</strong> Simple to implement since the index will tally with <code>ThemesList</code>. Simple to use since users don&#8217;t have to remember the names and look at the index in <code>ThemesList</code>.<br>
-<strong>Cons:</strong> Maybe less favourable for users when the size of <code>ThemesList</code> increase.<br>
+<strong>Pros:</strong> Simple to implement since the index will tally with <code>Themes</code>. Simple to use since users don&#8217;t have to remember the names and look at the index in <code>Themes</code>.<br>
+<strong>Cons:</strong> Maybe less favourable for users when the size of <code>Themes</code> increase.<br>
 <strong>Alternative 2:</strong> Taking in theme&#8217;s name (type String) as the argument.<br>
 <strong>Pros:</strong> Might be more favourable for long-time users since names may be easier to remember than numbers after using the application for a long time.<br>
 <strong>Cons:</strong> Harder to implement and test.<br></p>
 </div>
-<div class="paragraph">
-<p><mark>End of Extract</mark></p>
-</div>
-<hr>
 </div>
 </div>
 <div class="sect2">
-<h3 id="enhancement-added-themes-list"><a class="link" href="#enhancement-added-themes-list">Enhancement Added: Themes List</a></h3>
+<h3 id="theme-list-mechanism"><a class="link" href="#theme-list-mechanism">Theme List mechanism</a></h3>
 <div class="paragraph">
-<p>(Pull Requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/50">#50</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/63">#63</a>)</p>
-</div>
-<div class="sect3">
-<h4 id="external-behavior-3"><a class="link" href="#external-behavior-3">External behavior</a></h4>
-<hr>
-<div class="paragraph">
-<p><mark>Start of Extract [from: User Guide]</mark></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="listing-all-themes-code-themeslist-code"><a class="link" href="#listing-all-themes-code-themeslist-code">Listing all themes : <code>themeslist</code></a></h3>
-<div class="paragraph">
-<p>This command shows a list of all themes that is available to you in pop-up window format in The Myth&#8217;s Book.<br>
-Format: <code>themeslist</code></p>
+<p>The theme list mechanism is facilitated by a <code>ThemesWindow</code>, which resides in <code>MainWindow</code>. <code>ThemesWindow</code> is a pop-up window that is populated by <code>Themes.html</code>, a HTML file
+consisting of a list of available colour themes in The Myth&#8217;s Book.</p>
 </div>
 <div class="paragraph">
-<p>You should see the result of using <code>themeslist</code> as seen in Figure 5.14.1.</p>
+<p><code>Themes.html</code> will then populate <code>ThemesWindow</code>. This command will inherit from <code>Command</code>.</p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, the <code>ThemeListCommand</code> inherts from <code>Command</code>, which means its state is not saved by the address book, and it cannot be undone after executing the command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/themeslist.png" alt="themeslist" width="800">
+<img src="../images/ThemeListCommandDiagram1.png" alt="ThemeListCommandDiagram1" width="800">
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.14.1 <code>themeslist</code> Result for Themes List Command</p>
+<p><em>Figure 5.6.1 Theme List Command Diagram 1</em></p>
 </div>
 <div class="paragraph">
-<p><mark>End of Extract</mark></p>
+<p>The execution of ThemeListCommand is processed in this way:</p>
 </div>
-<hr>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>When the user execute <code>themes</code>, it posts an event <code>ShowThemeRequestEvent</code>, which will then be listened and handled by <code>handleShowThemeEvent</code> in <code>MainWindow</code>.</p>
+</li>
+<li>
+<p><code>gradle</code> will then convert the document <code>Themes.adoc</code> into <code>Themes.html</code> file.</p>
+</li>
+<li>
+<p><code>ThemesWindow</code> will then be activated, and will be populated by <code>Themes.html</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of ThemeListCommand:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">ThemeListCommand</span> <span class="directive">extends</span> Command {
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult execute() {
+        <span class="comment">// ... theme list logic ...</span>
+        EventsCenter.getInstance().post(<span class="keyword">new</span> ShowThemeRequestEvent());
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code of ThemesWindow.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> ThemesWindow() {
+    <span class="comment">// ... themes window logic ...</span>
+    dialogStage = createDialogStage(TITLE, <span class="predefined-constant">null</span>, scene);
+    dialogStage.setMaximized(<span class="predefined-constant">true</span>);
+    FxViewUtil.setStageIcon(dialogStage, ICON);
+
+    <span class="predefined-type">String</span> userGuideUrl = getClass().getResource(THEMES_FILE_PATH).toString();
+    browser.getEngine().load(userGuideUrl);
+}
+
+<span class="directive">public</span> <span class="type">void</span> show() {
+    <span class="comment">// ... show logic ...</span>
+    dialogStage.showAndWait();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Listener for ShowThemeRequestEvent in MainWindow.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Subscribe</span>
+<span class="directive">private</span> <span class="type">void</span> handleShowThemesEvent(ShowThemeRequestEvent event) {
+    logger.info(LogsCenter.getEventHandlingLogMessage(event));
+    handleThemes();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Creating and showing of ThemesWindow in MainWindow.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@FXML</span>
+<span class="directive">public</span> <span class="type">void</span> handleThemes() {
+    ThemesWindow themesWindow = <span class="keyword">new</span> ThemesWindow();
+    themesWindow.show();
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Including of Themes.html in build.gradle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">task deployOfflineDocs(type: Copy) {
+    into(<span class="string"><span class="delimiter">'</span><span class="content">src/main/resources/docs</span><span class="delimiter">'</span></span>)
+
+    from (<span class="string"><span class="delimiter">&quot;</span><span class="content">${asciidoctor.outputDir}/html5</span><span class="delimiter">&quot;</span></span>) {
+        include <span class="string"><span class="delimiter">'</span><span class="content">stylesheets/*</span><span class="delimiter">'</span></span>
+        include <span class="string"><span class="delimiter">'</span><span class="content">images/*</span><span class="delimiter">'</span></span>
+        include <span class="string"><span class="delimiter">'</span><span class="content">UserGuide.html</span><span class="delimiter">'</span></span>
+        include <span class="string"><span class="delimiter">'</span><span class="content">Themes.html</span><span class="delimiter">'</span></span>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the theme list operation works:</p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, when <code>themes</code> is typed into the command line input, a new <code>ThemeListcommand</code> is created.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ThemeListCommandDiagram2.png" alt="ThemeListCommandDiagram2" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.6.2 Theme List Command Diagram 2</em></p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, when <code>themes</code> is executed in <code>ThemeListCommand</code>, it will post <code>ShowThemeRequestEvent</code> to the <code>EventsCenter</code>, which will be handled by <code>MainWindow</code> through <code>handleThemes</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ThemeListCommandDiagram3.png" alt="ThemeListCommandDiagram3" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.6.3 Theme List Command Diagram 3</em></p>
+</div>
 <div class="sect3">
-<h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
 <div class="paragraph">
-<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
-<hr>
-<div class="paragraph">
-<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+<p><strong>Aspect:</strong> How theme list executes<br>
+<strong>Alternative 1 (current choice):</strong> Showing the list of themes through a pop-up window populated by a HTML file.<br>
+<strong>Pros:</strong> Improve user-friendliness because users will be able to see how each theme looks like, and will be able to decide and choose which theme they prefer easily.<br>
+<strong>Cons:</strong> Developers need to learn the implementation of <code>gradle</code>, <code>asciidoctor</code> and <code>deployOfflineDocs</code>.
+<strong>Alternative 2:</strong> Showing the list of themes through <code>CommandResult</code> in <code>ResultDisplay</code>.
+<strong>Pros:</strong> Simple to implement since the list of themes can come as <code>String</code> and do not need to convert asciidoc to HTML file. Developers do not need to learn implementation of <code>gradle</code>, <code>asciidoctor</code> and <code>deployOfflineDocs</code>.<br>
+<strong>Cons:</strong> Reduce user-friendliness since users will not be able to see how each theme looks like, and will not be able to decide and choose preferred theme.<br></p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -424,7 +615,214 @@ Format: <code>themeslist</code></p>
 <div class="sect2">
 <h3 id="enhancement-added-events-list"><a class="link" href="#enhancement-added-events-list">Enhancement Added: Events List</a></h3>
 <div class="paragraph">
-<p>(Pull Request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/135">#135</a>)</p>
+<p>This section includes the behaviour, justification and implementation of <code>EventsCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code on GitHub</strong>: Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/135">#135</a></p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-3"><a class="link" href="#external-behavior-3">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-events-code-events-code"><a class="link" href="#listing-all-events-code-events-code">Listing all events : <code>events</code></a></h3>
+<div class="paragraph">
+<p>This command helps you enter <code>Events</code> mode by replacing the list of contacts, and subsequently lists all your events stored in The Myth&#8217;s Book.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>events</code></p>
+</div>
+<div class="paragraph">
+<p>You should see the result of using <code>events</code> as seen in Figure 8.1.1.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/events.png" alt="events" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 8.1.1 <code>events</code> Result for Events Command</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
+<div class="paragraph">
+<p>University students are often particular about the overall organisation and structure of an application. They would prefer to have lesser things to see or look at.
+Hence, <code>EventsCommand</code> helps reduce the amount of objects to look at, by replacing the <code>PersonList</code>, and only showing items that are related to <code>Events</code>, such as
+the details of the events, a calendar and a Google Maps browser to help the students navigate to their intended location. <code>EventsCommand</code> will help improve the overall
+user-friendliness and user experience of The Myth&#8217;s Book, since the students will not be overwhelmed by multiple objects to view.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="events-mechanism"><a class="link" href="#events-mechanism">Events mechanism</a></h3>
+<div class="paragraph">
+<p>Events mechanism activates the Events mode in The Myth&#8217;s Book, where the users are locked to using commands pertaining to <code>Events</code>,
+which are <code>AddEventCommand</code> and <code>DeleteEventCommand</code>, and commands that are common between Events and Persons, such as <code>ExitCommand</code>,
+<code>HelpCommand</code> and more.</p>
+</div>
+<div class="paragraph">
+<p>The events mechanism also lists down the list of events, which is facilitated by an <code>EventList</code>, which is stored in The Myth&#8217;s Book.
+Similar to the PersonList and TagList, the list contains the different events with their information given by the user. This command inherits from <code>Command</code>.</p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, <code>EventsCommand</code> inherits <code>Command</code>, which means its state is not saved by the address book, and it cannot be undone after executing the command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EventsCommandDiagram1.png" alt="EventsCommandDiagram1" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.2.1 Events Command Diagram 1</p>
+</div>
+<div class="paragraph">
+<p>The execution of EventsCommand is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will execute <code>events</code> to activate the <code>Events</code> mode.</p>
+</li>
+<li>
+<p>The execution of <code>events</code> posts events <code>TogglePanelEvent</code>, <code>PersonPanelUnselectEvent</code> and <code>AccessWebsiteRequestEvent</code>, which will
+then be listened and handled by <code>handleToggleEvent</code> in <code>MainWindow</code>, <code>handleUnselectOfPersonCardEvent</code> in <code>MainWindow</code> and <code>handleAccessWebsiteEvent</code> in <code>BrowserPanel</code> respectively.</p>
+</li>
+<li>
+<p>The <code>EventListPanel</code> will then be brought to front over <code>PersonListPanel</code>, showing the list of events from <code>EventList</code>.</p>
+</li>
+<li>
+<p>Subsequently, <code>DetailsPanel</code>, which shows a person&#8217;s details, will be removed and be replaced by <code>EventsDetailsPanel</code> which shows an event&#8217;s details.</p>
+</li>
+<li>
+<p>The <code>BrowserPanel</code> section will also display <code>Google Maps</code> when <code>events</code> is executed.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of <code>EventsCommand</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">EventsCommand</span> <span class="directive">extends</span> Command {
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult execute() {
+        <span class="comment">// ... events logic ...</span>
+        EventsCenter.getInstance().post(<span class="keyword">new</span> TogglePanelEvent(COMMAND_WORD));
+        EventsCenter.getInstance().post(<span class="keyword">new</span> PersonPanelUnselectEvent());
+        EventsCenter.getInstance().post(<span class="keyword">new</span> AccessWebsiteRequestEvent(<span class="string"><span class="delimiter">&quot;</span><span class="content">https://maps.google.com/</span><span class="delimiter">&quot;</span></span>));
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Listener for TogglePanelEvent in MainWindow.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Subscribe</span>
+<span class="directive">private</span> <span class="type">void</span> handleToggleEvent(TogglePanelEvent event) {
+    handleToggle(event.selectedPanel);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bringing of EventListPanel to front in MainWindow.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> handleToggle(<span class="predefined-type">String</span> selectedPanel) {
+    <span class="keyword">if</span> (selectedPanel.equals(EventsCommand.COMMAND_WORD)) {
+        eventListPanelPlaceholder.toFront();
+    } <span class="keyword">else</span> <span class="keyword">if</span> (selectedPanel.equals(ListCommand.COMMAND_WORD)) {
+        personListPanelPlaceholder.toFront();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Listener for PersonPanelUnselectEvent in MainWindow.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Subscribe</span>
+<span class="directive">private</span> <span class="type">void</span> handleUnselectOfPersonCardEvent(PersonPanelUnselectEvent event) {
+    detailsPanel = <span class="keyword">new</span> DetailsPanel();
+    detailsPanelPlaceholder.getChildren().clear();
+    detailsPanelPlaceholder.getChildren().add(detailsPanel.getRoot());
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Listener for AccessWebsiteRequestEvent in BrowserPanel.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Subscribe</span>
+<span class="directive">private</span> <span class="type">void</span> handleAccessWebsiteEvent(AccessWebsiteRequestEvent event) {
+    handleWebsiteAccess(event.website);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Displaying of Google Maps in BrowserPanel.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> handleWebsiteAccess(<span class="predefined-type">String</span> website) {
+    loadPage(website);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the events operation works:</p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, when <code>events</code> is typed into the command line input, a new <code>EventsCommand</code> is created.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EventsCommandDiagram2.png" alt="EventsCommandDiagram2" width="800">
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>EventsCommand</code><br>
+<strong>Alternative 1 (current choice):</strong> Extends to <code>Command</code><br>
+<strong>Pros:</strong> Developers do not need to learn the implementation of <code>UndoableCommand</code> class.<br>
+<strong>Cons:</strong> Users may want to undo <code>EventsCommand</code> as they may not have wanted to be in Events mode.<br>
+<strong>Alternative 2:</strong> Extends to <code>UndoableCommand</code><br>
+<strong>Pros:</strong> Users can undo <code>EventsCommand</code> when they mistype the command.<br>
+<strong>Cons:</strong> Developers need to learn the implementation of <code>UndoableCommand</code>. Unnecessary to extend to <code>UndoableCommand</code> since users can type <code>ListCommand</code> to go back to Persons mode.<br></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-delete-event"><a class="link" href="#enhancement-added-delete-event">Enhancement Added: Delete Event</a></h3>
+<div class="paragraph">
+<p>This section includes the behaviour, justification and implementation of <code>DeleteEventCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code on GitHub</strong>: Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/107">#107</a></p>
 </div>
 <div class="sect3">
 <h4 id="external-behavior-4"><a class="link" href="#external-behavior-4">External behavior</a></h4>
@@ -435,23 +833,39 @@ Format: <code>themeslist</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-events-code-events-code"><a class="link" href="#listing-all-events-code-events-code">Listing all events : <code>events</code></a></h3>
+<h3 id="deleting-an-event-code-deleteevent-code"><a class="link" href="#deleting-an-event-code-deleteevent-code">Deleting an event : <code>deleteevent</code></a></h3>
 <div class="paragraph">
-<p>This command replaces the list of contacts, and subsequently lists all the events stored in The Myth&#8217;s Book.<br></p>
+<p>This command allows you to delete the specified event from The Myth&#8217;s Book.<br>
+Format: <code>deleteevent INDEX</code></p>
 </div>
-<div class="paragraph">
-<p>Format: <code>events</code></p>
-</div>
-<div class="paragraph">
-<p>You should see the result of using <code>events</code> as seen in Figure 5.4.1.</p>
-</div>
-<div class="imageblock">
+<div class="sidebarblock">
 <div class="content">
-<img src="../images/events.png" alt="events" width="800">
+<div class="ulist">
+<ul>
+<li>
+<p>The index refers to the index number shown in the most recent listing.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>Deletes the event at the specified <code>INDEX</code>.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.4.1 <code>events</code> Result for Events Command</p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>events</code><br>
+<code>deleteevent 2</code><br>
+By typing <code>deleteevent 2</code>, you will be able to delete the 2nd event in the most recent listing in The Myth&#8217;s Book.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -460,7 +874,9 @@ Format: <code>themeslist</code></p>
 <div class="sect3">
 <h4 id="justification-4"><a class="link" href="#justification-4">Justification</a></h4>
 <div class="paragraph">
-<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
+<p>University students are particular with the organisation of their events, and hence, with <code>DeleteEventCommand</code>, they can clean up their events list
+by deleting completed events so that they can better keep track of their upcoming or overdue events. This way, university students will be able to
+plan their schedule accordingly and balance their study life and social life.</p>
 </div>
 </div>
 <div class="sect3">
@@ -469,6 +885,167 @@ Format: <code>themeslist</code></p>
 <div class="paragraph">
 <p><mark>Start of Extract [from: Developer Guide]</mark></p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-event-mechanism"><a class="link" href="#delete-event-mechanism">Delete Event mechanism</a></h3>
+<div class="paragraph">
+<p>Delete event mechanism deletes an event which is stored in the The Myth&#8217;s Book, which will then be updated in the <code>Calendar</code> upon deletion.</p>
+</div>
+<div class="paragraph">
+<p>The delete event mechanism is facilitated by an <code>EventList</code>, which is stored in The Myth&#8217;s Book. Similar to the PersonList and TagList, the list contains the
+different events with their information given by the user. This command inherits from <code>UndoableCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>As seen in Figure 5.4.1 below, <code>DeleteEventCommand</code> inherits <code>UndoableCommand</code> which is an extra layer between abstract <code>Command</code> class and concrete commands that can be undone.
+When <code>DeleteEventCommand</code> is executed, the previous state of the address book before the deleting of an event is saved.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteEventCommandDiagram1.png" alt="DeleteEventCommandDiagram1" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.4.1 Delete Event Command Diagram</em></p>
+</div>
+<div class="paragraph">
+<p>The execution of DeleteEventCommand is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will execute <code>events</code> to enter Events mode, and user can look through the list of events that he or she may want to delete.</p>
+</li>
+<li>
+<p>User will then execute <code>deleteevent 2</code>, with <code>2</code> being the <code>index</code> of the event that the user wants to delete, provided by the executed <code>events</code>.</p>
+</li>
+<li>
+<p>The <code>EventList</code> in <code>AddressBook</code> will then delete the event specified by the user&#8217;s execution of <code>deleteevent 2</code>.</p>
+</li>
+<li>
+<p>The deleting of event in <code>AddressBook</code> posts an event <code>PopulateRequestEvent</code>, which will then be listened and handled by <code>handlePopulateEvent</code> in <code>MainWindow</code>.</p>
+</li>
+<li>
+<p>The <code>Calendar</code> will look through the <code>EventList</code> and update the calendar by populating the dates of the calendar where there are events.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of <code>DeleteEventCommand</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">DeleteEventCommand</span> <span class="directive">extends</span> UndoableCommand {
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult executeUndoableCommand() <span class="directive">throws</span> CommandException {
+
+        <span class="comment">// ... delete event logic ...</span>
+
+        <span class="predefined-type">List</span>&lt;ReadOnlyEvent&gt; lastShownList = model.getFilteredEventList();
+
+        ReadOnlyEvent eventToDelete = lastShownList.get(targetIndex.getZeroBased());
+
+        model.deleteEvent(eventToDelete);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Removing of event in AddressBook.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">AddressBook</span> <span class="directive">implements</span> ReadOnlyAddressBook {
+    <span class="directive">public</span> <span class="type">boolean</span> deleteEvent(ReadOnlyEvent event) <span class="directive">throws</span> EventNotFoundException {
+        <span class="keyword">if</span> (events.remove(event)) {
+            EventsCenter.getInstance().post(<span class="keyword">new</span> PopulateRequestEvent(events));
+            <span class="keyword">return</span> <span class="predefined-constant">true</span>;
+        } <span class="keyword">else</span> {
+            <span class="keyword">throw</span> <span class="keyword">new</span> EventNotFoundException();
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Listener for PopulateRequestEvent in MainWindow.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Subscribe</span>
+<span class="directive">private</span> <span class="type">void</span> handlePopulateEvent(PopulateRequestEvent request) {
+    calendar.populateUpdatedCalendar(request.eventList, YearMonth.now());
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Updating of the deletion of event in Calendar.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Calendar</span> {
+    <span class="directive">public</span> <span class="type">void</span> populateUpdatedCalendar(UniqueEventList eventList) {
+        <span class="keyword">for</span> (AnchorPaneNode ap : allCalendarDays) {
+            ap.setStyle(<span class="string"><span class="delimiter">&quot;</span><span class="content">calendar-color</span><span class="delimiter">&quot;</span></span>);
+            <span class="keyword">for</span> (<span class="predefined-type">Event</span> event1 : eventList) {
+                <span class="comment">// ... populate updated calendar logic ...</span>
+                <span class="keyword">if</span> (newDate.equals(event1.getDate().toString())) {
+                    ap.getChildren();
+                    ap.setStyle(<span class="string"><span class="delimiter">&quot;</span><span class="content">-fx-background-color: #ffebcd;</span><span class="delimiter">&quot;</span></span>);
+                }
+            }
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the delete event operation works:</p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, when <code>deleteevent 1</code> is typed into the command line input, a new <code>DeleteEventCommand</code> is created.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteEventCommandDiagram2.png" alt="DeleteEventCommandDiagram2" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.4.2 Delete Event Command Diagram 2</em></p>
+</div>
+<div class="paragraph">
+<p>As seen in Figure 5.4.3, when <code>deleteevent 1</code> is executed in <code>DeleteEventCommand</code>, it will remove the event in <code>UniqueEventList</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteEventCommandDiagram3.png" alt="DeleteEventCommandDiagram3" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.4.3 Delete Event Command Diagram 3</em></p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, when <code>deleteEvent</code> is executed in <code>AddressBook</code>, it will post an event <code>PopulateRequestEvent</code> in`EventsCenter`, which is handled by <code>MainWindow</code> and <code>Calendar</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteEventCommandDiagram4.png" alt="DeleteEventCommandDiagram4" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.4.4 Delete Event Command Diagram 4</em></p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>DeleteEventCommand</code><br>
+<strong>Alternative 1 (current choice):</strong> Extends to <code>UndoableCommand</code><br>
+<strong>Pros:</strong> Users can undo their command when they make a mistake in deleting an event.<br>
+<strong>Cons:</strong> Developer needs to understand the implementation of UndoableCommand.<br>
+<strong>Alternative 2:</strong> Extends to <code>Command</code><br>
+<strong>Pros:</strong> Developers do not need to understand the implementation of UndoableCommand.<br>
+<strong>Cons:</strong> Users are unable to undo their command when they make a mistake in deleting an event.<br></p>
+</div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
 </div>
@@ -476,21 +1053,269 @@ Format: <code>themeslist</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="enhancement-proposed"><a class="link" href="#enhancement-proposed">Enhancement Proposed:</a></h3>
-
+<h3 id="enhancement-added-find-tag"><a class="link" href="#enhancement-added-find-tag">Enhancement Added: Find Tag</a></h3>
+<div class="paragraph">
+<p>This section includes the behaviour, justification and implementation of <code>FindTagCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code on GitHub</strong>: Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/86">#86</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/103">#103</a></p>
+</div>
+<div class="sect3">
+<h4 id="external-behavior-5"><a class="link" href="#external-behavior-5">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<h3 id="finding-a-person-s-tag-code-findtag-code"><a class="link" href="#finding-a-person-s-tag-code-findtag-code">Finding a person&#8217;s tag : <code>findtag</code></a></h3>
+<div class="paragraph">
+<p>This command helps you find contacts whose tags contain any of the given keywords.<br>
+Format: <code>findtag TAGS [MORE_TAGS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Acceptance Testing on <code>Team T16-B1</code> (<a href="https://github.com/CS2103AUG2017-T16-B1/main/issues">Issues</a>)</p>
+<p>The search is case insensitive. e.g <code>friends</code> will match <code>Friends</code></p>
 </li>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com">#33</a>, <a href="https://github.com">#34</a>)</p>
+<p>The order of the tags does not matter. e.g. <code>friends owesMoney</code> will match <code>owesMoney friends</code></p>
 </li>
 <li>
-<p>Wrote additional tests to increase coverage from 88% to 92% (Pull requests <a href="https://github.com">#36</a>, <a href="https://github.com">#38</a>)</p>
+<p>Only the tag is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched. For eg: <code>friend</code> will not be matched to <code>friends</code>.</p>
+</li>
+<li>
+<p>Persons matching at least one tag will be returned (i.e. <code>OR</code> search). e.g. <code>friends</code> will return <code>Hans Gruber</code> that has <code>friends</code> and <code>neighbours</code> tags, <code>Bo Yang</code> that has <code>owesMoney</code> tag.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findtag friends</code><br>
+By typing this command, you will be able to find any person having tag <code>friends</code>.</p>
+</li>
+<li>
+<p><code>findtag owesMoney neighbours friends</code><br>
+By typing this command, you will be able to find any person having tags <code>owesMoney</code>, <code>neighbours</code>, or <code>friends</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-5"><a class="link" href="#justification-5">Justification</a></h4>
+<div class="paragraph">
+<p>University students tend to make many friends while they are in school, and when the contacts list increase in number, it becomes hard for the students to differentiate
+or find the correct contacts. Hence, <code>FindTagCommand</code> will help university students better search for their group of friends through the finding of the contacts' tags,
+Furthermore, <code>FindTagCommand</code> will also prevent the university students to find the wrong friends, maybe due to the similarities in the name.
+This would also help improve the efficiency of using The Myth&#8217;s Book, as less time would be spent trying to find the correct contacts.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-tag-mechanism"><a class="link" href="#find-tag-mechanism">Find Tag mechanism</a></h3>
+<div class="paragraph">
+<p>The find tag mechanism is facilitated by <code>TagContainsKeywordsPredicate</code>, a predicate class that finds persons in the address book with the tag specified by the user.
+It lists out all contacts that have the specified tag. Contacts with substrings of the tag will not be listed, unlike the Find mechanism. This command will inherit from <code>Command</code>.</p>
+</div>
+<div class="paragraph">
+<p>From Figure 5.11.1 below, the <code>FindTagCommand</code> inherits from <code>Command</code>, which means its state is not saved by the address book, and it cannot be undone after executing the command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindTagCommandDiagram1.png" alt="FindTagCommandDiagram1" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.11.1 Find Tag Command Diagram 1</em></p>
+</div>
+<div class="paragraph">
+<p>The execution of FindTagCommand is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will execute <code>findtag classmates</code> to find contacts in The Myth&#8217;s Book with the tag <code>classmates</code>.</p>
+</li>
+<li>
+<p>The execution of <code>findtag classmates</code> updates the <code>PersonList</code> in <code>AddressBook</code> with <code>TagContainsKeywordsPredicate</code>, which checks if the contacts in <code>PersonList</code> have the tag <code>classmates</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of <code>FindTagCommand</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">FindTagCommand</span> <span class="directive">extends</span> Command {
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult execute() {
+        <span class="comment">// ... find tag logic ...</span>
+        model.updateFilteredPersonList(predicate);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code of <code>TagContainsKeywordsPredicate</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">TagContainsKeywordsPredicate</span> <span class="directive">implements</span> <span class="predefined-type">Predicate</span>&lt;ReadOnlyPerson&gt; {
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> <span class="type">boolean</span> test(ReadOnlyPerson person) {
+        <span class="keyword">return</span> (keywords.stream().anyMatch(keyword -&gt; StringUtil.containsWordIgnoreCase
+                (person.getTagsText(), keyword)));
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The follow sequence diagram shows how the find tag operation works:</p>
+</div>
+<div class="paragraph">
+<p>As seen in Figure 5.11.2, when <code>findtag classmates</code> is typed into the command line input, a new <code>FindTagCommand</code> is created.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindTagCommandDiagram2.png" alt="FindTagCommandDiagram2" width="800">
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>TagContainsKeywordsPredicate</code><br>
+<strong>Alternative 1 (current choice):</strong> Tag of contacts has to match with the tag specified by the user<br>
+<strong>Pros:</strong> Persons found are specific to the tags that the user wants to find. Easy to implement.<br>
+<strong>Cons:</strong> <code>FindTagcommand</code> cannot account for mistypes or account for cases where users can&#8217;t remember the exact tag for his/her contacts.<br>
+<strong>Alternative 2:</strong> Substrings of the tag of contacts can be matched as well<br>
+<strong>Pros:</strong> <code>FindTagCommand</code> can account for cases where users do not remember the exact tag for his/her contacts.<br>
+<strong>Cons:</strong> Difficult to implement. Not exactly a big improvement to <code>FindTagCommand</code>.<br></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-composing-and-sending-of-emails"><a class="link" href="#enhancement-proposed-composing-and-sending-of-emails">Enhancement Proposed: Composing and Sending of Emails</a></h3>
+<div class="sect3">
+<h4 id="external-behaviour"><a class="link" href="#external-behaviour">External Behaviour</a></h4>
+<div class="paragraph">
+<p>This enhancement will allow university students to compose and send emails to their classmates or professors. It will include an <code>EmailCommand</code> that takes in the <code>index</code> specified by the user.
+A pop-up window will be activated and it will go to an <code>Outlook</code> window, where university students can compose to the email field of the contact specified by the user.
+This enhancement will make use of the <code>Outlook API</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="justification-6"><a class="link" href="#justification-6">Justification</a></h4>
+<div class="paragraph">
+<p>University students would prefer having lesser things to worry about amidst their work load. Hence, this enhancement will reduce the multi-tasking factor of university students, so that
+students don&#8217;t have to open multiple application or browsers. This would improve efficiency of using The Myth&#8217;s Book and also the efficiency of the students doing their work, as they don&#8217;t have to
+waste time opening additional browsers to send an email.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-to-do-list"><a class="link" href="#enhancement-proposed-to-do-list">Enhancement Proposed: To-Do List</a></h3>
+<div class="sect3">
+<h4 id="external-behaviour-2"><a class="link" href="#external-behaviour-2">External Behaviour</a></h4>
+<div class="paragraph">
+<p>This enhancement will improve the overall structure of <code>Events</code> and <code>Birthdays</code>, where it will include reminders through the notification tray, when the day of the event or birthday is up.
+Furthermore, the <code>Events</code> and <code>Birthdays</code> would combine so that there are lesser commands for users to use, improving user experience and user-friendliness of The Myth&#8217;s Book.
+This enhancement will also allow university students to tick off events that they have completed, and upcoming events will also be notified to the users, through a different background colour
+of the event in the event list.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="justification-7"><a class="link" href="#justification-7">Justification</a></h4>
+<div class="paragraph">
+<p>University students would want to balance their social and study life. Hence, this enhancement will allow them to better schedule their events since they can take note of upcoming events, and plan
+accordingly. Moreover, this enhancement will prevent students from opening too many applications that will potentially cause multi-tasking, reducing university students' efficiency in doing their work.
+This enhancement will also improve user-friendliness and user experience of The Myth&#8217;s Book as it reduces the number of commands that the university students have to know.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="paragraph">
+<p>This section outlines the additional contributions by Chan Kin Hung Dickson for The Myth&#8217;s Book and Ark (Software by Team T16-B1).</p>
+</div>
+<div class="sect3">
+<h4 id="software-contributions"><a class="link" href="#software-contributions">Software Contributions</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the GUI color scheme, structure, layout and overall outlook (Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/97">#97</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/124">#124</a>)</p>
+</li>
+<li>
+<p>Updated AddCommand and EditCommand so that the application will select the person added or edited (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/124">#124</a>)</p>
+</li>
+<li>
+<p>Created additional color scheme <code>Bright Theme</code> for users to choose (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/50">#50</a>)</p>
+</li>
+<li>
+<p>Implemented randomised colors for tags in PersonCard (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/37">#37</a>)</p>
+</li>
+<li>
+<p>Implemented tests to increase overall test coverage (Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/63">#63</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/82">#82</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/103">#103</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="documentation-contributions"><a class="link" href="#documentation-contributions">Documentation Contributions</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the images used in User Guide (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/106">#106</a>)</p>
+</li>
+<li>
+<p>Created use cases in Developer Guide (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/39">#39</a>)</p>
+</li>
+<li>
+<p>Updated User Guide layout (Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/102">#102</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/152">#152</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="acceptance-testing-ark-team-t16-b1"><a class="link" href="#acceptance-testing-ark-team-t16-b1">Acceptance Testing: Ark (Team T16-B1):</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Found bug where the team&#8217;s example for their add command does not work (Issue <a href="https://github.com/CS2103AUG2017-T16-B1/main/issues/157">#157</a>)</p>
+</li>
+<li>
+<p>Provided suggestion for them to provide a sample XML file for testers to test their import feature (Issue <a href="https://github.com/CS2103AUG2017-T16-B1/main/issues/158">#158</a>)</p>
+</li>
+<li>
+<p>Found possible bug where the team&#8217;s undo command may be fixated on showing the list of all persons even if it was showing a list of something else (Issue <a href="https://github.com/CS2103AUG2017-T16-B1/main/issues/159">#159</a>)</p>
+</li>
+<li>
+<p>Provided suggestion and bug on the command <code>deleteTag</code> where it should only delete the tags of specified parcels and not all, and that the example provided is invalid (Issue <a href="https://github.com/CS2103AUG2017-T16-B1/main/issues/162">#162</a>)</p>
 </li>
 </ul>
 </div>
@@ -498,9 +1323,10 @@ Format: <code>themeslist</code></p>
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 09:25:31 +00:00
+Last updated 2017-11-12 13:06:39 +00:00
 </div>
 </div>
 </body>
