@@ -98,7 +98,7 @@ based on their names in alphabetical order. The sort mechanism touches all compo
 but mainly involving the logic and model component.</p>
 </div>
 <div class="paragraph">
-<p>In the figure [Figure 5.4.1] below, the <code>SortCommand</code> inherits from <code>UndoableCommand</code>
+<p>In the figure [Figure 5.7.1] below, the <code>SortCommand</code> inherits from <code>UndoableCommand</code>
 which is an extra layer between abstract <code>Command</code> class which belongs to the Logic Component.
 This allows the SortCommand to be undoable, where the previous state of the address book before sorting is saved.</p>
 </div>
@@ -108,7 +108,7 @@ This allows the SortCommand to be undoable, where the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.4.1 SortCommand Logic Class Diagram</p>
+<p><em>Figure 5.7.1 SortCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>Suppose a user has an unorganized list of contacts and executes the <code>SortCommand</code> to organize his contacts.</p>
@@ -176,7 +176,7 @@ to update the <code>PersonListPanel</code> of the GUI being shown.</p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagrams shows how the sort operation works:
-As seen in the figure [Figure 5.4.2] below, when sort is typed into command line input, new <code>SortCommand</code> is created.</p>
+As seen in the figure [Figure 5.7.2] below, when sort is typed into command line input, new <code>SortCommand</code> is created.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -184,10 +184,10 @@ As seen in the figure [Figure 5.4.2] below, when sort is typed into command line
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.4.2 SortCommand Logic Sequence Diagram</p>
+<p><em>Figure 5.7.2 SortCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
-<p>As seen in the figure [Figure 5.4.3] below, when <code>executeUndoableCommand</code> is called in SortCommand class, it will call the sort function in ModelManager.
+<p>As seen in the figure [Figure 5.7.3] below, when <code>executeUndoableCommand</code> is called in SortCommand class, it will call the sort function in ModelManager.
 It will call the sort() function of its own class until it reaches InternalList.sort() where the sorting of
 contacts positions based on their names will be executed.</p>
 </div>
@@ -197,7 +197,7 @@ contacts positions based on their names will be executed.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.4.3 SortCommand Model Sequence Diagram</p>
+<p><em>Figure 5.7.3 SortCommand Model Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>Finally, the execution will create a sorted addressbook where the names of contacts are alphabetically sorted
@@ -469,7 +469,7 @@ into the <code>AddressBookParser</code> so that it can create a new <code>Access
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.5.1 Access Command Logic Sequence Diagram</p>
+<p><em>Figure 5.8.1 AccessCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>After creating a new <code>AccessCommand</code>, <code>LogicManager</code> will call execute on <code>AccessCommand</code>
@@ -487,7 +487,7 @@ where it shows the sequence of <code>execute()</code> method of <code>AccessComm
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.5.2 Access Command Model/EventsCenter/UI Sequence Diagram</p>
+<p><em>Figure 5.8.2 AccessCommand Model, EventsCenter &amp; UI Sequence Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
@@ -750,7 +750,7 @@ into the <code>AddressBookParser</code> so that it can create a new <code>Locati
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.6.1 LocationCommand Logic Sequence Diagram</p>
+<p><em>Figure 5.9.1 LocationCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>After creating a new <code>LocationCommand</code>, <code>LogicManager</code> will call execute on <code>LocationCommand</code>
@@ -769,7 +769,7 @@ where it shows the sequence of <code>execute()</code> method of <code>LocationCo
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.6.2 LocationCommand Model/EventsCenter/UI Sequence Diagram</p>
+<p><em>Figure 5.9.2 LocationCommand Model, EventsCenter &amp; UI Sequence Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
@@ -1514,7 +1514,7 @@ better user readability. You can click and view the attached pull request links 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 15:51:43 +00:00
+Last updated 2017-11-12 16:43:09 +00:00
 </div>
 </div>
 </body>

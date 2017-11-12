@@ -325,7 +325,7 @@ preferred colour theme for the application.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.5.1 Switch Theme Command Diagram 1</em></p>
+<p><em>Figure 5.5.1 SwitchThemeCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of SwitchThemeCommand is processed in this way:</p>
@@ -419,7 +419,7 @@ allow the application to check the latest colour theme before the application wa
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.5.2 Switch Theme Command Diagram 2</em></p>
+<p><em>Figure 5.5.2 SwitchThemeCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram below, when <code>switch 1</code> is executed in <code>SwitchThemeCommand</code>, it will post <code>ChangeThemeRequestEvent</code> to the <code>EventsCenter</code>.</p>
@@ -430,7 +430,7 @@ allow the application to check the latest colour theme before the application wa
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.5.3 Switch Theme Command Diagram 3</em></p>
+<p><em>Figure 5.5.3 SwitchThemeCommand Logic, EventsCenter &amp; UI Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>Upon detecting <code>ChangeThemeRequestEvent</code>, <code>MainWindow</code> will call <code>handleChangeTheme</code> to handle the event.</p>
@@ -476,7 +476,7 @@ consisting of a list of available colour themes in The Myth&#8217;s Book.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.6.1 Theme List Command Diagram 1</em></p>
+<p><em>Figure 5.6.1 ThemeListCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of ThemeListCommand is processed in this way:</p>
@@ -582,7 +582,7 @@ consisting of a list of available colour themes in The Myth&#8217;s Book.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.6.2 Theme List Command Diagram 2</em></p>
+<p><em>Figure 5.6.2 ThemeListCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram below, when <code>themes</code> is executed in <code>ThemeListCommand</code>, it will post <code>ShowThemeRequestEvent</code> to the <code>EventsCenter</code>, which will be handled by <code>MainWindow</code> through <code>handleThemes</code>.</p>
@@ -593,7 +593,7 @@ consisting of a list of available colour themes in The Myth&#8217;s Book.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.6.3 Theme List Command Diagram 3</em></p>
+<p><em>Figure 5.6.3 ThemeListCommand Logic, EventsCenter &amp; UI Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
@@ -688,7 +688,7 @@ Similar to the PersonList and TagList, the list contains the different events wi
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.2.1 Events Command Diagram 1</p>
+<p><em>Figure 5.2.1 EventsCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of EventsCommand is processed in this way:</p>
@@ -799,6 +799,9 @@ then be listened and handled by <code>handleToggleEvent</code> in <code>MainWind
 <img src="../images/EventsCommandDiagram2.png" alt="EventsCommandDiagram2" width="800">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 5.2.2 EventsCommand Logic Sequence Diagram</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
 <div class="paragraph">
@@ -906,7 +909,7 @@ When <code>DeleteEventCommand</code> is executed, the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.4.1 Delete Event Command Diagram</em></p>
+<p><em>Figure 5.4.1 DeleteEventCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of DeleteEventCommand is processed in this way:</p>
@@ -1011,7 +1014,7 @@ When <code>DeleteEventCommand</code> is executed, the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.4.2 Delete Event Command Diagram 2</em></p>
+<p><em>Figure 5.4.2 DeleteEventCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>As seen in Figure 5.4.3, when <code>deleteevent 1</code> is executed in <code>DeleteEventCommand</code>, it will remove the event in <code>UniqueEventList</code>.</p>
@@ -1022,7 +1025,7 @@ When <code>DeleteEventCommand</code> is executed, the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.4.3 Delete Event Command Diagram 3</em></p>
+<p><em>Figure 5.4.3 DeleteEventCommand Logic &amp; Model Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram below, when <code>deleteEvent</code> is executed in <code>AddressBook</code>, it will post an event <code>PopulateRequestEvent</code> in`EventsCenter`, which is handled by <code>MainWindow</code> and <code>Calendar</code>.</p>
@@ -1033,7 +1036,7 @@ When <code>DeleteEventCommand</code> is executed, the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.4.4 Delete Event Command Diagram 4</em></p>
+<p><em>Figure 5.4.4 DeleteEventCommand Logic, EventsCenter &amp; UI Sequence Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h4>
@@ -1148,7 +1151,7 @@ It lists out all contacts that have the specified tag. Contacts with substrings 
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.11.1 Find Tag Command Diagram 1</em></p>
+<p><em>Figure 5.11.1 FindTagCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of FindTagCommand is processed in this way:</p>
@@ -1201,6 +1204,9 @@ It lists out all contacts that have the specified tag. Contacts with substrings 
 <div class="content">
 <img src="../images/FindTagCommandDiagram2.png" alt="FindTagCommandDiagram2" width="800">
 </div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.11.2 FindTagCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h4>
@@ -1293,7 +1299,7 @@ This enhancement will also improve user-friendliness and user experience of The 
 <p>Updated the images used in User Guide (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/106">#106</a>)</p>
 </li>
 <li>
-<p>Created use cases in Developer Guide (Pull request <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/39">#39</a>)</p>
+<p>Created use cases in Developer Guide (Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/39">#39</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/163">#163</a>)</p>
 </li>
 <li>
 <p>Updated User Guide layout (Pull requests <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/102">#102</a>, <a href="https://github.com/CS2103AUG2017-T15-B3/main/pull/152">#152</a>)</p>
@@ -1326,7 +1332,7 @@ This enhancement will also improve user-friendliness and user experience of The 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 15:51:43 +00:00
+Last updated 2017-11-12 16:43:09 +00:00
 </div>
 </div>
 </body>

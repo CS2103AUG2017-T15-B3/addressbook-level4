@@ -96,13 +96,21 @@
 <li><a href="#use-case-delete-person">B.1. Use case: Delete person</a></li>
 <li><a href="#use-case-sort-list">B.2. Use case: Sort list</a></li>
 <li><a href="#use-case-find-person">B.3. Use case: Find person</a></li>
-<li><a href="#use-case-add-person">B.4. Use case: Add person</a></li>
-<li><a href="#use-case-undo-command">B.5. Use case: Undo command</a></li>
-<li><a href="#use-case-list-persons">B.6. Use case: List persons</a></li>
-<li><a href="#use-case-list-birthdays">B.7. Use case: List Birthdays</a></li>
-<li><a href="#use-case-add-event">B.8. Use case: Add event</a></li>
-<li><a href="#use-case-access-website">B.9. Use case: Access website</a></li>
-<li><a href="#use-case-access-location">B.10. Use case: Access Location</a></li>
+<li><a href="#use-case-find-tag">B.4. Use case: Find tag</a></li>
+<li><a href="#use-case-add-person">B.5. Use case: Add person</a></li>
+<li><a href="#use-case-favourite-person">B.6. Use case: Favourite person</a></li>
+<li><a href="#use-case-unfavourite-person">B.7. Use case: Unfavourite person</a></li>
+<li><a href="#use-case-list-favourited-persons">B.8. Use case: List favourited persons</a></li>
+<li><a href="#use-case-undo-command">B.9. Use case: Undo command</a></li>
+<li><a href="#use-case-list-persons">B.10. Use case: List persons</a></li>
+<li><a href="#use-case-list-birthdays">B.11. Use case: List birthdays</a></li>
+<li><a href="#use-case-list-events">B.12. Use case: List events</a></li>
+<li><a href="#use-case-add-event">B.13. Use case: Add event</a></li>
+<li><a href="#use-case-delete-event">B.14. Use case: Delete event</a></li>
+<li><a href="#use-case-list-themes">B.15. Use case: List themes</a></li>
+<li><a href="#use-case-switch-theme">B.16. Use case: Switch theme</a></li>
+<li><a href="#use-case-access-website">B.17. Use case: Access website</a></li>
+<li><a href="#use-case-access-location">B.18. Use case: Access location</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix C: Non Functional Requirements</a></li>
@@ -850,7 +858,7 @@ Similar to the PersonList and TagList, the list contains the different events wi
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.2.1 Events Command Diagram 1</p>
+<p><em>Figure 5.2.1 EventsCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of EventsCommand is processed in this way:</p>
@@ -961,6 +969,9 @@ then be listened and handled by <code>handleToggleEvent</code> in <code>MainWind
 <img src="images/EventsCommandDiagram2.png" alt="EventsCommandDiagram2" width="800">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 5.2.2 EventsCommand Logic Sequence Diagram</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">5.2.1. Design Considerations</a></h4>
 <div class="paragraph">
@@ -981,7 +992,7 @@ then be listened and handled by <code>handleToggleEvent</code> in <code>MainWind
 different events with their information given by the user. This command inherits from <code>UndoableCommand</code>.</p>
 </div>
 <div class="paragraph">
-<p>From Figure 5.2.1 below, it is visible that <code>AddEventCommand</code> inherits from <code>UndoableCommand</code> which is an extra layer between abstract <code>Command</code> class in which the AddEventCommand
+<p>From Figure 5.3.1 below, it is visible that <code>AddEventCommand</code> inherits from <code>UndoableCommand</code> which is an extra layer between abstract <code>Command</code> class in which the AddEventCommand
 can be undoable, where the previous state of The Myth&#8217;s Book before the event is saved.</p>
 </div>
 <div class="imageblock">
@@ -990,7 +1001,7 @@ can be undoable, where the previous state of The Myth&#8217;s Book before the ev
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.3.1 AddEventCommand Logic Class Diagram</p>
+<p><em>Figure 5.3.1 AddEventCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of AddEventCommand is processed in this way:</p>
@@ -1014,7 +1025,7 @@ with additional event.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>The illustration of the execution is illustrated in Figure 5.2.2 below.</p>
+<p>The illustration of the execution is illustrated in Figure 5.3.2 below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1022,7 +1033,7 @@ with additional event.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.2.2 AddEventCommand Model Sequence Diagram</p>
+<p><em>Figure 5.3.2 AddEventCommand Model Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>Code of <code>AddEventCommand</code>:</p>
@@ -1107,7 +1118,7 @@ When <code>DeleteEventCommand</code> is executed, the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.4.1 Delete Event Command Diagram</em></p>
+<p><em>Figure 5.4.1 DeleteEventCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of DeleteEventCommand is processed in this way:</p>
@@ -1212,7 +1223,7 @@ When <code>DeleteEventCommand</code> is executed, the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.4.2 Delete Event Command Diagram 2</em></p>
+<p><em>Figure 5.4.2 DeleteEventCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>As seen in Figure 5.4.3, when <code>deleteevent 1</code> is executed in <code>DeleteEventCommand</code>, it will remove the event in <code>UniqueEventList</code>.</p>
@@ -1223,7 +1234,7 @@ When <code>DeleteEventCommand</code> is executed, the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.4.3 Delete Event Command Diagram 3</em></p>
+<p><em>Figure 5.4.3 DeleteEventCommand Logic &amp; Model Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram below, when <code>deleteEvent</code> is executed in <code>AddressBook</code>, it will post an event <code>PopulateRequestEvent</code> in`EventsCenter`, which is handled by <code>MainWindow</code> and <code>Calendar</code>.</p>
@@ -1234,7 +1245,7 @@ When <code>DeleteEventCommand</code> is executed, the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.4.4 Delete Event Command Diagram 4</em></p>
+<p><em>Figure 5.4.4 DeleteEventCommand Logic, EventsCenter &amp; UI Sequence Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">5.4.1. Design Considerations</a></h4>
@@ -1263,7 +1274,7 @@ When <code>DeleteEventCommand</code> is executed, the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.5.1 Switch Theme Command Diagram 1</em></p>
+<p><em>Figure 5.5.1 SwitchThemeCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of SwitchThemeCommand is processed in this way:</p>
@@ -1357,7 +1368,7 @@ allow the application to check the latest colour theme before the application wa
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.5.2 Switch Theme Command Diagram 2</em></p>
+<p><em>Figure 5.5.2 SwitchThemeCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram below, when <code>switch 1</code> is executed in <code>SwitchThemeCommand</code>, it will post <code>ChangeThemeRequestEvent</code> to the <code>EventsCenter</code>.</p>
@@ -1368,7 +1379,7 @@ allow the application to check the latest colour theme before the application wa
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.5.3 Switch Theme Command Diagram 3</em></p>
+<p><em>Figure 5.5.3 SwitchThemeCommand Logic, EventsCenter &amp; UI Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>Upon detecting <code>ChangeThemeRequestEvent</code>, <code>MainWindow</code> will call <code>handleChangeTheme</code> to handle the event.</p>
@@ -1414,7 +1425,7 @@ consisting of a list of available colour themes in The Myth&#8217;s Book.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.6.1 Theme List Command Diagram 1</em></p>
+<p><em>Figure 5.6.1 ThemeListCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of ThemeListCommand is processed in this way:</p>
@@ -1520,7 +1531,7 @@ consisting of a list of available colour themes in The Myth&#8217;s Book.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.6.2 Theme List Command Diagram 2</em></p>
+<p><em>Figure 5.6.2 ThemeListCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>As seen in the diagram below, when <code>themes</code> is executed in <code>ThemeListCommand</code>, it will post <code>ShowThemeRequestEvent</code> to the <code>EventsCenter</code>, which will be handled by <code>MainWindow</code> through <code>handleThemes</code>.</p>
@@ -1531,7 +1542,7 @@ consisting of a list of available colour themes in The Myth&#8217;s Book.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.6.3 Theme List Command Diagram 3</em></p>
+<p><em>Figure 5.6.3 ThemeListCommand Logic, EventsCenter &amp; UI Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">5.6.1. Design Considerations</a></h4>
@@ -1555,7 +1566,7 @@ based on their names in alphabetical order. The sort mechanism touches all compo
 but mainly involving the logic and model component.</p>
 </div>
 <div class="paragraph">
-<p>In the figure [Figure 5.4.1] below, the <code>SortCommand</code> inherits from <code>UndoableCommand</code>
+<p>In the figure [Figure 5.7.1] below, the <code>SortCommand</code> inherits from <code>UndoableCommand</code>
 which is an extra layer between abstract <code>Command</code> class which belongs to the Logic Component.
 This allows the SortCommand to be undoable, where the previous state of the address book before sorting is saved.</p>
 </div>
@@ -1565,7 +1576,7 @@ This allows the SortCommand to be undoable, where the previous state of the addr
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.4.1 SortCommand Logic Class Diagram</p>
+<p><em>Figure 5.7.1 SortCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>Suppose a user has an unorganized list of contacts and executes the <code>SortCommand</code> to organize his contacts.</p>
@@ -1633,7 +1644,7 @@ to update the <code>PersonListPanel</code> of the GUI being shown.</p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagrams shows how the sort operation works:
-As seen in the figure [Figure 5.4.2] below, when sort is typed into command line input, new <code>SortCommand</code> is created.</p>
+As seen in the figure [Figure 5.7.2] below, when sort is typed into command line input, new <code>SortCommand</code> is created.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1641,10 +1652,10 @@ As seen in the figure [Figure 5.4.2] below, when sort is typed into command line
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.4.2 SortCommand Logic Sequence Diagram</p>
+<p><em>Figure 5.7.2 SortCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
-<p>As seen in the figure [Figure 5.4.3] below, when <code>executeUndoableCommand</code> is called in SortCommand class, it will call the sort function in ModelManager.
+<p>As seen in the figure [Figure 5.7.3] below, when <code>executeUndoableCommand</code> is called in SortCommand class, it will call the sort function in ModelManager.
 It will call the sort() function of its own class until it reaches InternalList.sort() where the sorting of
 contacts positions based on their names will be executed.</p>
 </div>
@@ -1654,7 +1665,7 @@ contacts positions based on their names will be executed.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.4.3 SortCommand Model Sequence Diagram</p>
+<p><em>Figure 5.7.3 SortCommand Model Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>Finally, the execution will create a sorted addressbook where the names of contacts are alphabetically sorted
@@ -1803,7 +1814,7 @@ into the <code>AddressBookParser</code> so that it can create a new <code>Access
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.5.1 Access Command Logic Sequence Diagram</p>
+<p><em>Figure 5.8.1 AccessCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>After creating a new <code>AccessCommand</code>, <code>LogicManager</code> will call execute on <code>AccessCommand</code>
@@ -1821,7 +1832,7 @@ where it shows the sequence of <code>execute()</code> method of <code>AccessComm
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.5.2 Access Command Model/EventsCenter/UI Sequence Diagram</p>
+<p><em>Figure 5.8.2 AccessCommand Model, EventsCenter &amp; UI Sequence Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">5.8.1. Design Considerations</a></h4>
@@ -1962,7 +1973,7 @@ into the <code>AddressBookParser</code> so that it can create a new <code>Locati
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.6.1 LocationCommand Logic Sequence Diagram</p>
+<p><em>Figure 5.9.1 LocationCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>After creating a new <code>LocationCommand</code>, <code>LogicManager</code> will call execute on <code>LocationCommand</code>
@@ -1981,7 +1992,7 @@ where it shows the sequence of <code>execute()</code> method of <code>LocationCo
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.6.2 LocationCommand Model/EventsCenter/UI Sequence Diagram</p>
+<p><em>Figure 5.9.2 LocationCommand Model, EventsCenter &amp; UI Sequence Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">5.9.1. Design Considerations</a></h4>
@@ -2092,7 +2103,7 @@ It lists out all contacts that have the specified tag. Contacts with substrings 
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.11.1 Find Tag Command Diagram 1</em></p>
+<p><em>Figure 5.11.1 FindTagCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of FindTagCommand is processed in this way:</p>
@@ -2146,6 +2157,9 @@ It lists out all contacts that have the specified tag. Contacts with substrings 
 <img src="images/FindTagCommandDiagram2.png" alt="FindTagCommandDiagram2" width="800">
 </div>
 </div>
+<div class="paragraph">
+<p><em>Figure 5.11.2 FindTagCommand Logic Sequence Diagram</em></p>
+</div>
 <div class="sect3">
 <h4 id="design-considerations-10"><a class="link" href="#design-considerations-10">5.11.1. Design Considerations</a></h4>
 <div class="paragraph">
@@ -2174,7 +2188,7 @@ the previous state of the address book before favouriting or unfavouriting a per
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.12.1 Favourite Command Diagram 1</em></p>
+<p><em>Figure 5.12.1 FavouriteCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of FavouriteCommand is processed in this way:</p>
@@ -2291,7 +2305,7 @@ The same works for <code>UnfavouriteCommand</code> when <code>unfavourite 1</cod
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.12.2 Favourite Command Diagram 2</em></p>
+<p><em>Figure 5.12.2 FavouriteCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-11"><a class="link" href="#design-considerations-11">5.12.1. Design Considerations</a></h4>
@@ -2320,7 +2334,7 @@ The same works for <code>UnfavouriteCommand</code> when <code>unfavourite 1</cod
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.13.1 Favourite List Command Diagram 1</em></p>
+<p><em>Figure 5.13.1 FavouriteListCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of <code>FavouriteListCommand</code> is processed in this way:</p>
@@ -2374,7 +2388,7 @@ The same works for <code>UnfavouriteCommand</code> when <code>unfavourite 1</cod
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.13.2 Favourite List Command Diagram 2</em></p>
+<p><em>Figure 5.13.2 FavouriteListCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-12"><a class="link" href="#design-considerations-12">5.13.1. Design Considerations</a></h4>
@@ -2416,7 +2430,7 @@ The same works for <code>UnfavouriteCommand</code> when <code>unfavourite 1</cod
 </div>
 </div>
 <div class="paragraph">
-<p>An overall view of birthdays command logic is shown in Figure 5.8.1</p>
+<p>An overall view of birthdays command logic is shown in Figure 5.14.1:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2424,10 +2438,10 @@ The same works for <code>UnfavouriteCommand</code> when <code>unfavourite 1</cod
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.8.1 Birthdays Command Logic Sequence Diagram</p>
+<p><em>Figure 5.14.1 Birthdays Command Logic Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
-<p>What the user finally sees is a list of people with their birthday today as shown in figure 5.8.2. This is because the <code>executeUndoableCommand()</code> which is overriden in the BirthdaysCommand class updates the <code>filteredPersonList</code>.</p>
+<p>What the user finally sees is a list of people with their birthday today. This is because the <code>executeUndoableCommand()</code> which is overriden in the BirthdaysCommand class updates the <code>filteredPersonList</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2859,7 +2873,7 @@ will then populate the Calendar in <code>MainWindow</code> with <code>EventList<
 <div class="sect3">
 <h4 id="dialog-box"><a class="link" href="#dialog-box">5.17.3. Dialog Box</a></h4>
 <div class="paragraph">
-<p>The mechanism behind the process of adding an event from the dialog box is shown in Figure 5.9.3.1 below.</p>
+<p>The mechanism behind the process of adding an event from the dialog box is shown in Figure 5.17.3.1 below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2867,7 +2881,7 @@ will then populate the Calendar in <code>MainWindow</code> with <code>EventList<
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 5.9.3.1 Dialog Add Event Sequence Diagram</p>
+<p><em>Figure 5.17.3.1 Dialog Add Event Model, EventsCenter &amp; UI Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>From the startDialog method in <code>AnchorPaneNode</code> class, after receiving a valid Event, an <code>AddEventRequestEvent</code> object will be posted to <code>EventsCenter</code>.
@@ -3096,7 +3110,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.6.1 : Saving documentation as PDF files in Chrome</em></p>
+<p><em>Figure 6.3.1 : Saving documentation as PDF files in Chrome</em></p>
 </div>
 <div class="paragraph">
 <p><a href="#the-myths-book---developer-guide">Back To Top</a></p>
@@ -3518,8 +3532,7 @@ b. Require developers to download those libraries manually (this creates extra w
 </table>
 <div class="paragraph">
 <p>Social user - a user who likes to know more information about the people around them so as to understand them better<br>
-Task-oriented user - a user who prefers to have purposeful functions which would help facilitate easier access towards executing his work<br>
-{More to be added}</p>
+Task-oriented user - a user who prefers to have purposeful functions which would help facilitate easier access towards executing his work<br></p>
 </div>
 <div class="paragraph">
 <p><a href="#the-myths-book---developer-guide">Back To Top</a></p>
@@ -3658,7 +3671,7 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 <div class="ulist">
 <ul>
 <li>
-<p>1a. Person name is invalid</p>
+<p>1a. Person name is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -3674,7 +3687,46 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-add-person"><a class="link" href="#use-case-add-person">B.4. Use case: Add person</a></h3>
+<h3 id="use-case-find-tag"><a class="link" href="#use-case-find-tag">B.4. Use case: Find tag</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to find person with tag keyword (tag of person)</p>
+</li>
+<li>
+<p>AddressBook shows a list of persons with tags matching with user specified tags</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. Tag name is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. AddressBook shows an error image.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-add-person"><a class="link" href="#use-case-add-person">B.5. Use case: Add person</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3744,7 +3796,149 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-undo-command"><a class="link" href="#use-case-undo-command">B.5. Use case: Undo command</a></h3>
+<h3 id="use-case-favourite-person"><a class="link" href="#use-case-favourite-person">B.6. Use case: Favourite person</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to favourite person</p>
+</li>
+<li>
+<p>User types in index of person to favourite</p>
+</li>
+<li>
+<p>AddressBook favourites person</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. Index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. Person specified is already favourited.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-unfavourite-person"><a class="link" href="#use-case-unfavourite-person">B.7. Use case: Unfavourite person</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to unfavourite person</p>
+</li>
+<li>
+<p>User types in index of person to unfavourite</p>
+</li>
+<li>
+<p>AddressBook unfavourites person</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. Index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. Person specified is already unfavourited.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-list-favourited-persons"><a class="link" href="#use-case-list-favourited-persons">B.8. Use case: List favourited persons</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list favourited persons</p>
+</li>
+<li>
+<p>AddressBook shows a list of favourited persons</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-undo-command"><a class="link" href="#use-case-undo-command">B.9. Use case: Undo command</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3789,7 +3983,7 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-list-persons"><a class="link" href="#use-case-list-persons">B.6. Use case: List persons</a></h3>
+<h3 id="use-case-list-persons"><a class="link" href="#use-case-list-persons">B.10. Use case: List persons</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3821,20 +4015,20 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-list-birthdays"><a class="link" href="#use-case-list-birthdays">B.7. Use case: List Birthdays</a></h3>
+<h3 id="use-case-list-birthdays"><a class="link" href="#use-case-list-birthdays">B.11. Use case: List birthdays</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User wants to know if any person has a birthday today.</p>
+<p>User wants to know if any person has a birthday today</p>
 </li>
 <li>
-<p>User requests birthdays command.</p>
+<p>User requests birthdays command</p>
 </li>
 <li>
-<p>AddressBook lists all persons with birthday today.</p>
+<p>AddressBook lists all persons with birthday today</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3856,7 +4050,39 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-add-event"><a class="link" href="#use-case-add-event">B.8. Use case: Add event</a></h3>
+<h3 id="use-case-list-events"><a class="link" href="#use-case-list-events">B.12. Use case: List events</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list events</p>
+</li>
+<li>
+<p>AddressBook lists all events</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-add-event"><a class="link" href="#use-case-add-event">B.13. Use case: Add event</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -3869,46 +4095,173 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 <p>User types in details of event to add</p>
 </li>
 <li>
-<p>AddressBook shows details of event to add</p>
-</li>
-<li>
-<p>AddressBook request confirmation to add event</p>
-</li>
-<li>
-<p>User confirms adding of event</p>
-</li>
-<li>
 <p>AddressBok adds event to list of events</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Use case ends</p>
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. Details of event is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-access-website"><a class="link" href="#use-case-access-website">B.9. Use case: Access website</a></h3>
+<h3 id="use-case-delete-event"><a class="link" href="#use-case-delete-event">B.14. Use case: Delete event</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User chooses to access a contact&#8217;s website.</p>
+<p>User requests to delete event</p>
 </li>
 <li>
-<p>AddressBook requests for details of the access.</p>
+<p>User types in index of event to delete</p>
 </li>
 <li>
-<p>User enters the requested details which includes the index of the desired contact.</p>
-</li>
-<li>
-<p>AddressBook shows the website of the desired contact for user to use.</p>
+<p>AddressBook deletes event from list of events</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
 </li>
 </ol>
 </div>
 <div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. Index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. AddressBook shows an error message.</p>
+<div class="paragraph">
 <p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-list-themes"><a class="link" href="#use-case-list-themes">B.15. Use case: List themes</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list themes</p>
+</li>
+<li>
+<p>AddressBook pops-up a window with the list of themes</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-switch-theme"><a class="link" href="#use-case-switch-theme">B.16. Use case: Switch theme</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to switch theme</p>
+</li>
+<li>
+<p>User types in index of theme to switch to</p>
+</li>
+<li>
+<p>AddressBook switches to specified theme</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. Index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. AddressBook is already in theme specified by user.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-access-website"><a class="link" href="#use-case-access-website">B.17. Use case: Access website</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User chooses to access a contact&#8217;s website</p>
+</li>
+<li>
+<p>AddressBook requests for details of the access</p>
+</li>
+<li>
+<p>User enters the requested details which includes the index of the desired contact</p>
+</li>
+<li>
+<p>AddressBook shows the website of the desired contact for user to use</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
@@ -3938,28 +4291,28 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 </div>
 </div>
 <div class="sect2">
-<h3 id="use-case-access-location"><a class="link" href="#use-case-access-location">B.10. Use case: Access Location</a></h3>
+<h3 id="use-case-access-location"><a class="link" href="#use-case-access-location">B.18. Use case: Access location</a></h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User chooses to access a contact&#8217;s location.</p>
+<p>User chooses to access a contact&#8217;s location</p>
 </li>
 <li>
-<p>AddressBook requests for details of the access.</p>
+<p>AddressBook requests for details of the access</p>
 </li>
 <li>
-<p>User enters the requested details which includes the index of the desired contact.</p>
+<p>User enters the requested details which includes the index of the desired contact</p>
 </li>
 <li>
-<p>AddressBook shows the location of the desired contact for user to view.</p>
-</li>
-</ol>
-</div>
+<p>AddressBook shows the location of the desired contact for user to view</p>
 <div class="paragraph">
 <p>Use case ends.</p>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
@@ -3986,9 +4339,6 @@ Task-oriented user - a user who prefers to have purposeful functions which would
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>{More to be added}</p>
 </div>
 <div class="paragraph">
 <p><a href="#the-myths-book---developer-guide">Back To Top</a></p>
@@ -4135,7 +4485,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-12 15:51:43 +00:00
+Last updated 2017-11-12 16:43:09 +00:00
 </div>
 </div>
 </body>
