@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3">
+<title>The Myth&#8217;s Book - Test Script</title>
+<link rel="stylesheet" href="./gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./coderay-asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>The Myth&#8217;s Book - Test Script</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document explains the steps to perform manual testing, and how to load the sample data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="loading-the-sample-data"><a class="link" href="#loading-the-sample-data">2. Loading the Sample Data</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following are the steps to load sample data:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Step 1
+Rename the SampleData.xml to addressbook.xml</p>
+</li>
+<li>
+<p>Step 2
+Move this addressbook.xml to \data folder.</p>
+</li>
+<li>
+<p>Step 3
+You will get a dialog box asking if you would like to overwrite the existing addressbook.xml file. Click on <code>overwrite</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="commands-to-test"><a class="link" href="#commands-to-test">3. Commands to Test</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="help"><a class="link" href="#help">3.1. Help</a></h3>
+<div class="paragraph">
+<p>Command Usage: <code>help</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>help</code><br>
+Expected Result: New window pops up showing all commands The Myth&#8217;s Book offers.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="history"><a class="link" href="#history">3.2. History</a></h3>
+<div class="paragraph">
+<p>Command Usage: <code>history</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>history</code><br>
+Expected Result:<br>
+Entered commands(from most recent to earliest):<br>
+help</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="themes"><a class="link" href="#themes">3.3. Themes</a></h3>
+<div class="paragraph">
+<p>Command Usage: <code>themes</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>themes</code><br>
+Expected Result:<br>
+Listed all themes<br>
+Opens a window showing all the themes you can switch to in the application (currently there are two).<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="switch-themes"><a class="link" href="#switch-themes">3.4. Switch themes</a></h3>
+<div class="paragraph">
+<p>Command Usage: <code>switch INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>To note:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Currently The Myth&#8217;s Book offers only two themes. So the index provided must be either 1 or 2.<br></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>switch 2</code><br>
+Expected Result:<br>
+Switched Theme: Light Theme</p>
+</li>
+<li>
+<p><code>switch 1</code><br>
+Expected Result:<br>
+Switched Theme: Dark theme</p>
+</li>
+<li>
+<p><code>switch 200</code><br>
+Expected Result:<br>
+Index provided is invalid</p>
+</li>
+<li>
+<p><code>switch</code><br>
+Expected Result:<br>
+Invalid command format!<br>
+switch: Switches the current theme to the theme identified by the index number in the themes list.
+Parameters: INDEX (must be a positive integer)<br>
+Example: switch 1<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add"><a class="link" href="#add">3.5. Add</a></h3>
+<div class="paragraph">
+<p>Command Usage: <code>add n/NAME p/PHONE_NUMBER e/EMAIL [w/WEBSITE] [a/ADDRESS] [h/HOME_NUMBER] [se/SCHOOL_EMAIL] [b/BIRTHDAY] [t/TAG]…</code></p>
+</div>
+<div class="paragraph">
+<p>To note:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>NAME, PHONE and EMAIL are compulsory fields for the command.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/Jessica Alba p/98456321 e/jalaba@hotmail.com</code><br>
+Expected result:<br>
+New person added with its details.<br>
+Person list panel jumps to added person card<br>
+Details Panel displays newly added person&#8217;s details.<br></p>
+</li>
+<li>
+<p><code>add n/Dickson Chan p/84563241 e/dickson_chan@gmail.com w/https://www.facebook.com/dicksonChan</code> <br>
+Expected result:<br>
+New person added with its details.<br>
+Person list panel jumps to added person card<br>
+Details Panel displays newly added person&#8217;s details.<br></p>
+</li>
+<li>
+<p><code>add n/James Cordon p/8543219 b/12/11/1998</code><br>
+Expected Result:<br>
+Invalid command format!<br>
+add: Adds a person to the address book. Parameters: n/NAME p/PHONE e/EMAIL [w/WEBSITE] [a/ADDRESS] [h/HOME NUMBER] [se/SCHOOL EMAIL] [b/BIRTHDAY] [t/TAG]&#8230;&#8203;<br>
+Example: add n/John Doe p/98765432 h/65822291 e/johnd@example.com se/e0001111@u.nus.edu w/https://www.facebook.com/johnDoe a/311, Clementi Ave 2, #02-25 b/12/02/1998 t/friends t/owesMoney<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sort-command"><a class="link" href="#sort-command">3.6. Sort Command</a></h3>
+<div class="paragraph">
+<p>Command usage: <code>sort</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sort</code><br>
+Expected result:<br>
+Sorted all persons in the list<br>
+Contact list will be sorted in alphabetical order.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="select-command"><a class="link" href="#select-command">3.7. Select Command</a></h3>
+<div class="paragraph">
+<p>Command usage: <code>select INDEX</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>select 3</code><br>
+Expected result:<br>
+Selected Person: Charlotte Oliveiro at Index 3<br>
+Details panel of Charlotte Oliveiro will be displayed.
+Website of Charlotte Oliveiro will be displayed in the Browser Panel.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-command-enhancement"><a class="link" href="#find-command-enhancement">3.8. Find Command Enhancement</a></h3>
+<div class="paragraph">
+<p>Command usage:
+<code>find KEYWORD</code></p>
+</div>
+<div class="paragraph">
+<p>Suppose a contact named <code>Alex Yeoh</code> is in the person list.</p>
+</div>
+<div class="paragraph">
+<p>(part of name)<br>
+* <code>find ale</code><br>
+Expected result:<br>
+1 persons listed!</p>
+</div>
+<div class="paragraph">
+<p>(full name with case insensitive)<br>
+* <code>find alex</code><br>
+Expected result:<br>
+1 persons listed!</p>
+</div>
+<div class="paragraph">
+<p>Note: Find allows searching for part of the Contact&#8217;s name. However, the part of the name you are searching for must be at least 2 characters long and is in the starting of either the first or last name.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-tags"><a class="link" href="#find-tags">3.9. Find Tags</a></h3>
+<div class="paragraph">
+<p>Command usage: <code>findtag TAG [TAG..]</code></p>
+</div>
+<div class="paragraph">
+<p>Note: type <code>list</code> before each findtag test case.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findtag brother</code><br>
+Expected result:<br>
+1 persons listed!<br>
+<code>Wei Hong</code> will be displayed.</p>
+</li>
+<li>
+<p><code>findtag colleagues friends</code><br>
+Expected result:<br>
+6 persons listed!<br>
+<code>Alex Yeoh</code>, <code>Bernice Yu</code>, <code>Irfan Ibrahim</code>, <code>Darren</code>, <code>Jinting</code>, <code>John Doe</code> will be displayed.</p>
+</li>
+<li>
+<p><code>findtag work</code><br>
+Expected result:<br>
+0 persons listed!<br></p>
+</li>
+<li>
+<p><code>findtag work friends</code><br>
+Expected Result: 4 persons listed!<br>
+<code>Alex Yeoh</code>, <code>Bernice Yu</code>, <code>Darren</code>, <code>John Doe</code> will be displayed.</p>
+</li>
+<li>
+<p><code>findtag</code><br>
+Expected result:<br>
+Invalid command format!<br>
+findtag: Finds all persons whose tags contain any of the specified keywords (case-insensitive) and displays them as a list with index numbers.<br>
+Parameters: KEYWORD [MORE_KEYWORDS]&#8230;&#8203;<br>
+Example: findtag friend</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="birthdays"><a class="link" href="#birthdays">3.10. Birthdays</a></h3>
+<div class="paragraph">
+<p>Command usage: <code>birthdays</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>birthdays</code><br>
+Expected Result:<br>
+Wish these 1 people a Happy Birthday!<br>
+<code>Bernice Yu</code> will be displayed.</p>
+</li>
+<li>
+<p><code>bd</code><br>
+Expected Result:<br>
+Wish these 1 people a Happy Birthday!<br>
+<code>Bernice Yu</code> will be displayed.</p>
+</li>
+<li>
+<p><code>birthday</code><br>
+Expected Result:<br>
+Unknown command</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locate"><a class="link" href="#locate">3.11. Locate</a></h3>
+<div class="paragraph">
+<p><strong>Please type the <code>list</code> command before conducting the test.</strong></p>
+</div>
+<div class="paragraph">
+<p>Command usage: <code>locate INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Note: Google maps might not load immediately please wait awhile.<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>locate 3</code><br>
+Expected Result:<br>
+Accessed location of Person: David Li at Index 3<br>
+Google maps is shown on the right most panel with David Li&#8217;s address location.<br></p>
+</li>
+<li>
+<p><code>locate 19</code><br>
+Expected Result:<br>
+User accessed does not have an address!<br></p>
+</li>
+<li>
+<p><code>locate 300</code><br>
+Expected Result:<br>
+The index provided is invalid<br></p>
+</li>
+<li>
+<p><code>locate</code><br>
+Expected Result:<br>
+Invalid command format!<br>
+locate: Accesses the location of the person identified by the index number used in the last person listing.<br>
+Parameters: INDEX (must be a positive integer)<br>
+Example: locate 1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="access"><a class="link" href="#access">3.12. Access</a></h3>
+<div class="paragraph">
+<p><strong>Please type the <code>list</code> command before conducting the test.</strong></p>
+</div>
+<div class="paragraph">
+<p>Command Usage: <code>access INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>To note:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>*Browser might not load immediately please wait awhile.<br>
+*Please sign in to the corresponding social media page to access the person&#8217;s details.</p>
+</div>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>access 2</code><br>
+Expected result:<br>
+Accessed website of Person: Bernice Yu at Index 2.</p>
+</li>
+<li>
+<p><code>access 23</code><br>
+Expected result:<br>
+The index provided is invalid</p>
+</li>
+<li>
+<p><code>access 19</code><br>
+Expected Result:<br>
+User does not have website.</p>
+</li>
+<li>
+<p><code>access</code><br>
+Expected Result:<br>
+Invalid command format!<br>
+access: Accesses the website of the person identified by the index number used in the last person listing.<br>
+Parameters: INDEX (must be a positive integer)<br>
+Example: access 1</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-an-event"><a class="link" href="#adding-an-event">3.13. Adding an event</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Please make sure to type <code>events</code> to be in the events list panel before starting this section of the test.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Command usage: <code>addevent n/NAME d/DATE a/ADDRESS</code></p>
+</div>
+<div class="paragraph">
+<p>To note:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>All three parameters NAME, DATE and ADDRESS must be filled.<br></p>
+</li>
+<li>
+<p>DATE must be in the format dd/mm/yyyy. <code>'-'</code>, <code>'/'</code> and <code>'.'</code> can be used to separate the day, month and year field of the date.<br></p>
+</li>
+<li>
+<p>NAME can be of any value, as long as it is not empty.</p>
+</li>
+<li>
+<p>If the event has passed, the calendar cell corresponding to the date of the event is colored in beige.<br></p>
+</li>
+<li>
+<p>The <code>undo</code> and <code>redo</code> commands apply to events.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Cases:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>events</code></p>
+</li>
+<li>
+<p><code>addevent n/Bowling with friends d/20/11/2017 a/Kallang bowling</code><br>
+Expected result:<br>
+New event added: Bowling with friends Date: 20/11/2017 Address: Kallang bowling<br>
+A new event would be added to the events list.<br>
+Calendar UI is populated on that particular date <code>20/11/2017</code>.</p>
+</li>
+<li>
+<p><code>addevent n/Exam d/18-11-2017 a/NUS</code><br>
+Expected result:<br>
+The day month and year must be valid in form dd/mm/yyyy<br>
+Single value days should be keyed in without 0 in front.<br></p>
+</li>
+<li>
+<p><code>addevent n/Jess&#8217;s birthday a/Home</code><br>
+Expected result:<br>
+Invalid command format!<br>
+addevent: Adds an event to the address book. Parameters: n/NAME d/DATE a/ADDRESS<br>
+Example: addevent n/ZoukOut d/5/12/2017 a/Sentosa Beach, Siloso<br></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-an-event"><a class="link" href="#delete-an-event">3.14. Delete an event</a></h3>
+<div class="paragraph">
+<p><strong>Please undo after each delete event command.</strong><br>
+<strong>Please switch to events list panel before trying out this test.</strong></p>
+</div>
+<div class="paragraph">
+<p>Command Usage: <code>deleteevent INDEX</code></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>deleteevent 1</code><br>
+Expected Result:<br>
+Deleted Event: ZoukOut Date: 5/12/2017 Address: Sentosa Beach, Siloso</p>
+</li>
+<li>
+<p><code>deleteevent</code><br>
+Expected Result:<br>
+Invalid command format!<br>
+deleteevent: Deletes the event identified by the index number used in the last person listing.<br>
+Parameters: INDEX (must be a positive integer)<br>
+Example: deleteevent 1</p>
+</li>
+<li>
+<p><code>deleteevent 21</code><br>
+Expected Result:<br>
+The index provided is invalid</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="events"><a class="link" href="#events">3.15. Events</a></h3>
+<div class="paragraph">
+<p>Command usage: <code>events</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>events</code><br>
+Expected Result:<br>
+Listed all events.<br>
+Switched to Events list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="favourite"><a class="link" href="#favourite">3.16. Favourite</a></h3>
+<div class="paragraph">
+<p><strong>Please switch to person list panel using the <code>list</code> command before trying out this test.</strong></p>
+</div>
+<div class="paragraph">
+<p>Command Usage: <code>favourite INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>To note:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use the <code>favourites</code> command to check if person has been added to favourite list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>favourite 3</code><br>
+Expected result:<br>
+Favourited Person: Charlotte Oliveiro Phone: 93210283 HomeNumber: 61112223 Email: <a href="mailto:charlotte@example.com">charlotte@example.com</a> SchEmail: <a href="mailto:charlotte@u.ntu.edu">charlotte@u.ntu.edu</a> Website: <a href="https://www.facebook.com/charlotteO" class="bare">https://www.facebook.com/charlotteO</a> Address: Blk 11 Ang Mo Kio Street 74, #11-04 Birthday: 05/03/2001 Tags: [neighbours]</p>
+</li>
+<li>
+<p><code>favourite 3</code><br>
+Expected result:<br>
+Person is already favourited.</p>
+</li>
+<li>
+<p><code>favourite 21</code><br>
+Expected result:<br>
+The index provided is invalid</p>
+</li>
+<li>
+<p><code>favourite</code><br>
+Expected result:<br>
+Invalid command format!<br>
+favourite: Favourites the person identified by the index number used in the last person listing.<br>
+Parameters: INDEX (must be a positive integer)<br>
+Example: favourite 1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="favourites"><a class="link" href="#favourites">3.17. Favourites</a></h3>
+<div class="paragraph">
+<p><strong>Please switch to person list panel using the <code>list</code> command before trying out this test.</strong></p>
+</div>
+<div class="paragraph">
+<p>Command Usage: <code>favourites</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>favourites</code><br>
+Expected Result:<br>
+Listed all favourited persons.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="unfavourite"><a class="link" href="#unfavourite">3.18. Unfavourite</a></h3>
+<div class="paragraph">
+<p><strong>Please switch to favourites list using the <code>favourites</code> command before trying out this test.</strong></p>
+</div>
+<div class="paragraph">
+<p>Command Usage: <code>unfavourite INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>To note:<br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use the <code>favourites</code> command to check if person has been added to favourite list.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>unfavourite 1</code><br>
+Expected result:<br>
+Unfavourited Person: Charlotte Oliveiro Phone: 93210283 HomeNumber: 61112223 Email: <a href="mailto:charlotte@example.com">charlotte@example.com</a> SchEmail: <a href="mailto:charlotte@u.ntu.edu">charlotte@u.ntu.edu</a> Website: <a href="https://www.facebook.com/charlotteO" class="bare">https://www.facebook.com/charlotteO</a> Address: Blk 11 Ang Mo Kio Street 74, #11-04 Birthday: 05/03/2001 Tags: [neighbours]<br>
+Favourite list will populate person list</p>
+</li>
+<li>
+<p><code>list</code><br></p>
+</li>
+<li>
+<p><code>unfavourite 3</code><br>
+Expected result:<br>
+Person is not favourited.</p>
+</li>
+<li>
+<p><code>unfavourite 200</code><br>
+Expected result:<br>
+The index provided is invalid</p>
+</li>
+<li>
+<p><code>unfavourite</code><br>
+Expected result:<br>
+Invalid command format!<br>
+unfavourite: Unfavourites the person identified by the index number used in the last person listing.<br>
+Parameters: INDEX (must be a positive integer)<br>
+Example: unfavourite 1</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-11-13 09:15:59 +00:00
+</div>
+</div>
+</body>
+</html>
