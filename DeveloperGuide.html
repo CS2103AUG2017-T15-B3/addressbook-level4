@@ -987,11 +987,23 @@ then be listened and handled by <code>handleToggleEvent</code> in <code>MainWind
 <div class="sect2">
 <h3 id="add-event-mechanism"><a class="link" href="#add-event-mechanism">5.3. Add Event mechanism</a></h3>
 <div class="paragraph">
-<p>Add event mechanism adds an event which stores in the The Myth&#8217;s Book. The add event mechanism is facilitated by an <code>EventList</code>, which is stored in The Myth&#8217;s Book. Similar to the PersonList and TagList, the list contains the
+<p>An <code>Event</code> is created by <code>EventName</code>, <code>Date</code> and <code>Address</code> as the details of the event.
+It also implements <code>ReadOnlyEvent</code> interface. The class diagram is shown in Figure 5.3.1 below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/eventclassdiagram.PNG" alt="eventclassdiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.3.1 Event Class Diagram</em></p>
+</div>
+<div class="paragraph">
+<p>Add event mechanism adds an Event which stores in the The Myth&#8217;s Book. The add event mechanism is facilitated by an <code>EventList</code>, which is stored in The Myth&#8217;s Book. Similar to the PersonList and TagList, the list contains the
 different events with their information given by the user. This command inherits from <code>UndoableCommand</code>.</p>
 </div>
 <div class="paragraph">
-<p>From Figure 5.3.1 below, it is visible that <code>AddEventCommand</code> inherits from <code>UndoableCommand</code> which is an extra layer between abstract <code>Command</code> class in which the AddEventCommand
+<p>From Figure 5.3.2 below, it is visible that <code>AddEventCommand</code> inherits from <code>UndoableCommand</code> which is an extra layer between abstract <code>Command</code> class in which the AddEventCommand
 can be undoable, where the previous state of The Myth&#8217;s Book before the event is saved.</p>
 </div>
 <div class="imageblock">
@@ -1000,7 +1012,7 @@ can be undoable, where the previous state of The Myth&#8217;s Book before the ev
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.3.1 AddEventCommand Logic Class Diagram</em></p>
+<p><em>Figure 5.3.2 AddEventCommand Logic Class Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>The execution of AddEventCommand is processed in this way:</p>
@@ -1024,7 +1036,7 @@ with additional event.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>The illustration of the execution is illustrated in Figure 5.3.2 below.</p>
+<p>The illustration of the execution is illustrated in Figure 5.3.3 below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1032,7 +1044,7 @@ with additional event.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 5.3.2 AddEventCommand Model Sequence Diagram</em></p>
+<p><em>Figure 5.3.3 AddEventCommand Model Sequence Diagram</em></p>
 </div>
 <div class="paragraph">
 <p>Code of <code>AddEventCommand</code>:</p>
@@ -2817,7 +2829,7 @@ be populated with a change in background color.</p>
             ap.setDate(calendarDate);
             ap.setTopAnchor(txt, <span class="float">5.0</span>);
             ap.setLeftAnchor(txt, <span class="float">5.0</span>);
-            ap.setStyle(<span class="string"><span class="delimiter">&quot;</span><span class="content">calendar-color</span><span class="delimiter">&quot;</span></span>);
+            ap.setStyle(<span class="string"><span class="delimiter">&quot;</span><span class="content">-fx-background-color: transparent;</span><span class="delimiter">&quot;</span></span>);
             ap.getChildren().add(txt);
             calendarDate = calendarDate.plusDays(<span class="integer">1</span>);
         }
@@ -2922,7 +2934,7 @@ It reverts every node to be of the same color, then runs through the events list
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java">    <span class="directive">public</span> <span class="type">void</span> populateUpdatedCalendar(UniqueEventList eventList) {
         <span class="keyword">for</span> (AnchorPaneNode ap : allCalendarDays) {
-            ap.setStyle(<span class="string"><span class="delimiter">&quot;</span><span class="content">calendar-color</span><span class="delimiter">&quot;</span></span>);
+            ap.setStyle(<span class="string"><span class="delimiter">&quot;</span><span class="content">-fx-background-color: transparent;</span><span class="delimiter">&quot;</span></span>);
             <span class="keyword">for</span> (<span class="predefined-type">Event</span> event1 : eventList) {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern(<span class="string"><span class="delimiter">&quot;</span><span class="content">d/MM/yyyy</span><span class="delimiter">&quot;</span></span>);
                 <span class="predefined-type">String</span> newDate = formatter.format(ap.getDate());
@@ -4456,7 +4468,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-13 06:11:54 +00:00
+Last updated 2017-11-13 06:51:51 +00:00
 </div>
 </div>
 </body>
