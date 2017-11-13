@@ -270,10 +270,10 @@ By typing this command, you will be able to find any person having names <code>B
 <p>The details panel can be accessed by using the <code>select</code> command or by directly clicking on the peron card in the ui.</p>
 </div>
 <div class="paragraph">
-<p>The details panel is directly accessed by <code>MainWindow</code> class. The <code>details panel</code> class extends from <code>UiPart&lt;Region&gt;</code> and calls the super class constructor to use the FXML file.</p>
+<p>The  panel is directly accessed by <code>MainWindow</code> class. The <code>details panel</code> class extends from <code>UiPart&lt;Region&gt;</code> and calls the super class constructor to use the FXML file.</p>
 </div>
 <div class="paragraph">
-<p>The details panel also calls the <code>loadBlankPage()</code> method in its constructor so that the user does not see anything on the details panel when the application is first opened.</p>
+<p>It also calls the <code>loadBlankPage()</code> method in its constructor so that the user does not see anything on the details panel when the application is first opened.</p>
 </div>
 <div class="paragraph">
 <p>The <code>loadPersonInfo()</code> method is called from  two event handlers <code>handlePersonPanelSelectionChangedEvent()</code> and <code>handlePersonSelectionChangedEvent()</code> as shown in the code snippet below.</p>
@@ -298,6 +298,17 @@ By typing this command, you will be able to find any person having names <code>B
 </div>
 <div class="paragraph">
 <p>The <code>loadPersonInfo</code> is facilitated by the <code>bindListeners()</code> method that "listens" for a change in any of the fields of the person.</p>
+</div>
+<div class="paragraph">
+<p>The sequence diagram is shown in 5.18.1 below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DetailsPanelMechanism.png" alt="DetailsPanelMechanism" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure 5.18.1 Details Panel Sequence Diagram</p>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
@@ -432,8 +443,21 @@ By typing this command, you will be able to find any person having names <code>B
 </div>
 <div class="sect2">
 <h3 id="enhancement-proposed-task-manager"><a class="link" href="#enhancement-proposed-task-manager">Enhancement Proposed: Task Manager</a></h3>
-<div class="paragraph">
-<p>A to-do list to remind university students when their assignment or submissions are due. This facilitates our purpose to reduce multi-tasking as much as possible as now even the tasks they have to do is in one application.</p>
+<div class="sect3">
+<h4 id="external-behaviour"><a class="link" href="#external-behaviour">External Behaviour</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre>Type `task` on the command line to see a list of tasks you have to do for the week.</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="justification-5"><a class="link" href="#justification-5">Justification</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre>A to-do list to remind university students when their assignment or submissions are due. This facilitates our purpose to reduce multi-tasking as much as possible as now even the tasks they have to do is in one application.</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -457,7 +481,7 @@ By typing this command, you will be able to find any person having names <code>B
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-13 03:01:00 +00:00
+Last updated 2017-11-13 03:46:05 +00:00
 </div>
 </div>
 </body>
