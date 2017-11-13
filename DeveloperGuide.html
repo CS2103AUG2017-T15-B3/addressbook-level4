@@ -1054,19 +1054,19 @@ with additional event.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>public class UniqueEventList implements Iterable&lt;Event&gt; {
+<pre>    public class UniqueEventList implements Iterable&lt;Event&gt; {
 
-    private final ObservableList&lt;Event&gt; internalList = FXCollections.observableArrayList();
-    ...
-    public void add(ReadOnlyEvent toAdd) throws DuplicateEventException {
-        requireNonNull(toAdd);
-        if (contains(toAdd)) {
-            throw new DuplicateEventException();
+        private final ObservableList&lt;Event&gt; internalList = FXCollections.observableArrayList();
+        ...
+        public void add(ReadOnlyEvent toAdd) throws DuplicateEventException {
+            requireNonNull(toAdd);
+            if (contains(toAdd)) {
+                throw new DuplicateEventException();
+            }
+            internalList.add(new Event(toAdd));
         }
-        internalList.add(new Event(toAdd));
-    }
-    ...
-}</pre>
+        ...
+    }</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2892,7 +2892,8 @@ shows the key implementation of how an Event object is added to the addressbook.
 <div class="content">
 <pre>   dialog.setResultConverter(dialogButton -&gt; {
         if (dialogButton == button) {
-                return new BuildEvent().withName(text1.getText()).withDate(date).withAddress(text2.getText()).build();
+                return new BuildEvent().withName(text1.getText())
+                                       .withDate(date).withAddress(text2.getText()).build();
             }
             return null;
         });
@@ -4485,7 +4486,7 @@ as well as rich internet applications (RIAs) that can run across a wide variety 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-13 00:15:16 +00:00
+Last updated 2017-11-13 00:33:02 +00:00
 </div>
 </div>
 </body>
