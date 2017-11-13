@@ -181,6 +181,236 @@ This would also help improve the efficiency of using The Myth&#8217;s Book, as l
 <div class="paragraph">
 <p><mark>Start of Extract [from: Developer Guide]</mark></p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="favourite-unfavourite-mechanism"><a class="link" href="#favourite-unfavourite-mechanism">Favourite/Unfavourite mechanism</a></h3>
+<div class="paragraph">
+<p>The favourite/unfavourite mechanism is facilitated by the <code>Favourite</code> field that resides in <code>Person</code>. These commands will inherit from <code>UndoableCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below,<code>FavouriteCommand</code> and <code>UnfavouriteCommand</code> inherits <code>UndoableCommand</code>, which is an extra layer between abstract Command class and concrete commands that can be undone. When <code>FavouriteCommand</code> or <code>UnfavouriteCommand</code> is executed,
+the previous state of the address book before favouriting or unfavouriting a person is saved.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FavouriteCommandDiagram1.png" alt="FavouriteCommandDiagram1" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.12.1 FavouriteCommand Logic Class Diagram</em></p>
+</div>
+<div class="paragraph">
+<p>The execution of FavouriteCommand is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will execute <code>list</code> to view the list of persons in The Myth&#8217;s Book.</p>
+</li>
+<li>
+<p>User will then execute <code>favourite 1</code>, with <code>1</code> being the <code>index</code> of the person that the user wants to favourite, provided by the executed <code>list</code>.</p>
+</li>
+<li>
+<p>The <code>PersonList</code> in <code>AddressBook</code> will then favourite the person specified by the user&#8217;s execution of <code>favourite 1</code>.</p>
+</li>
+<li>
+<p>The <code>PersonCard</code> will be notified through <code>BindListeners</code> that the person specified is favourited, and will set the favourite icon beside the person&#8217;s name.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The execution of UnfavouriteCommand is processed similarly, but the person will be unfavourited, and the favourite icon will be removed instead.
+The execution of UnfavouriteCommand will also enable the display of <code>FavouriteList</code>.</p>
+</div>
+<div class="paragraph">
+<p>Code of <code>FavouriteCommand</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">FavouriteCommand</span> <span class="directive">extends</span> UndoableCommand {
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult executeUndoableCommand() <span class="directive">throws</span> CommandException {
+        <span class="comment">// ... favourite logic ...</span>
+
+        <span class="predefined-type">List</span>&lt;ReadOnlyPerson&gt; lastShownList = model.getFilteredPersonList();
+
+        ReadOnlyPerson personToFavourite = lastShownList.get(targetIndex.getZeroBased());
+
+        model.favouritePerson(personToFavourite);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code of <code>UnfavouriteCommand</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">UnfavouriteCommand</span> <span class="directive">extends</span> UndoableCommand {
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult executeUndoableCommand() <span class="directive">throws</span> CommandException {
+        <span class="comment">// ... unfavourite logic ...</span>
+
+        <span class="predefined-type">List</span>&lt;ReadOnlyPerson&gt; lastShownList = model.getFilteredPersonList();
+
+        ReadOnlyPerson personToUnfavourite = lastShownList.get(targetIndex.getZeroBased());
+
+        model.unfavouritePerson(personToUnfavourite);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Favouriting/Unfavouriting of person in AddressBook.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">void</span> favouritePerson(ReadOnlyPerson target) <span class="directive">throws</span> PersonNotFoundException {
+    persons.favouritePerson(target);
+}
+
+<span class="directive">public</span> <span class="type">void</span> unfavouritePerson(ReadOnlyPerson target) <span class="directive">throws</span> PersonNotFoundException {
+    persons.unfavouritePerson(target);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Listener for change of favourite field in PersonCard.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> <span class="type">void</span> bindListeners(ReadOnlyPerson person) {
+    <span class="comment">// ... listeners logic for other fields ...</span>
+    person.favouriteProperty().addListener((observable, oldValue, newValue) -&gt; {
+        initFavourite(person);
+    });
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Setting visibility of favourite icon beside name in PersonCard.java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">private</span> <span class="type">void</span> initFavourite(ReadOnlyPerson person) {
+    <span class="keyword">if</span> (person.isFavourite()) {
+        favouriteImage.setVisible(<span class="predefined-constant">true</span>);
+    } <span class="keyword">else</span> {
+        favouriteImage.setVisible(<span class="predefined-constant">false</span>);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the favourite/unfavourite operation works:</p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, when <code>favourite 1</code> is typed into the command line input, a new <code>FavouriteCommand</code> is created.
+The same works for <code>UnfavouriteCommand</code> when <code>unfavourite 1</code> is typed into the command line input.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FavouriteCommandDiagram2.png" alt="FavouriteCommandDiagram2" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.12.2 FavouriteCommand Logic Sequence Diagram</em></p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>FavouriteCommand</code> and <code>UnfavouriteCommand</code><br>
+<strong>Alternative 1 (current choice):</strong> Extending to <code>UndoableCommand</code> class.<br>
+<strong>Pros:</strong> Better for users to undo <code>FavouriteCommand</code> or <code>UnfavouriteCommand</code> if he/she favourites/unfavourites the wrong person.<br>
+<strong>Cons:</strong> Developers need to learn the implementation of <code>UndoableCommand</code>.<br>
+<strong>Alternative 2:</strong> Extending to <code>Command</code> class.<br>
+<strong>Pros:</strong> Developers do not need to learn the implementation of <code>UndoableCommand</code> class.<br>
+<strong>Cons:</strong> <code>FavouriteCommand</code> cannot be undone and have to call <code>UnfavouriteCommand</code> or vice versa to undo mistyped command<br></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="favourite-list-mechanism"><a class="link" href="#favourite-list-mechanism">Favourite List mechanism</a></h3>
+<div class="paragraph">
+<p>The favourite list mechanism is facilitated by <code>NameContainsFavouritePredicate</code>, a predicate class that checks if a person is favourited. It lists out all contacts that are favourited. This command will inherit from <code>Command</code>.</p>
+</div>
+<div class="paragraph">
+<p>As seen in the diagram below, <code>FavouriteListCommand</code> inherits from <code>Command</code>, which means its state is not saved by the address book, and it cannot be undone after executing the command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FavouriteListCommandDiagram1.png" alt="FavouriteListCommandDiagram1" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.13.1 FavouriteListCommand Logic Class Diagram</em></p>
+</div>
+<div class="paragraph">
+<p>The execution of <code>FavouriteListCommand</code> is processed in this way:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User will execute <code>favourites</code> to display a list of favourited persons in The Myth&#8217;s Book.</p>
+</li>
+<li>
+<p>The execution of <code>favourites</code> updates the <code>PersonList</code> in <code>AddressBook</code> with <code>NameContainsFavouritePredicate</code>, which checks if a person is favourited.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Code of <code>FavouriteListCommand</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">FavouriteListCommand</span> <span class="directive">extends</span> Command {
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> CommandResult execute() {
+        <span class="comment">// ... favourite list logic ...</span>
+        model.updateFilteredPersonList(predicate);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code of <code>NameContainsFavouritePredicate</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">NameContainsFavouritePredicate</span> <span class="directive">implements</span> <span class="predefined-type">Predicate</span>&lt;ReadOnlyPerson&gt; {
+    <span class="annotation">@Override</span>
+    <span class="directive">public</span> <span class="type">boolean</span> test(ReadOnlyPerson person) {
+        <span class="keyword">return</span> person.getFavourite();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the favourite list operation works:</p>
+</div>
+<div class="paragraph">
+<p>As seen in Figure 5.13.2, when <code>favourites</code> is typed into the command line input, a new <code>FavouriteListCommand</code> is created.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FavouriteListCommandDiagram2.png" alt="FavouriteListCommandDiagram2" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.13.2 FavouriteListCommand Logic Sequence Diagram</em></p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of <code>FavouriteListCommand</code><br>
+<strong>Alternative 1 (current choice):</strong> Extends to <code>Command</code><br>
+<strong>Pros:</strong> Developers do not need to learn the implementation of <code>UndoableCommand</code> class.<br>
+<strong>Cons:</strong> Users may want to undo <code>FavouriteListCommand</code> as they may not have wanted to list the favourited persons.<br>
+<strong>Alternative 2:</strong> Extends to <code>UndoableCommand</code><br>
+<strong>Pros:</strong> Users can undo <code>FavouriteListCommand</code> when they mistype the command.<br>
+<strong>Cons:</strong> Developers need to learn the implementation of <code>UndoableCommand</code>. Unnecessary to extend to <code>UndoableCommand</code> since users can type <code>ListCommand</code> to go back to the list of all persons.<br></p>
+</div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
 </div>
@@ -215,7 +445,7 @@ You will be able to switch between <code>Bright Theme</code> and <code>Dark Them
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 9.3.1 Bright Theme</p>
+<p><em>Figure 9.3.1 Bright Theme</em></p>
 </div>
 <div class="paragraph">
 <p><a href="#the-myths-book---user-guide">Back To Top</a>
@@ -234,7 +464,7 @@ Format: <code>themes</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 6.5.1 <code>themes</code> Result for Themes List Command
+<p><em>Figure 6.5.1 <code>themes</code> Result for Themes List Command</em>
 === Switching themes : <code>switch</code></p>
 </div>
 <div class="paragraph">
@@ -288,7 +518,7 @@ Format: <code>switch INDEX</code></p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 6.6.1 <code>switch 2</code> Result for Switch Command</p>
+<p><em>Figure 6.6.1 <code>switch 2</code> Result for Switch Command</em></p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -436,7 +666,7 @@ allow the application to check the latest colour theme before the application wa
 <p>Upon detecting <code>ChangeThemeRequestEvent</code>, <code>MainWindow</code> will call <code>handleChangeTheme</code> to handle the event.</p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>SwitchThemeCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> Extending to <code>Command</code> class.<br>
@@ -596,7 +826,7 @@ consisting of a list of available colour themes in The Myth&#8217;s Book.</p>
 <p><em>Figure 5.6.3 ThemeListCommand Logic, EventsCenter &amp; UI Diagram</em></p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> How theme list executes<br>
 <strong>Alternative 1 (current choice):</strong> Showing the list of themes through a pop-up window populated by a HTML file.<br>
@@ -645,7 +875,7 @@ consisting of a list of available colour themes in The Myth&#8217;s Book.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 8.1.1 <code>events</code> Result for Events Command</p>
+<p><em>Figure 8.1.1 <code>events</code> Result for Events Command</em></p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -803,7 +1033,7 @@ then be listened and handled by <code>handleToggleEvent</code> in <code>MainWind
 <p><em>Figure 5.2.2 EventsCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>EventsCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> Extends to <code>Command</code><br>
@@ -1039,7 +1269,7 @@ When <code>DeleteEventCommand</code> is executed, the previous state of the addr
 <p><em>Figure 5.4.4 DeleteEventCommand Logic, EventsCenter &amp; UI Sequence Diagram</em></p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>DeleteEventCommand</code><br>
 <strong>Alternative 1 (current choice):</strong> Extends to <code>UndoableCommand</code><br>
@@ -1209,7 +1439,7 @@ It lists out all contacts that have the specified tag. Contacts with substrings 
 <p><em>Figure 5.11.2 FindTagCommand Logic Sequence Diagram</em></p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h4>
+<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of <code>TagContainsKeywordsPredicate</code><br>
 <strong>Alternative 1 (current choice):</strong> Tag of contacts has to match with the tag specified by the user<br>
@@ -1332,7 +1562,7 @@ This enhancement will also improve user-friendliness and user experience of The 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-13 03:47:33 +00:00
+Last updated 2017-11-13 04:06:39 +00:00
 </div>
 </div>
 </body>
