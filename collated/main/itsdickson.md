@@ -1044,17 +1044,6 @@ public class EventListPanel extends UiPart<Region> {
         }
         getRoot().getStylesheets().add(VIEW_PATH + theme);
     }
-
-    /**
-     * Toggles the list panel based on the input panel.
-     */
-    public void handleToggle(String selectedPanel) {
-        if (selectedPanel.equals(EventsCommand.COMMAND_WORD)) {
-            eventListPanelPlaceholder.toFront();
-        } else if (selectedPanel.equals(ListCommand.COMMAND_WORD)) {
-            personListPanelPlaceholder.toFront();
-        }
-    }
 ```
 ###### \java\seedu\address\ui\MainWindow.java
 ``` java
@@ -1999,6 +1988,17 @@ public class ThemesWindow extends UiPart<Region> {
 #resultDisplayPlaceholder {
     -fx-background-color: #1d1d1d;
 }
+```
+###### \resources\view\defaultLight.html
+``` html
+<html>
+<head>
+    <link rel="stylesheet" href="BrightTheme.css">
+</head>
+
+<body class="background">
+</body>
+</html>
 ```
 ###### \resources\view\EventListCard.fxml
 ``` fxml
