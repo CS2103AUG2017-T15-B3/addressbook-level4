@@ -1,6 +1,5 @@
 package seedu.address.ui;
 
-//@@author chernghann
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
@@ -20,6 +19,7 @@ import seedu.address.model.event.Event;
 import seedu.address.model.event.ReadOnlyEvent;
 import seedu.address.model.event.UniqueEventList;
 
+//@@author SirGoose3432-reused
 /**
  * The UI component that is responsible for implemented Calendar.
  */
@@ -122,7 +122,7 @@ public class Calendar {
         // Change the title of the calendar
         calendarTitle.setText(yearMonth.getMonth().toString() + " " + String.valueOf(yearMonth.getYear()));
     }
-
+    //@@author chernghann
     /**
      * Move the month back by one. Repopulate the calendar with the correct dates.
      */
@@ -138,6 +138,7 @@ public class Calendar {
         currentYearMonth = currentYearMonth.plusMonths(1);
         EventsCenter.getInstance().post(new PopulateMonthEvent(currentYearMonth));
     }
+    //@@author
 
     public VBox getView() {
         return view;
@@ -151,6 +152,7 @@ public class Calendar {
         this.allCalendarDays = allCalendarDays;
     }
 
+    //@@author chernghann
     /**
      * populating updated calendar for the switch buttons for the add of events
      * @param eventList
